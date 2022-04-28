@@ -1,0 +1,46 @@
+{
+  "Version": 1,
+  "Hash": "1ALeqt7q2+ymu/lXokCBH9cRx1txHr6yAzKmg3/anh4=",
+  "Source": "AngularAPI",
+  "BasePath": "_content/AngularAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [
+    {
+      "Identity": "D:\\ITI\\Angular\\AngularAPI\\AngularAPI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\AngularAPI.styles.css",
+      "SourceId": "AngularAPI",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularAPI\\AngularAPI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/AngularAPI",
+      "RelativePath": "AngularAPI.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\ITI\\Angular\\AngularAPI\\AngularAPI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\AngularAPI.styles.css"
+    },
+    {
+      "Identity": "D:\\ITI\\Angular\\AngularAPI\\AngularAPI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\AngularAPI.bundle.scp.css",
+      "SourceId": "AngularAPI",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularAPI\\AngularAPI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "BasePath": "_content/AngularAPI",
+      "RelativePath": "AngularAPI.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\ITI\\Angular\\AngularAPI\\AngularAPI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\AngularAPI.bundle.scp.css"
+    }
+  ]
+}
