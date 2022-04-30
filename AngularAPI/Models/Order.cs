@@ -18,10 +18,10 @@ namespace AngularProject.Models
        public OrderState State { get; set; }
 
        [Required, ForeignKey("User")]
-       public int UserID;
+       public string UserID;
        public User User { get; set; }
 
-       public ICollection<OrderProducts> OrderProducts { get; set; }
+       public virtual ICollection<OrderProducts> OrderProducts { get; set; }
 
     }
 }

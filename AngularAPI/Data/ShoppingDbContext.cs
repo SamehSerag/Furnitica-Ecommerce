@@ -1,12 +1,13 @@
 ﻿using AngularProject.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace AngularProject.Data
 {
-    public class ShoppingDb : DbContext
+    public class ShoppingDbContext : IdentityDbContext<User>
     {
 
-        public ShoppingDb(DbContextOptions options): base(options)
+        public ShoppingDbContext(DbContextOptions options): base(options)
         {
 
         }
@@ -14,6 +15,7 @@ namespace AngularProject.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
            
+            base.OnModelCreating(modelBuilder);
 
             //builder.Entity<OrderProducts>()
             //   .HasOne(Tc => Tc.Order)
@@ -37,8 +39,8 @@ namespace AngularProject.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderProducts> OrderProducts { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<Role> Roles { get; set; }
-        public DbSet<User> Users { get; set; }
 
+        //public DbSet<User> Users { get; set; }
+        //public DbSet<Role> Roles { get; set; }
     }
 }
