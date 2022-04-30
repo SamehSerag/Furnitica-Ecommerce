@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using AngularAPI.Enums;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AngularProject.Models
@@ -15,6 +16,10 @@ namespace AngularProject.Models
         public string Details_AR { get; set; }
         [DataType(DataType.Currency), Required]
         public decimal price { get; set; }
+
+        [EnumDataType(typeof(Color))]
+        public Color Color { get; set; }
+        public int Quantity { get; set; }
 
         [ForeignKey("Image")]
         public int ImageId { get; set; }

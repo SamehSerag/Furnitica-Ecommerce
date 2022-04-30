@@ -9,5 +9,7 @@ namespace AngularProject.Models
         public int Id { get; set; }
 
         public ICollection<CartProduct> CartProducts { get; set; }
+
+
     }
 }

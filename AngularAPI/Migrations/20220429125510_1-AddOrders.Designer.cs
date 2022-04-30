@@ -4,6 +4,7 @@ using AngularProject.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AngularAPI.Migrations
 {
     [DbContext(typeof(ShoppingDb))]
-    partial class ShoppingDbModelSnapshot : ModelSnapshot
+    [Migration("20220429125510_1-AddOrders")]
+    partial class _1AddOrders
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -161,9 +163,6 @@ namespace AngularAPI.Migrations
                     b.Property<int>("CategoryID")
                         .HasColumnType("int");
 
-                    b.Property<int>("Color")
-                        .HasColumnType("int");
-
                     b.Property<string>("Details_AR")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -173,9 +172,6 @@ namespace AngularAPI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ImageId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantity")
                         .HasColumnType("int");
 
                     b.Property<string>("Title_AR")

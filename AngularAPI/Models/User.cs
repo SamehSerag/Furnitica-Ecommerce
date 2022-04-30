@@ -32,6 +32,8 @@ namespace AngularProject.Models
 
         public Role Role { get; set; }
 
+        //// list of orders
+        public ICollection<Order> Orders { get; set; }
 
 
     }
