@@ -8,7 +8,7 @@ namespace AngularProject.Models
         [Key]
         public int Id { get; set; }
 
-        public ICollection<CartProduct> CartProducts { get; set; }
+        public ICollection<CartProduct>? CartProducts { get; set; }
 
 
     }

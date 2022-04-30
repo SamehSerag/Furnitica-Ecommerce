@@ -44,7 +44,7 @@ namespace AngularProject.Models
         
         //public Role Role { get; set; }
         public virtual Image? Image { get; set; }
-        public virtual Cart Cart { get; set; }
+        public virtual Cart? Cart { get; set; }
 
         //// list of orders
         public virtual ICollection<Order>? Orders { get; set; }

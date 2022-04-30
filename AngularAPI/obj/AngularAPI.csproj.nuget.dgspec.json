@@ -10,11 +10,11 @@
         "projectUniqueName": "D:\\ITI\\Angular\\AngularProject\\AngularAPI\\AngularAPI.csproj",
         "projectName": "AngularAPI",
         "projectPath": "D:\\ITI\\Angular\\AngularProject\\AngularAPI\\AngularAPI.csproj",
-        "packagesPath": "C:\\Users\\Lap Smart\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\muna\\.nuget\\packages\\",
         "outputPath": "D:\\ITI\\Angular\\AngularProject\\AngularAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Lap Smart\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\muna\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,9 +58,13 @@
               "target": "Package",
               "version": "[6.0.4, )"
             },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.3, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.2.3, )"
+              "version": "[6.3.0, )"
             }
           },
           "imports": [
@@ -81,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
