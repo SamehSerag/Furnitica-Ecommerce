@@ -10,7 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<ShoppingDb>(
+builder.Services.AddDbContext<ShoppingDbContext>(
     options => options.UseSqlServer(
                builder.Configuration.GetConnectionString("ShopDbConn")
     ));
