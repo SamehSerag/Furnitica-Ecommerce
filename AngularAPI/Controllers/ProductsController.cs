@@ -28,11 +28,19 @@ namespace AngularAPI.Controllers
         {
             return await _context.Products.Include(p => p.Image)
                 .Include(p => p.Category)
+                .Include(p => p.Image)
+                //.Include(p => p.OrderProducts)
+                .ToListAsync();
+        }
+        [HttpGet("/admin")]
+        public async Task<ActionResult<IEnumerable<Product>>> GetProductsByAdmin()
+        {
+            return await _context.Products.Include(p => p.Image)
+                .Include(p => p.Category)
                 .Include(p => p.OrderProducts)
                 .Include(p => p.Image)
                 .ToListAsync();
         }
-
         // GET: api/Products/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetProduct(int id)
@@ -40,8 +48,25 @@ namespace AngularAPI.Controllers
             var product = await _context.Products
                 .Include(p => p.Category)
                 .Include(p => p.Image)
-                .Include(p=>p.OrderProducts)
+                //.Include(p=>p.OrderProducts)
                 .FirstOrDefaultAsync(p=>p.Id==id);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            return product;
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Product>> GetProductByAdmin(int id)
+        {
+            var product = await _context.Products
+                .Include(p => p.Category)
+                .Include(p => p.Image)
+                .Include(p => p.OrderProducts)
+                .FirstOrDefaultAsync(p => p.Id == id);
 
             if (product == null)
             {
