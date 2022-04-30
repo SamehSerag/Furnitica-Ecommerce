@@ -19,9 +19,9 @@ namespace AngularProject.Models
 
        [Required, ForeignKey("User")]
        public int UserID;
-       public User User { get; set; }
+       public User? User { get; set; }
 
-       public ICollection<OrderProducts> OrderProducts { get; set; }
+       public ICollection<OrderProducts>? OrderProducts { get; set; }
 
     }
 }

@@ -132,7 +132,6 @@ namespace AngularAPI.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int?>("OrderId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("ProductId")
@@ -295,9 +294,7 @@ namespace AngularAPI.Migrations
                 {
                     b.HasOne("AngularProject.Models.Order", "Order")
                         .WithMany("OrderProducts")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("OrderId");
 
                     b.HasOne("AngularProject.Models.Product", "Product")
                         .WithMany("OrderProducts")

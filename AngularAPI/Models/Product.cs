@@ -27,9 +27,9 @@ namespace AngularProject.Models
         [ForeignKey("Category")]
         public int CategoryID { get; set; }
 
-        public Image Image { get; set; }
-        public Category Category { get; set; }
+        public Image? Image { get; set; }
+        public Category? Category { get; set; }
 
-        public ICollection<OrderProducts> OrderProducts { get; set; }
+        public ICollection<OrderProducts>? OrderProducts { get; set; }
     }
 }

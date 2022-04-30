@@ -28,9 +28,9 @@ namespace AngularProject.Models
 
         [ForeignKey("Image")]
         public int ImageId { get; set; }
-        public Image Image { get; set; }
+        public Image? Image { get; set; }
 
-        public Role Role { get; set; }
+        public Role? Role { get; set; }
 
         //// list of orders
         public ICollection<Order> Orders { get; set; }
