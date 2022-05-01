@@ -44,8 +44,8 @@ namespace AngularAPI.Controllers
         public async Task<ActionResult<Product>> GetProduct(int id)
         {
             var product = await _context.Products
-                .Include(p=>p.Image)
-                .Include(p=>p.Category).FirstOrDefaultAsync(p=>p.Id==id);
+                .Include(p => p.Image)
+                .Include(p => p.Category).FirstOrDefaultAsync(p => p.Id == id);
 
             if (product == null)
             {
@@ -127,6 +127,17 @@ namespace AngularAPI.Controllers
             await _context.SaveChangesAsync();
 
             return NoContent();
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<List<Product>>> GetProductsByName(String name)
+        {
+            return await _context.Products
+                .Where(p => p.Title_EN.Contains(name) || p.Title_AR.Contains(name))
+                .Include(p => p.Image)
+                .Include(p => p.Category)
+                .ToListAsync();
+
         }
 
         private bool ProductExists(int id)
