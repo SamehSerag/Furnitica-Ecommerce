@@ -18,14 +18,16 @@ namespace AngularAPI.Dtos.Helpers
             ICollection<string> destMember, ResolutionContext context)
         {
             List<string> result = new List<string>();
-            foreach (var item in source.Images)
-            {
-                if(!string.IsNullOrEmpty(item.Src) && 
-                    !item.Src.Contains("http")){
+            if(source.Images != null)
+                foreach (var item in source.Images)
+                {
+                    if(!string.IsNullOrEmpty(item.Src) && 
+                        !item.Src.Contains("http")){
 
-                    result.Add(Configuration["ApiUrl"] + item.Src);
+                        result.Add(Configuration["ApiUrl"] + item.Src);
+                    }
                 }
-            }
+
             return result;
         }
     }
