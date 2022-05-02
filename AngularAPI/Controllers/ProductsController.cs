@@ -31,10 +31,10 @@ namespace AngularAPI.Controllers
         // GET: api/Products
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts
-            ([FromQuery] string sortby, [FromQuery] string sortdir = "asc")
+            (string sortby, string sortdir, int? category, string search)
         {
             var products = await _productRepository
-                .GetAllProductsAsync(sortby, sortdir);
+                .GetAllProductsAsync(sortby, sortdir, category, search);
 
             return Ok(
                 mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>

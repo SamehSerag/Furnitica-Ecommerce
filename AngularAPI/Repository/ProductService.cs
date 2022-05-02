@@ -33,14 +33,25 @@ namespace AngularAPI.Repository
         //    .Include(p => p.Category).ToListAsync();
         //}
         public async Task<IReadOnlyList<Product>> GetAllProductsAsync
-            (string sortby, string sortdir)
+            (string sortby, string sortdir, int? category, string search)
         {
-            //var test = _context.Products.Include(p => p.Images)
-            //    .Include(p => p.Category);
-            //var test2 =  test.Where(p => p.price < 1000).ToList();
 
             IQueryable<Product> query = _context.Products.Include(p => p.Images)
                 .Include(p => p.Category);
+
+            if (category != null)
+            {
+               query = query.Where(p => p.Category.Id == category);
+            }
+
+            if (search != null)
+            {
+                query = query.Where(p =>
+                    p.Title_EN.Contains(search) || p.Title_AR.Contains(search) ||
+                    p.Details_EN.Contains(search) || p.Details_AR.Contains(search)
+                );
+            }
+
 
             if (!string.IsNullOrEmpty(sortby))
             {
@@ -54,17 +65,14 @@ namespace AngularAPI.Repository
                           param
                            );
 
-                    if (sortdir?.ToLower() == "asc")
-                        query = query.OrderBy(expr);
-                    else
+                    if (sortdir?.ToLower() == "dasc")
                         query = query.OrderByDescending(expr);
+                    else
+                        query = query.OrderBy(expr);
                 }
             }
 
-            //if (category != null)
-            //{
-            //    query.Where(p => p.Category.Id == category);
-            //}
+
 
 
             return await query.ToListAsync();
