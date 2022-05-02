@@ -1,4 +1,7 @@
+using AngularAPI.Dtos.Helpers;
+using AngularAPI.Repository;
 using AngularProject.Data;
+using AngularProject.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,10 +13,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddScoped<IProductRepository, ProductService>();
+
 builder.Services.AddDbContext<ShoppingDbContext>(
     options => options.UseSqlServer(
                builder.Configuration.GetConnectionString("ShopDbConn")
     ));
+// Auto Mapper DTO
+builder.Services.AddAutoMapper(typeof(MappingProfiles));
+
+// Reference Loop Handling
+builder.Services.AddControllers().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling =
+Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
 var app = builder.Build();
 
@@ -25,6 +36,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 
 app.UseAuthorization();
 
