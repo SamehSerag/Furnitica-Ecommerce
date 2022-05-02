@@ -32,15 +32,19 @@ namespace AngularAPI.Repository
         //    .Include(p => p.Images)
         //    .Include(p => p.Category).ToListAsync();
         //}
-        public async Task<IReadOnlyList<Product>> GetAllProductsAsync(string sortby, string sortdir)
+        public async Task<IReadOnlyList<Product>> GetAllProductsAsync
+            (string sortby, string sortdir)
         {
+            //var test = _context.Products.Include(p => p.Images)
+            //    .Include(p => p.Category);
+            //var test2 =  test.Where(p => p.price < 1000).ToList();
 
-            var query = _context.Products.Include(p => p.Images)
-                            .Include(p => p.Category);
+            IQueryable<Product> query = _context.Products.Include(p => p.Images)
+                .Include(p => p.Category);
 
             if (!string.IsNullOrEmpty(sortby))
             {
-
+                
                 var propertyInfo = typeof(Product).GetProperty(sortby);
                 if(propertyInfo != null)
                 {
@@ -50,19 +54,20 @@ namespace AngularAPI.Repository
                           param
                            );
 
-                    if (sortdir.ToLower() == "asc")
-                        return await query.OrderBy(expr)
-                            .ToListAsync();
+                    if (sortdir?.ToLower() == "asc")
+                        query = query.OrderBy(expr);
                     else
-                        return await query.OrderByDescending(expr)
-                            .ToListAsync();
-
+                        query = query.OrderByDescending(expr);
                 }
-
             }
 
-            return await query
-                    .ToListAsync();
+            //if (category != null)
+            //{
+            //    query.Where(p => p.Category.Id == category);
+            //}
+
+
+            return await query.ToListAsync();
         }
         public async Task<Product> GetProductByIdAsync(int id)
         {
