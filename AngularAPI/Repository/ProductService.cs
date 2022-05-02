@@ -1,6 +1,7 @@
 ﻿using AngularProject.Data;
 using AngularProject.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace AngularAPI.Repository
 {
@@ -25,13 +26,44 @@ namespace AngularAPI.Repository
             await _context.SaveChangesAsync();
         }
 
-        public async Task<IReadOnlyList<Product>> GetAllProductsAsync()
+        //public async Task<IReadOnlyList<Product>> GetAllProductsAsync()
+        //{
+        //    return await _context.Products
+        //    .Include(p => p.Images)
+        //    .Include(p => p.Category).ToListAsync();
+        //}
+        public async Task<IReadOnlyList<Product>> GetAllProductsAsync(string sortby, string sortdir)
         {
-            return await _context.Products
-            .Include(p => p.Images)
-            .Include(p => p.Category).ToListAsync();
-        }
 
+            var query = _context.Products.Include(p => p.Images)
+                            .Include(p => p.Category);
+
+            if (!string.IsNullOrEmpty(sortby))
+            {
+
+                var propertyInfo = typeof(Product).GetProperty(sortby);
+                if(propertyInfo != null)
+                {
+                    var param = Expression.Parameter(typeof(Product));
+                    var expr = Expression.Lambda < Func <Product, object> > (
+                          Expression.Convert(Expression.Property(param, propertyInfo), typeof(object)),
+                          param
+                           );
+
+                    if (sortdir.ToLower() == "asc")
+                        return await query.OrderBy(expr)
+                            .ToListAsync();
+                    else
+                        return await query.OrderByDescending(expr)
+                            .ToListAsync();
+
+                }
+
+            }
+
+            return await query
+                    .ToListAsync();
+        }
         public async Task<Product> GetProductByIdAsync(int id)
         {
             return await _context.Products

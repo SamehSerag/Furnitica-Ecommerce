@@ -4,7 +4,7 @@ namespace AngularAPI.Repository
 {
     public interface IProductRepository
     {
-        Task<IReadOnlyList<Product>> GetAllProductsAsync();
+        Task<IReadOnlyList<Product>> GetAllProductsAsync(string sortby, string sortdir);
         Task<Product> GetProductByIdAsync(int id);
         Task<Product> UpdateProductAsync(int id, Product product);
         Task AddProductAsync(Product product);
