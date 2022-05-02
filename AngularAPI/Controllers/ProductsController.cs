@@ -9,6 +9,8 @@ using Microsoft.EntityFrameworkCore;
 using AngularProject.Data;
 using AngularProject.Models;
 using AngularAPI.Repository;
+using AutoMapper;
+using AngularAPI.Dtos;
 
 namespace AngularAPI.Controllers
 {
@@ -16,34 +18,45 @@ namespace AngularAPI.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
+        private readonly IMapper mapper;
+
         private IProductRepository _productRepository { get; }
 
-        public ProductsController(IProductRepository productRepository)
+        public ProductsController(IProductRepository productRepository, IMapper _mapper)
         {
             _productRepository = productRepository;
+            mapper = _mapper;
         }
 
         // GET: api/Products
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
-            return Ok(await _productRepository.GetAllProductsAsync());
+            var products = await _productRepository.GetAllProductsAsync();
+
+            return Ok(
+                mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>
+                (products)
+                );
+
+            //return Ok(await _productRepository.GetAllProductsAsync());
         }
         
 
         // GET: api/Products/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> GetProduct(int id)
+        public async Task<ActionResult<ProductToReturnDto>> GetProduct(int id)
         {
             var product = await _productRepository.GetProductByIdAsync(id);
-
+            
             if (product == null)
             {
                 return NotFound();
             }
 
             //return product;
-            return Ok(product);
+            var productDto =  mapper.Map<Product, ProductToReturnDto>(product);
+            return Ok(productDto);
         }
        
 

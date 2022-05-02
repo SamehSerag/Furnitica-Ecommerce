@@ -28,14 +28,14 @@ namespace AngularAPI.Repository
         public async Task<IReadOnlyList<Product>> GetAllProductsAsync()
         {
             return await _context.Products
-            .Include(p => p.Image)
+            .Include(p => p.Images)
             .Include(p => p.Category).ToListAsync();
         }
 
         public async Task<Product> GetProductByIdAsync(int id)
         {
             return await _context.Products
-                .Include(p => p.Image)
+                .Include(p => p.Images)
                 .Include(p => p.Category)
                 .FirstOrDefaultAsync(p => p.Id == id);
         }
