@@ -1,4 +1,5 @@
-﻿using AngularProject.Data;
+﻿using AngularAPI.Dtos;
+using AngularProject.Data;
 using AngularProject.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
@@ -33,7 +34,9 @@ namespace AngularAPI.Repository
         //    .Include(p => p.Category).ToListAsync();
         //}
         public async Task<IReadOnlyList<Product>> GetAllProductsAsync
-            (string sortby, string sortdir, int? category, string search)
+            (string sortby, string sortdir, int? category, string search,
+            int pageIndex, int pageSize)
+            
         {
 
             IQueryable<Product> query = _context.Products.Include(p => p.Images)
@@ -73,7 +76,7 @@ namespace AngularAPI.Repository
             }
 
 
-
+            query = query.Skip((pageIndex - 1) * pageSize).Take(pageSize);
 
             return await query.ToListAsync();
         }
