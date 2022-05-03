@@ -8,6 +8,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AngularProject.Data;
 using AngularProject.Models;
+using AngularAPI.Repository;
+using AutoMapper;
+using AngularAPI.Dtos;
+using System.Text.Json;
 
 namespace AngularAPI.Controllers
 {
@@ -15,60 +19,56 @@ namespace AngularAPI.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private readonly ShoppingDbContext _context;
+        private readonly IMapper mapper;
 
-        public ProductsController(ShoppingDbContext context)
+        private IProductRepository _productRepository { get; }
+
+        public ProductsController(IProductRepository productRepository, IMapper _mapper)
         {
-            _context = context;
+            _productRepository = productRepository;
+            mapper = _mapper;
         }
 
         // GET: api/Products
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
+        public async Task<ActionResult<IEnumerable<Product>>> GetProducts
+            (string sortby, string sortdir, int? category, string search,
+            int pageIndex = 1, int pageSize = 10)
         {
-            return await _context.Products
-                .Include(p => p.Image)
-                .Include(p => p.Category).ToListAsync();
+            var products = await _productRepository
+                .GetAllProductsAsync(sortby, sortdir, category, search,
+                pageIndex, pageSize);
+
+            // Pagination detials sent header
+            PaginationMetaData paginationMetaData = 
+                new PaginationMetaData(products.Count,  pageIndex, pageSize);
+            Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(paginationMetaData));
+
+            return Ok(
+                mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>
+                (products)
+                );
+
+            //return Ok(await _productRepository.GetAllProductsAsync());
         }
-        [HttpGet("/admin")]
-        public async Task<ActionResult<IEnumerable<Product>>> GetProductsByAdmin()
-        {
-            return await _context.Products
-                .Include(p => p.Image)
-                .Include(p => p.Category)
-                .Include(p => p.OrderProducts).ToListAsync();
-        }
+        
 
         // GET: api/Products/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> GetProduct(int id)
+        public async Task<ActionResult<ProductToReturnDto>> GetProduct(int id)
         {
-            var product = await _context.Products
-                .Include(p=>p.Image)
-                .Include(p=>p.Category).FirstOrDefaultAsync(p=>p.Id==id);
-
+            var product = await _productRepository.GetProductByIdAsync(id);
+            
             if (product == null)
             {
                 return NotFound();
             }
 
-            return product;
+            //return product;
+            var productDto =  mapper.Map<Product, ProductToReturnDto>(product);
+            return Ok(productDto);
         }
-        [HttpGet("{id}/admin")]
-        public async Task<ActionResult<Product>> GetProductByAdmin(int id)
-        {
-            var product = await _context.Products
-                .Include(p => p.Image)
-                .Include(p => p.Category)
-                .Include(p => p.OrderProducts).FirstOrDefaultAsync(p => p.Id == id);
-
-            if (product == null)
-            {
-                return NotFound();
-            }
-
-            return product;
-        }
+       
 
 
         // PUT: api/Products/5
@@ -80,12 +80,10 @@ namespace AngularAPI.Controllers
             {
                 return BadRequest();
             }
-
-            _context.Entry(product).State = EntityState.Modified;
-
             try
             {
-                await _context.SaveChangesAsync();
+                //await _context.SaveChangesAsync();
+                await _productRepository.UpdateProductAsync(id, product);
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -107,8 +105,7 @@ namespace AngularAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Product>> PostProduct(Product product)
         {
-            _context.Products.Add(product);
-            await _context.SaveChangesAsync();
+            await _productRepository.AddProductAsync(product);
 
             return CreatedAtAction("GetProduct", new { id = product.Id }, product);
         }
@@ -117,21 +114,76 @@ namespace AngularAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(int id)
         {
-            var product = await _context.Products.FindAsync(id);
+            var product = await _productRepository.GetProductByIdAsync(id);
             if (product == null)
             {
                 return NotFound();
             }
 
-            _context.Products.Remove(product);
-            await _context.SaveChangesAsync();
+            await _productRepository.DeleteProductAsync(id);
 
             return NoContent();
         }
 
         private bool ProductExists(int id)
         {
-            return _context.Products.Any(e => e.Id == id);
+            return _productRepository.IsProductExixtsAsync(id);
         }
+
+
+
+        //// Admin
+        ///
+
+        //[HttpGet("/sortAscndByPrice")]
+
+        //public async Task<ActionResult<IEnumerable<Product>>> GetProductsSortedAscndByPrice(/*[FromBody] decimal min, [FromBody] decimal max*/)
+        //{
+        //    return await _context.Products
+        //        .Include(p => p.Image)
+        //        .Include(p => p.Category).OrderBy(p=>p.price).ToListAsync();
+        //}
+
+        //[HttpGet("/sortDescndByPrice")]
+
+        //public async Task<ActionResult<IEnumerable<Product>>> GetProductsSortedDascndByPrice(/*[FromBody] decimal min, [FromBody] decimal max*/)
+        //{
+        //    return await _context.Products
+        //        .Include(p => p.Image)
+        //        .Include(p => p.Category).OrderByDescending(p => p.price).ToListAsync();
+        //}
+        //[HttpGet("/range")]
+
+        //public async Task<ActionResult<IEnumerable<Product>>> GetProductsByPriceRange([FromBody] decimal min, [FromBody] decimal max)
+        //{
+        //    return await _context.Products
+        //        .Include(p => p.Image)
+        //        .Include(p => p.Category).Where(p=> p.price >= min && p.price <= max).ToListAsync();
+        //}
+
+        //[HttpGet("/admin")]
+        //public async Task<ActionResult<IEnumerable<Product>>> GetProductsByAdmin()
+        //{
+        //    return await _context.Products
+        //        .Include(p => p.Image)
+        //        .Include(p => p.Category)
+        //        .Include(p => p.OrderProducts).ToListAsync();
+        //}
+
+        //[HttpGet("{id}/admin")]
+        //public async Task<ActionResult<Product>> GetProductByAdmin(int id)
+        //{
+        //    var product = await _context.Products
+        //        .Include(p => p.Image)
+        //        .Include(p => p.Category)
+        //        .Include(p => p.OrderProducts).FirstOrDefaultAsync(p => p.Id == id);
+
+        //    if (product == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return product;
+        //}
     }
 }

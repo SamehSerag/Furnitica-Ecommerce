@@ -1,8 +1,11 @@
+using AngularAPI.Dtos.Helpers;
+using AngularAPI.Repository;
 using AngularAPI.Services;
 using AngularProject.Data;
 using AngularProject.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using AngularProject.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
@@ -42,6 +45,18 @@ builder.Services.AddAuthentication( options => {
 
 // adding user repo to container
 builder.Services.AddScoped<IGenericRepository<User>, GenericRepositoryT<User> >();
+builder.Services.AddScoped<IProductRepository, ProductService>();
+
+builder.Services.AddDbContext<ShoppingDbContext>(
+    options => options.UseSqlServer(
+               builder.Configuration.GetConnectionString("ShopDbConn")
+    ));
+// Auto Mapper DTO
+builder.Services.AddAutoMapper(typeof(MappingProfiles));
+
+// Reference Loop Handling
+builder.Services.AddControllers().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling =
+Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
 var app = builder.Build();
 
@@ -53,6 +68,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 
 app.UseAuthentication();
 
