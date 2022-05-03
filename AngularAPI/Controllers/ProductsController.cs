@@ -11,6 +11,7 @@ using AngularProject.Models;
 using AngularAPI.Repository;
 using AutoMapper;
 using AngularAPI.Dtos;
+using System.Text.Json;
 
 namespace AngularAPI.Controllers
 {
@@ -31,10 +32,17 @@ namespace AngularAPI.Controllers
         // GET: api/Products
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts
-            (string sortby, string sortdir, int? category, string search)
+            (string sortby, string sortdir, int? category, string search,
+            int pageIndex = 1, int pageSize = 10)
         {
             var products = await _productRepository
-                .GetAllProductsAsync(sortby, sortdir, category, search);
+                .GetAllProductsAsync(sortby, sortdir, category, search,
+                pageIndex, pageSize);
+
+            // Pagination detials sent header
+            PaginationMetaData paginationMetaData = 
+                new PaginationMetaData(products.Count,  pageIndex, pageSize);
+            Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(paginationMetaData));
 
             return Ok(
                 mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>
