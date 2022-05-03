@@ -4,6 +4,7 @@ using AngularProject.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AngularAPI.Migrations
 {
     [DbContext(typeof(ShoppingDbContext))]
-    partial class ShoppingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220503175155_allow-null-address")]
+    partial class allownulladdress
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -87,16 +89,11 @@ namespace AngularAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Src")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
 
                     b.ToTable("Images");
                 });
@@ -177,6 +174,9 @@ namespace AngularAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("ImageId")
+                        .HasColumnType("int");
+
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
@@ -195,6 +195,8 @@ namespace AngularAPI.Migrations
 
                     b.HasIndex("CategoryID");
 
+                    b.HasIndex("ImageId");
+
                     b.ToTable("Products");
                 });
 
@@ -207,6 +209,7 @@ namespace AngularAPI.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Address")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("CartID")
@@ -431,17 +434,6 @@ namespace AngularAPI.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("AngularProject.Models.Image", b =>
-                {
-                    b.HasOne("AngularProject.Models.Product", "Product")
-                        .WithMany("Images")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Product");
-                });
-
             modelBuilder.Entity("AngularProject.Models.Order", b =>
                 {
                     b.HasOne("AngularProject.Models.User", "User")
@@ -476,7 +468,15 @@ namespace AngularAPI.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("AngularProject.Models.Image", "Image")
+                        .WithMany()
+                        .HasForeignKey("ImageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Category");
+
+                    b.Navigation("Image");
                 });
 
             modelBuilder.Entity("AngularProject.Models.User", b =>
@@ -559,8 +559,6 @@ namespace AngularAPI.Migrations
 
             modelBuilder.Entity("AngularProject.Models.Product", b =>
                 {
-                    b.Navigation("Images");
-
                     b.Navigation("OrderProducts");
                 });
 
