@@ -12,6 +12,9 @@ using AngularAPI.Repository;
 using AutoMapper;
 using AngularAPI.Dtos;
 using System.Text.Json;
+using System.Diagnostics;
+using System.IO;
+using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IWebHostEnvironment;
 
 namespace AngularAPI.Controllers
 {
@@ -20,13 +23,16 @@ namespace AngularAPI.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly IMapper mapper;
+        private readonly IHostingEnvironment environment;
 
         private IProductRepository _productRepository { get; }
 
-        public ProductsController(IProductRepository productRepository, IMapper _mapper)
+        public ProductsController(IProductRepository productRepository, 
+            IMapper _mapper, IHostingEnvironment _environment)
         {
             _productRepository = productRepository;
             mapper = _mapper;
+            environment = _environment;
         }
 
         // GET: api/Products
@@ -105,6 +111,7 @@ namespace AngularAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Product>> PostProduct(Product product)
         {
+            
             await _productRepository.AddProductAsync(product);
 
             return CreatedAtAction("GetProduct", new { id = product.Id }, product);

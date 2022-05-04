@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "s3JB3ydyRMqsPae8k8uq39O6m8L/X9X4D0EG4nivufQ=",
+  "Hash": "QkBJ3PwHDq9o9VD2la7KiPcrs1t/upI2WpU3JqtKW9s=",
   "Source": "AngularAPI",
   "BasePath": "_content/AngularAPI",
   "Mode": "Default",
@@ -355,6 +355,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\products\\sb-ts1.png"
+    },
+    {
+      "Identity": "D:\\ITI\\Angular\\AngularProject\\AngularAPI\\wwwroot\\images\\products\\Web capture_11-4-2022_233338_.jpeg",
+      "SourceId": "AngularAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\AngularAPI\\wwwroot\\",
+      "BasePath": "_content/AngularAPI",
+      "RelativePath": "images/products/Web capture_11-4-2022_233338_.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\Web capture_11-4-2022_233338_.jpeg"
     }
   ]
 }
