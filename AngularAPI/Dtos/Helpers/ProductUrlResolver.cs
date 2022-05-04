@@ -21,8 +21,10 @@ namespace AngularAPI.Dtos.Helpers
             if(source.Images != null)
                 foreach (var item in source.Images)
                 {
-                    if(!string.IsNullOrEmpty(item.Src) && 
-                        !item.Src.Contains("http")){
+                    if(!string.IsNullOrEmpty(item.Src) &&
+                        !item.Src.Contains("https://") && 
+                        !item.Src.Contains("http://"))
+                    {
 
                         result.Add(Configuration["ApiUrl"] + item.Src);
                     }
