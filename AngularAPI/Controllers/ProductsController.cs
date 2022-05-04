@@ -35,9 +35,8 @@ namespace AngularAPI.Controllers
             environment = _environment;
         }
 
-        // GET: api/Products
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Product>>> GetProducts
+        [NonAction]
+        public async Task<IReadOnlyList<Product>> GetProducts
             (string sortby, string sortdir, int? category, string search,
             int pageIndex = 1, int pageSize = 10)
         {
@@ -50,18 +49,45 @@ namespace AngularAPI.Controllers
                 new PaginationMetaData(products.Count,  pageIndex, pageSize);
             Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(paginationMetaData));
 
+            return products;
+
+            //return Ok(await _productRepository.GetAllProductsAsync());
+        }
+
+        // GET: api/Products
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Product>>> GetProductsByUser
+         (string sortby, string sortdir, int? category, string search,
+         int pageIndex = 1, int pageSize = 10)
+        {
+
+            var products = await GetProducts(sortby, sortdir, category,
+                search, pageIndex, pageSize);
+
             return Ok(
                 mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>
                 (products)
                 );
-
-            //return Ok(await _productRepository.GetAllProductsAsync());
         }
-        
+        // GET: api/Products/admin
+        [HttpGet("admin/")]
+        public async Task<ActionResult<IEnumerable<Product>>> GetProductsByAdmin
+            (string sortby, string sortdir, int? category, string search,
+            int pageIndex = 1, int pageSize = 10)
+        {
+            var products = await GetProducts(sortby, sortdir, category,
+                search, pageIndex, pageSize);
+
+            return Ok(
+                mapper.Map<IReadOnlyList<Product>, IReadOnlyList<AdminProductDto>>
+                (products)
+                );
+        }
+
 
         // GET: api/Products/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<ProductToReturnDto>> GetProduct(int id)
+        public async Task<ActionResult<ProductToReturnDto>> GetProductByUser(int id)
         {
             var product = await _productRepository.GetProductByIdAsync(id);
             
@@ -71,10 +97,25 @@ namespace AngularAPI.Controllers
             }
 
             //return product;
-            var productDto =  mapper.Map<Product, ProductToReturnDto>(product);
+            var productDto = mapper.Map<Product, ProductToReturnDto>(product);
             return Ok(productDto);
         }
-       
+
+        [HttpGet("admin/{id}")]
+        public async Task<ActionResult<ProductToReturnDto>> GetProductByAdmin(int id)
+        {
+            var product = await _productRepository.GetProductByIdAsync(id);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            //return product;
+            var productDto = mapper.Map<Product, AdminProductDto>(product);
+            return Ok(productDto);
+        }
+
 
 
         // PUT: api/Products/5
@@ -108,7 +149,7 @@ namespace AngularAPI.Controllers
 
         // POST: api/Products
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
+        [HttpPost("admin/")]
         public async Task<ActionResult<Product>> PostProduct(Product product)
         {
             
@@ -118,7 +159,7 @@ namespace AngularAPI.Controllers
         }
 
         // DELETE: api/Products/5
-        [HttpDelete("{id}")]
+        [HttpDelete("admin/{id}")]
         public async Task<IActionResult> DeleteProduct(int id)
         {
             var product = await _productRepository.GetProductByIdAsync(id);
