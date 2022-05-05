@@ -7,7 +7,6 @@ namespace AngularProject.Models
 {
     public class User : IdentityUser
     {
-
         //[Key]
         //public int Id { get; set; }
 
@@ -27,8 +26,8 @@ namespace AngularProject.Models
         public Gender Gender { get; set; }
         
         
-        [Required]
-        public string Address { get; set; }
+        //[Required]
+        public string? Address { get; set; }
 
         
         //[Required, ForeignKey("Role")]
@@ -40,7 +39,7 @@ namespace AngularProject.Models
 
 
         [ForeignKey("Image")]
-        public int ImageId { get; set; }
+        public int? ImageId { get; set; }
         
         //public Role Role { get; set; }
         public virtual Image? Image { get; set; }

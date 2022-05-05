@@ -1,16 +1,5 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
 
-*.cache
-*.v2
-.vs/AngularAPI/v17/.suo
-AngularAPI/obj/Debug/net6.0/AngularAPI.assets.cache
-AngularAPI/obj/AngularAPI.csproj.nuget.g.props
-*.cache
-AngularAPI/obj/project.assets.json
-AngularAPI/obj/project.nuget.cache
-AngularAPI/obj/Debug/net6.0/AngularAPI.GeneratedMSBuildEditorConfig.editorconfig
-AngularAPI/obj/Debug/net6.0/AngularAPI.csproj.AssemblyReference.cache
-AngularAPI/obj/Debug/net6.0/AngularAPI.assets.cache
-AngularAPI/obj/AngularAPI.csproj.nuget.g.props
-AngularAPI/obj/AngularAPI.csproj.nuget.dgspec.json
-.vs/AngularAPI/v17/.suo
-.vs/AngularAPI/DesignTimeBuild/.dtbcache.v2
+/.vs

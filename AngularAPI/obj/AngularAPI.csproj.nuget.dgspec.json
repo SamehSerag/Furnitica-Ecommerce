@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ITI\\Angular\\AngularProject\\AngularAPI\\AngularAPI.csproj": {}
+    "E:\\42 Intake - SD - SWA\\Projects\\Project-Clone-Angular\\AngularProject\\AngularAPI\\AngularAPI.csproj": {}
   },
   "projects": {
-    "D:\\ITI\\Angular\\AngularProject\\AngularAPI\\AngularAPI.csproj": {
+    "E:\\42 Intake - SD - SWA\\Projects\\Project-Clone-Angular\\AngularProject\\AngularAPI\\AngularAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ITI\\Angular\\AngularProject\\AngularAPI\\AngularAPI.csproj",
+        "projectUniqueName": "E:\\42 Intake - SD - SWA\\Projects\\Project-Clone-Angular\\AngularProject\\AngularAPI\\AngularAPI.csproj",
         "projectName": "AngularAPI",
-        "projectPath": "D:\\ITI\\Angular\\AngularProject\\AngularAPI\\AngularAPI.csproj",
-        "packagesPath": "C:\\Users\\muna\\.nuget\\packages\\",
-        "outputPath": "D:\\ITI\\Angular\\AngularProject\\AngularAPI\\obj\\",
+        "projectPath": "E:\\42 Intake - SD - SWA\\Projects\\Project-Clone-Angular\\AngularProject\\AngularAPI\\AngularAPI.csproj",
+        "packagesPath": "C:\\Users\\Samaa\\.nuget\\packages\\",
+        "outputPath": "E:\\42 Intake - SD - SWA\\Projects\\Project-Clone-Angular\\AngularProject\\AngularAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\muna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Samaa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,11 +40,23 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "LinqKit": {
+              "target": "Package",
+              "version": "[1.2.2, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[6.0.4, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.4, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
               "version": "[6.0.4, )"
             },

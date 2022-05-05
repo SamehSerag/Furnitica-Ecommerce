@@ -21,14 +21,15 @@ namespace AngularProject.Models
         public Color Color { get; set; }
         public int Quantity { get; set; }
 
-        [ForeignKey("Image")]
-        public int ImageId { get; set; }
+        //[ForeignKey("Image")]
+        //public int ImageId { get; set; }
         
         [ForeignKey("Category")]
         public int CategoryID { get; set; }
 
-        public Image? Image { get; set; }
+        //public Image? Image { get; set; }
         public Category? Category { get; set; }
+        public ICollection<Image>? Images { get; set; }
 
         public ICollection<OrderProducts>? OrderProducts { get; set; }
     }
