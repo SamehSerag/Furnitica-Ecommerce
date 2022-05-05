@@ -10481,19 +10481,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\muna\\.nuget\\packages\\": {}
+    "C:\\Users\\Samaa\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ITI\\Angular\\AngularProject\\AngularAPI\\AngularAPI.csproj",
+      "projectUniqueName": "E:\\42 Intake - SD - SWA\\Projects\\Project-Clone-Angular\\AngularProject\\AngularAPI\\AngularAPI.csproj",
       "projectName": "AngularAPI",
-      "projectPath": "D:\\ITI\\Angular\\AngularProject\\AngularAPI\\AngularAPI.csproj",
-      "packagesPath": "C:\\Users\\muna\\.nuget\\packages\\",
-      "outputPath": "D:\\ITI\\Angular\\AngularProject\\AngularAPI\\obj\\",
+      "projectPath": "E:\\42 Intake - SD - SWA\\Projects\\Project-Clone-Angular\\AngularProject\\AngularAPI\\AngularAPI.csproj",
+      "packagesPath": "C:\\Users\\Samaa\\.nuget\\packages\\",
+      "outputPath": "E:\\42 Intake - SD - SWA\\Projects\\Project-Clone-Angular\\AngularProject\\AngularAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\muna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Samaa\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
