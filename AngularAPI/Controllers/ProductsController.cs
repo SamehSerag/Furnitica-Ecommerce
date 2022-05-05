@@ -186,7 +186,7 @@ namespace AngularAPI.Controllers
             return NoContent();
         }
 
-        [HttpGet]
+/*        [HttpGet]
         public async Task<ActionResult<List<Product>>> GetProductsByName(String name)
         {
             return await _context.Products
@@ -196,7 +196,7 @@ namespace AngularAPI.Controllers
                 .ToListAsync();
 
         }
-
+*/
         private bool ProductExists(int id)
         {
             return _productRepository.IsProductExixtsAsync(id);
