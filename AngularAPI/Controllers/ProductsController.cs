@@ -15,6 +15,7 @@ using System.Text.Json;
 using System.Diagnostics;
 using System.IO;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IWebHostEnvironment;
+using AngularAPI.Data;
 
 namespace AngularAPI.Controllers
 {
@@ -35,19 +36,30 @@ namespace AngularAPI.Controllers
             environment = _environment;
         }
 
+        [HttpGet("test")]
+        public ActionResult<string> TestCategory([FromQuery] List<string> liststring)
+        {
+
+
+            return Ok(liststring.Count);
+        }
+
         [NonAction]
         public async Task<IReadOnlyList<Product>> GetProducts
-            (string sortby, string sortdir, int? category, string search,
+            (PriceRange priceRange, string sortby, string sortdir, int? category, string search,
             int pageIndex = 1, int pageSize = 10)
         {
             var products = await _productRepository
-                .GetAllProductsAsync(sortby, sortdir, category, search,
+                .GetAllProductsAsync(priceRange, sortby, sortdir, category, search,
                 pageIndex, pageSize);
 
             // Pagination detials sent header
             PaginationMetaData paginationMetaData = 
                 new PaginationMetaData(products.Count,  pageIndex, pageSize);
             Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(paginationMetaData));
+
+            PriceRange priceRangeObj = new PriceRange(products);
+            Response.Headers.Add("X-PriceRange", JsonSerializer.Serialize(priceRangeObj));
 
             return products;
 
@@ -57,11 +69,13 @@ namespace AngularAPI.Controllers
         // GET: api/Products
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Product>>> GetProductsByUser
-         (string sortby, string sortdir, int? category, string search,
+         ([FromQuery] PriceRange priceRange,string sortby, string sortdir, int? category, string search,
          int pageIndex = 1, int pageSize = 10)
         {
+            if (!priceRange.IsValidRange)
+                return BadRequest("Max Price Less Than Min Price");
 
-            var products = await GetProducts(sortby, sortdir, category,
+            var products = await GetProducts(priceRange, sortby, sortdir, category,
                 search, pageIndex, pageSize);
 
             return Ok(
@@ -72,10 +86,13 @@ namespace AngularAPI.Controllers
         // GET: api/Products/admin
         [HttpGet("admin/")]
         public async Task<ActionResult<IEnumerable<Product>>> GetProductsByAdmin
-            (string sortby, string sortdir, int? category, string search,
-            int pageIndex = 1, int pageSize = 10)
+            ([FromQuery] PriceRange priceRange, string sortby, string sortdir, int? category, 
+            string search, int pageIndex = 1, int pageSize = 10)
         {
-            var products = await GetProducts(sortby, sortdir, category,
+            if (!priceRange.IsValidRange)
+                return BadRequest("Max Price Less Than Min Price");
+
+            var products = await GetProducts(priceRange, sortby, sortdir, category,
                 search, pageIndex, pageSize);
 
             return Ok(
@@ -120,7 +137,7 @@ namespace AngularAPI.Controllers
 
         // PUT: api/Products/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
+        [HttpPut("admin/{id}")]
         public async Task<IActionResult> PutProduct(int id, Product product)
         {
             if (id != product.Id)
