@@ -1,4 +1,5 @@
-﻿using AngularAPI.Dtos;
+﻿using AngularAPI.Data;
+using AngularAPI.Dtos;
 using AngularProject.Data;
 using AngularProject.Models;
 using Microsoft.EntityFrameworkCore;
@@ -34,7 +35,7 @@ namespace AngularAPI.Repository
         //    .Include(p => p.Category).ToListAsync();
         //}
         public async Task<IReadOnlyList<Product>> GetAllProductsAsync
-            (string sortby, string sortdir, int? category, string search,
+            (PriceRange priceRange, string sortby, string sortdir, int? category, string search,
             int pageIndex, int pageSize)
             
         {
@@ -75,6 +76,9 @@ namespace AngularAPI.Repository
                 }
             }
 
+            if (priceRange != null)
+                query = query.Where(p => p.price >= priceRange.MinPrice
+                && p.price <= priceRange.MaxPrice);
 
             query = query.Skip((pageIndex - 1) * pageSize).Take(pageSize);
 
