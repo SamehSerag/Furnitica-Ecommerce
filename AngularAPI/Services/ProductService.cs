@@ -1,7 +1,9 @@
 ﻿using AngularAPI.Data;
 using AngularAPI.Dtos;
+using AngularAPI.Models;
 using AngularProject.Data;
 using AngularProject.Models;
+using LinqKit;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
@@ -35,52 +37,63 @@ namespace AngularAPI.Repository
         //    .Include(p => p.Category).ToListAsync();
         //}
         public async Task<IReadOnlyList<Product>> GetAllProductsAsync
-            (PriceRange priceRange, string sortby, string sortdir, int? category, string search,
-            int pageIndex, int pageSize)
+            (ProductSearchModel productSearchModel)
             
         {
 
             IQueryable<Product> query = _context.Products.Include(p => p.Images)
                 .Include(p => p.Category);
 
-            if (category != null)
+            if(productSearchModel != null)
             {
-               query = query.Where(p => p.Category.Id == category);
-            }
-
-            if (search != null)
-            {
-                query = query.Where(p =>
-                    p.Title_EN.Contains(search) || p.Title_AR.Contains(search) ||
-                    p.Details_EN.Contains(search) || p.Details_AR.Contains(search)
-                );
-            }
-
-
-            if (!string.IsNullOrEmpty(sortby))
-            {
-                
-                var propertyInfo = typeof(Product).GetProperty(sortby);
-                if(propertyInfo != null)
+                if (productSearchModel.Category != null)
                 {
-                    var param = Expression.Parameter(typeof(Product));
-                    var expr = Expression.Lambda < Func <Product, object> > (
-                          Expression.Convert(Expression.Property(param, propertyInfo), typeof(object)),
-                          param
-                           );
+                    Expression<Func<Product, bool>> predicate =
+                         PredicateBuilder.New<Product>();
 
-                    if (sortdir?.ToLower() == "dasc")
-                        query = query.OrderByDescending(expr);
-                    else
-                        query = query.OrderBy(expr);
+                    foreach (var category in productSearchModel.Category)
+                    {
+                        predicate = predicate.Or(p => p.CategoryID == category);
+                    }
+
+                    query = query.Where(predicate);
                 }
+
+                if (!string.IsNullOrEmpty(productSearchModel.Search))
+                {
+                    query = query.Where(p =>
+                        p.Title_EN.Contains(productSearchModel.Search) || p.Title_AR.Contains(productSearchModel.Search) ||
+                        p.Details_EN.Contains(productSearchModel.Search) || p.Details_AR.Contains(productSearchModel.Search)
+                    );
+                }
+
+
+                if (!string.IsNullOrEmpty(productSearchModel.Sortby))
+                {
+                
+                    var propertyInfo = typeof(Product).GetProperty(productSearchModel.Sortby);
+                    if(propertyInfo != null)
+                    {
+                        var param = Expression.Parameter(typeof(Product));
+                        var expr = Expression.Lambda < Func <Product, object> > (
+                              Expression.Convert(Expression.Property(param, propertyInfo), typeof(object)),
+                              param
+                               );
+
+                        if (productSearchModel.Sortdir?.ToLower() == "dasc")
+                            query = query.OrderByDescending(expr);
+                        else
+                            query = query.OrderBy(expr);
+                    }
+                }
+
+                if (productSearchModel.MaxPrice != 0)
+                    query = query.Where(p => p.price >= productSearchModel.MinPrice
+                    && p.price <= productSearchModel.MaxPrice);
+
+                query = query.Skip((productSearchModel.PageIndex - 1) * 
+                    productSearchModel.PageSize).Take(productSearchModel.PageSize);
             }
-
-            if (priceRange != null)
-                query = query.Where(p => p.price >= priceRange.MinPrice
-                && p.price <= priceRange.MaxPrice);
-
-            query = query.Skip((pageIndex - 1) * pageSize).Take(pageSize);
 
             return await query.ToListAsync();
         }

@@ -1,4 +1,5 @@
 ﻿using AngularAPI.Data;
+using AngularAPI.Models;
 using AngularProject.Models;
 
 namespace AngularAPI.Repository
@@ -6,8 +7,7 @@ namespace AngularAPI.Repository
     public interface IProductRepository
     {
         Task<IReadOnlyList<Product>> GetAllProductsAsync
-            (PriceRange priceRange, string sortby, string sortdir, int? category, string search,
-            int pageIndex, int pageSize);
+            (ProductSearchModel productSearchModel);
         Task<Product> GetProductByIdAsync(int id);
         Task<Product> UpdateProductAsync(int id, Product product);
         Task AddProductAsync(Product product);
