@@ -16,6 +16,7 @@ using System.Diagnostics;
 using System.IO;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IWebHostEnvironment;
 using AngularAPI.Data;
+using AngularAPI.Models;
 
 namespace AngularAPI.Controllers
 {
@@ -41,21 +42,20 @@ namespace AngularAPI.Controllers
         {
 
 
-            return Ok(liststring.Count);
+            return Ok(liststring);
         }
 
         [NonAction]
         public async Task<IReadOnlyList<Product>> GetProducts
-            (PriceRange priceRange, string sortby, string sortdir, int? category, string search,
-            int pageIndex = 1, int pageSize = 10)
+            (ProductSearchModel productSearchModel)
         {
             var products = await _productRepository
-                .GetAllProductsAsync(priceRange, sortby, sortdir, category, search,
-                pageIndex, pageSize);
+                .GetAllProductsAsync(productSearchModel);
 
             // Pagination detials sent header
             PaginationMetaData paginationMetaData = 
-                new PaginationMetaData(products.Count,  pageIndex, pageSize);
+                new PaginationMetaData(products.Count, productSearchModel.PageIndex,
+                productSearchModel.PageSize);
             Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(paginationMetaData));
 
             PriceRange priceRangeObj = new PriceRange(products);
@@ -69,14 +69,12 @@ namespace AngularAPI.Controllers
         // GET: api/Products
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Product>>> GetProductsByUser
-         ([FromQuery] PriceRange priceRange,string sortby, string sortdir, int? category, string search,
-         int pageIndex = 1, int pageSize = 10)
+         ([FromQuery] ProductSearchModel productSearchModel)
         {
-            if (!priceRange.IsValidRange)
+            if (!productSearchModel.IsValidRange)
                 return BadRequest("Max Price Less Than Min Price");
 
-            var products = await GetProducts(priceRange, sortby, sortdir, category,
-                search, pageIndex, pageSize);
+            var products = await GetProducts(productSearchModel);
 
             return Ok(
                 mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>
@@ -86,14 +84,12 @@ namespace AngularAPI.Controllers
         // GET: api/Products/admin
         [HttpGet("admin/")]
         public async Task<ActionResult<IEnumerable<Product>>> GetProductsByAdmin
-            ([FromQuery] PriceRange priceRange, string sortby, string sortdir, int? category, 
-            string search, int pageIndex = 1, int pageSize = 10)
+            ([FromQuery] ProductSearchModel productSearchModel)
         {
-            if (!priceRange.IsValidRange)
+            if (!productSearchModel.IsValidRange)
                 return BadRequest("Max Price Less Than Min Price");
 
-            var products = await GetProducts(priceRange, sortby, sortdir, category,
-                search, pageIndex, pageSize);
+            var products = await GetProducts(productSearchModel);
 
             return Ok(
                 mapper.Map<IReadOnlyList<Product>, IReadOnlyList<AdminProductDto>>

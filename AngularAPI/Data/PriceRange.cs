@@ -1,9 +1,11 @@
 ﻿using AngularProject.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AngularAPI.Data
 {
     public class PriceRange
     {
+        public  Test test { get; set; }
         public PriceRange()
         {
 
@@ -33,4 +35,11 @@ namespace AngularAPI.Data
         //        );
         //}
     }
+
+    public class Test
+    {
+        public string testObj { get; set; }
+    }
 }
+
+
