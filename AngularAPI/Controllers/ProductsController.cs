@@ -103,7 +103,7 @@ namespace AngularAPI.Controllers
         public async Task<ActionResult<ProductToReturnDto>> GetProductByUser(int id)
         {
             var product = await _productRepository.GetProductByIdAsync(id);
-            
+          
             if (product == null)
             {
                 return NotFound();
@@ -184,6 +184,17 @@ namespace AngularAPI.Controllers
             await _productRepository.DeleteProductAsync(id);
 
             return NoContent();
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<List<Product>>> GetProductsByName(String name)
+        {
+            return await _context.Products
+                .Where(p => p.Title_EN.Contains(name) || p.Title_AR.Contains(name))
+                .Include(p => p.Image)
+                .Include(p => p.Category)
+                .ToListAsync();
+
         }
 
         private bool ProductExists(int id)
