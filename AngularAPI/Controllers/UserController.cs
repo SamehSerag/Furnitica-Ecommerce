@@ -64,7 +64,6 @@ namespace AngularAPI.Controllers
                 .ToListAsync();
         }
 
-
         private bool UserExists(string id)
         {
             return _context.Users.Any(e => e.Id.Equals(id));
