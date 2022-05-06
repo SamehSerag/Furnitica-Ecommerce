@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using AngularAPI.Enums;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AngularProject.Models
@@ -8,14 +9,14 @@ namespace AngularProject.Models
         [Key]
         public int Id { get; set; }
 
-        [Required, ForeignKey("Cart")]
-        public int CartId { get; set; }
-        [Required, ForeignKey("Product")]
-        public int ProductId { get; set; }
         [Required]
-        public int Quantity { get; set; }
+        public string Title_EN { get; set; }
+        public string Title_AR { get; set; }
 
-        public Product? Product { get; set; }
-        public Cart? Cart { get; set; }
+        [DataType(DataType.Currency), Required]
+        public decimal price { get; set; }
+        public int Quantity { get; set; }
+        public Category? Category { get; set; }
+
     }
 }
