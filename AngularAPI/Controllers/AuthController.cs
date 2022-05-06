@@ -46,10 +46,10 @@ namespace AngularAPI.Controllers
                 return BadRequest("email is already registered");            
 
             // this code will be replaced by cartrepository later
-            Cart c = new Cart();
+           /* Cart c = new Cart();
             context.Carts.Add(c);
             context.SaveChanges();
-            user.CartID = c.Id;
+            user.CartID = c.Id;*/
 
             IdentityResult userCreated = await UserManager.CreateAsync(user, userDto.password);
             IdentityResult roleAssigned = await UserManager.AddToRolesAsync(user, new[]{ "Client" });
@@ -58,8 +58,8 @@ namespace AngularAPI.Controllers
                 return Ok();            
             else
             {
-                context.Carts.Remove(c);
-                context.SaveChanges();
+/*                context.Carts.Remove(c);
+*/                context.SaveChanges();
 
                 foreach (var item in userCreated.Errors)
                     ModelState.AddModelError(item.Code, item.Description);
