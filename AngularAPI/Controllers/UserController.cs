@@ -54,7 +54,7 @@ namespace AngularAPI.Controllers
             return NoContent();
         }
 
-        [HttpGet]
+        [HttpGet("GetUsersByName/")]
         public async Task<ActionResult<List<User>>> GetUsersByName(String name)
         {
             return await _context.Users
