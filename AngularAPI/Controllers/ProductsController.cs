@@ -68,7 +68,7 @@ namespace AngularAPI.Controllers
 
         // GET: api/Products
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Product>>> GetProductsByUser
+        public async Task<ActionResult<IEnumerable<ProductToReturnDto>>> GetProductsByUser
          ([FromQuery] ProductSearchModel productSearchModel)
         {
             if (!productSearchModel.IsValidRange)
@@ -83,7 +83,7 @@ namespace AngularAPI.Controllers
         }
         // GET: api/Products/admin
         [HttpGet("admin/")]
-        public async Task<ActionResult<IEnumerable<Product>>> GetProductsByAdmin
+        public async Task<ActionResult<IEnumerable<ProductToReturnDto>>> GetProductsByAdmin
             ([FromQuery] ProductSearchModel productSearchModel)
         {
             if (!productSearchModel.IsValidRange)
