@@ -47,6 +47,7 @@ builder.Services.AddAuthentication( options => {
 builder.Services.AddScoped<IGenericRepository<User>, GenericRepositoryT<User> >();
 builder.Services.AddScoped<IProductRepository, ProductService>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 builder.Services.AddDbContext<ShoppingDbContext>(
     options => options.UseSqlServer(
