@@ -65,7 +65,6 @@ namespace AngularAPI.Controllers
             return user;
         }
 
-
         private bool UserExists(string id)
         {
             return _repo.IsUserExixtsAsync(id);
