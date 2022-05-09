@@ -1,4 +1,4 @@
-﻿using AngularProject.Data;
+﻿using AngularAPI.Services;
 using AngularProject.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -12,13 +12,13 @@ namespace AngularAPI.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly ShoppingDbContext _context;
+        private readonly IUserRepository _repo; 
         protected readonly UserManager<User> _userManager;
 
-        public UserController(ShoppingDbContext context, UserManager<User> userManager)
+
+        public UserController( IUserRepository repo)
         {
-            _context = context;
-            _userManager = userManager;
+            _repo = repo;   
         }
 
         [HttpGet]
@@ -33,11 +33,9 @@ namespace AngularAPI.Controllers
         [HttpPut]
         public async Task<ActionResult<User>> UpdateInfo(User UpdatedUser)
         {
-            _context.Entry(UpdatedUser).State = EntityState.Modified;
-
             try
             {
-                await _context.SaveChangesAsync();
+                await _repo.UpdateUserAsync(UpdatedUser);
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -54,20 +52,23 @@ namespace AngularAPI.Controllers
             return NoContent();
         }
 
-        [HttpGet("getByName")]
-        public async Task<ActionResult<List<User>>> GetUsersByName(String name)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<User>> GetUser(string id)
         {
-            return await _context.Users
-                .Where(u => u.UserName.Contains(name))
-                .Include(u => u.Image)
-                .Include(u => u.Orders)
-                .ToListAsync();
+            var user = await _repo.GetUserByIdAsync(id);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return user;
         }
 
 
         private bool UserExists(string id)
         {
-            return _context.Users.Any(e => e.Id.Equals(id));
+            return _repo.IsUserExixtsAsync(id);
         }
     }
 
