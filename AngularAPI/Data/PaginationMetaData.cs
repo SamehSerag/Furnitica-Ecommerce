@@ -7,13 +7,14 @@
         public int PageIndex { get; private set; }
         public int TotalPages { get; private set; }
         public int TotalCounts { get; private set; }
+        public int PageSize { get; private set; }
         public bool HasPreviousPage => PageIndex > 1;
 
         public bool HasNextPage => PageIndex < TotalPages;
 
         public PaginationMetaData(int itemsCount, int pageIndex, int pageSize)
         {
-            pageSize = pageSize > _maxItemsPerPage ? _maxItemsPerPage : pageSize;
+            PageSize = pageSize = pageSize > _maxItemsPerPage ? _maxItemsPerPage : pageSize;
 
             TotalCounts = itemsCount;
             PageIndex = pageIndex;
