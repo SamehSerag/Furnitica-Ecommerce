@@ -11,7 +11,7 @@ using System.Text;
 
 
 var builder = WebApplication.CreateBuilder(args);
-
+var MyAllowSpecificOrigins = "";
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -60,6 +60,21 @@ builder.Services.AddAutoMapper(typeof(MappingProfiles));
 builder.Services.AddControllers().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling =
 Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
+// Enable Cores
+builder.Services.AddCors(
+    options =>
+    {
+        options.AddPolicy(MyAllowSpecificOrigins,
+            builder =>
+            {
+                builder.AllowAnyOrigin();
+                builder.AllowAnyMethod();
+                builder.AllowAnyHeader();
+            }
+            );
+    }
+    );
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -71,6 +86,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+app.UseCors(MyAllowSpecificOrigins);
 
 app.UseAuthentication();
 

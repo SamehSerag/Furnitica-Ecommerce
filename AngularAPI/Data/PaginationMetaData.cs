@@ -11,7 +11,7 @@
         public bool HasPreviousPage => PageIndex > 1;
 
         public bool HasNextPage => PageIndex < TotalPages;
-        public IReadOnlyList<T> Data;
+        public IReadOnlyList<T> Data { get; private set; }
 
         public PaginationMetaData(int itemsCount, int pageIndex, int pageSize, 
             IReadOnlyList<T> data)
