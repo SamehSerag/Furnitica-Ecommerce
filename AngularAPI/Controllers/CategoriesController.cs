@@ -32,10 +32,10 @@ namespace AngularAPI.Controllers
         {
            var categories = await _repo.GetAllCategorysAsync(searchModel);
 
-            PaginationMetaData paginationMetaData =
-                new PaginationMetaData(categories.Count, searchModel.PageIndex,
-                searchModel.PageSize);
-            Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(paginationMetaData));
+            //PaginationMetaData paginationMetaData =
+            //    new PaginationMetaData(categories.Count, searchModel.PageIndex,
+            //    searchModel.PageSize);
+            //Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(paginationMetaData));
 
             return categories.ToList();
         }

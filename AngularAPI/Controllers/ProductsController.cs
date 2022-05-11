@@ -53,10 +53,10 @@ namespace AngularAPI.Controllers
                 .GetAllProductsAsync(productSearchModel);
 
             // Pagination detials sent header
-            PaginationMetaData paginationMetaData = 
-                new PaginationMetaData(products.Count, productSearchModel.PageIndex,
-                productSearchModel.PageSize);
-            Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(paginationMetaData));
+            //PaginationMetaData paginationMetaData = 
+            //    new PaginationMetaData(products.Count, productSearchModel.PageIndex,
+            //    productSearchModel.PageSize);
+            //Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(paginationMetaData));
 
             PriceRange priceRangeObj = new PriceRange(products);
             Response.Headers.Add("X-PriceRange", JsonSerializer.Serialize(priceRangeObj));
@@ -68,7 +68,7 @@ namespace AngularAPI.Controllers
 
         // GET: api/Products
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProductToReturnDto>>> GetProductsByUser
+        public async Task<ActionResult<PaginationMetaData<ProductToReturnDto>>> GetProductsByUser
          ([FromQuery] ProductSearchModel productSearchModel)
         {
             if (!productSearchModel.IsValidRange)
@@ -76,25 +76,34 @@ namespace AngularAPI.Controllers
 
             var products = await GetProducts(productSearchModel);
 
-            return Ok(
-                mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>
-                (products)
-                );
+            var productsDto = mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>
+                (products);
+            PaginationMetaData<ProductToReturnDto> paginationMetaData =
+                new PaginationMetaData<ProductToReturnDto>
+                (products.Count, productSearchModel.PageIndex,
+                productSearchModel.PageSize,
+                productsDto);
+
+            return Ok(paginationMetaData);
         }
         // GET: api/Products/admin
         [HttpGet("admin/")]
-        public async Task<ActionResult<IEnumerable<ProductToReturnDto>>> GetProductsByAdmin
+        public async Task<ActionResult<AdminProductDto>> GetProductsByAdmin
             ([FromQuery] ProductSearchModel productSearchModel)
         {
             if (!productSearchModel.IsValidRange)
                 return BadRequest("Max Price Less Than Min Price");
 
             var products = await GetProducts(productSearchModel);
+            var adminProductDto = mapper.Map<IReadOnlyList<Product>, IReadOnlyList<AdminProductDto>>
+                (products);
 
-            return Ok(
-                mapper.Map<IReadOnlyList<Product>, IReadOnlyList<AdminProductDto>>
-                (products)
-                );
+            PaginationMetaData<AdminProductDto> paginationMetaData =
+                new PaginationMetaData<AdminProductDto>
+                (products.Count, productSearchModel.PageIndex,
+                productSearchModel.PageSize,
+                adminProductDto);
+            return Ok(paginationMetaData);
         }
 
 
