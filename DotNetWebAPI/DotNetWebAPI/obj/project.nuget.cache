@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xKBJSN5hv0BCe7Exm+wlGSzGDbSYhXrEWfBuWSvS9RqVcNnbkb0lERFz25t6gJTVIPq1kjC6nBE/ZpC6Tr6hmA==",
+  "dgSpecHash": "0S57TdwBYwCvsWYUJRJh+rBwzdXE4bA0UlYtNk4QV8RwmIZFLwW/51GZR95br6cTmIosybomoEEzwpnYk3zAgg==",
   "success": true,
-  "projectFilePath": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\DotNetWebAPI.csproj",
+  "projectFilePath": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\DotNetWebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\muna\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\muna\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

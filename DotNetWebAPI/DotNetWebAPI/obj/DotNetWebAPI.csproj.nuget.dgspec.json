@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\DotNetWebAPI.csproj": {}
+    "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\DotNetWebAPI.csproj": {}
   },
   "projects": {
-    "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\DotNetWebAPI.csproj": {
+    "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\DotNetWebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\DotNetWebAPI.csproj",
+        "projectUniqueName": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\DotNetWebAPI.csproj",
         "projectName": "DotNetWebAPI",
-        "projectPath": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\DotNetWebAPI.csproj",
+        "projectPath": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\DotNetWebAPI.csproj",
         "packagesPath": "C:\\Users\\muna\\.nuget\\packages\\",
-        "outputPath": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\obj\\",
+        "outputPath": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\muna\\AppData\\Roaming\\NuGet\\NuGet.Config",

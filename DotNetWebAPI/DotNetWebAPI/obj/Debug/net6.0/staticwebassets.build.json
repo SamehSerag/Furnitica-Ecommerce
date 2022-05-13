@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lWLqBeyRQQloFBacnBWLoqLDh6qzc8apsXMH+n3+By0=",
+  "Hash": "A5Mv3Py9KwhzTqWMRX0dmDXs9bw6TJscBY5W0t9z1Tg=",
   "Source": "DotNetWebAPI",
   "BasePath": "_content/DotNetWebAPI",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "DotNetWebAPI\\wwwroot",
       "Source": "DotNetWebAPI",
-      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\DotNetWebAPI.styles.css",
+      "Identity": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\DotNetWebAPI.styles.css",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "DotNetWebAPI.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\DotNetWebAPI.styles.css"
+      "OriginalItemSpec": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\DotNetWebAPI.styles.css"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\DotNetWebAPI.bundle.scp.css",
+      "Identity": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\DotNetWebAPI.bundle.scp.css",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "DotNetWebAPI.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\DotNetWebAPI.bundle.scp.css"
+      "OriginalItemSpec": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\DotNetWebAPI.bundle.scp.css"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\images\\bg-img\\1.jpg",
+      "Identity": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\1.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/bg-img/1.jpg",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bg-img\\1.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\images\\bg-img\\2.jpg",
+      "Identity": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\2.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/bg-img/2.jpg",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bg-img\\2.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\images\\bg-img\\3.jpg",
+      "Identity": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\3.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/bg-img/3.jpg",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bg-img\\3.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\images\\bg-img\\4.jpg",
+      "Identity": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\4.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/bg-img/4.jpg",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bg-img\\4.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\images\\bg-img\\5.jpg",
+      "Identity": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\5.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/bg-img/5.jpg",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bg-img\\5.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\images\\bg-img\\6.jpg",
+      "Identity": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\6.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/bg-img/6.jpg",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bg-img\\6.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\images\\bg-img\\7.jpg",
+      "Identity": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\7.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/bg-img/7.jpg",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bg-img\\7.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\images\\bg-img\\8.jpg",
+      "Identity": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\8.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/bg-img/8.jpg",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bg-img\\8.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\images\\bg-img\\9.jpg",
+      "Identity": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\9.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/bg-img/9.jpg",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bg-img\\9.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\images\\bg-img\\cart1.jpg",
+      "Identity": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\cart1.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/bg-img/cart1.jpg",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bg-img\\cart1.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\images\\bg-img\\cart2.jpg",
+      "Identity": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\cart2.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/bg-img/cart2.jpg",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bg-img\\cart2.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\images\\bg-img\\cart3.jpg",
+      "Identity": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\cart3.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/bg-img/cart3.jpg",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bg-img\\cart3.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\images\\products\\pro-big-1.jpg",
+      "Identity": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products\\pro-big-1.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/products/pro-big-1.jpg",
       "AssetKind": "All",
@@ -272,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\pro-big-1.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\images\\products\\pro-big-2.jpg",
+      "Identity": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products\\pro-big-2.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/products/pro-big-2.jpg",
       "AssetKind": "All",
@@ -289,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\pro-big-2.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\images\\products\\pro-big-3.jpg",
+      "Identity": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products\\pro-big-3.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/products/pro-big-3.jpg",
       "AssetKind": "All",
@@ -306,10 +306,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\pro-big-3.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\images\\products\\pro-big-4.jpg",
+      "Identity": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products\\pro-big-4.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/products/pro-big-4.jpg",
       "AssetKind": "All",
@@ -323,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\pro-big-4.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\images\\products\\product1.jpg",
+      "Identity": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products\\product1.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/products/product1.jpg",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\product1.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\images\\products\\product2.jpg",
+      "Identity": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products\\product2.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/products/product2.jpg",
       "AssetKind": "All",
@@ -357,10 +357,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\product2.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\images\\products\\product3.jpg",
+      "Identity": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products\\product3.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/products/product3.jpg",
       "AssetKind": "All",
@@ -374,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\product3.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\images\\products\\product4.jpg",
+      "Identity": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products\\product4.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/products/product4.jpg",
       "AssetKind": "All",
@@ -391,10 +391,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\product4.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\images\\products\\product5.jpg",
+      "Identity": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products\\product5.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/products/product5.jpg",
       "AssetKind": "All",
@@ -408,10 +408,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\product5.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\images\\products\\product6.jpg",
+      "Identity": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products\\product6.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\Web API\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/products/product6.jpg",
       "AssetKind": "All",
