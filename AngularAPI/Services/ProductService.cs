@@ -56,7 +56,9 @@ namespace AngularAPI.Repository
                         predicate = predicate.Or(p => p.CategoryID == category);
                     }
 
-                    query = query.Where(predicate);
+                    if(!(productSearchModel.Category.Count == 1 
+                        && productSearchModel.Category[0] == null))
+                        query = query.Where(predicate);
                 }
 
                 if (!string.IsNullOrEmpty(productSearchModel.Search))
