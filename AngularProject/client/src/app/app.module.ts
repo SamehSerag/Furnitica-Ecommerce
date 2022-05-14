@@ -11,6 +11,7 @@ import { IndexComponent } from './index.component';
 import { MainComponent } from './DashBoard/main.component';
 import { HomeComponent } from './Components/home/home.component';
 import { MainShopComponent } from './Components/main-shop/main-shop.component';
+import { AsListPipe } from './Pipes/as-list.pipe';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { MainShopComponent } from './Components/main-shop/main-shop.component';
     MainComponent,
     HomeComponent,
     MainShopComponent,
+    AsListPipe,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { IPagination } from 'src/app/Models/ipagination';
 import { IProduct } from 'src/app/Models/iproduct';
 import { ProductsService } from 'src/app/Services/products.service';
 
@@ -9,6 +10,7 @@ import { ProductsService } from 'src/app/Services/products.service';
 })
 export class MainShopComponent implements OnInit, OnChanges {
   products: IProduct[] = [];
+  pagination!: IPagination;
   constructor(private prdService: ProductsService) { }
   
 
@@ -30,6 +32,7 @@ export class MainShopComponent implements OnInit, OnChanges {
 
     this.prdService.getAllProducts().subscribe(
       response => {
+        this.pagination = response;
         this.products = response.data;
       });
     // this.http.get('https://localhost:7231/api/products').subscribe(

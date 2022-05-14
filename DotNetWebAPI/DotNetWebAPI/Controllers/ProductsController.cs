@@ -80,7 +80,7 @@ namespace AngularAPI.Controllers
                 (products);
             PaginationMetaData<ProductToReturnDto> paginationMetaData =
                 new PaginationMetaData<ProductToReturnDto>
-                (products.Count, productSearchModel.PageIndex,
+                (IProductRepository.TotalItems, productSearchModel.PageIndex,
                 productSearchModel.PageSize,
                 productsDto);
 
