@@ -1,0 +1,8 @@
+.out-of-stock{
+    float: right;
+    color: red;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 4px;
+    font-size: 13px;
+}

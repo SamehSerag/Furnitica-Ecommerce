@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { IndexComponent } from './index.component';
 import { MainComponent } from './DashBoard/main.component';
 import { HomeComponent } from './Components/home/home.component';
+import { MainShopComponent } from './Components/main-shop/main-shop.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HomeComponent } from './Components/home/home.component';
     FooterComponent,
     IndexComponent,
     MainComponent,
-    HomeComponent
+    HomeComponent,
+    MainShopComponent,
   ],
   imports: [
     BrowserModule,
