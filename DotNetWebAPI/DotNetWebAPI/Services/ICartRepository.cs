@@ -9,7 +9,7 @@ namespace AngularAPI.Services
     {
         //Task<Cart> CreateCartAsync(User user);
         //UserManager<AppUser> userManager
-
+        Task<Cart> CreateCartAsync(User user);
         Task<Cart> GetCartAsync(UserManager<User> userManager, ClaimsPrincipal user);
         Task<Cart> UpdateCartAsync(Cart cart);
         Task<bool> DeleteCartAsync(int CartId);

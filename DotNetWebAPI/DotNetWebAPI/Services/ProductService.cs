@@ -12,6 +12,7 @@ namespace AngularAPI.Repository
     public class ProductService : IProductRepository
     {
         private readonly ShoppingDbContext _context;
+        //public static int TotalItems { get; } = 0;
 
         public ProductService(ShoppingDbContext context)
         {
@@ -93,6 +94,7 @@ namespace AngularAPI.Repository
                     query = query.Where(p => p.price >= productSearchModel.MinPrice
                     && p.price <= productSearchModel.MaxPrice);
 
+               IProductRepository.TotalItems = query.Count();
                 query = query.Skip((productSearchModel.PageIndex - 1) * 
                     productSearchModel.PageSize).Take(productSearchModel.PageSize);
             }

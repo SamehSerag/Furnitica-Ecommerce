@@ -1,0 +1,19 @@
+.out-of-stock{
+    float: right;
+    color: red;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 4px;
+    font-size: 13px;
+}
+.nextAndPreviace{
+    pointer-events: none !important;
+}
+/* .nextAndPreviace:hover{
+    background-color: #C4C4C4 !important;
+    font-size: 30px;
+    
+} */
+/* a{
+    pointer-events: none;
+} */
