@@ -20,16 +20,12 @@ namespace AngularAPI.Controllers
         private readonly IConfiguration configuration;
         private readonly UserManager<User> UserManager;
         private readonly ShoppingDbContext context;
-        private readonly ICartRepository cartRepository;
-        private readonly RoleManager<IdentityRole> roleManager;
 
-        public AuthController(UserManager<User> _UserManager, IConfiguration _configuration, ShoppingDbContext _context, ICartRepository _cartRepository, RoleManager<IdentityRole> _roleManager)
+        public AuthController(UserManager<User> _UserManager, IConfiguration _configuration, ShoppingDbContext _context)
         {
             UserManager = _UserManager;
             configuration = _configuration;
             context = _context;
-            cartRepository = _cartRepository;
-            roleManager = _roleManager;
         }
 
         [HttpPost("Register")]
@@ -48,7 +44,6 @@ namespace AngularAPI.Controllers
             User u = await UserManager.FindByEmailAsync(userDto.email);
             if (u != null)
                 return BadRequest("email is already registered");            
-           
 
             // this code will be replaced by cartrepository later
            /* Cart c = new Cart();
@@ -57,24 +52,15 @@ namespace AngularAPI.Controllers
             user.CartID = c.Id;*/
 
             IdentityResult userCreated = await UserManager.CreateAsync(user, userDto.password);
-            // create role
-            IdentityResult roleCreated = await roleManager.CreateAsync(new(roleName: "Admin"));
-            IdentityResult roleAssigned = await UserManager.AddToRolesAsync(user, new[]{ "Admin" });
-
-            if(!roleCreated.Succeeded)
-            {
-                return StatusCode(500, new { err = "Role Creation failed" });
-            }
+            IdentityResult roleAssigned = await UserManager.AddToRolesAsync(user, new[]{ "Client" });
 
             if (userCreated.Succeeded && roleAssigned.Succeeded)
-            {
-                Cart c = await cartRepository.CreateCartAsync(user);
-                user.CartID = c.Id;
-                context.SaveChanges();
                 return Ok();            
-            }
             else
             {
+/*                context.Carts.Remove(c);
+*/                context.SaveChanges();
+
                 foreach (var item in userCreated.Errors)
                     ModelState.AddModelError(item.Code, item.Description);
                 foreach (var item in roleAssigned.Errors)
