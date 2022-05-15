@@ -577,24 +577,24 @@
                         <div class="d-flex justify-content-around row">
                           <div class="showing col col-xs-12">
                             <span>SHOWING 
-                                {{pagination.pageIndex }} OF {{pagination.totalPages}} Page(S)</span>
+                                {{pagination?.pageIndex }} OF {{pagination?.totalPages}} Page(S)</span>
                           </div>
                           <div class="page-list col col-xs-12">
                             <ul>
-                              <li>
-                                <a rel="prev" href="#" class="previous disabled js-search-link" >
+                              <li [ngClass]="{nextAndPreviace: pagination.hasPreviousPage != true}">
+                                <a rel="prev" routerLink="/main-shop" class="previous disabled js-search-link" (click)="previousPage()">
                                   Previous
                                 </a>
                               </li>
                               <!-- class="current active" -->
                               <li *ngFor="let item of pagination.totalPages | asList; let i=index;">
-                                <a rel="nofollow" href="#" class="disabled js-search-link">
+                                <a rel="nofollow" routerLink="/main-shop" class="disabled js-search-link" (click)="paginate(i+1)" >
                                   {{i+1}}
                                 </a>
                               </li>
 
-                              <li>
-                                <a rel="next" href="#" class="next disabled js-search-link">
+                              <li [ngClass]="{nextAndPreviace: pagination.hasNextPage != true}">
+                                <a rel="next" routerLink="/main-shop" class="next disabled js-search-link" (click)="nextPage()">
                                   Next
                                 </a>
                               </li>

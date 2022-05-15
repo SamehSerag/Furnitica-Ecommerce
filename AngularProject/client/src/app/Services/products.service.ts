@@ -15,6 +15,9 @@ export class ProductsService {
   getAllProducts(): Observable<IPagination> {
     return this.httpClinet.get<IPagination>(`${environment.APIURL}/api/products`);
   }
+  getProductsFilteration(filteration:string): Observable<IPagination> {
+    return this.httpClinet.get<IPagination>(`${environment.APIURL}/api/products${filteration}`);
+  }
 
   getProductsByCatId(catId: number): Observable<IPagination>{
     return this.httpClinet.get<IPagination>(`${environment.APIURL}/api/products?Category=${catId}`);
