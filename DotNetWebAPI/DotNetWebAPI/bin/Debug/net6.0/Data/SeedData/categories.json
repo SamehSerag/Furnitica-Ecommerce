@@ -30,6 +30,9 @@
     "Name": "Dressing Table"
   },
   {
+    "Name": "Window"
+  },
+  {
     "Name": "Window Curtain"
   },
   {
@@ -43,5 +46,26 @@
   },
   {
     "Name": "Floor Lamp"
+  },
+  {
+    "Name": "Vase-Flower"
+  },
+  {
+    "Name": "Bed"
+  },
+  {
+    "Name": "Bed Girl"
+  },
+  {
+    "Name": "Bed Boy"
+  },
+  {
+    "Name": "Bedside Table"
+  },
+  {
+    "Name": "Picture"
+  },
+  {
+    "Name": "Wall Clock"
   }
 ]
