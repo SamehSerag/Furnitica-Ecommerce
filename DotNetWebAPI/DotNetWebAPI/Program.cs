@@ -3,6 +3,7 @@ using AngularAPI.Repository;
 using AngularAPI.Services;
 using AngularProject.Data;
 using AngularProject.Models;
+using Infrastructure.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -78,6 +79,25 @@ builder.Services.AddCors(
     );
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var loggerFactory = scope.ServiceProvider.GetRequiredService<ILoggerFactory>();
+
+    try
+    {
+
+        var db = scope.ServiceProvider.GetRequiredService<ShoppingDbContext>();
+       // await db.Database.MigrateAsync();
+        await ShoppingContextSeed.SeedAsync(db, loggerFactory);
+
+    }
+    catch (Exception ex)
+    {
+        var logger = loggerFactory.CreateLogger<Program>();
+        logger.LogError(ex, "An Error occured during migration");
+    }
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
