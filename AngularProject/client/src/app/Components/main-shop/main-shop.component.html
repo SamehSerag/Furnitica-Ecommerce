@@ -269,7 +269,7 @@
                             <div id="slider-range" class="tiva-filter">
                               <div class="filter-itemprice-filter">
                                 <div class="layout-slider">
-                                  <input id="price-filter" name="price" value="0;100" />
+                                  <input id="price-filter" name="price" value="0;1000" (change)="pricefun($event)" />
                                 </div>
                                 <div class="layout-slider-settings"></div>
                               </div>
@@ -280,56 +280,12 @@
                       <div class="sidebar-block by-color">
                         <h3 class="title-product">By Color</h3>
                         <div>
-                          <span class="left">
-                            <label class="color-item1"></label>
-                            <a href="#">
-                              <span>Blue
-                                <span>(30)</span>
-                              </span>
-                            </a>
-                          </span>
-                          <span class="right">
-                            <label class="color-item2"></label>
-                            <a href="#">
-                              <span>Green
-                                <span>(30)</span>
-                              </span>
-                            </a>
-                          </span>
-                        </div>
-                        <div>
-                          <span class="left">
-                            <label class="color-item3"></label>
-                            <a href="#">
-                              <span>Yellow
-                                <span>(30)</span>
-                              </span>
-                            </a>
-                          </span>
-                          <span class="right">
-                            <label class="color-item4"></label>
-                            <a href="#">
-                              <span>Brown
-                                <span>(30)</span>
-                              </span>
-                            </a>
-                          </span>
-
-                        </div>
-                        <div>
-                          <span class="left">
-                            <label class="color-item5"></label>
-                            <a href="#">
-                              <span>Pink
-                                <span>(30)</span>
-                              </span>
-                            </a>
-                          </span>
-                          <span class="right">
-                            <label class="color-item6"></label>
-                            <a href="#">
-                              <span>Red
-                                <span>(30)</span>
+                          <span *ngFor="let color of colorArray; let i=index;" class="left"
+                                    [ngClass]="(i % 2) != 0 ? 'left':'right'">
+                            <label [class]="'color-item'+ (i+1)"></label>
+                            <a routerLink="/main-shop" (click)="colorChanged(i)">
+                              <span>{{color}}
+                                <span>(3)</span>
                               </span>
                             </a>
                           </span>
@@ -417,12 +373,11 @@
                           <div class="d-flex sort-by-row justify-content-lg-end justify-content-md-end">
 
                             <div class="products-sort-order dropdown">
-                              <select class="select-title">
-                                <option value="">Sort by</option>
-                                <option value="">Name, A to Z</option>
-                                <option value="">Name, Z to A</option>
-                                <option value="">Price, low to high</option>
-                                <option value="">Price, high to low</option>
+                              <select class="select-title" (change)="sort($event)">
+                                <option *ngFor="let item of sortArray;
+                                        let i=index;"[value]=i >
+                                    {{item}}</option>
+                                
                               </select>
                             </div>
                           </div>
@@ -581,7 +536,7 @@
                           </div>
                           <div class="page-list col col-xs-12">
                             <ul>
-                              <li [ngClass]="{nextAndPreviace: pagination.hasPreviousPage != true}">
+                              <li [ngClass]="{nextAndPreviace: pagination?.hasPreviousPage != true}">
                                 <a rel="prev" routerLink="/main-shop" class="previous disabled js-search-link" (click)="previousPage()">
                                   Previous
                                 </a>
@@ -593,7 +548,7 @@
                                 </a>
                               </li>
 
-                              <li [ngClass]="{nextAndPreviace: pagination.hasNextPage != true}">
+                              <li [ngClass]="{nextAndPreviace: pagination?.hasNextPage != true}">
                                 <a rel="next" routerLink="/main-shop" class="next disabled js-search-link" (click)="nextPage()">
                                   Next
                                 </a>
