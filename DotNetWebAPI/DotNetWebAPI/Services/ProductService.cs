@@ -94,6 +94,9 @@ namespace AngularAPI.Repository
                     query = query.Where(p => p.price >= productSearchModel.MinPrice
                     && p.price <= productSearchModel.MaxPrice);
 
+                if(productSearchModel.Color != null)
+                    query = query.Where(p=> p.Color == productSearchModel.Color);
+
                IProductRepository.TotalItems = query.Count();
                 query = query.Skip((productSearchModel.PageIndex - 1) * 
                     productSearchModel.PageSize).Take(productSearchModel.PageSize);

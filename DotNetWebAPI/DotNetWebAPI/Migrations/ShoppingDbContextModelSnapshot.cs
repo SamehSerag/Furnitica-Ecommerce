@@ -30,16 +30,9 @@ namespace AngularAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId")
-                        .IsUnique();
-
-                    b.ToTable("Carts", (string)null);
+                    b.ToTable("Carts");
                 });
 
             modelBuilder.Entity("AngularProject.Models.CartProduct", b =>
@@ -50,33 +43,22 @@ namespace AngularAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("CartId")
+                    b.Property<int>("CartId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CategoryId")
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<string>("Title_AR")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Title_EN")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("price")
-                        .HasColumnType("decimal(18,2)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CartId");
 
-                    b.HasIndex("CategoryId");
+                    b.HasIndex("ProductId");
 
-                    b.ToTable("CartProducts", (string)null);
+                    b.ToTable("CartProducts");
                 });
 
             modelBuilder.Entity("AngularProject.Models.Category", b =>
@@ -94,7 +76,7 @@ namespace AngularAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("AngularProject.Models.Image", b =>
@@ -116,7 +98,7 @@ namespace AngularAPI.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("Images", (string)null);
+                    b.ToTable("Images");
                 });
 
             modelBuilder.Entity("AngularProject.Models.Order", b =>
@@ -144,7 +126,7 @@ namespace AngularAPI.Migrations
 
                     b.HasIndex("UserID");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("AngularProject.Models.OrderProducts", b =>
@@ -170,7 +152,7 @@ namespace AngularAPI.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderProducts", (string)null);
+                    b.ToTable("OrderProducts");
                 });
 
             modelBuilder.Entity("AngularProject.Models.Product", b =>
@@ -213,7 +195,7 @@ namespace AngularAPI.Migrations
 
                     b.HasIndex("CategoryID");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("AngularProject.Models.User", b =>
@@ -281,6 +263,8 @@ namespace AngularAPI.Migrations
                         .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CartID");
 
                     b.HasIndex("ImageId");
 
@@ -428,28 +412,23 @@ namespace AngularAPI.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("AngularProject.Models.Cart", b =>
+            modelBuilder.Entity("AngularProject.Models.CartProduct", b =>
                 {
-                    b.HasOne("AngularProject.Models.User", "User")
-                        .WithOne("Cart")
-                        .HasForeignKey("AngularProject.Models.Cart", "UserId")
+                    b.HasOne("AngularProject.Models.Cart", "Cart")
+                        .WithMany("CartProducts")
+                        .HasForeignKey("CartId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("AngularProject.Models.CartProduct", b =>
-                {
-                    b.HasOne("AngularProject.Models.Cart", null)
-                        .WithMany("CartProducts")
-                        .HasForeignKey("CartId");
-
-                    b.HasOne("AngularProject.Models.Category", "Category")
+                    b.HasOne("AngularProject.Models.Product", "Product")
                         .WithMany()
-                        .HasForeignKey("CategoryId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("Category");
+                    b.Navigation("Cart");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("AngularProject.Models.Image", b =>
@@ -502,9 +481,17 @@ namespace AngularAPI.Migrations
 
             modelBuilder.Entity("AngularProject.Models.User", b =>
                 {
+                    b.HasOne("AngularProject.Models.Cart", "Cart")
+                        .WithMany()
+                        .HasForeignKey("CartID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("AngularProject.Models.Image", "Image")
                         .WithMany()
                         .HasForeignKey("ImageId");
+
+                    b.Navigation("Cart");
 
                     b.Navigation("Image");
                 });
@@ -579,8 +566,6 @@ namespace AngularAPI.Migrations
 
             modelBuilder.Entity("AngularProject.Models.User", b =>
                 {
-                    b.Navigation("Cart");
-
                     b.Navigation("Orders");
                 });
 #pragma warning restore 612, 618
