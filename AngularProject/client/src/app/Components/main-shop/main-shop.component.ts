@@ -22,18 +22,18 @@ export class MainShopComponent implements OnInit, OnChanges {
   pagination!: IPagination;
   productsSearchModel: ProductsSearchModel;
 
-  constructor(private prdService: ProductsService, 
+  constructor(private prdService: ProductsService,
     @Inject(DOCUMENT) private dom: Document, private router:Router) {
     this.products=[];
-    this.sortArray = ["Sort by", "Name, A to Z", "Name, Z to A", 
+    this.sortArray = ["Sort by", "Name, A to Z", "Name, Z to A",
                       "Price, low to high", "Price, high to low"];
     this.colorArray = ["Blue", "Green", "Yellow", "Brown", "Pink", "Red"];
     // this.sortArrayValues = ["Sort by", "Title_EN", "Title_EN", "price", "price"];
 
-    
+
     this.productsSearchModel = new ProductsSearchModel();
    }
-  
+
 
   public IfImgFound(i:number, imageIndex: number): boolean{
     return this.products[i].images[imageIndex] != null ? true : false;
@@ -72,7 +72,7 @@ export class MainShopComponent implements OnInit, OnChanges {
         this.pagination = response;
         this.products = response.data;
       })
-      
+
       this.router.navigate(["/main-shop"]);
 
       console.log(this.productsSearchModel.toString())
@@ -100,7 +100,7 @@ export class MainShopComponent implements OnInit, OnChanges {
 
   /// Pagination
   paginate(pageIndex:number):void{
-    
+
     this.productsSearchModel.pageIndex = pageIndex;
     this.getProductFilteration();
 

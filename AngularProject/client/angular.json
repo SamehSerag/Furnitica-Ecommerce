@@ -36,11 +36,13 @@
               "src/assets/libs/font-material/css/material-design-iconic-font.min.css",
               "src/assets/libs/slider-range/css/jslider.css",
               "src/assets/libs/owl-carousel/assets/owl.carousel.min.css",
+              "src/assets/libs/slick-slider/css/slick.css",
+              "src/assets/libs/slick-slider/css/slick-theme.css",
               "src/assets/css/style.css",
               "src/assets/css/reponsive.css"
             ],
             "scripts": [
-            
+
             ]
           },
           "configurations": {

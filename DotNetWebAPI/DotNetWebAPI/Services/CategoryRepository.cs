@@ -38,6 +38,11 @@ namespace AngularAPI.Services
 
             if (categorySearchModel != null)
             {
+                if (!string.IsNullOrEmpty(categorySearchModel.Search)) //name category
+                {
+                    query = query
+                   .Where(c => c.Name.ToLower().Contains(categorySearchModel.Search.ToLower()));
+                }
 
                 if (!string.IsNullOrEmpty(categorySearchModel.Sort))
                 {
@@ -54,12 +59,6 @@ namespace AngularAPI.Services
                             query = query.OrderBy(c => c.Name);
                             break;
                     }
-                }
-                if (!string.IsNullOrEmpty(categorySearchModel.Search))
-                {
-                    query = query
-                   .Where(c => c.Name.ToLower().Contains(categorySearchModel.Search.ToLower()));
-
                 }
             }
 

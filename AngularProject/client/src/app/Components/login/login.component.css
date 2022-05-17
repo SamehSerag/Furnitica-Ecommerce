@@ -1,0 +1,32 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css");
+
+.cborder {
+  border: 1px solid black;
+}
+
+.invalid-data {
+  color: #c80000;
+  display: flex;
+  justify-self: start;
+}
+
+.err-message{
+  background-color: #fccfd6;
+  color: #787878;
+  border: 1px solid grey;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: smaller;
+}
+
+
+#btnClose :hover{
+  cursor: pointer;
+}
+
+/* span span span :hover{
+  cursor: pointer;
+}
+
+span.hoverhand :hover{
+  cursor: pointer;
+} */

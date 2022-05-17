@@ -1,6 +1,7 @@
 ﻿using AngularProject.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace AngularProject.Data
 {
@@ -16,6 +17,7 @@ namespace AngularProject.Data
         {
            
             base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
             //builder.Entity<OrderProducts>()
             //   .HasOne(Tc => Tc.Order)
