@@ -1,47 +1,94 @@
 [
   {
-    "Name": "Side Table"
+    "Name": "Side Table",
+    "Image": "coffee_table.png"
   },
   {
-    "Name": "Fire Place"
+    "Name": "Fire Place",
+    "Image": "fireplace.png"
   },
   {
-    "Name": "Table Lamp"
+    "Name": "Table Lamp",
+    "Image": "table-lamp.png"
   },
   {
-    "Name": "Ottoman"
+    "Name": "Ottoman",
+    "Image": "ottoman.png"
   },
   {
-    "Name": "Armchair"
+    "Name": "Armchair",
+    "Image":"armchair.png"
   },
   {
-    "Name": "Cushion"
+    "Name": "Cushion",
+    "Image": "cushion.png"
   },
   {
-    "Name": "Coffee Table"
+    "Name": "Coffee Table",
+    "Image": "coffee_table.png"
   },
   {
-    "Name": "Shelf"
+    "Name": "Shelf",
+    "Image": "shelf.png"
   },
   {
-    "Name": "Sofa"
+    "Name": "Sofa",
+    "Image": "sofa.png"
   },
   {
-    "Name": "Dressing Table"
+    "Name": "Dressing Table",
+    "Image": "dressing.png"
   },
   {
-    "Name": "Window Curtain"
+    "Name": "Window",
+    "Image": "windown.png"
   },
   {
-    "Name": "Chandelier"
+    "Name": "Window Curtain",
+    "Image": "windows.png"
   },
   {
-    "Name": "Ceiling Fan"
+    "Name": "Chandelier",
+    "Image": "chandelier.png"
   },
   {
-    "Name": "Wardrobe"
+    "Name": "Ceiling Fan",
+    "Image": "ceiling_fan.png"
   },
   {
-    "Name": "Floor Lamp"
+    "Name": "Wardrobe",
+    "Image": "wardrobe.png"
+  },
+  {
+    "Name": "Floor Lamp",
+    "Image": "floor_lamp.png"
+  },
+  {
+    "Name": "Vase-Flower",
+    "Image": "vase-flower.png"
+  },
+  {
+    "Name": "Bed",
+    "Image": "bed.png"
+  },
+  {
+    "Name": "Bed Girl",
+    "Image": "bed.png"
+  },
+  {
+    "Name": "Bed Boy",
+    "Image": "bed.png"
+  },
+  {
+    "Name": "Bedside Table",
+    "Image": "night-stand.png"
+  },
+  {
+    "Name": "Picture",
+    "Image": "frame.png"
+  },
+  {
+    "Name": "Wall Clock",
+    "Image": "clock.png"
   }
 ]

@@ -12,6 +12,8 @@ import { MainComponent } from './DashBoard/main.component';
 import { HomeComponent } from './Components/home/home.component';
 import { MainShopComponent } from './Components/main-shop/main-shop.component';
 import { AsListPipe } from './Pipes/as-list.pipe';
+import { MainCatergoriesComponent } from './Components/main-catergories/main-catergories.component';
+import { EditProfileComponent } from './Components/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { AsListPipe } from './Pipes/as-list.pipe';
     HomeComponent,
     MainShopComponent,
     AsListPipe,
+    MainCatergoriesComponent,
+    EditProfileComponent,
   ],
   imports: [
     BrowserModule,
