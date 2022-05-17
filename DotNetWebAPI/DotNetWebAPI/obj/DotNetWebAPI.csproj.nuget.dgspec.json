@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\DotNetWebAPI.csproj": {}
+    "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\DotNetWebAPI.csproj": {}
   },
   "projects": {
-    "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\DotNetWebAPI.csproj": {
+    "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\DotNetWebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\DotNetWebAPI.csproj",
+        "projectUniqueName": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\DotNetWebAPI.csproj",
         "projectName": "DotNetWebAPI",
-        "projectPath": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\DotNetWebAPI.csproj",
-        "packagesPath": "C:\\Users\\muna\\.nuget\\packages\\",
-        "outputPath": "D:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\obj\\",
+        "projectPath": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\DotNetWebAPI.csproj",
+        "packagesPath": "C:\\Users\\Lap Smart\\.nuget\\packages\\",
+        "outputPath": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\muna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lap Smart\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -97,7 +97,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
