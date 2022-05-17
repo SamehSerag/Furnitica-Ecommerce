@@ -1,4 +1,6 @@
-﻿namespace AngularAPI.Models
+﻿using AngularAPI.Enums;
+
+namespace AngularAPI.Models
 {
     public class ProductSearchModel
     {
@@ -10,6 +12,7 @@
         public string? Search { get; set; }
         public int PageIndex { get; set; } = 1;
         public int PageSize { get; set; } = 12;
+        public Color? Color { get; set; }
 
         public bool IsValidRange => MaxPrice >= MinPrice;
     }

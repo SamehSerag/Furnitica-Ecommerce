@@ -252,14 +252,14 @@
                                     </a>
                                 </div>
                                 <div>
-                                    <a class="login" href="user-login.html" rel="nofollow"
+                                    <a class="login" [routerLink]="['/Login']" routerLinkActive="router-link-active"  href="user-login.html" rel="nofollow"
                                         title="Log in to your customer account">
                                         <i class="fa fa-sign-in"></i>
                                         <span>Sign in</span>
                                     </a>
                                 </div>
                                 <div>
-                                    <a class="register" href="user-register.html" rel="nofollow"
+                                    <a class="register" [routerLink]="['/Register']" routerLinkActive="router-link-active"  href="user-register.html" rel="nofollow"
                                         title="Register Account">
                                         <i class="fa fa-user"></i>
                                         <span>Register Account</span>
@@ -277,6 +277,12 @@
                                         <span>My Wishlists</span>
                                     </a>
                                 </div>
+                                <div>
+                                  <a class="login" [routerLink]="['/Login']" routerLinkActive="router-link-active" title="Logout">
+                                      <i class="fa fa-sign-out"></i>
+                                      <span>Sign Out</span>
+                                  </a>
+                              </div>
                                 <div id="desktop_currency_selector"
                                     class="currency-selector groups-selector hidden-sm-down">
                                     <ul class="list-inline">
