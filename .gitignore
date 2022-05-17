@@ -6,3 +6,5 @@ AngularProject/client/node_modules/
 DotNetWebAPI/.vs/
 DotNetWebAPI/DotNetWebAPI/obj/
 DotNetWebAPI/DotNetWebAPI/bin/
+DotNetWebAPI/DotNetWebAPI/DotNetWebAPI.csproj
+DotNetWebAPI/DotNetWebAPI/DotNetWebAPI.csproj.user
