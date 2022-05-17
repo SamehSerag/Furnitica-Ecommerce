@@ -1,5 +1,6 @@
 ﻿using AngularProject.Data;
 using AngularProject.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
@@ -29,7 +30,20 @@ namespace Infrastructure.Data
                     }
                     await context.SaveChangesAsync();
                 }
-                
+
+                if (!context.Roles.Any())
+                {
+                    var roleData =
+                        File.ReadAllText("../DotNetWebAPI/Data/SeedData/role.json");//H:\ITI\Angular\AngularProject\DotNetWebAPI\DotNetWebAPI\Data\SeedData\
+                    var roles = JsonSerializer.Deserialize<List<IdentityRole>>(roleData);
+
+                    foreach (var item in roles)
+                    {
+                        context.Roles.Add(item);
+                    }
+                    await context.SaveChangesAsync();
+                }
+
             }
             catch (Exception ex) { 
             
