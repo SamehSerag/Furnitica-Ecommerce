@@ -14,7 +14,9 @@ import { MainShopComponent } from './Components/main-shop/main-shop.component';
 import { AsListPipe } from './Pipes/as-list.pipe';
 import { MainCatergoriesComponent } from './Components/main-catergories/main-catergories.component';
 import { EditProfileComponent } from './Components/edit-profile/edit-profile.component';
-
+import { RegisterComponent } from './Components/register/register.component';
+import { LoginComponent } from './Components/login/login.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +29,8 @@ import { EditProfileComponent } from './Components/edit-profile/edit-profile.com
     AsListPipe,
     MainCatergoriesComponent,
     EditProfileComponent,
+    RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,8 @@ import { EditProfileComponent } from './Components/edit-profile/edit-profile.com
         deps: [HttpClient]
       }
     }),
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -51,7 +51,6 @@ builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ICartRepository, CartRepository>();
 
-
 builder.Services.AddDbContext<ShoppingDbContext>(
     options => options.UseSqlServer(
                builder.Configuration.GetConnectionString("ShopDbConn")

@@ -19,17 +19,13 @@ namespace AngularAPI.Controllers
     {
         private readonly IConfiguration configuration;
         private readonly UserManager<User> UserManager;
-        private readonly ShoppingDbContext context;
         private readonly ICartRepository cartRepository;
-        private readonly RoleManager<IdentityRole> roleManager;
 
-        public AuthController(UserManager<User> _UserManager, IConfiguration _configuration, ShoppingDbContext _context, ICartRepository _cartRepository, RoleManager<IdentityRole> _roleManager)
+        public AuthController(UserManager<User> _UserManager, IConfiguration _configuration, ICartRepository _cartRepository)
         {
             UserManager = _UserManager;
             configuration = _configuration;
-            context = _context;
             cartRepository = _cartRepository;
-            roleManager = _roleManager;
         }
 
         [HttpPost("Register")]
@@ -38,51 +34,31 @@ namespace AngularAPI.Controllers
             if(!ModelState.IsValid)
                 return BadRequest(ModelState);            
 
-            User user = new();
-            user.UserName = userDto.username;
-            user.Email = userDto.email;
-            user.Gender = userDto.Gender;
-            user.Address = userDto.Address;
-
-
-            User u = await UserManager.FindByEmailAsync(userDto.email);
-            if (u != null)
-                return BadRequest("email is already registered");            
-           
-
-            // this code will be replaced by cartrepository later
-           /* Cart c = new Cart();
-            context.Carts.Add(c);
-            context.SaveChanges();
-            user.CartID = c.Id;*/
-
-            IdentityResult userCreated = await UserManager.CreateAsync(user, userDto.password);
-            // create role
-            IdentityResult roleCreated = await roleManager.CreateAsync(new(roleName: "Admin"));
-            IdentityResult roleAssigned = await UserManager.AddToRolesAsync(user, new[]{ "Admin" });
-
-            if(!roleCreated.Succeeded)
+            try
             {
-                return StatusCode(500, new { err = "Role Creation failed" });
+                User user = await CreateUser(userDto);
+
+
+                var jwtToken = await GenerateToken(user);
+
+                return Created("", new
+                {
+                    userData = new {
+                        username = user.UserName,
+                        email = user.Email,
+                        address = user.Address,
+                        gender = user.Gender,
+                    },
+                    token = new JwtSecurityTokenHandler().WriteToken(jwtToken),
+                    expiration = jwtToken.ValidTo.ToString(),
+                });
             }
-
-            if (userCreated.Succeeded && roleAssigned.Succeeded)
+            catch (Exception ex)
             {
-                Cart c = await cartRepository.CreateCartAsync(user);
-                user.CartID = c.Id;
-                context.SaveChanges();
-                return Ok();            
-            }
-            else
-            {
-                foreach (var item in userCreated.Errors)
-                    ModelState.AddModelError(item.Code, item.Description);
-                foreach (var item in roleAssigned.Errors)
-                    ModelState.AddModelError(item.Code, item.Description);
-
-                return BadRequest(ModelState);
+                return BadRequest(ex.Message);
             }
         }
+
 
         [HttpPost("Login")]
         public async Task<IActionResult> Login(LoginDto userDto)
@@ -105,34 +81,17 @@ namespace AngularAPI.Controllers
 
             // create and send token to client
 
-            // preparing claims to be added to token payload
-            List<Claim> claims = new();
-            claims.Add(new(ClaimTypes.NameIdentifier, user.Id));
-            claims.Add(new(ClaimTypes.Name, user.UserName));
-            claims.Add(new(ClaimTypes.Role, (await UserManager.GetRolesAsync(user)).First()));
-
-            var roles = await UserManager.GetRolesAsync(user);
-            foreach (var role in roles)
-                claims.Add(new(ClaimTypes.Role, role));
-
-            claims.Add(new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()));
-
-
-            // creating the token from the claims
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Secret"]));
-            
-            var jwtToken = new JwtSecurityToken(
-                configuration["JWT:ValidIssuer"],
-                configuration["JWT:ValidAudience"],
-                claims,
-                null,
-                DateTime.Now.AddDays(365),
-                signingCredentials: new(key, SecurityAlgorithms.HmacSha256)
-            );
+            var jwtToken = await GenerateToken(user);
 
             return Ok(new {
+                userData = new {
+                    username = user.UserName,
+                    email = user.Email,
+                    address = user.Address,
+                    gender = user.Gender,
+                },
                 token = new JwtSecurityTokenHandler().WriteToken(jwtToken),
-                expiration = jwtToken.ValidTo  
+                expiration = jwtToken.ValidTo.ToString(),  
             });
         }
 
@@ -157,5 +116,77 @@ namespace AngularAPI.Controllers
         {
             return Ok("Admin logged in success");
         }
+
+
+        [NonAction]
+        private async Task<User> CreateUser(RegisterDto userDto)
+        {
+            User user = new();
+            user.UserName = userDto.username;
+            user.Email = userDto.email;
+            user.Gender = userDto.Gender;
+            user.Address = userDto.Address;
+
+
+            User u = await UserManager.FindByEmailAsync(userDto.email);
+            if (u != null)
+                throw new Exception("email is already registered");
+
+
+            IdentityResult userCreated = await UserManager.CreateAsync(user, userDto.password);
+            IdentityResult roleAssigned = await UserManager.AddToRolesAsync(user, new[] { "Client" });
+
+
+            if (userCreated.Succeeded && roleAssigned.Succeeded)
+            {
+                Cart c = await cartRepository.CreateCartAsync(user);
+                //user.CartID = c.Id;
+                return user;
+            }
+            else
+            {
+                foreach (var item in userCreated.Errors)
+                    ModelState.AddModelError(item.Code, item.Description);
+                foreach (var item in roleAssigned.Errors)
+                    ModelState.AddModelError(item.Code, item.Description);
+
+                var errorList = ModelState.Values.SelectMany(m => m.Errors).Select(e => e.ErrorMessage).ToList();
+                throw new Exception(string.Join('#', errorList));
+            }
+        }
+
+
+        [NonAction]
+        private async Task<JwtSecurityToken> GenerateToken(User user)
+        {
+            // preparing claims to be added to token payload
+            List<Claim> claims = new();
+            claims.Add(new(ClaimTypes.NameIdentifier, user.Id));
+            //claims.Add(new(ClaimTypes.Name, user.UserName));
+            //claims.Add(new(ClaimTypes.Role, (await UserManager.GetRolesAsync(user)).First()));
+
+            var roles = await UserManager.GetRolesAsync(user);
+            foreach (var role in roles)
+                claims.Add(new(ClaimTypes.Role, role));
+
+            claims.Add(new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()));
+
+
+            // creating the token from the claims
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Secret"]));
+
+            var jwtToken = new JwtSecurityToken(
+                configuration["JWT:ValidIssuer"],
+                configuration["JWT:ValidAudience"],
+                claims,
+                null,
+                DateTime.Now.AddDays(365),
+                signingCredentials: new(key, SecurityAlgorithms.HmacSha256)
+            );
+
+            return jwtToken;
+        }
+
+
     }
 }
