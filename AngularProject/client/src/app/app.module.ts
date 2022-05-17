@@ -17,6 +17,7 @@ import { EditProfileComponent } from './Components/edit-profile/edit-profile.com
 import { RegisterComponent } from './Components/register/register.component';
 import { LoginComponent } from './Components/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { ProductDetialsComponent } from './Components/product-detials/product-detials.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +32,7 @@ import { FormsModule } from '@angular/forms';
     EditProfileComponent,
     RegisterComponent,
     LoginComponent,
+    ProductDetialsComponent,
   ],
   imports: [
     BrowserModule,
