@@ -4,12 +4,14 @@ import { EditProfileComponent } from './Components/edit-profile/edit-profile.com
 import { HomeComponent } from './Components/home/home.component';
 import { LoginComponent } from './Components/login/login.component';
 import { MainShopComponent } from './Components/main-shop/main-shop.component';
+import { ProductDetialsComponent } from './Components/product-detials/product-detials.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { IndexComponent } from './index.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'main-shop', component:MainShopComponent },
+  { path: 'products/:pid', component:ProductDetialsComponent },
   { path: 'edit-profile', component:EditProfileComponent},
   { path: 'Register', component:RegisterComponent},
   { path: 'Login', component:LoginComponent}

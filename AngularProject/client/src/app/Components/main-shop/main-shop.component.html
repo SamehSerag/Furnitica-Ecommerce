@@ -393,7 +393,7 @@
                           <div class="item text-center col-md-4" *ngFor="let product of products; let i = index" >
                             <div class="product-miniature js-product-miniature item-one first-item">
                               <div class="thumbnail-container border">
-                                <a href="product-detail.html">
+                                <a [routerLink]="'/products/'+product.id">
                                     <ng-container *ngIf="IfImgFound(i, 0)">
                                         <img class="img-fluid image-cover" [src]="Img(i, 0)"  alt="img">
                                     </ng-container>
@@ -412,7 +412,7 @@
                               <div class="product-description">
                                 <div class="product-groups">
                                   <div class="product-title">
-                                    <a href="product-detail.html">{{product.title_EN}}</a>
+                                    <a [routerLink]="'/products/'+product.id">{{product.title_EN}}</a>
                                   </div>
                                   <div class="rating">
                                     <div class="star-content">
@@ -439,7 +439,7 @@
                                   <a class="addToWishlist" href="#" data-rel="1" onclick="">
                                     <i class="fa fa-heart" aria-hidden="true"></i>
                                   </a>
-                                  <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
+                                  <a [routerLink]="'/products/'+product.id" class="quick-view hidden-sm-down" data-link-action="quickview">
                                     <i class="fa fa-eye" aria-hidden="true"></i>
                                   </a>
                                 </div>
@@ -455,7 +455,7 @@
                               <div class="row">
                                 <div class="col-md-4">
                                   <div class="thumbnail-container border">
-                                    <a href="product-detail.html">
+                                    <a [routerLink]="'product/'+product.id">
                                         <ng-container *ngIf="IfImgFound(i, 0)">
                                             <img class="img-fluid image-cover" [src]="Img(i, 0)"  alt="img">
                                         </ng-container>
@@ -469,7 +469,7 @@
                                   <div class="product-description">
                                     <div class="product-groups">
                                       <div class="product-title">
-                                        <a href="product-detail.html">{{product.title_EN}}</a>
+                                        <a [routerLink]="'product/'+product.id">{{product.title_EN}}</a>
                                         <div *ngIf="product.quantity > 0 then inStock else outOfStock"></div>
                                         <ng-template #inStock >
                                             <span class="info-stock">
