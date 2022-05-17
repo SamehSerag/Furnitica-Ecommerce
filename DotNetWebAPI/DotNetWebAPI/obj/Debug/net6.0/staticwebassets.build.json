@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "QED+Xs+c3lEcvHKWsKO+zJOltgedwJEnbga2UFxckmg=",
+  "Hash": "SVARtUWjS32knIymu+By26MWXRadmY0RDR5U0Q3yTVU=",
   "Source": "DotNetWebAPI",
   "BasePath": "_content/DotNetWebAPI",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "DotNetWebAPI\\wwwroot",
       "Source": "DotNetWebAPI",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\DotNetWebAPI.styles.css",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\DotNetWebAPI.styles.css",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "DotNetWebAPI.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\DotNetWebAPI.styles.css"
+      "OriginalItemSpec": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\obj\\Debug\\net6.0\\scopedcss\\bundle\\DotNetWebAPI.styles.css"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\DotNetWebAPI.bundle.scp.css",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\DotNetWebAPI.bundle.scp.css",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "DotNetWebAPI.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\DotNetWebAPI.bundle.scp.css"
+      "OriginalItemSpec": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\DotNetWebAPI.bundle.scp.css"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\1.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\1.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/bg-img/1.jpg",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bg-img\\1.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\2.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\2.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/bg-img/2.jpg",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bg-img\\2.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\3.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\3.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/bg-img/3.jpg",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bg-img\\3.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\4.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\4.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/bg-img/4.jpg",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bg-img\\4.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\5.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\5.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/bg-img/5.jpg",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bg-img\\5.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\6.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\6.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/bg-img/6.jpg",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bg-img\\6.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\7.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\7.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/bg-img/7.jpg",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bg-img\\7.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\8.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\8.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/bg-img/8.jpg",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bg-img\\8.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\9.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\9.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/bg-img/9.jpg",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bg-img\\9.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\cart1.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\cart1.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/bg-img/cart1.jpg",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bg-img\\cart1.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\cart2.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\cart2.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/bg-img/cart2.jpg",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bg-img\\cart2.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\cart3.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\bg-img\\cart3.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/bg-img/cart3.jpg",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bg-img\\cart3.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\1.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\1.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/blog/1.jpg",
       "AssetKind": "All",
@@ -272,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\images\\blog\\1.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\2.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\2.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/blog/2.jpg",
       "AssetKind": "All",
@@ -289,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\images\\blog\\2.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\3.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\3.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/blog/3.jpg",
       "AssetKind": "All",
@@ -306,10 +306,10 @@
       "OriginalItemSpec": "wwwroot\\images\\blog\\3.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\4.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\4.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/blog/4.jpg",
       "AssetKind": "All",
@@ -323,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\images\\blog\\4.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\5.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\5.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/blog/5.jpg",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\images\\blog\\5.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\6.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\6.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/blog/6.jpg",
       "AssetKind": "All",
@@ -357,10 +357,10 @@
       "OriginalItemSpec": "wwwroot\\images\\blog\\6.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\7.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\7.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/blog/7.jpg",
       "AssetKind": "All",
@@ -374,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\images\\blog\\7.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\8.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\8.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/blog/8.jpg",
       "AssetKind": "All",
@@ -391,10 +391,10 @@
       "OriginalItemSpec": "wwwroot\\images\\blog\\8.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\9.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\9.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/blog/9.jpg",
       "AssetKind": "All",
@@ -408,10 +408,10 @@
       "OriginalItemSpec": "wwwroot\\images\\blog\\9.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\advertising.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\advertising.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/blog/advertising.jpg",
       "AssetKind": "All",
@@ -425,10 +425,10 @@
       "OriginalItemSpec": "wwwroot\\images\\blog\\advertising.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\detail.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\detail.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/blog/detail.jpg",
       "AssetKind": "All",
@@ -442,10 +442,10 @@
       "OriginalItemSpec": "wwwroot\\images\\blog\\detail.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\user.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\user.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/blog/user.jpg",
       "AssetKind": "All",
@@ -459,10 +459,10 @@
       "OriginalItemSpec": "wwwroot\\images\\blog\\user.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\user1.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\user1.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/blog/user1.jpg",
       "AssetKind": "All",
@@ -476,10 +476,10 @@
       "OriginalItemSpec": "wwwroot\\images\\blog\\user1.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\user2.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\blog\\user2.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/blog/user2.jpg",
       "AssetKind": "All",
@@ -493,10 +493,10 @@
       "OriginalItemSpec": "wwwroot\\images\\blog\\user2.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\armchair.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\armchair.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/armchair.png",
       "AssetKind": "All",
@@ -510,10 +510,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\armchair.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\bed.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\bed.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/bed.png",
       "AssetKind": "All",
@@ -527,10 +527,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\bed.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\ceiling_fan.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\ceiling_fan.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/ceiling_fan.png",
       "AssetKind": "All",
@@ -544,10 +544,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\ceiling_fan.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\chandelier.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\chandelier.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/chandelier.png",
       "AssetKind": "All",
@@ -561,10 +561,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\chandelier.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\coffee_table.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\coffee_table.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/coffee_table.png",
       "AssetKind": "All",
@@ -578,10 +578,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\coffee_table.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\cushion.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\cushion.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/cushion.png",
       "AssetKind": "All",
@@ -595,10 +595,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\cushion.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\dressing.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\dressing.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/dressing.png",
       "AssetKind": "All",
@@ -612,10 +612,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\dressing.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect1.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect1.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/effect1.jpg",
       "AssetKind": "All",
@@ -629,10 +629,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\effect1.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect10.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect10.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/effect10.jpg",
       "AssetKind": "All",
@@ -646,10 +646,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\effect10.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect11.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect11.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/effect11.jpg",
       "AssetKind": "All",
@@ -663,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\effect11.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect12.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect12.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/effect12.jpg",
       "AssetKind": "All",
@@ -680,10 +680,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\effect12.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect13.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect13.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/effect13.jpg",
       "AssetKind": "All",
@@ -697,10 +697,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\effect13.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect14.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect14.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/effect14.jpg",
       "AssetKind": "All",
@@ -714,10 +714,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\effect14.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect15.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect15.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/effect15.jpg",
       "AssetKind": "All",
@@ -731,10 +731,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\effect15.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect16.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect16.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/effect16.jpg",
       "AssetKind": "All",
@@ -748,10 +748,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\effect16.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect17.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect17.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/effect17.jpg",
       "AssetKind": "All",
@@ -765,10 +765,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\effect17.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect18.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect18.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/effect18.jpg",
       "AssetKind": "All",
@@ -782,10 +782,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\effect18.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect19.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect19.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/effect19.jpg",
       "AssetKind": "All",
@@ -799,10 +799,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\effect19.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect2.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect2.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/effect2.jpg",
       "AssetKind": "All",
@@ -816,10 +816,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\effect2.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect3.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect3.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/effect3.jpg",
       "AssetKind": "All",
@@ -833,10 +833,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\effect3.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect4.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect4.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/effect4.jpg",
       "AssetKind": "All",
@@ -850,10 +850,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\effect4.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect5.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect5.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/effect5.jpg",
       "AssetKind": "All",
@@ -867,10 +867,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\effect5.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect6.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect6.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/effect6.jpg",
       "AssetKind": "All",
@@ -884,10 +884,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\effect6.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect7.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect7.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/effect7.jpg",
       "AssetKind": "All",
@@ -901,10 +901,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\effect7.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect8.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect8.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/effect8.jpg",
       "AssetKind": "All",
@@ -918,10 +918,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\effect8.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect9.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\effect9.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/effect9.jpg",
       "AssetKind": "All",
@@ -935,10 +935,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\effect9.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\fireplace.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\fireplace.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/fireplace.png",
       "AssetKind": "All",
@@ -952,10 +952,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\fireplace.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\floor_lamp.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\floor_lamp.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/floor_lamp.png",
       "AssetKind": "All",
@@ -969,10 +969,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\floor_lamp.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\footer-icon1.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\footer-icon1.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/footer-icon1.png",
       "AssetKind": "All",
@@ -986,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\footer-icon1.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\footer-icon2.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\footer-icon2.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/footer-icon2.png",
       "AssetKind": "All",
@@ -1003,10 +1003,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\footer-icon2.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\footer-icon3.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\footer-icon3.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/footer-icon3.png",
       "AssetKind": "All",
@@ -1020,10 +1020,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\footer-icon3.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-background1.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-background1.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home1-background1.jpg",
       "AssetKind": "All",
@@ -1037,10 +1037,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home1-background1.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-background2.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-background2.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home1-background2.jpg",
       "AssetKind": "All",
@@ -1054,10 +1054,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home1-background2.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-background3.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-background3.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home1-background3.jpg",
       "AssetKind": "All",
@@ -1071,10 +1071,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home1-background3.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-banner1.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-banner1.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home1-banner1.jpg",
       "AssetKind": "All",
@@ -1088,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home1-banner1.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-banner2.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-banner2.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home1-banner2.jpg",
       "AssetKind": "All",
@@ -1105,10 +1105,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home1-banner2.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-banner3.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-banner3.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home1-banner3.jpg",
       "AssetKind": "All",
@@ -1122,10 +1122,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home1-banner3.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-flas.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-flas.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home1-flas.jpg",
       "AssetKind": "All",
@@ -1139,10 +1139,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home1-flas.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-flas2.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-flas2.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home1-flas2.jpg",
       "AssetKind": "All",
@@ -1156,10 +1156,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home1-flas2.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-flas3.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-flas3.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home1-flas3.jpg",
       "AssetKind": "All",
@@ -1173,10 +1173,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home1-flas3.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-flas4.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-flas4.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home1-flas4.jpg",
       "AssetKind": "All",
@@ -1190,10 +1190,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home1-flas4.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-policy.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-policy.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home1-policy.png",
       "AssetKind": "All",
@@ -1207,10 +1207,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home1-policy.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-policy2.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-policy2.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home1-policy2.png",
       "AssetKind": "All",
@@ -1224,10 +1224,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home1-policy2.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-policy3.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-policy3.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home1-policy3.png",
       "AssetKind": "All",
@@ -1241,10 +1241,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home1-policy3.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-post1.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-post1.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home1-post1.jpg",
       "AssetKind": "All",
@@ -1258,10 +1258,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home1-post1.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-post2.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-post2.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home1-post2.jpg",
       "AssetKind": "All",
@@ -1275,10 +1275,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home1-post2.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-post3.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-post3.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home1-post3.jpg",
       "AssetKind": "All",
@@ -1292,10 +1292,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home1-post3.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-tolltip1.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-tolltip1.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home1-tolltip1.jpg",
       "AssetKind": "All",
@@ -1309,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home1-tolltip1.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-tolltip2.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-tolltip2.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home1-tolltip2.jpg",
       "AssetKind": "All",
@@ -1326,10 +1326,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home1-tolltip2.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-tolltip3.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-tolltip3.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home1-tolltip3.jpg",
       "AssetKind": "All",
@@ -1343,10 +1343,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home1-tolltip3.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-tolltip4.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home1-tolltip4.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home1-tolltip4.jpg",
       "AssetKind": "All",
@@ -1360,10 +1360,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home1-tolltip4.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home3-banner.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home3-banner.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home3-banner.jpg",
       "AssetKind": "All",
@@ -1377,10 +1377,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home3-banner.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home3-banner2.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home3-banner2.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home3-banner2.jpg",
       "AssetKind": "All",
@@ -1394,10 +1394,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home3-banner2.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home3-banner3.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home3-banner3.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home3-banner3.jpg",
       "AssetKind": "All",
@@ -1411,10 +1411,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home3-banner3.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home4-slide1.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home4-slide1.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home4-slide1.jpg",
       "AssetKind": "All",
@@ -1428,10 +1428,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home4-slide1.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home4-slide2.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home4-slide2.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home4-slide2.jpg",
       "AssetKind": "All",
@@ -1445,10 +1445,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home4-slide2.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home4-slide3.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home4-slide3.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home4-slide3.jpg",
       "AssetKind": "All",
@@ -1462,10 +1462,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home4-slide3.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home4-slide4.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home4-slide4.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home4-slide4.jpg",
       "AssetKind": "All",
@@ -1479,10 +1479,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home4-slide4.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home4-slide5.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home4-slide5.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home4-slide5.jpg",
       "AssetKind": "All",
@@ -1496,10 +1496,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home4-slide5.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home4-slide6.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\home4-slide6.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/home4-slide6.jpg",
       "AssetKind": "All",
@@ -1513,10 +1513,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\home4-slide6.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-logo1.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-logo1.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/icon-logo1.jpg",
       "AssetKind": "All",
@@ -1530,10 +1530,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\icon-logo1.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-logo2.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-logo2.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/icon-logo2.jpg",
       "AssetKind": "All",
@@ -1547,10 +1547,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\icon-logo2.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-logo3.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-logo3.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/icon-logo3.jpg",
       "AssetKind": "All",
@@ -1564,10 +1564,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\icon-logo3.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-logo4.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-logo4.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/icon-logo4.jpg",
       "AssetKind": "All",
@@ -1581,10 +1581,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\icon-logo4.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-logo5.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-logo5.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/icon-logo5.jpg",
       "AssetKind": "All",
@@ -1598,10 +1598,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\icon-logo5.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-logo6.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-logo6.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/icon-logo6.jpg",
       "AssetKind": "All",
@@ -1615,10 +1615,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\icon-logo6.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-tolltip1.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-tolltip1.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/icon-tolltip1.jpg",
       "AssetKind": "All",
@@ -1632,10 +1632,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\icon-tolltip1.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-tolltip10.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-tolltip10.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/icon-tolltip10.jpg",
       "AssetKind": "All",
@@ -1649,10 +1649,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\icon-tolltip10.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-tolltip2.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-tolltip2.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/icon-tolltip2.jpg",
       "AssetKind": "All",
@@ -1666,10 +1666,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\icon-tolltip2.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-tolltip4.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-tolltip4.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/icon-tolltip4.jpg",
       "AssetKind": "All",
@@ -1683,10 +1683,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\icon-tolltip4.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-tolltip5.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-tolltip5.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/icon-tolltip5.jpg",
       "AssetKind": "All",
@@ -1700,10 +1700,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\icon-tolltip5.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-tolltip6.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-tolltip6.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/icon-tolltip6.jpg",
       "AssetKind": "All",
@@ -1717,10 +1717,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\icon-tolltip6.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-tolltip8.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-tolltip8.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/icon-tolltip8.jpg",
       "AssetKind": "All",
@@ -1734,10 +1734,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\icon-tolltip8.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-tolltip9.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\icon-tolltip9.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/icon-tolltip9.jpg",
       "AssetKind": "All",
@@ -1751,10 +1751,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\icon-tolltip9.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\img-menu.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\img-menu.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/img-menu.jpg",
       "AssetKind": "All",
@@ -1768,10 +1768,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\img-menu.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\lg1.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\lg1.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/lg1.jpg",
       "AssetKind": "All",
@@ -1785,10 +1785,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\lg1.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\lg2.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\lg2.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/lg2.jpg",
       "AssetKind": "All",
@@ -1802,10 +1802,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\lg2.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\lg3.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\lg3.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/lg3.jpg",
       "AssetKind": "All",
@@ -1819,10 +1819,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\lg3.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\lg4.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\lg4.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/lg4.jpg",
       "AssetKind": "All",
@@ -1836,10 +1836,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\lg4.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\logo.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\logo.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/logo.png",
       "AssetKind": "All",
@@ -1853,10 +1853,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\logo.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\logo-mobie.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\logo-mobie.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/logo-mobie.png",
       "AssetKind": "All",
@@ -1870,10 +1870,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\logo-mobie.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\map.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\map.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/map.png",
       "AssetKind": "All",
@@ -1887,10 +1887,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\map.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\note.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\note.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/note.png",
       "AssetKind": "All",
@@ -1904,10 +1904,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\note.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\ottoman.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\ottoman.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/ottoman.png",
       "AssetKind": "All",
@@ -1921,10 +1921,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\ottoman.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\payment.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\payment.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/payment.jpg",
       "AssetKind": "All",
@@ -1938,10 +1938,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\payment.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\payment.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\payment.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/payment.png",
       "AssetKind": "All",
@@ -1955,10 +1955,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\payment.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\payment-footer.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\payment-footer.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/payment-footer.png",
       "AssetKind": "All",
@@ -1972,10 +1972,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\payment-footer.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\shelf.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\shelf.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/shelf.png",
       "AssetKind": "All",
@@ -1989,10 +1989,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\shelf.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\sofa.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\sofa.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/sofa.png",
       "AssetKind": "All",
@@ -2006,10 +2006,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\sofa.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\table-lamp.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\table-lamp.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/table-lamp.png",
       "AssetKind": "All",
@@ -2023,10 +2023,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\table-lamp.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\vase-flower.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\vase-flower.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/vase-flower.png",
       "AssetKind": "All",
@@ -2040,10 +2040,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\vase-flower.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\wardrobe.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\wardrobe.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/wardrobe.png",
       "AssetKind": "All",
@@ -2057,10 +2057,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\wardrobe.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\windown.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\home\\windown.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/home/windown.png",
       "AssetKind": "All",
@@ -2074,10 +2074,10 @@
       "OriginalItemSpec": "wwwroot\\images\\home\\windown.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\other\\1.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\other\\1.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/other/1.jpg",
       "AssetKind": "All",
@@ -2091,10 +2091,10 @@
       "OriginalItemSpec": "wwwroot\\images\\other\\1.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\other\\2.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\other\\2.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/other/2.jpg",
       "AssetKind": "All",
@@ -2108,10 +2108,10 @@
       "OriginalItemSpec": "wwwroot\\images\\other\\2.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\other\\3.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\other\\3.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/other/3.jpg",
       "AssetKind": "All",
@@ -2125,10 +2125,10 @@
       "OriginalItemSpec": "wwwroot\\images\\other\\3.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\other\\4.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\other\\4.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/other/4.png",
       "AssetKind": "All",
@@ -2142,10 +2142,10 @@
       "OriginalItemSpec": "wwwroot\\images\\other\\4.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\other\\after.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\other\\after.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/other/after.png",
       "AssetKind": "All",
@@ -2159,10 +2159,10 @@
       "OriginalItemSpec": "wwwroot\\images\\other\\after.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\other\\background.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\other\\background.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/other/background.jpg",
       "AssetKind": "All",
@@ -2176,10 +2176,10 @@
       "OriginalItemSpec": "wwwroot\\images\\other\\background.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\other\\contact_email.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\other\\contact_email.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/other/contact_email.png",
       "AssetKind": "All",
@@ -2193,10 +2193,10 @@
       "OriginalItemSpec": "wwwroot\\images\\other\\contact_email.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\other\\contact_mess.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\other\\contact_mess.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/other/contact_mess.png",
       "AssetKind": "All",
@@ -2210,10 +2210,10 @@
       "OriginalItemSpec": "wwwroot\\images\\other\\contact_mess.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\other\\image-404.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\other\\image-404.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/other/image-404.png",
       "AssetKind": "All",
@@ -2227,10 +2227,10 @@
       "OriginalItemSpec": "wwwroot\\images\\other\\image-404.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\1.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\1.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/1.jpg",
       "AssetKind": "All",
@@ -2244,10 +2244,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\1.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\10.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\10.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/10.jpg",
       "AssetKind": "All",
@@ -2261,10 +2261,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\10.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\11.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\11.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/11.jpg",
       "AssetKind": "All",
@@ -2278,10 +2278,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\11.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\12.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\12.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/12.jpg",
       "AssetKind": "All",
@@ -2295,10 +2295,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\12.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\13.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\13.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/13.jpg",
       "AssetKind": "All",
@@ -2312,10 +2312,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\13.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\14.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\14.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/14.jpg",
       "AssetKind": "All",
@@ -2329,10 +2329,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\14.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\15.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\15.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/15.jpg",
       "AssetKind": "All",
@@ -2346,10 +2346,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\15.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\16.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\16.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/16.jpg",
       "AssetKind": "All",
@@ -2363,10 +2363,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\16.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\17.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\17.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/17.jpg",
       "AssetKind": "All",
@@ -2380,10 +2380,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\17.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\18.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\18.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/18.jpg",
       "AssetKind": "All",
@@ -2397,10 +2397,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\18.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\2.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\2.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/2.jpg",
       "AssetKind": "All",
@@ -2414,10 +2414,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\2.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\20.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\20.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/20.jpg",
       "AssetKind": "All",
@@ -2431,10 +2431,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\20.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\22.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\22.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/22.jpg",
       "AssetKind": "All",
@@ -2448,10 +2448,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\22.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\23.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\23.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/23.jpg",
       "AssetKind": "All",
@@ -2465,10 +2465,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\23.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\24.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\24.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/24.jpg",
       "AssetKind": "All",
@@ -2482,10 +2482,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\24.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\25.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\25.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/25.jpg",
       "AssetKind": "All",
@@ -2499,10 +2499,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\25.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\26.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\26.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/26.jpg",
       "AssetKind": "All",
@@ -2516,10 +2516,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\26.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\27.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\27.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/27.jpg",
       "AssetKind": "All",
@@ -2533,10 +2533,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\27.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\28.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\28.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/28.jpg",
       "AssetKind": "All",
@@ -2550,10 +2550,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\28.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\29.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\29.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/29.jpg",
       "AssetKind": "All",
@@ -2567,10 +2567,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\29.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\3.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\3.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/3.jpg",
       "AssetKind": "All",
@@ -2584,10 +2584,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\3.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\30.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\30.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/30.jpg",
       "AssetKind": "All",
@@ -2601,10 +2601,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\30.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\31.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\31.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/31.jpg",
       "AssetKind": "All",
@@ -2618,10 +2618,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\31.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\32.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\32.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/32.jpg",
       "AssetKind": "All",
@@ -2635,10 +2635,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\32.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\33.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\33.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/33.jpg",
       "AssetKind": "All",
@@ -2652,10 +2652,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\33.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\34.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\34.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/34.jpg",
       "AssetKind": "All",
@@ -2669,10 +2669,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\34.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\4.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\4.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/4.jpg",
       "AssetKind": "All",
@@ -2686,10 +2686,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\4.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\5.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\5.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/5.jpg",
       "AssetKind": "All",
@@ -2703,10 +2703,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\5.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\6.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\6.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/6.jpg",
       "AssetKind": "All",
@@ -2720,10 +2720,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\6.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\7.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\7.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/7.jpg",
       "AssetKind": "All",
@@ -2737,10 +2737,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\7.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\8.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\8.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/8.jpg",
       "AssetKind": "All",
@@ -2754,10 +2754,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\8.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\9.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\9.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/9.jpg",
       "AssetKind": "All",
@@ -2771,10 +2771,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\9.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\check1.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\check1.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/check1.png",
       "AssetKind": "All",
@@ -2788,10 +2788,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\check1.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\check2.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\check2.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/check2.png",
       "AssetKind": "All",
@@ -2805,10 +2805,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\check2.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\check3.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\check3.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/check3.png",
       "AssetKind": "All",
@@ -2822,10 +2822,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\check3.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\star.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\star.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/star.png",
       "AssetKind": "All",
@@ -2839,10 +2839,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\star.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\star1.png",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\product\\star1.png",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/product/star1.png",
       "AssetKind": "All",
@@ -2856,10 +2856,10 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\star1.png"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products-old\\pro-big-1.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products-old\\pro-big-1.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/products-old/pro-big-1.jpg",
       "AssetKind": "All",
@@ -2873,10 +2873,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products-old\\pro-big-1.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products-old\\pro-big-2.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products-old\\pro-big-2.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/products-old/pro-big-2.jpg",
       "AssetKind": "All",
@@ -2890,10 +2890,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products-old\\pro-big-2.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products-old\\pro-big-3.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products-old\\pro-big-3.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/products-old/pro-big-3.jpg",
       "AssetKind": "All",
@@ -2907,10 +2907,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products-old\\pro-big-3.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products-old\\pro-big-4.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products-old\\pro-big-4.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/products-old/pro-big-4.jpg",
       "AssetKind": "All",
@@ -2924,10 +2924,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products-old\\pro-big-4.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products-old\\product1.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products-old\\product1.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/products-old/product1.jpg",
       "AssetKind": "All",
@@ -2941,10 +2941,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products-old\\product1.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products-old\\product2.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products-old\\product2.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/products-old/product2.jpg",
       "AssetKind": "All",
@@ -2958,10 +2958,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products-old\\product2.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products-old\\product3.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products-old\\product3.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/products-old/product3.jpg",
       "AssetKind": "All",
@@ -2975,10 +2975,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products-old\\product3.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products-old\\product4.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products-old\\product4.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/products-old/product4.jpg",
       "AssetKind": "All",
@@ -2992,10 +2992,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products-old\\product4.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products-old\\product5.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products-old\\product5.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/products-old/product5.jpg",
       "AssetKind": "All",
@@ -3009,10 +3009,10 @@
       "OriginalItemSpec": "wwwroot\\images\\products-old\\product5.jpg"
     },
     {
-      "Identity": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products-old\\product6.jpg",
+      "Identity": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\images\\products-old\\product6.jpg",
       "SourceId": "DotNetWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
+      "ContentRoot": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\wwwroot\\",
       "BasePath": "_content/DotNetWebAPI",
       "RelativePath": "images/products-old/product6.jpg",
       "AssetKind": "All",
