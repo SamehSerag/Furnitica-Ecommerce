@@ -12,11 +12,12 @@ namespace AngularAPI.Services
         {
             _context = context;
         }
-        private async Task<Cart> CreateCartAsync(User user)
+        public async Task<Cart> CreateCartAsync(User user)
         {
             //Create Cart
             var cart = new Cart() { UserId = user.Id, User = user, CartProducts = new List<CartProduct>() };
             _context.Carts.Add(cart);
+            user.CartID = cart.Id;
             await _context.SaveChangesAsync();
             return cart;
         }
