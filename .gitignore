@@ -8,3 +8,10 @@ DotNetWebAPI/DotNetWebAPI/obj/
 DotNetWebAPI/DotNetWebAPI/bin/
 DotNetWebAPI/DotNetWebAPI/DotNetWebAPI.csproj
 DotNetWebAPI/DotNetWebAPI/DotNetWebAPI.csproj.user
+*.cache
+*.dll
+*.exe
+*.pdb
+*.editorconfig
+*.suo
+*.user
