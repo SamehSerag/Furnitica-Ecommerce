@@ -1,4 +1,5 @@
 ﻿using AngularProject.Models;
+using DotNetWebAPI.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
@@ -41,6 +42,7 @@ namespace AngularProject.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderProducts> OrderProducts { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Review> Reviews { get; set; }
 
         //public DbSet<User> Users { get; set; }
         //public DbSet<Role> Roles { get; set; }
