@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\DotNetWebAPI.csproj": {}
+    "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\DotNetWebAPI.csproj": {}
   },
   "projects": {
-    "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\DotNetWebAPI.csproj": {
+    "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\DotNetWebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\DotNetWebAPI.csproj",
+        "projectUniqueName": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\DotNetWebAPI.csproj",
         "projectName": "DotNetWebAPI",
-        "projectPath": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\DotNetWebAPI.csproj",
-        "packagesPath": "C:\\Users\\Lap Smart\\.nuget\\packages\\",
-        "outputPath": "D:\\ITI\\Angular\\Amado-Ecommerce\\DotNetWebAPI\\DotNetWebAPI\\obj\\",
+        "projectPath": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\DotNetWebAPI.csproj",
+        "packagesPath": "C:\\Users\\Omnia\\.nuget\\packages\\",
+        "outputPath": "H:\\ITI\\Angular\\AngularProject\\DotNetWebAPI\\DotNetWebAPI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Lap Smart\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Omnia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,6 +63,10 @@
               "target": "Package",
               "version": "[6.0.4, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[6.0.4, )"
@@ -68,7 +75,7 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.4, )"
+              "version": "[6.0.5, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
@@ -97,7 +104,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
