@@ -3,6 +3,7 @@ using AngularAPI.Repository;
 using AngularAPI.Services;
 using AngularProject.Data;
 using AngularProject.Models;
+using DotNetWebAPI.Services;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -50,6 +51,7 @@ builder.Services.AddScoped<IProductRepository, ProductService>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ICartRepository, CartRepository>();
+builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
 
 builder.Services.AddDbContext<ShoppingDbContext>(
     options => options.UseSqlServer(

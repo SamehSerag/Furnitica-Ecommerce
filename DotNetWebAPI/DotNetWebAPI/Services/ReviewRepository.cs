@@ -18,15 +18,15 @@ namespace DotNetWebAPI.Services
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteReviewAsync(int id)
+        public async Task DeleteReviewAsync(Review review)
         {
-            _context.Reviews.Remove(await GetReviewByIdAsync(id));
+            _context.Reviews.Remove(review);
             await _context.SaveChangesAsync();
         }
 
         public async Task<IReadOnlyList<Review>> GetAllReviewsAsync(ReviewSearchModel reviewSearchModel)
         {
-            IQueryable<Review> query = _context.Reviews.AsQueryable();
+            IQueryable<Review> query = _context.Reviews.AsQueryable().Include(x => x.user).ThenInclude(x => x.Image);
 
             if (reviewSearchModel != null)
             {
@@ -47,7 +47,7 @@ namespace DotNetWebAPI.Services
                             break;
                         case "StarsDesc":
                             query = query.OrderByDescending(c => c.starsCount);
-                            break;                        
+                            break;
                         default:
                             query = query.OrderByDescending(c => c.CreatedDate);
                             break;
@@ -66,13 +66,13 @@ namespace DotNetWebAPI.Services
 
         public async Task<Review> GetReviewByIdAsync(int id)
         {
-            return await _context.Reviews
+            return await _context.Reviews.Include(x => x.user).ThenInclude(x=>x.Image)
                            .FirstOrDefaultAsync(c => c.Id == id);
-        } 
-        
+        }
+
         public async Task<Review> GetReviewByUserIdAsync(string id)
         {
-            return await _context.Reviews
+            return await _context.Reviews.Include(x => x.user).ThenInclude(x => x.Image)
                            .FirstOrDefaultAsync(c => c.UserId == id);
         }
 
