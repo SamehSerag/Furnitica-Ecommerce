@@ -1,0 +1,21 @@
+.out-of-stock{
+    float: right;
+    color: red;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 0px;
+    margin-left: 5px ;
+    font-size: 13px;
+}
+button[disabled]{
+    pointer-events: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
