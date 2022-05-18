@@ -17,6 +17,12 @@ import { EditProfileComponent } from './Components/edit-profile/edit-profile.com
 import { RegisterComponent } from './Components/register/register.component';
 import { LoginComponent } from './Components/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { OrdersComponent } from './Components/orders/orders.component';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PendingOrdersComponent } from './DashBoard/pending-orders/pending-orders.component';
+import { AllOrdersComponent } from './DashBoard/all-orders/all-orders.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +37,9 @@ import { FormsModule } from '@angular/forms';
     EditProfileComponent,
     RegisterComponent,
     LoginComponent,
+    OrdersComponent,
+    PendingOrdersComponent,
+    AllOrdersComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +52,9 @@ import { FormsModule } from '@angular/forms';
       }
     }),
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    AccordionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

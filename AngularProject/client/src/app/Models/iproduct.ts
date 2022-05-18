@@ -5,8 +5,10 @@ export interface IProduct {
     details_EN: string;
     details_AR: string;
     price: number;
-    color: string;
+    color: number;
     quantity: number;
-    images: string[];
-    category: string;
+    categoryID: number;
+    category?: any;
+    images?: any;
+    orderProducts: any[];
 }

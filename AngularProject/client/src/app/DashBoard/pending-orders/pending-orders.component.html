@@ -1,0 +1,39 @@
+<div class="product-cart checkout-cart blog">
+    <div class="main-content" id="cart">
+        <!-- main -->
+        <div id="wrapper-site">
+
+            <div class="container">
+                <div class="row">
+                    <div id="content-wrapper" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 onecol">
+                        <section id="main">
+                            <div class="cart-grid row">
+
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Data</th>
+                                            <th scope="col">Total Price</th>
+                                            <th scope="col">State</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let peOrders of allOrders">
+                                            <th scope="row">{{peOrders.id}}</th>
+                                            <td>{{peOrders.date|date:'dd/MM/yyyy'}}</td>
+                                            <td>{{peOrders.totalPrice}}$</td>
+                                            <td class="pending">Pending</td>
+                                            <td><i class="fa fa-pencil color editOrder"></i></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
