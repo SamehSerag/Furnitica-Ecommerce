@@ -1,5 +1,7 @@
 ﻿using AngularAPI.Services;
 using AngularProject.Models;
+using AutoMapper;
+using DotNetWebAPI.DTOs;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,63 +14,54 @@ namespace AngularAPI.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly IUserRepository _repo; 
-        protected readonly UserManager<User> _userManager;
+        private readonly IUserRepository userRepository;
+        private readonly IMapper mapper;
+
+        //protected readonly UserManager<User> _userManager;
 
 
-        public UserController( IUserRepository repo)
+        public UserController(IUserRepository repo, IMapper _mapper)
         {
-            _repo = repo;   
+            userRepository = repo;
+            mapper = _mapper;
         }
 
         [HttpGet]
-        public async Task<ActionResult<User>> GetInfo()
+        public async Task<IActionResult> Get()
         {
-            var user = await _userManager.GetUserAsync(User);
-            if (user == null) return NotFound();
+            User? reqUser = HttpContext.Items["User"] as User;
 
-            return Ok(user);
+            if (reqUser == null) return NotFound();
+
+            User? user = await userRepository.GetByIdAsync(reqUser.Id);
+
+            return Ok(mapper.Map<User, UserProfileDto>(user!));
         }
 
         [HttpPut]
-        public async Task<ActionResult<User>> UpdateInfo(User UpdatedUser)
+        public async Task<ActionResult<User>> Put(UserProfileDto userDto)
         {
-            try
-            {
-                await _repo.UpdateUserAsync(UpdatedUser);
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UserExists(UpdatedUser.Id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            if (!ModelState.IsValid)
+                return BadRequest("invalid data!");
+   
+            User? user = HttpContext.Items["User"] as User;
+            if (!userRepository.Exists(user!.Id))
+                return NotFound("user not found");
 
-            return NoContent();
+            User tmpUser = (await userRepository.GetByEmailAsync(userDto.Email!))!;
+
+            if (tmpUser != null && tmpUser.Id != user.Id)
+                return BadRequest("mail already exists");
+
+
+            User newUser = mapper.Map<UserProfileDto, User>(userDto);
+            newUser.Id = user!.Id;
+
+            user = await userRepository.UpdateAsync(newUser);
+            return Ok(mapper.Map<User, UserProfileDto>(user));
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<User>> GetUser(string id)
-        {
-            var user = await _repo.GetUserByIdAsync(id);
-
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            return user;
-        }
-
-        private bool UserExists(string id)
-        {
-            return _repo.IsUserExixtsAsync(id);
-        }
+        
     }
 
 
