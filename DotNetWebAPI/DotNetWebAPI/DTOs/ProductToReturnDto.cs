@@ -1,4 +1,5 @@
 ﻿using AngularProject.Models;
+using DotNetWebAPI.DTOs;
 
 namespace AngularAPI.Dtos
 {
@@ -15,5 +16,7 @@ namespace AngularAPI.Dtos
         public int Quantity { get; set; }
         public ICollection<string>? Images { get; set; }
         public string? Category { get; set; }
+        public OwnerDto? Owner { get; set; }
+
     }
 }
