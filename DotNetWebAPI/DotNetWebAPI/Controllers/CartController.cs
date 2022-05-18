@@ -1,43 +1,61 @@
-﻿using AngularAPI.Services;
+﻿using AngularAPI.Repository;
+using AngularAPI.Services;
 using AngularProject.Models;
+using DotNetWebAPI.DTOs;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AngularAPI.Controllers
 {
-    [Route("api/[controller]")]
+    //[Route("api/[controller]")]
     [ApiController]
     public class CartController : ControllerBase
     {
-        private readonly ICartRepository _cartRepository;
-        private readonly UserManager<User> _userManager;
+        readonly ICartRepository _cartRepository;
 
-        public CartController(ICartRepository cartRepository, UserManager<User> userManager)
+        public CartController(ICartRepository cartRepository)
         {
             _cartRepository = cartRepository;
-            _userManager = userManager;
         }
 
-        [HttpGet]
-        public async Task<ActionResult> GetCart()
+        // Get the list of products in the shopping cart
+        [HttpGet("userId")]
+        public async Task<List<CartProductDto>> Get(string userId)
         {
-            // To retrieve at the client side --> UserManager<AppUser> userManager
-
-            var cart = await _cartRepository.GetCartAsync(_userManager, User);
-            return Ok(cart);
+            string cartid = _cartRepository.GetCart(userId);
+            return await Task.FromResult(_cartRepository.GetProductsAvailableInCart(cartid)).ConfigureAwait(true);
         }
 
+        // Add a single product into the shopping cart or Increase the quantity of the product by ONE
         [HttpPost]
-        public async Task<ActionResult<Cart>> UpdateCart(Cart cart)
+        [Route("AddToCart/{userId}/{productId}")]
+        public int Post(string userId, int productId)
         {
-            var updatedCart = await _cartRepository.UpdateCartAsync(cart);
-            return Ok(updatedCart);
+            _cartRepository.AddProductToCart(userId, productId);
+            return _cartRepository.GetCartItemCount(userId);
         }
-        [HttpDelete]
-        public async Task DeleteCartAsync(int id)
+
+        // Reduces the quantity by one for an item in shopping cart
+        [HttpPut("{userId}/{productId}")]
+        public int Put(string userId, int productId)
         {
-            // Id -> Sent from the Client side.
-            await _cartRepository.DeleteCartAsync(id);
+            _cartRepository.DeleteOneCartItem(userId, productId);
+            return _cartRepository.GetCartItemCount(userId);
+        }
+
+        // Delete a single item from the cart 
+        [HttpDelete("{userId}/{productId}")]
+        public int Delete(string userId, int productId)
+        {
+            _cartRepository.RemoveCartItem(userId, productId);
+            return _cartRepository.GetCartItemCount(userId);
+        }
+
+        // Clear the shopping cart
+        [HttpDelete("{userId}")]
+        public int Delete(string userId)
+        {
+            return _cartRepository.ClearCart(userId);
         }
     }
 }
