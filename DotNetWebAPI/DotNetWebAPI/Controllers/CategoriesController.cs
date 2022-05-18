@@ -47,7 +47,7 @@ namespace AngularAPI.Controllers
                 searchModel.PageSize,
                 categoryDto);
 
-            return (paginationMetaData);
+            return paginationMetaData;
         }
 
         // GET: api/Categories/5
