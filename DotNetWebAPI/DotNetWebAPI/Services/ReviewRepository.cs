@@ -26,6 +26,41 @@ namespace DotNetWebAPI.Services
 
         public async Task<IReadOnlyList<Review>> GetAllReviewsAsync(ReviewSearchModel reviewSearchModel)
         {
+            return (await ApplySpecifications(reviewSearchModel)).ToList();
+        }
+
+        public async Task<Review> GetReviewByIdAsync(int id)
+        {
+            return await _context.Reviews.Include(x => x.user).ThenInclude(x => x.Image)
+                           .FirstOrDefaultAsync(c => c.Id == id);
+        }
+
+        public async Task<Review> GetReviewByUserIdAsync(string id)
+        {
+            return await _context.Reviews.Include(x => x.user).ThenInclude(x => x.Image)
+                           .FirstOrDefaultAsync(c => c.UserId == id);
+        }
+
+        public bool IsReviewExixtsAsync(int id)
+        {
+            return _context.Reviews
+                           .Any(c => c.Id == id);
+        }
+
+        public async Task<Review> UpdateReviewAsync(Review review)
+        {
+            _context.Reviews.Update(review);
+            await _context.SaveChangesAsync();
+            return review;
+        }
+
+        public async Task<int> CountAsync(ReviewSearchModel reviewSearchModel)
+        {
+            return (await ApplySpecifications(reviewSearchModel)).Count;
+        }
+
+        private async Task<IReadOnlyList<Review>> ApplySpecifications(ReviewSearchModel reviewSearchModel)
+        {
             IQueryable<Review> query = _context.Reviews.AsQueryable().Include(x => x.user).ThenInclude(x => x.Image);
 
             if (reviewSearchModel != null)
@@ -59,34 +94,39 @@ namespace DotNetWebAPI.Services
                    .Where(c => c.ProductId == reviewSearchModel.PrdId);
 
                 }
+                if ((reviewSearchModel.stars != null))
+                {
+                    switch (reviewSearchModel.stars)
+                    {
+                        case 1:
+                            query = query
+                            .Where(c => c.starsCount == 1);
+                            break;
+                        case 2:
+                            query = query
+                            .Where(c => c.starsCount == 2);
+                            break;
+                        case 3:
+                            query = query
+                            .Where(c => c.starsCount == 3);
+                            break;
+                        case 4:
+                            query = query
+                            .Where(c => c.starsCount == 4);
+                            break;
+                        case 5:
+                            query = query
+                            .Where(c => c.starsCount == 5);
+                            break;
+                        default:
+                            break;
+                    }
+
+                }
+              
             }
 
             return await query.ToListAsync();
-        }
-
-        public async Task<Review> GetReviewByIdAsync(int id)
-        {
-            return await _context.Reviews.Include(x => x.user).ThenInclude(x=>x.Image)
-                           .FirstOrDefaultAsync(c => c.Id == id);
-        }
-
-        public async Task<Review> GetReviewByUserIdAsync(string id)
-        {
-            return await _context.Reviews.Include(x => x.user).ThenInclude(x => x.Image)
-                           .FirstOrDefaultAsync(c => c.UserId == id);
-        }
-
-        public bool IsReviewExixtsAsync(int id)
-        {
-            return _context.Reviews
-                           .Any(c => c.Id == id);
-        }
-
-        public async Task<Review> UpdateReviewAsync(Review review)
-        {
-            _context.Reviews.Update(review);
-            await _context.SaveChangesAsync();
-            return review;
         }
     }
 }
