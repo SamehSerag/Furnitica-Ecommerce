@@ -9,6 +9,7 @@ namespace DotNetWebAPI.DTOs
         public string UserId { get; set; }
 
         public string UserName { get; set; }
+        public string UserImg { get; set; }
 
         public string ReviewBody { get; set; }
 
