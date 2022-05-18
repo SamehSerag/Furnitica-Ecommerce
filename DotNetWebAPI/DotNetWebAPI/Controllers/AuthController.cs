@@ -139,7 +139,7 @@ namespace AngularAPI.Controllers
 
             if (userCreated.Succeeded && roleAssigned.Succeeded)
             {
-                string c = cartRepository.GetCart(user.Id);
+                Cart c = await cartRepository.CreateCartAsync(user);
                 //user.CartID = c.Id;
                 return user;
             }

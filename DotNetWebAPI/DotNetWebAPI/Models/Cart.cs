@@ -8,7 +8,13 @@ namespace AngularProject.Models
     public class Cart
     {
         [Key]
-        public string CartId { get; set; }
+        public int Id { get; set; }
+
+        [Required, ForeignKey("User")]
         public string UserId { get; set; }
+        [JsonIgnore]
+        public virtual User User { get; set; }
+
+        public List<CartProduct> CartProducts { get; set; } = new List<CartProduct>();
     }
 }
