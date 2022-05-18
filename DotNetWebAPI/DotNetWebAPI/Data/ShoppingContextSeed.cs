@@ -43,9 +43,9 @@ namespace Infrastructure.Data
                     }
                     await context.SaveChangesAsync();
                 }
-/*
+
                 if (!context.Products.Any())
-                {*/
+                {
                     var productData =
                         File.ReadAllText("../DotNetWebAPI/Data/SeedData/products.json");
                     var products = JsonSerializer.Deserialize<List<Product>>(productData);
@@ -55,8 +55,8 @@ namespace Infrastructure.Data
                         context.Products.Add(item);
                     }
                     await context.SaveChangesAsync();
-                
 
+                }
 
 
             }
