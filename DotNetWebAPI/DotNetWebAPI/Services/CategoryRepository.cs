@@ -38,7 +38,7 @@ namespace AngularAPI.Services
 
         public async Task<Category> GetCategoryByIdAsync(int id)
         {
-            return await _context.Categories
+            return await _context.Categories.Include(x => x.Products)
                 .FirstOrDefaultAsync(c => c.Id == id);
         }
 
@@ -55,7 +55,7 @@ namespace AngularAPI.Services
 
         private async Task<IReadOnlyList<Category>> ApplySpecifications(CategorySearchModel categorySearchModel)
         {
-            IQueryable<Category> query = _context.Categories.AsQueryable();
+            IQueryable<Category> query = _context.Categories.AsQueryable().Include(x => x.Products);
 
             if (categorySearchModel != null)
             {
