@@ -43,6 +43,21 @@ namespace Infrastructure.Data
                     }
                     await context.SaveChangesAsync();
                 }
+/*
+                if (!context.Products.Any())
+                {*/
+                    var productData =
+                        File.ReadAllText("../DotNetWebAPI/Data/SeedData/products.json");
+                    var products = JsonSerializer.Deserialize<List<Product>>(productData);
+
+                    foreach (var item in products)
+                    {
+                        context.Products.Add(item);
+                    }
+                    await context.SaveChangesAsync();
+                
+
+
 
             }
             catch (Exception ex)
