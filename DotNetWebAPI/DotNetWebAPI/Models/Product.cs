@@ -30,7 +30,9 @@ namespace AngularProject.Models
         //public Image? Image { get; set; }
         public Category? Category { get; set; }
         public ICollection<Image>? Images { get; set; }
-
+        [ForeignKey("Owner")]
+        public string? OwnerId { get; set; }
+        public User? Owner { get; set; }
         public ICollection<OrderProducts>? OrderProducts { get; set; }
     }
 }

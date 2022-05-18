@@ -86,5 +86,7 @@ namespace AngularAPI.Services
             }
             return await query.ToListAsync();
         }
+
+ 
     }
 }

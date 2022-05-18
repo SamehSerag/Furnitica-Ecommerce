@@ -2,6 +2,7 @@
 using AngularProject.Models;
 using AutoMapper;
 using DotNetWebAPI.DTOs;
+using DotNetWebAPI.DTOs.Helpers;
 using DotNetWebAPI.Models;
 
 namespace AngularAPI.Dtos.Helpers
@@ -12,11 +13,14 @@ namespace AngularAPI.Dtos.Helpers
         {
             CreateMap<Product, ProductToReturnDto>()
                 .ForMember(d => d.Category, o => o.MapFrom(s => s.Category.Name))
+                .ForMember(d => d.Owner, o => o.MapFrom<ProductOwnerResolver<ProductToReturnDto>>())
                 .ForMember(d => d.Images, o => o.MapFrom<ProductUrlResolver>());
+                //.ForMember(d => d)
             //.ForMember(d => d.Images, o => o.MapFrom(s => s.Images.Select(i => i.Src)));
 
             CreateMap<Product, AdminProductDto>()
                 .ForMember(d => d.OrderProduct, o => o.MapFrom(s => s.OrderProducts))
+                .ForMember(d => d.Owner, o => o.MapFrom<ProductOwnerResolver<AdminProductDto>>())
                 .ForMember(d => d.Image, o => o.MapFrom<AdminProductUrlResolver>());
 
             CreateMap<User, UserProfileDto>();

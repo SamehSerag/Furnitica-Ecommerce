@@ -13,7 +13,7 @@ namespace AngularAPI.Models
         public int PageIndex { get; set; } = 1;
         public int PageSize { get; set; } = 12;
         public Color? Color { get; set; }
-
+        public string? OwnerId { get; set; }
         public bool IsValidRange => MaxPrice >= MinPrice;
     }
 }
