@@ -31,10 +31,31 @@ namespace AngularAPI.Services
             await _context.SaveChangesAsync();
         }
 
-        public async Task<IReadOnlyList<Category>> GetAllCategorysAsync( CategorySearchModel categorySearchModel)
+        public async Task<IReadOnlyList<Category>> GetAllCategorysAsync(CategorySearchModel categorySearchModel)
+        {
+            return await ApplySpecifications(categorySearchModel);
+        }
+
+        public async Task<Category> GetCategoryByIdAsync(int id)
+        {
+            return await _context.Categories
+                .FirstOrDefaultAsync(c => c.Id == id);
+        }
+
+        public bool IsCategoryExixtsAsync(int id)
+        {
+            return _context.Categories
+                           .Any(c => c.Id == id);
+        }
+
+        public async Task<int> CountAsync(CategorySearchModel categorySearchModel)
+        {
+            return (await ApplySpecifications(categorySearchModel)).Count;
+        }
+
+        private async Task<IReadOnlyList<Category>> ApplySpecifications(CategorySearchModel categorySearchModel)
         {
             IQueryable<Category> query = _context.Categories.AsQueryable();
-
 
             if (categorySearchModel != null)
             {
@@ -60,22 +81,10 @@ namespace AngularAPI.Services
                             break;
                     }
                 }
+                query = query.Skip((categorySearchModel.PageIndex - 1) *
+                categorySearchModel.PageSize).Take(categorySearchModel.PageSize);
             }
-
             return await query.ToListAsync();
         }
-
-        public async Task<Category> GetCategoryByIdAsync(int id)
-        {
-            return await _context.Categories
-                .FirstOrDefaultAsync(c => c.Id == id);
-        }
-
-        public bool IsCategoryExixtsAsync(int id)
-        {
-            return _context.Categories
-                           .Any(c => c.Id == id);
-        }
-
     }
 }

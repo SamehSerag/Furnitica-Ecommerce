@@ -12,5 +12,7 @@ namespace DotNetWebAPI.Services
         Task<Review> UpdateReviewAsync(Review review);
         Task DeleteReviewAsync(Review review);
         bool IsReviewExixtsAsync(int id);
+        public Task<int> CountAsync(ReviewSearchModel reviewSearchModel);
+
     }
 }

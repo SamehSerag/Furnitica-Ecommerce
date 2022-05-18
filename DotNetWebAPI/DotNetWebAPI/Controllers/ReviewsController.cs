@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using AngularProject.Data;
 using DotNetWebAPI.Models;
 using DotNetWebAPI.Services;
+using DotNetWebAPI.DTOs;
 
 namespace DotNetWebAPI.Controllers
 {

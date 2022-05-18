@@ -12,6 +12,8 @@ using AngularAPI.Services;
 using AngularAPI.Models;
 using System.Text.Json;
 using AngularAPI.Dtos;
+using DotNetWebAPI.DTOs;
+using AutoMapper;
 
 namespace AngularAPI.Controllers
 {
@@ -20,24 +22,32 @@ namespace AngularAPI.Controllers
     public class CategoriesController : ControllerBase
     {
         private ICategoryRepository _repo;
+        private readonly IMapper _mapper;
 
-        public CategoriesController(ICategoryRepository repo)
+        public CategoriesController(ICategoryRepository repo, IMapper mapper)
         {
             _repo = repo;
+            _mapper = mapper;
         }
 
         // GET: api/Categories
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Category>>> GetCategories([FromQuery] CategorySearchModel searchModel)
+        public async Task<ActionResult<PaginationMetaData<CategoryDto>>> GetCategories([FromQuery] CategorySearchModel searchModel)
         {
            var categories = await _repo.GetAllCategorysAsync(searchModel);
 
-            //PaginationMetaData paginationMetaData =
-            //    new PaginationMetaData(categories.Count, searchModel.PageIndex,
-            //    searchModel.PageSize);
-            //Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(paginationMetaData));
+            var categoryDto = _mapper.Map<IReadOnlyList<Category>, IReadOnlyList<CategoryDto>>
+               (categories);
 
-            return categories.ToList();
+            int count = _repo.CountAsync(searchModel).Result;
+
+            PaginationMetaData<CategoryDto> paginationMetaData =
+                new PaginationMetaData<CategoryDto>
+                (count, searchModel.PageIndex,
+                searchModel.PageSize,
+                categoryDto);
+
+            return (paginationMetaData);
         }
 
         // GET: api/Categories/5
