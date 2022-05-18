@@ -21,7 +21,7 @@ namespace Infrastructure.Data
                 if (!context.Categories.Any())
                 {
                     var categoriesData =
-                        File.ReadAllText("../DotNetWebAPI/Data/SeedData/categories.json");//H:\ITI\Angular\AngularProject\DotNetWebAPI\DotNetWebAPI\Data\SeedData\
+                        File.ReadAllText("../DotNetWebAPI/Data/SeedData/categories.json");
                     var categories = JsonSerializer.Deserialize<List<Category>>(categoriesData);
 
                     foreach (var item in categories)
@@ -34,7 +34,7 @@ namespace Infrastructure.Data
                 if (!context.Roles.Any())
                 {
                     var roleData =
-                        File.ReadAllText("../DotNetWebAPI/Data/SeedData/role.json");//H:\ITI\Angular\AngularProject\DotNetWebAPI\DotNetWebAPI\Data\SeedData\
+                        File.ReadAllText("../DotNetWebAPI/Data/SeedData/role.json");
                     var roles = JsonSerializer.Deserialize<List<IdentityRole>>(roleData);
 
                     foreach (var item in roles)
@@ -45,8 +45,9 @@ namespace Infrastructure.Data
                 }
 
             }
-            catch (Exception ex) { 
-            
+            catch (Exception ex)
+            {
+
                 var logger = loggerFactory.CreateLogger<ShoppingContextSeed>();
                 logger.LogError(ex.Message);
             }

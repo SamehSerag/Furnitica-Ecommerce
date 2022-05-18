@@ -2,7 +2,7 @@
 
 namespace DotNetWebAPI.DTOs
 {
-    public class ReviewDTO
+    public class ReviewDto
     {
         public int Id { get; set; }
 

@@ -1,5 +1,6 @@
 ﻿using AngularProject.Models;
 using AutoMapper;
+using DotNetWebAPI.DTOs;
 
 namespace AngularAPI.Dtos.Helpers
 {
@@ -16,7 +17,10 @@ namespace AngularAPI.Dtos.Helpers
                 .ForMember(d => d.OrderProduct, o => o.MapFrom(s => s.OrderProducts))
                 .ForMember(d => d.Image, o => o.MapFrom<AdminProductUrlResolver>());
 
-                
+            CreateMap<Category, CategoryDto>()
+              .ForMember(d => d.count, o => o.MapFrom(s => s.Products.Count));
+
+
         }
     }
 }
