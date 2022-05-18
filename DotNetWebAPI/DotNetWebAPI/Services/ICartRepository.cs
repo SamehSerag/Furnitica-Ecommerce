@@ -1,6 +1,7 @@
 ﻿using System.Security.Claims;
 using System.Threading.Tasks;
 using AngularProject.Models;
+using DotNetWebAPI.DTOs;
 using Microsoft.AspNetCore.Identity;
 
 namespace AngularAPI.Services
@@ -9,9 +10,14 @@ namespace AngularAPI.Services
     {
         //UserManager<AppUser> userManager
 
-        Task<Cart> CreateCartAsync(User user);
-        Task<Cart> GetCartAsync(UserManager<User> userManager, ClaimsPrincipal user);
-        Task<Cart> UpdateCartAsync(Cart cart);
-        Task<bool> DeleteCartAsync(int CartId);
+        public void AddProductToCart(string userId, int ProductId);
+        public string GetCart(string userId);
+        public void RemoveCartItem(string userId, int productId);
+        public void DeleteOneCartItem(string userId, int productId);
+        public int GetCartItemCount(string userId);
+        public int ClearCart(string userId);
+        public void DeleteCart(string cartId);
+        public List<CartProductDto> GetProductsAvailableInCart(string cartID);
+        public Product GetProductData(int productId);
     }
 }
