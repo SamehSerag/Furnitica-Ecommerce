@@ -19,8 +19,10 @@ namespace AngularAPI.DTOs
         [Required, EnumDataType(typeof(Gender))]
         public Gender Gender { get; set; }
 
-
         //[Required]
         public string? Address { get; set; }
+
+        [Required]
+        public string Role { get; set; }
     }
 }
