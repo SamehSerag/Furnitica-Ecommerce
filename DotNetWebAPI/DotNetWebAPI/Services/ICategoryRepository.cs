@@ -12,5 +12,7 @@ namespace AngularAPI.Services
         Task<Category> UpdateCategoryAsync(Category category);
         Task DeleteCategoryAsync(Category category);
         bool IsCategoryExixtsAsync(int id);
+
+        public Task<int> CountAsync(CategorySearchModel categorySearchModel);
     }
 }

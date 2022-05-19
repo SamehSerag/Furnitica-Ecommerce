@@ -43,7 +43,8 @@ namespace AngularAPI.Repository
         {
 
             IQueryable<Product> query = _context.Products.Include(p => p.Images)
-                .Include(p => p.Category);
+                .Include(p => p.Category)
+                .Include(p => p.Owner);
 
             if(productSearchModel != null)
             {
@@ -97,6 +98,12 @@ namespace AngularAPI.Repository
                 if(productSearchModel.Color != null)
                     query = query.Where(p=> p.Color == productSearchModel.Color);
 
+                if (!string.IsNullOrEmpty(productSearchModel.OwnerId))
+                {
+                    query = query.Where(p => p.OwnerId 
+                                    == productSearchModel.OwnerId);
+                }
+
                IProductRepository.TotalItems = query.Count();
                 query = query.Skip((productSearchModel.PageIndex - 1) * 
                     productSearchModel.PageSize).Take(productSearchModel.PageSize);
@@ -109,6 +116,7 @@ namespace AngularAPI.Repository
             return await _context.Products
                 .Include(p => p.Images)
                 .Include(p => p.Category)
+                .Include(p => p.Owner)
                 .FirstOrDefaultAsync(p => p.Id == id);
         }
 

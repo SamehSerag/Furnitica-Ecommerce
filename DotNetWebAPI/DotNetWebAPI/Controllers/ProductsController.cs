@@ -87,7 +87,7 @@ namespace AngularAPI.Controllers
             return Ok(paginationMetaData);
         }
         // GET: api/Products/admin
-        [HttpGet("admin/")]
+        [HttpGet("owner/")]
         public async Task<ActionResult<AdminProductDto>> GetProductsByAdmin
             ([FromQuery] ProductSearchModel productSearchModel)
         {
@@ -123,7 +123,7 @@ namespace AngularAPI.Controllers
             return Ok(productDto);
         }
 
-        [HttpGet("admin/{id}")]
+        [HttpGet("owner/{id}")]
         public async Task<ActionResult<ProductToReturnDto>> GetProductByAdmin(int id)
         {
             var product = await _productRepository.GetProductByIdAsync(id);
@@ -142,7 +142,7 @@ namespace AngularAPI.Controllers
 
         // PUT: api/Products/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("admin/{id}")]
+        [HttpPut("owner/{id}")]
         public async Task<IActionResult> PutProduct(int id, Product product)
         {
             if (id != product.Id)
@@ -169,19 +169,19 @@ namespace AngularAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Products
+        // POST: api/Products/onwer
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost("admin/")]
-        public async Task<ActionResult<Product>> PostProduct(Product product)
+        [HttpPost("owner")]
+        public async Task<ActionResult<AdminProductDto>> PostProduct(Product product)
         {
             
             await _productRepository.AddProductAsync(product);
 
-            return CreatedAtAction("GetProduct", new { id = product.Id }, product);
+            return CreatedAtAction("GetProductByAdmin", new { id = product.Id }, product);
         }
 
-        // DELETE: api/Products/5
-        [HttpDelete("admin/{id}")]
+        // DELETE: api/Products/owner/5
+        [HttpDelete("owner/{id}")]
         public async Task<IActionResult> DeleteProduct(int id)
         {
             var product = await _productRepository.GetProductByIdAsync(id);
