@@ -21,6 +21,7 @@ import { ProductDetialsComponent } from './Components/product-detials/product-de
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductListComponent } from './DashBoard/product-list/product-list.component';
 import { PipeTransformPipe } from './Pipes/pipe-transform.pipe';
+import { AddProductComponent } from './DashBoard/add-product/add-product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,7 @@ import { PipeTransformPipe } from './Pipes/pipe-transform.pipe';
     ProductDetialsComponent,
     ProductListComponent,
     PipeTransformPipe,
+    AddProductComponent,
   ],
   imports: [
     BrowserModule,

@@ -35,6 +35,7 @@ export class ProductListComponent implements OnInit, AfterViewChecked{
   }
 
   ngOnInit(): void {
+    this.productsSearchModel.ownerId = "1";
     this.getProductFilteration();
   }
 
