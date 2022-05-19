@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'main-shop', component:MainShopComponent },
   { path: 'products/:pid', component:ProductDetialsComponent },
-  { path: 'edit-profile', component:EditProfileComponent},
+  { path: 'profile', component:EditProfileComponent},
   { path: 'Orders', component:OrdersComponent},
   { path: 'Orders/pending', component:PendingOrdersComponent},
   { path: 'Orders/allOrders', component:AllOrdersComponent},

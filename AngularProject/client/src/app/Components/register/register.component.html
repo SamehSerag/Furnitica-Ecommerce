@@ -98,15 +98,22 @@
 
                                       <div class="clearfix">
                                           <div>
-                                              <button (click)="Register()" [disabled]="loading" class="btn btn-primary"  type="submit">
-                                                <span *ngIf="!loading; else spinner">
-                                                  Create Account
-                                                </span>
-                                                <ng-template #spinner>
-                                                  <span class="spinner-border spinner-border-sm"></span>
-                                                  <span class="ml-2">Creating Your Account...</span>
-                                                </ng-template>
+
+                                            <button *ngIf="!loading" (click)="Register('Client')" [disabled]="loading" class="btn btn-primary"  type="submit">
+
+                                                Create Account As Customer
+                                            </button>
+
+                                              <button *ngIf="!loading" (click)="Register('Admin')" [disabled]="loading" class="btn btn-primary ml-3"  type="submit">
+
+                                                  Create Account As Owner
                                               </button>
+
+                                              <button *ngIf="loading"  disabled class="btn btn-primary"  type="submit">
+                                                <span class="spinner-border spinner-border-sm"></span>
+                                                <span class="ml-2">Creating Your Account....</span>
+                                              </button>
+
                                           </div>
                                       </div>
                                   </form>
