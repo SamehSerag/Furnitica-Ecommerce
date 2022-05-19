@@ -115,8 +115,8 @@ namespace AngularAPI.Repository
         {
             return await _context.Products
                 .Include(p => p.Images)
-                .Include(p => p.Category)
                 .Include(p => p.Owner)
+                .Include(p => p.Category)
                 .FirstOrDefaultAsync(p => p.Id == id);
         }
 

@@ -18,8 +18,7 @@ namespace AngularAPI.Dtos
         public int Quantity { get; set; }
 
         public int CategoryID { get; set; }
-        public OwnerDto? Owner { get; set; }
-        public CategoryDto? Category { get; set; }
+        public ProductCategoryDto? Category { get; set; }
         public ICollection<ImageDto>? Image { get; set; }
         public ICollection<OrderProductDto>? OrderProduct { get; set; } 
 
