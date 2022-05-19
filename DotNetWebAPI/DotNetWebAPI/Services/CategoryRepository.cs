@@ -38,7 +38,7 @@ namespace AngularAPI.Services
 
         public async Task<Category> GetCategoryByIdAsync(int id)
         {
-            return await _context.Categories.Include(x => x.Products)
+            return await _context.Categories.AsQueryable().Include(x => x.Products)
                 .FirstOrDefaultAsync(c => c.Id == id);
         }
 

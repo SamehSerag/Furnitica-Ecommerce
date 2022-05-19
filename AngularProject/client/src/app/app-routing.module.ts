@@ -6,15 +6,17 @@ import { LoginComponent } from './Components/login/login.component';
 import { MainShopComponent } from './Components/main-shop/main-shop.component';
 import { ProductDetialsComponent } from './Components/product-detials/product-detials.component';
 import { RegisterComponent } from './Components/register/register.component';
+import { ProductListComponent } from './DashBoard/product-list/product-list.component';
 import { IndexComponent } from './index.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'main-shop', component:MainShopComponent },
-  { path: 'products/:pid', component:ProductDetialsComponent },
+  { path: 'Products/:pid', component:ProductDetialsComponent },
   { path: 'edit-profile', component:EditProfileComponent},
   { path: 'Register', component:RegisterComponent},
-  { path: 'Login', component:LoginComponent}
+  { path: 'Login', component:LoginComponent},
+  { path: 'Product/Owner', component: ProductListComponent},
 ];
 
 @NgModule({

@@ -18,6 +18,8 @@ import { RegisterComponent } from './Components/register/register.component';
 import { LoginComponent } from './Components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { ProductDetialsComponent } from './Components/product-detials/product-detials.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductListComponent } from './DashBoard/product-list/product-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +35,7 @@ import { ProductDetialsComponent } from './Components/product-detials/product-de
     RegisterComponent,
     LoginComponent,
     ProductDetialsComponent,
+    ProductListComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ import { ProductDetialsComponent } from './Components/product-detials/product-de
       }
     }),
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
