@@ -32,36 +32,37 @@ namespace AngularAPI.Controllers
 
         // GET: api/Categories
         [HttpGet]
-        public async Task<ActionResult<PaginationMetaData<CategoryDto>>> GetCategories([FromQuery] CategorySearchModel searchModel)
+        public async Task<ActionResult<IReadOnlyList<CategoryDto>>> GetCategories([FromQuery] CategorySearchModel searchModel)
         {
            var categories = await _repo.GetAllCategorysAsync(searchModel);
 
             var categoryDto = _mapper.Map<IReadOnlyList<Category>, IReadOnlyList<CategoryDto>>
                (categories);
 
-            int count = _repo.CountAsync(searchModel).Result;
-
-            PaginationMetaData<CategoryDto> paginationMetaData =
+/*            int count = _repo.CountAsync(searchModel).Result;
+*/
+          /*  PaginationMetaData<CategoryDto> paginationMetaData =
                 new PaginationMetaData<CategoryDto>
                 (count, searchModel.PageIndex,
                 searchModel.PageSize,
-                categoryDto);
+                categoryDto);*/
 
-            return (paginationMetaData);
+            return categoryDto.ToList();
         }
 
         // GET: api/Categories/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Category>> GetCategory(int id)
+        public async Task<ActionResult<CategoryDto>> GetCategory(int id)
         {
             var category = await _repo.GetCategoryByIdAsync(id);
+            var categoryDto = _mapper.Map<Category, CategoryDto>(category);
 
             if (category == null)
             {
                 return NotFound();
             }
 
-            return category;
+            return categoryDto;
         }
 
         // PUT: api/Categories/5

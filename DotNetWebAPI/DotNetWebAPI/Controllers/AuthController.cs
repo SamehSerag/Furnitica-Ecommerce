@@ -23,10 +23,12 @@ namespace AngularAPI.Controllers
         private readonly UserManager<User> UserManager;
         private readonly ICartRepository cartRepository;
         private readonly IMapper mapper;
+        private readonly RoleManager<IdentityRole> roleManager;
 
-        public AuthController(UserManager<User> _UserManager, IConfiguration _configuration, ICartRepository _cartRepository, IMapper _mapper)
+        public AuthController(UserManager<User> _UserManager, RoleManager<IdentityRole> _roleManager, IConfiguration _configuration, ICartRepository _cartRepository, IMapper _mapper)
         {
             UserManager = _UserManager;
+            roleManager = _roleManager;
             configuration = _configuration;
             cartRepository = _cartRepository;
             mapper = _mapper;
@@ -36,7 +38,11 @@ namespace AngularAPI.Controllers
         public async Task<IActionResult> Register(RegisterDto userDto)
         {
             if(!ModelState.IsValid)
-                return BadRequest(ModelState);            
+                return BadRequest(ModelState);
+            
+            IdentityRole role = await roleManager.FindByNameAsync(userDto.Role);
+            if (role == null)
+                return BadRequest("Invalid Role");
 
             try
             {
@@ -113,14 +119,8 @@ namespace AngularAPI.Controllers
         private async Task<User> CreateUser(RegisterDto userDto)
         {
             User user = mapper.Map<RegisterDto, User>(userDto);
-            //user.UserName = userDto.username;
-            //user.Email = userDto.email;
-            //user.Gender = userDto.Gender;
-            //user.Address = userDto.Address;
-            
 
             User u = await UserManager.FindByEmailAsync(userDto.email);
-
             if (u != null)
                 throw new Exception("email is already registered");
 
@@ -131,7 +131,8 @@ namespace AngularAPI.Controllers
 
             if (userCreated.Succeeded && roleAssigned.Succeeded)
             {
-                string c = cartRepository.GetCart(user.Id);               
+                if(userDto.Role == "Client")
+                    cartRepository.GetCart(user.Id);               
                 return user;
             }
             else

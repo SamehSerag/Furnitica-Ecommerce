@@ -81,8 +81,8 @@ namespace AngularAPI.Services
                             break;
                     }
                 }
-                query = query.Skip((categorySearchModel.PageIndex - 1) *
-                categorySearchModel.PageSize).Take(categorySearchModel.PageSize);
+              /*  query = query.Skip((categorySearchModel.PageIndex - 1) *
+                categorySearchModel.PageSize).Take(categorySearchModel.PageSize);*/
             }
             return await query.ToListAsync();
         }
