@@ -210,20 +210,19 @@
                           <div class="page-content" id="content">
                             <div class="images-container">
                               <div class="js-qv-mask mask tab-content border">
-                                  <div [id]="'item'+(i+1)" *ngFor="let img of product.images; let i=index;"
-                                   [ngClass]=" i==0 ? 'tab-pane fade active in show': 'tab-pane fade' " >
-                                    <img [src]="img" alt="img">                    
-                                  </div>
+                                <div [id]="'item'+(i+1)" *ngFor="let img of product.images; let i=index;"
+                                  [ngClass]=" i==0 ? 'tab-pane fade active in show': 'tab-pane fade' ">
+                                  <img [src]="img" alt="img">
+                                </div>
                                 <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
                                   <i class="fa fa-expand"></i>
                                 </div>
                               </div>
                               <ul class="product-tab nav nav-tabs d-flex">
                                 <li *ngFor="let img of product.images; let i=index;"
-                                [ngClass]=" i==0 ? 'active col': 'col' "
-                                 >
+                                  [ngClass]=" i==0 ? 'active col': 'col' ">
                                   <a [href]="'#item'+(i+1)" data-toggle="tab" aria-expanded="true"
-                                  [ngClass]="{'active show': i==0} ">
+                                    [ngClass]="{'active show': i==0} ">
                                     <img [src]="img" alt="img">
                                   </a>
                                 </li>
@@ -231,37 +230,37 @@
                               <div class="modal fade" id="product-modal" role="dialog">
                                 <div class="modal-dialog">
 
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <div class="modal-body">
-                                                <div class="product-detail">
-                                                    <div>
-                                                        <div class="images-container">
-                                                            <div class="js-qv-mask mask tab-content">
-                                                                <div [id]="'modal-item'+(i+1)" *ngFor="let img of product.images; let i=index;"
-                                                                    [ngClass]=" i==0 ? 'tab-pane fade active in show': 'tab-pane fade' " >
-                                                                        <img [src]="img" alt="img">                    
-                                                                </div>
-                                                            </div>
-                                                            <ul class="product-tab nav nav-tabs">
-                                                                <li *ngFor="let img of product.images; let i=index;"
-                                                                    [ngClass]=" i==0 ? 'active col': 'col' "
-                                                                    >
-                                                                    <a [href]="'#modal-item'+(i+1)" data-toggle="tab" aria-expanded="true"
-                                                                    [ngClass]="{'active show': i==0} ">
-                                                                        <img [src]="img" alt="img">
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
+                                  <!-- Modal content-->
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <div class="modal-body">
+                                        <div class="product-detail">
+                                          <div>
+                                            <div class="images-container">
+                                              <div class="js-qv-mask mask tab-content">
+                                                <div [id]="'modal-item'+(i+1)"
+                                                  *ngFor="let img of product.images; let i=index;"
+                                                  [ngClass]=" i==0 ? 'tab-pane fade active in show': 'tab-pane fade' ">
+                                                  <img [src]="img" alt="img">
                                                 </div>
+                                              </div>
+                                              <ul class="product-tab nav nav-tabs">
+                                                <li *ngFor="let img of product.images; let i=index;"
+                                                  [ngClass]=" i==0 ? 'active col': 'col' ">
+                                                  <a [href]="'#modal-item'+(i+1)" data-toggle="tab" aria-expanded="true"
+                                                    [ngClass]="{'active show': i==0} ">
+                                                    <img [src]="img" alt="img">
+                                                  </a>
+                                                </li>
+                                              </ul>
                                             </div>
+                                          </div>
                                         </div>
+                                      </div>
                                     </div>
+                                  </div>
                                 </div>
-                            </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -272,18 +271,18 @@
                               <span class="float-right">
                                 <span class="availb">Availability: </span>
                                 <div *ngIf="product.quantity > 0 then inStock else outOfStock"></div>
-                                        <ng-template #inStock >
-                                            <span class="check">
-                                                <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                                                In Stock
-                                            </span>
-                                        </ng-template> 
-                                        <ng-template #outOfStock >
-                                            <span class="out-of-stock">
-                                                <i class="fa fa-ban" aria-hidden="true"></i>
-                                                Out of Stock
-                                            </span>
-                                        </ng-template>
+                                <ng-template #inStock>
+                                  <span class="check">
+                                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                                    In Stock
+                                  </span>
+                                </ng-template>
+                                <ng-template #outOfStock>
+                                  <span class="out-of-stock">
+                                    <i class="fa fa-ban" aria-hidden="true"></i>
+                                    Out of Stock
+                                  </span>
+                                </ng-template>
                                 <!-- <span class="check">
                                   <i class="fa fa-check-square-o" aria-hidden="true"></i>IN STOCK</span> -->
                               </span>
@@ -292,8 +291,8 @@
                             <div class="option has-border d-lg-flex size-color">
                               <div class="colors">
                                 <b class="title">Color : </b>
-                                <span [class]="product.color | lowercase"></span>
-                              
+                                <!-- <span [class]="product.color | lowercase"></span> -->
+
                               </div>
                             </div>
                             <div class="has-border cart-area">
@@ -302,24 +301,24 @@
                                   <div class="input-group">
                                     <div class="quantity" [hidden]="product.quantity == 0">
                                       <span class="control-label">QTY : </span>
-                                      <input [(ngModel)] = "quantity" min="1" [max]="product.quantity" type="number" name="qty" id="quantity_wanted" 
-                                       (change)="onKeyChange($event)" value="1" class="input-group form-control">
+                                      <input [(ngModel)]="quantity" min="1" [max]="product.quantity" type="number"
+                                        name="qty" id="quantity_wanted" (change)="onKeyChange($event)" value="1"
+                                        class="input-group form-control">
 
                                       <span class="input-group-btn-vertical">
-                                        <button (click)="incrementQuantity()" class="btn btn-touchspin js-touchspin bootstrap-touchspin-up"
-                                          type="button">
+                                        <button (click)="incrementQuantity()"
+                                          class="btn btn-touchspin js-touchspin bootstrap-touchspin-up" type="button">
                                           +
                                         </button>
-                                        <button (click)="decrementQuantity()" class="btn btn-touchspin js-touchspin bootstrap-touchspin-down"
-                                          type="button">
+                                        <button (click)="decrementQuantity()"
+                                          class="btn btn-touchspin js-touchspin bootstrap-touchspin-down" type="button">
                                           -
                                         </button>
                                       </span>
                                     </div>
                                     <span class="add">
                                       <button class="custom-class btn btn-primary add-to-cart add-item"
-                                        data-button-action="add-to-cart" type="button" 
-                                        [hidden]="product.quantity == 0">
+                                        data-button-action="add-to-cart" type="button" [hidden]="product.quantity == 0">
                                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                         <span>Add to cart</span>
                                       </button>

@@ -40,16 +40,18 @@ import { ProductDetialsComponent } from './Components/product-detials/product-de
     LoginComponent,
     OrdersComponent,
     PendingOrdersComponent,
-    ProductDetialsComponent],
+    ProductDetialsComponent,
+    AllOrdersComponent
+  ],
   imports: [
 
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: httpTranslateLoader,
-        deps: [HttpClient]
-      }
-    }),
+    // TranslateModule.forRoot({
+    //   loader: {
+    //     provide: TranslateLoader,
+    //     useFactory: httpTranslateLoader,
+    //     deps: [HttpClient]
+    //   }
+    // }),
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
