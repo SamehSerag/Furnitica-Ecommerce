@@ -125,7 +125,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 //  middleware that reads the token and gets current user
-
 app.UseMiddleware<AuthMiddleware>();
 
 app.MapControllers();
