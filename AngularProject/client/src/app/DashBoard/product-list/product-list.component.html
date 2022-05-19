@@ -1,9 +1,8 @@
-<div>
-  <p>add-product works!</p>
+<div class="container">
   <!-- <div class="alert alert-success" role="alert">
     A simple success alert—check it out!
   </div> -->
-  <button type="button" name="" id="" class="btn btn-primary" (click)="AddProduct()">Add</button>
+  <button type="button" name="" id="" style="float: right;" class="btn btn-dark m-3 p-2 px-4" (click)="AddProduct()">Add</button>
 
   <table class="table table-hover">
     <thead>
@@ -21,15 +20,15 @@
         <th scope="col">Actions</th>
       </tr>
     </thead>
-    <tbody>
-      <tr #scrollBottom *ngFor="let product of products">
+    <tbody #scrollBottom>
+      <tr *ngFor="let product of products">
         <th scope="row">{{product.id}}</th>
         <td> <img width="50px" *ngIf="product.images[0]" [src]="product.images[0]" alt="img"></td>
-        <td>{{product.title_EN}}</td>
-        <td>{{product.title_AR}}</td>
-        <td>{{product.details_EN}}</td>
-        <td>{{product.details_AR}}</td>
-        <td>{{product.price}}</td>
+        <td>{{product.title_EN | pipeTransform}}</td>
+        <td>{{product.title_AR | pipeTransform}}</td>
+        <td>{{product.details_EN | pipeTransform}}</td>
+        <td>{{product.details_AR | pipeTransform}}</td>
+        <td>{{product.price | currency}}</td>
         <td>{{product.color}}</td>
         <td>{{product.quantity}}</td>
         <td>{{product.category}}</td>

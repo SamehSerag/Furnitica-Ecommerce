@@ -13,7 +13,7 @@ import { ProductsService } from 'src/app/Services/products.service';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent implements OnInit{
+export class ProductListComponent implements OnInit, AfterViewChecked{
   @ViewChild('scrollBottom') scrollBottom!: ElementRef;
 
   products: IProduct[];
@@ -28,6 +28,10 @@ export class ProductListComponent implements OnInit{
     this.productsSearchModel = new ProductsSearchModel();
     this.productToDelete = undefined;
     // this.pagination  = { hasPreviousPage: false, totalPages: 0, hasNextPage: false};
+  }
+  ngAfterViewChecked(): void {
+    // console.log(this.scrollBottom.nativeElement.scrollHeight)
+    
   }
 
   ngOnInit(): void {
@@ -70,9 +74,9 @@ export class ProductListComponent implements OnInit{
       const observer = {
         next: () => {
           // console.log(this.products.length)
-          alert("Deleted Successfully");
+          // alert("Deleted Successfully");
           this.ngOnInit();
-          this.scrollToTop() ;
+          // this.scrollToTop();
           this.productToDelete = undefined;
         },
         Error: () => {

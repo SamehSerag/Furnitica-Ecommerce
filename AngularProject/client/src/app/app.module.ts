@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { ProductDetialsComponent } from './Components/product-detials/product-detials.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductListComponent } from './DashBoard/product-list/product-list.component';
+import { PipeTransformPipe } from './Pipes/pipe-transform.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,7 @@ import { ProductListComponent } from './DashBoard/product-list/product-list.comp
     LoginComponent,
     ProductDetialsComponent,
     ProductListComponent,
+    PipeTransformPipe,
   ],
   imports: [
     BrowserModule,
