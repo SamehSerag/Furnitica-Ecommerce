@@ -22,9 +22,7 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PendingOrdersComponent } from './DashBoard/pending-orders/pending-orders.component';
 import { AllOrdersComponent } from './DashBoard/all-orders/all-orders.component';
-
 import { ProductDetialsComponent } from './Components/product-detials/product-detials.component';
-import { ReviewsComponent } from './Components/reviews/reviews.component';
 import { ProductReviewsComponent } from './Components/product-reviews/product-reviews.component';
 @NgModule({
   declarations: [
@@ -43,21 +41,25 @@ import { ProductReviewsComponent } from './Components/product-reviews/product-re
     OrdersComponent,
     PendingOrdersComponent,
     ProductReviewsComponent,
+    AllOrdersComponent,
+    ProductDetialsComponent
   ],
   imports: [
-
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: httpTranslateLoader,
-        deps: [HttpClient]
-      }
-    }),
+    BrowserModule,
+    HttpClientModule,
+  //  TranslateModule.forRoot({
+  //    loader: {
+  //      provide: TranslateLoader,
+  //      useFactory: httpTranslateLoader,
+  //      deps: [HttpClient]
+  //    }
+  //  }),
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
     AccordionModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -5,7 +5,7 @@ export interface IProduct {
     details_EN: string;
     details_AR: string;
     price: number;
-    color: number;
+    color: string;
     quantity: number;
     categoryID: number;
     category?: any;
