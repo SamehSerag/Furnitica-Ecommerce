@@ -24,6 +24,8 @@ import { PendingOrdersComponent } from './DashBoard/pending-orders/pending-order
 import { AllOrdersComponent } from './DashBoard/all-orders/all-orders.component';
 
 import { ProductDetialsComponent } from './Components/product-detials/product-detials.component';
+import { ReviewsComponent } from './Components/reviews/reviews.component';
+import { ProductReviewsComponent } from './Components/product-reviews/product-reviews.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +42,8 @@ import { ProductDetialsComponent } from './Components/product-detials/product-de
     LoginComponent,
     OrdersComponent,
     PendingOrdersComponent,
-    ProductDetialsComponent],
+    ProductReviewsComponent,
+  ],
   imports: [
 
     TranslateModule.forRoot({
