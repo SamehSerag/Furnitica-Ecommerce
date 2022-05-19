@@ -23,47 +23,57 @@
 
         <div class="acount head-acount">
             <div class="container">
-                <div id="main">
+                <div id="main" class="pt-3">
                     <h1 class="title-page">My Account</h1>
                     <div class="content" id="block-history">
+
+                      <span *ngIf="showMessage" class="err-message row mx-2 mb-4 p-2">
+                        <span class="col-10 row justify-content-start"> {{errMessage}} </span>
+                        <span id="btnClose" (click)="closeMessage()" class="col row justify-content-end align-items-center hoverhand">
+                            <span class="fa fa-window-close"></span>
+                        </span>
+                      </span>
+
                         <table class="std table">
                             <tbody>
                                 <tr>
-                                    <th class="first_item">My Name :</th>
-                                    <td>David James</td>
+                                    <th class="first_item">Username :</th>
+                                    <td *ngIf="!editing">{{user!.userName}}</td>
+                                    <td *ngIf="editing"> <input type="text" [(ngModel)]="user!.userName" class="form-control">  </td>
                                 </tr>
                                 <tr>
-                                    <th class="first_item">Company :</th>
-                                    <td>TivaTheme</td>
+                                    <th class="first_item"> Email :</th>
+                                    <td *ngIf="!editing"> {{user!.email!}}</td>
+                                    <td *ngIf="editing"> <input type="text" [(ngModel)]="user!.email" class="form-control">  </td>
                                 </tr>
                                 <tr>
                                     <th class="first_item">Address :</th>
-                                    <td>123 canberra Street, New York, USA</td>
+                                    <td *ngIf="!editing"> {{user!.address}}</td>
+                                    <td *ngIf="editing"> <input type="text" [(ngModel)]="user!.address" class="form-control">  </td>
                                 </tr>
                                 <tr>
-                                    <th class="first_item">City :</th>
-                                    <td>New York</td>
+                                    <th class="first_item"> Phone Number :</th>
+                                    <td *ngIf="!editing" > {{user!.phoneNumber}} </td>
+                                    <td *ngIf="editing"> <input type="text" [(ngModel)]="user!.phoneNumber" class="form-control">  </td>
                                 </tr>
-                                <tr>
-                                    <th class="first_item">Postal/Zip Code :</th>
-                                    <td>10001</td>
-                                </tr>
-                                <tr>
-                                    <th class="first_item">Phone :</th>
-                                    <td>0123456789</td>
-                                </tr>
-                                <tr>
-                                    <th class="first_item">Country:</th>
-                                    <td>USA</td>
-                                </tr>
+
                             </tbody>
                         </table>
 
                     </div>
-                    <button class="btn btn-primary" data-link-action="sign-in" type="submit">
-                      Edit Info
-                  </button>
-                    <div class="order">
+                    <button *ngIf="!editing" (click)="StartEditing()" class="btn btn-outline-dark px-2 py-1" data-link-action="sign-in" type="submit">
+                      Edit
+                    </button>
+
+                    <button *ngIf="editing" (click)="Save()" [disabled]="saving" class="btn btn-outline-dark px-2 py-1" data-link-action="sign-in" type="submit">
+                      <span *ngIf="!saving">Save</span>
+                      <span *ngIf="saving">
+                        <span class="spinner-border spinner-border-sm"></span>
+                        <span class="ml-2">Saving...</span>
+                      </span>
+                    </button>
+
+                    <div class="order mt-3">
                         <h4>Order
                             <span class="detail">History</span>
                         </h4>
