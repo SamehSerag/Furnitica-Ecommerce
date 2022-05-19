@@ -1,7 +1,9 @@
 ﻿using AngularAPI.DTOs;
+using DotNetWebAPI.DTOs;
 using AngularAPI.Services;
 using AngularProject.Data;
 using AngularProject.Models;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -20,12 +22,14 @@ namespace AngularAPI.Controllers
         private readonly IConfiguration configuration;
         private readonly UserManager<User> UserManager;
         private readonly ICartRepository cartRepository;
+        private readonly IMapper mapper;
 
-        public AuthController(UserManager<User> _UserManager, IConfiguration _configuration, ICartRepository _cartRepository)
+        public AuthController(UserManager<User> _UserManager, IConfiguration _configuration, ICartRepository _cartRepository, IMapper _mapper)
         {
             UserManager = _UserManager;
             configuration = _configuration;
             cartRepository = _cartRepository;
+            mapper = _mapper;
         }
 
         [HttpPost("Register")]
@@ -37,18 +41,11 @@ namespace AngularAPI.Controllers
             try
             {
                 User user = await CreateUser(userDto);
-
-
                 var jwtToken = await GenerateToken(user);
 
                 return Created("", new
                 {
-                    userData = new {
-                        username = user.UserName,
-                        email = user.Email,
-                        address = user.Address,
-                        gender = user.Gender,
-                    },
+                    userData = mapper.Map<User, UserProfileDto>(user),
                     token = new JwtSecurityTokenHandler().WriteToken(jwtToken),
                     expiration = jwtToken.ValidTo.ToString(),
                 });
@@ -84,17 +81,11 @@ namespace AngularAPI.Controllers
             var jwtToken = await GenerateToken(user);
 
             return Ok(new {
-                userData = new {
-                    username = user.UserName,
-                    email = user.Email,
-                    address = user.Address,
-                    gender = user.Gender,
-                },
+                userData = mapper.Map<User, UserProfileDto>(user),
                 token = new JwtSecurityTokenHandler().WriteToken(jwtToken),
                 expiration = jwtToken.ValidTo.ToString(),  
             });
         }
-
 
         [Authorize]
         [HttpGet("Logout")]
@@ -121,26 +112,26 @@ namespace AngularAPI.Controllers
         [NonAction]
         private async Task<User> CreateUser(RegisterDto userDto)
         {
-            User user = new();
-            user.UserName = userDto.username;
-            user.Email = userDto.email;
-            user.Gender = userDto.Gender;
-            user.Address = userDto.Address;
-
+            User user = mapper.Map<RegisterDto, User>(userDto);
+            //user.UserName = userDto.username;
+            //user.Email = userDto.email;
+            //user.Gender = userDto.Gender;
+            //user.Address = userDto.Address;
+            
 
             User u = await UserManager.FindByEmailAsync(userDto.email);
+
             if (u != null)
                 throw new Exception("email is already registered");
 
 
             IdentityResult userCreated = await UserManager.CreateAsync(user, userDto.password);
-            IdentityResult roleAssigned = await UserManager.AddToRolesAsync(user, new[] { "Client" });
+            IdentityResult roleAssigned = await UserManager.AddToRolesAsync(user, new[] { userDto.Role });
 
 
             if (userCreated.Succeeded && roleAssigned.Succeeded)
             {
-                Cart c = await cartRepository.CreateCartAsync(user);
-                //user.CartID = c.Id;
+                string c = cartRepository.GetCart(user.Id);               
                 return user;
             }
             else
@@ -186,7 +177,6 @@ namespace AngularAPI.Controllers
 
             return jwtToken;
         }
-
 
     }
 }

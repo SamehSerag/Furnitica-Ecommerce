@@ -3,12 +3,15 @@ using AngularAPI.Repository;
 using AngularAPI.Services;
 using AngularProject.Data;
 using AngularProject.Models;
+using DotNetWebAPI.Middlewares;
 using DotNetWebAPI.Services;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Text;
 
 
@@ -45,14 +48,16 @@ builder.Services.AddAuthentication( options => {
 });
 
 
-// adding user repo to container
+// adding repository services to the container
 builder.Services.AddScoped<IGenericRepository<User>, GenericRepositoryT<User> >();
 builder.Services.AddScoped<IProductRepository, ProductService>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ICartRepository, CartRepository>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
 
+// adding db context service
 builder.Services.AddDbContext<ShoppingDbContext>(
     options => options.UseSqlServer(
                builder.Configuration.GetConnectionString("ShopDbConn")
@@ -63,6 +68,9 @@ builder.Services.AddAutoMapper(typeof(MappingProfiles));
 // Reference Loop Handling
 builder.Services.AddControllers().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling =
 Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
+builder.Services.AddScoped<AuthMiddleware>();
+
 
 // Enable Cores
 builder.Services.AddCors(
@@ -115,6 +123,10 @@ app.UseCors(MyAllowSpecificOrigins);
 app.UseAuthentication();
 
 app.UseAuthorization();
+
+//  middleware that reads the token and gets current user
+
+app.UseMiddleware<AuthMiddleware>();
 
 app.MapControllers();
 

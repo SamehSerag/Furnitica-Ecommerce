@@ -91,7 +91,7 @@
                 <!-- logo -->
                 <div class="col-sm-2 col-md-2 d-flex align-items-center">
                     <div id="logo">
-                        <a href="index-2.html">
+                        <a routerLink="">
                             <img class="img-fluid" src="../../../assets/img/home/logo.png" alt="logo">
                         </a>
                     </div>
@@ -101,8 +101,8 @@
                 <div class="main-menu col-sm-4 col-md-5 align-items-center justify-content-center navbar-expand-md">
                     <div class="menu navbar collapse navbar-collapse">
                         <ul class="menu-top navbar-nav">
-                            <li class="nav-link">
-                                <a href="#" class="parent">Home</a>
+                            <li routerLinkActive="nav-link">
+                                <a routerLink="" class="parent">Home</a>
                                 <div class="dropdown-menu">
                                     <ul>
                                         <li class="item">
@@ -154,8 +154,9 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li>
-                                <a href="#" class="parent">Page</a>
+                            <li routerLinkActive="nav-link">
+                                <a  routerLink="/main-shop" class="parent">Shop</a>
+                                <!-- <a href="#" class="parent">Page</a>
                                 <div class="dropdown-menu drop-tab">
                                     <ul>
                                         <li class="item container group">
@@ -211,9 +212,9 @@
                                             </div>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> -->
                             </li>
-                            <li>
+                            <li routerLinkActive="nav-link">
                                 <a href="contact.html" class="parent">Contact US</a>
                             </li>
                         </ul>

@@ -23,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PendingOrdersComponent } from './DashBoard/pending-orders/pending-orders.component';
 import { AllOrdersComponent } from './DashBoard/all-orders/all-orders.component';
 
+import { ProductDetialsComponent } from './Components/product-detials/product-detials.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,11 +40,9 @@ import { AllOrdersComponent } from './DashBoard/all-orders/all-orders.component'
     LoginComponent,
     OrdersComponent,
     PendingOrdersComponent,
-    AllOrdersComponent,
-  ],
+    ProductDetialsComponent],
   imports: [
-    BrowserModule,
-    HttpClientModule,
+
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
