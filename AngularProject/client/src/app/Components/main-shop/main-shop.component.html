@@ -391,12 +391,15 @@
                                                         <div class="product-miniature js-product-miniature item-one first-item">
                                                             <div class="thumbnail-container border">
                                                                 <a [routerLink]="'/products/'+product.id">
-                                                                    <ng-container *ngIf="IfImgFound(i, 0)">
+                                                                    <ng-container *ngIf="IfImgFound(i, 0);else NoImg">
                                                                         <img class="img-fluid image-cover" [src]="Img(i, 0)" alt="img">
                                                                     </ng-container>
                                                                     <ng-container *ngIf="IfImgFound(i, 1)">
                                                                         <img class="img-fluid image-secondary" [src]="Img(i, 1)" alt="img">
                                                                     </ng-container>
+                                                                    <ng-template #NoImg>
+                                                                        <img class="img-fluid image-cover" src="../../../assets/img/product/noImg.jpg" alt="img">
+                                                                    </ng-template>
                                                                 </a>
                                                                 <div class="highlighted-informations">
                                                                     <div class="variant-links">
