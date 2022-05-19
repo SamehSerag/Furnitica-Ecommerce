@@ -23,7 +23,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PendingOrdersComponent } from './DashBoard/pending-orders/pending-orders.component';
 import { AllOrdersComponent } from './DashBoard/all-orders/all-orders.component';
 import { ProductDetialsComponent } from './Components/product-detials/product-detials.component';
-import { ProductReviewsComponent } from './Components/product-reviews/product-reviews.component';
+=import { ProductReviewsComponent } from './Components/product-reviews/product-reviews.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductListComponent } from './DashBoard/product-list/product-list.component';
+import { PipeTransformPipe } from './Pipes/pipe-transform.pipe';
+import { AddProductComponent } from './DashBoard/add-product/add-product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +46,10 @@ import { ProductReviewsComponent } from './Components/product-reviews/product-re
     PendingOrdersComponent,
     ProductReviewsComponent,
     AllOrdersComponent,
-    ProductDetialsComponent
+    ProductDetialsComponent,
+    ProductListComponent,
+    PipeTransformPipe,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
