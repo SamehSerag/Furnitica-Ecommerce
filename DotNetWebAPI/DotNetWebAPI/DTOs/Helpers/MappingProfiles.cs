@@ -20,13 +20,18 @@ namespace AngularAPI.Dtos.Helpers
 
             CreateMap<Product, AdminProductDto>()
                 .ForMember(d => d.OrderProduct, o => o.MapFrom(s => s.OrderProducts))
-                .ForMember(d => d.Owner, o => o.MapFrom<ProductOwnerResolver<AdminProductDto>>())
+                //.ForMember(d => d.Owner, o => o.MapFrom<ProductOwnerResolver<AdminProductDto>>())
                 .ForMember(d => d.Image, o => o.MapFrom<AdminProductUrlResolver>());
+
+            CreateMap<ProductToAdd, Product>()
+                .ForMember(d => d.Color, o => o.MapFrom(s => s.Color));
+
 
             CreateMap<User, UserProfileDto>();
             CreateMap<RegisterDto, User>();
             CreateMap<UserProfileDto, User>();
-            
+
+            CreateMap<Category, ProductCategoryDto>();
             CreateMap<Category, CategoryDto>()
               .ForMember(d => d.count, o => o.MapFrom(s => s.Products.Count));
 
