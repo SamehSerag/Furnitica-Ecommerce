@@ -24,4 +24,9 @@ export class CategoryService {
   {
   }
 
+  putCategory(category:ICategory)
+  {
+
+  }
+
 }

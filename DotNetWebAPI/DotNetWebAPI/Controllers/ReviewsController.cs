@@ -8,6 +8,9 @@ using Microsoft.EntityFrameworkCore;
 using AngularProject.Data;
 using DotNetWebAPI.Models;
 using DotNetWebAPI.Services;
+using DotNetWebAPI.DTOs;
+using AngularAPI.Dtos;
+using AutoMapper;
 
 namespace DotNetWebAPI.Controllers
 {
@@ -15,36 +18,51 @@ namespace DotNetWebAPI.Controllers
     [ApiController]
     public class ReviewsController : ControllerBase
     {
-        private readonly ShoppingDbContext _context;
         private readonly IReviewRepository _repo;
+        private readonly IMapper _mapper;
 
 
-        public ReviewsController(IReviewRepository repo)
+        public ReviewsController(IReviewRepository repo, IMapper mapper)
         {
             _repo = repo;
+            _mapper = mapper;
         }
 
         // GET: api/Reviews
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Review>>> GetReviews([FromQuery] ReviewSearchModel searchModel)
+        public async Task<ActionResult<PaginationMetaData<ReviewDto>>> GetReviews([FromQuery] ReviewSearchModel searchModel)
         {
             var reviews = await _repo.GetAllReviewsAsync(searchModel);
 
-            return reviews.ToList();
+            var reviewDto = _mapper.Map<IReadOnlyList<Review>, IReadOnlyList<ReviewDto>>
+             (reviews);
+
+            int count = _repo.CountAsync(searchModel).Result;
+
+            PaginationMetaData<ReviewDto> paginationMetaData =
+                new PaginationMetaData<ReviewDto>
+                (count, searchModel.PageIndex,
+                searchModel.PageSize,
+                reviewDto);
+
+            return paginationMetaData;
+
         }
 
         // GET: api/Reviews/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Review>> GetReview(int id)
+        public async Task<ActionResult<ReviewDto>> GetReview(int id)
         {
             var review = await _repo.GetReviewByIdAsync(id);
+
+            var reviewDto = _mapper.Map<Review, ReviewDto>(review);
 
             if (review == null)
             {
                 return NotFound();
             }
 
-            return review;
+            return reviewDto;
         }
 
         [HttpGet("/User/{id}")]
@@ -104,10 +122,7 @@ namespace DotNetWebAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteReview(int id)
         {
-            if (_context.Reviews == null)
-            {
-                return NotFound();
-            }
+            
             var review = await _repo.GetReviewByIdAsync(id);
             if (review == null)
             {

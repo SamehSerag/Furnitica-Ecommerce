@@ -54,6 +54,7 @@ builder.Services.AddScoped<IProductRepository, ProductService>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ICartRepository, CartRepository>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
 
 // adding db context service
@@ -124,7 +125,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 //  middleware that reads the token and gets current user
-
 app.UseMiddleware<AuthMiddleware>();
 
 app.MapControllers();

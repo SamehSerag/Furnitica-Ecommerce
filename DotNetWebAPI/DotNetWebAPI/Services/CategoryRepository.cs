@@ -31,11 +31,31 @@ namespace AngularAPI.Services
             await _context.SaveChangesAsync();
         }
 
-        public async Task<IReadOnlyList<Category>> GetAllCategorysAsync( CategorySearchModel categorySearchModel)
+        public async Task<IReadOnlyList<Category>> GetAllCategorysAsync(CategorySearchModel categorySearchModel)
         {
-            IQueryable<Category> query = _context.Categories
-                .AsQueryable().Include(c => c.Products);
+            return await ApplySpecifications(categorySearchModel);
+        }
 
+        public async Task<Category> GetCategoryByIdAsync(int id)
+        {
+            return await _context.Categories.Include(x => x.Products)
+                .FirstOrDefaultAsync(c => c.Id == id);
+        }
+
+        public bool IsCategoryExixtsAsync(int id)
+        {
+            return _context.Categories
+                           .Any(c => c.Id == id);
+        }
+
+        public async Task<int> CountAsync(CategorySearchModel categorySearchModel)
+        {
+            return (await ApplySpecifications(categorySearchModel)).Count;
+        }
+
+        private async Task<IReadOnlyList<Category>> ApplySpecifications(CategorySearchModel categorySearchModel)
+        {
+            IQueryable<Category> query = _context.Categories.AsQueryable().Include(x => x.Products);
 
             if (categorySearchModel != null)
             {
@@ -61,22 +81,12 @@ namespace AngularAPI.Services
                             break;
                     }
                 }
+              /*  query = query.Skip((categorySearchModel.PageIndex - 1) *
+                categorySearchModel.PageSize).Take(categorySearchModel.PageSize);*/
             }
-
             return await query.ToListAsync();
         }
 
-        public async Task<Category> GetCategoryByIdAsync(int id)
-        {
-            return await _context.Categories.Include(c => c.Products)
-                .FirstOrDefaultAsync(c => c.Id == id);
-        }
-
-        public bool IsCategoryExixtsAsync(int id)
-        {
-            return _context.Categories
-                           .Any(c => c.Id == id);
-        }
-
+ 
     }
 }
