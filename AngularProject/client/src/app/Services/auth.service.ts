@@ -47,8 +47,8 @@ export class AuthService {
 
   Logout(){
     localStorage.removeItem("access-token");
-    localStorage.removeItem("user-data");
     localStorage.removeItem("expiration");
+    localStorage.setItem("user-data", "");
     return  this.http.get<any>(`${environment.AuthAPIURL}/logout`);
   }
 }
