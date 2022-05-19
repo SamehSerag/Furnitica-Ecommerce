@@ -18,6 +18,8 @@ import { RegisterComponent } from './Components/register/register.component';
 import { LoginComponent } from './Components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { ProductDetialsComponent } from './Components/product-detials/product-detials.component';
+import { ReviewsComponent } from './Components/reviews/reviews.component';
+import { ProductReviewsComponent } from './Components/product-reviews/product-reviews.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +35,8 @@ import { ProductDetialsComponent } from './Components/product-detials/product-de
     RegisterComponent,
     LoginComponent,
     ProductDetialsComponent,
+    ReviewsComponent,
+    ProductReviewsComponent,
   ],
   imports: [
     BrowserModule,

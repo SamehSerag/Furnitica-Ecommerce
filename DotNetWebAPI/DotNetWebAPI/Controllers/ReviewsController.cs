@@ -51,16 +51,18 @@ namespace DotNetWebAPI.Controllers
 
         // GET: api/Reviews/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Review>> GetReview(int id)
+        public async Task<ActionResult<ReviewDto>> GetReview(int id)
         {
             var review = await _repo.GetReviewByIdAsync(id);
+
+            var reviewDto = _mapper.Map<Review, ReviewDto>(review);
 
             if (review == null)
             {
                 return NotFound();
             }
 
-            return review;
+            return reviewDto;
         }
 
         [HttpGet("/User/{id}")]

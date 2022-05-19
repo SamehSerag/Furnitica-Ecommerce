@@ -52,16 +52,17 @@ namespace AngularAPI.Controllers
 
         // GET: api/Categories/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Category>> GetCategory(int id)
+        public async Task<ActionResult<CategoryDto>> GetCategory(int id)
         {
             var category = await _repo.GetCategoryByIdAsync(id);
+            var categoryDto = _mapper.Map<Category, CategoryDto>(category);
 
             if (category == null)
             {
                 return NotFound();
             }
 
-            return category;
+            return categoryDto;
         }
 
         // PUT: api/Categories/5
