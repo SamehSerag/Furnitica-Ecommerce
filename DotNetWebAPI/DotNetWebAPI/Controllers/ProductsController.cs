@@ -17,6 +17,7 @@ using System.IO;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IWebHostEnvironment;
 using AngularAPI.Data;
 using AngularAPI.Models;
+using DotNetWebAPI.DTOs;
 
 namespace AngularAPI.Controllers
 {
@@ -124,7 +125,7 @@ namespace AngularAPI.Controllers
         }
 
         [HttpGet("owner/{id}")]
-        public async Task<ActionResult<ProductToReturnDto>> GetProductByAdmin(int id)
+        public async Task<ActionResult<AdminProductDto>> GetProductByAdmin(int id)
         {
             var product = await _productRepository.GetProductByIdAsync(id);
 
@@ -172,12 +173,13 @@ namespace AngularAPI.Controllers
         // POST: api/Products/onwer
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost("owner")]
-        public async Task<ActionResult<AdminProductDto>> PostProduct(Product product)
+        public async Task<ActionResult<AdminProductDto>> PostProduct(ProductToAdd product)
         {
-            
-            await _productRepository.AddProductAsync(product);
+            var productMapped = mapper.Map<ProductToAdd, Product>
+                (product);
+            await _productRepository.AddProductAsync(productMapped);
 
-            return CreatedAtAction("GetProductByAdmin", new { id = product.Id }, product);
+            return CreatedAtAction("GetProductByAdmin", new { id = productMapped.Id }, productMapped);
         }
 
         // DELETE: api/Products/owner/5

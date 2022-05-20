@@ -38,7 +38,7 @@ namespace AngularAPI.Services
 
         public async Task<Category> GetCategoryByIdAsync(int id)
         {
-            return await _context.Categories.Include(x => x.Products)
+            return await _context.Categories.AsQueryable().Include(x => x.Products)
                 .FirstOrDefaultAsync(c => c.Id == id);
         }
 
@@ -81,8 +81,8 @@ namespace AngularAPI.Services
                             break;
                     }
                 }
-                query = query.Skip((categorySearchModel.PageIndex - 1) *
-                categorySearchModel.PageSize).Take(categorySearchModel.PageSize);
+              /*  query = query.Skip((categorySearchModel.PageIndex - 1) *
+                categorySearchModel.PageSize).Take(categorySearchModel.PageSize);*/
             }
             return await query.ToListAsync();
         }

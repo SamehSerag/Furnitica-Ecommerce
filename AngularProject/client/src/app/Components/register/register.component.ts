@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     // this.user.username = "mohamedalaa";
     this.loading = false;
-    this.user = {username : "", email : "", address : "", gender : Gender.undefined, password : ""}
+    this.user = {username : "", email : "", address : "", gender : Gender.undefined, password : "", role : ""}
   }
 
   ngOnDestroy(): void {
@@ -68,9 +68,10 @@ export class RegisterComponent implements OnInit, OnDestroy {
     return res;
   }
 
-  Register () {
+  Register (roleName : string) {
     this.loading = true;
     this.validated = true;
+    this.user.role = roleName;
 
     if(!this.isValid()) {
       console.log("invalid user data", this.user);
@@ -107,6 +108,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
         console.log("request completed")
       }
     });
+
   }
 
 }

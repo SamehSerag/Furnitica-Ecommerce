@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   showMessage : boolean  = false;
   errMessage : string = "default err message";
 
+
   ngOnInit(): void {
     // this.user.username = "mohamedalaa";
     this.loading = false;
@@ -53,6 +54,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
     console.log("loading = ", this.loading);
     console.log("userdata = ", this.user);
+
     this.sub = this.auth.Login(this.user).subscribe({
       next: res => {
         if(res["status"] == 200) {
@@ -60,6 +62,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           localStorage.setItem("access-token", loggedUser.token);
           localStorage.setItem("user-data", JSON.stringify(loggedUser.userData));
           localStorage.setItem("expiration", loggedUser.expiration);
+
           this.router.navigate([""]);
         }
       },

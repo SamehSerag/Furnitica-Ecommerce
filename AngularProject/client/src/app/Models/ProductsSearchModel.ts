@@ -8,9 +8,12 @@ export class ProductsSearchModel {
     pageIndex: number = 1;
     pageSize: number = 12;
     color:number | null = null;
+    ownerId:string | null = null;
 
     public toString = () : string => {
         var query:string = "?";
+        if(this.ownerId != null)
+            query+=`ownerId=${this.ownerId}`;
         if(this.maxPrice >= 0)
             query+=`minPrice=${this.minPrice}&maxPrice=${this.maxPrice}`;
         

@@ -1,6 +1,5 @@
 import { Gender } from "../Enums/Gender";
 
-
 export interface RegisterDTO {
 
   username : string;
@@ -8,5 +7,5 @@ export interface RegisterDTO {
   email : string ;
   gender : Gender;
   address : string;
-
+  role : string;
 }
