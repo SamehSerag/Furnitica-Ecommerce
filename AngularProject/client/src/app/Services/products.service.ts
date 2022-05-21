@@ -19,6 +19,7 @@ export class ProductsService {
         // ,Authorization: 'my-auth-token'
       })
     };
+    this.httpOption.headers.append('Content-Type','multipart/form-data');
   }
   // Authorization: 'my-auth-token'
 
@@ -36,9 +37,17 @@ export class ProductsService {
     return this.httpClinet.get<IProduct>(`${environment.APIURL}/api/products/${prdId}`);
   }
 
-  addProduct(newPrd: IProductToAdd): Observable<IOwnerProduct>{
-    return this.httpClinet.post<IOwnerProduct>(`${environment.APIURL}/api/products/owner`, 
-    JSON.stringify(newPrd),this.httpOption)
+  // addProduct(newPrd: IProductToAdd): Observable<IProductToAdd>{
+  //   return this.httpClinet.post<IProductToAdd>(`${environment.APIURL}/api/products/owner`, 
+  //   JSON.stringify(newPrd),this.httpOption)
+  //   .pipe(
+  //     retry(2),
+  //     catchError(this.handleError)
+  //   )
+  // }
+
+  addProduct(newPrd: FormData): Observable<IOwnerProduct>{
+    return this.httpClinet.post<IOwnerProduct>(`${environment.APIURL}/api/products/owner`,newPrd)
     .pipe(
       retry(2),
       catchError(this.handleError)

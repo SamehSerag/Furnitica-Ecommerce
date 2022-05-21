@@ -1,20 +1,52 @@
-<form class="container p-5 m-auto">
+<form class="container p-5 m-auto" style="width: 60%;">
+  <h1 style="text-align: center; font-weight: 900;"> Add Product</h1>
+  <div class="form-group">
+    <label for="title_EN">Title In English </label>
+    <input type="text" class="form-control" id="title_EN" name="title_EN" [(ngModel)]="productToAdd.title_EN">
+  </div>
+  <div class="form-group">
+    <label for="title_AR">Title In Arabic </label>
+    <input type="text" class="form-control" id="title_AR" name="title_AR" [(ngModel)]="productToAdd.title_AR">
+  </div>
+  <div class="form-group">
+    <label for="details_EN">Details In English</label>
+    <textarea class="form-control" id="details_EN" rows="3" name="details_EN"
+      [(ngModel)]="productToAdd.details_EN"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="details_AR">Details In Arabic</label>
+    <textarea class="form-control" id="details_AR" rows="3" name="details_AR"
+      [(ngModel)]="productToAdd.details_AR"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="price">Price </label>
+    <input type="number" class="form-control" id="price" name="price" [(ngModel)]="productToAdd.price">
+  </div>
+  <div class="form-group">
+    <label for="quantity">Quantity </label>
+    <input type="number" class="form-control" id="quantity" name="quantity" [(ngModel)]="productToAdd.quantity">
+  </div>
+  <div class="form-group">
+    <label for="categoryl">Category</label>
+    <select class="form-control" name="categoryl" id="categoryl" [(ngModel)]="productToAdd.categoryID">
+      <option *ngFor="let category of categoriesList; let i=index" [value]="category.id">
+        {{category.name}}
+      </option>
+    </select>
     <div class="form-group">
-      <label for="exampleFormControlInput1">Email address</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1">
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlSelect1">Example select</label>
-      <select class="form-control" id="exampleFormControlSelect1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
+      <label for="color">Color</label>
+      <select class="form-control" name="color" id="color" [(ngModel)]="productToAdd.color">
+        <option *ngFor="let color of colorArray; let i=index" [value]="(i+1)">
+          {{color}}
+        </option>
       </select>
     </div>
     <div class="form-group">
-      <label for="exampleFormControlTextarea1">Example textarea</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <label for="images">Product Images</label>
+      <input #imageInput type="file" class="form-control-file" id="images" name="images" multiple accept="image/*">
     </div>
-  </form>
+
+    <button type="submit" name="" id="" style="float: right;" class="btn btn-dark m-3 p-2 px-4"
+      (click)="AddProduct()">Add</button>
+
+<!-- </form> -->
