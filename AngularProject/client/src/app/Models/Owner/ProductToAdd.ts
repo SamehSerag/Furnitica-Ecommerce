@@ -4,8 +4,9 @@ export class ProductToAdd {
     details_EN!: string;
     details_AR!: string;
     price!: number;
-    color!: number;
+    color: number = 1;
     quantity!: number;
     categoryID!: number;
     ownerId!: string;
+    // ImagesFiles?: FormData = new FormData();
 }

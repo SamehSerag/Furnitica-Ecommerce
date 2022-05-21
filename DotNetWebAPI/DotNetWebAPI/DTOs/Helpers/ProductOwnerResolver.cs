@@ -19,11 +19,14 @@ namespace DotNetWebAPI.DTOs.Helpers
 
         public OwnerDto Resolve(Product source, T destination, OwnerDto destMember, ResolutionContext context)
         {
-            return new OwnerDto()
-            {
-                Id = source.Owner.Id,
-                UserName = source.Owner.UserName
-            };
+            if (source.Owner != null)
+                return new OwnerDto()
+                {
+                    Id = source.Owner.Id,
+                    UserName = source.Owner.UserName
+                };
+            else
+                return new OwnerDto();
         }
     }
 }
