@@ -90,7 +90,34 @@ export class ProductListComponent implements OnInit, AfterViewChecked{
     
   }
 
-  // AddProduct() {
+ 
+
+  /// Pagination
+  paginate(pageIndex: number): void {
+
+    this.productsSearchModel.pageIndex = pageIndex;
+    this.getProductFilteration();
+
+    // this.dom.body.scrollTop =0;
+    this.scrollToTop();
+    
+
+  }
+  nextPage(): void {
+    if (this.pagination.hasNextPage) {
+      this.paginate(++this.productsSearchModel.pageIndex);
+    }
+  }
+  previousPage(): void {
+    if (this.pagination.hasPreviousPage) {
+      this.paginate(--this.productsSearchModel.pageIndex);
+    }
+  }
+ 
+}
+
+
+ // AddProduct() {
   //   const observer = {
   //     next: (prd: IOwnerProduct) => {
   //       alert("Add Successfully");
@@ -117,28 +144,3 @@ export class ProductListComponent implements OnInit, AfterViewChecked{
   //   }
   //   this.prdService.addProduct(product).subscribe(observer);
   // }
-
-
-  /// Pagination
-  paginate(pageIndex: number): void {
-
-    this.productsSearchModel.pageIndex = pageIndex;
-    this.getProductFilteration();
-
-    // this.dom.body.scrollTop =0;
-    this.scrollToTop();
-    
-
-  }
-  nextPage(): void {
-    if (this.pagination.hasNextPage) {
-      this.paginate(++this.productsSearchModel.pageIndex);
-    }
-  }
-  previousPage(): void {
-    if (this.pagination.hasPreviousPage) {
-      this.paginate(--this.productsSearchModel.pageIndex);
-    }
-  }
- 
-}
