@@ -22,6 +22,8 @@ export class MainShopComponent implements OnInit, OnChanges {
   pagination!: IPagination;
   productsSearchModel: ProductsSearchModel;
 
+  
+
   constructor(private prdService: ProductsService,
     @Inject(DOCUMENT) private dom: Document, private router:Router) {
     this.products=[];

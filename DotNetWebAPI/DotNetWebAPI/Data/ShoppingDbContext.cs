@@ -20,6 +20,9 @@ namespace AngularProject.Data
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
+            modelBuilder.Entity<WishListProduct>()
+                .HasKey(W => new {W.WishListId, W.ProductId});
+
             //builder.Entity<OrderProducts>()
             //   .HasOne(Tc => Tc.Order)
             //   .WithMany(c => c.OrderProducts)
@@ -43,6 +46,8 @@ namespace AngularProject.Data
         public DbSet<OrderProducts> OrderProducts { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Review> Reviews { get; set; }
+        public DbSet<WishList> WishLists { get; set; }
+        public DbSet<WishListProduct> WishListProducts { get; set; }
 
         //public DbSet<User> Users { get; set; }
         //public DbSet<Role> Roles { get; set; }

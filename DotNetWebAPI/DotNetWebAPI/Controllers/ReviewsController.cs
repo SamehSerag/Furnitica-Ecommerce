@@ -11,6 +11,9 @@ using DotNetWebAPI.Services;
 using DotNetWebAPI.DTOs;
 using AngularAPI.Dtos;
 using AutoMapper;
+using Microsoft.AspNetCore.Identity;
+using AngularProject.Models;
+using System.Security.Claims;
 
 namespace DotNetWebAPI.Controllers
 {
@@ -20,7 +23,6 @@ namespace DotNetWebAPI.Controllers
     {
         private readonly IReviewRepository _repo;
         private readonly IMapper _mapper;
-
 
         public ReviewsController(IReviewRepository repo, IMapper mapper)
         {
@@ -65,17 +67,25 @@ namespace DotNetWebAPI.Controllers
             return reviewDto;
         }
 
-        [HttpGet("/User/{id}")]
-        public async Task<ActionResult<Review>> GetUserReview(string id)
+        [HttpGet("/api/UserReview/{prdid}")]
+        public async Task<ActionResult<ReviewDto>> GetUserReview(int prdid)
         {
-            var review = await _repo.GetReviewByUserIdAsync(id);
+            User? user = HttpContext.Items["User"] as User;
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var review = await _repo.GetReviewByUserIdAsync(user?.Id, prdid);
 
             if (review == null)
             {
                 return NotFound();
             }
+            var reviewDto = _mapper.Map<Review, ReviewDto>(review);
 
-            return review;
+            return reviewDto;
         }
 
         // PUT: api/Reviews/5
@@ -87,7 +97,14 @@ namespace DotNetWebAPI.Controllers
             {
                 return BadRequest();
             }
+            User? user = HttpContext.Items["User"] as User;
 
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            review.UserId = user.Id;
 
             try
             {

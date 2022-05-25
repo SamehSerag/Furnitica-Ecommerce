@@ -14,8 +14,9 @@ namespace AngularAPI.Dtos.Helpers
             CreateMap<Product, ProductToReturnDto>()
                 .ForMember(d => d.Category, o => o.MapFrom(s => s.Category.Name))
                 .ForMember(d => d.Owner, o => o.MapFrom<ProductOwnerResolver<ProductToReturnDto>>())
-                .ForMember(d => d.Images, o => o.MapFrom<ProductUrlResolver>());
-                //.ForMember(d => d)
+                .ForMember(d => d.Images, o => o.MapFrom<ProductUrlResolver>())
+                .ForMember(d => d.Rating, o => o.MapFrom(s => s.Reviews.Count != 0 ? s.Reviews.Average(r => r.starsCount) : 0));
+            //.ForMember(d => d)
             //.ForMember(d => d.Images, o => o.MapFrom(s => s.Images.Select(i => i.Src)));
 
             CreateMap<Product, AdminProductDto>()

@@ -35,10 +35,10 @@ namespace DotNetWebAPI.Services
                            .FirstOrDefaultAsync(c => c.Id == id);
         }
 
-        public async Task<Review> GetReviewByUserIdAsync(string id)
+        public async Task<Review> GetReviewByUserIdAsync(string id,int prdid)
         {
             return await _context.Reviews.Include(x => x.user).ThenInclude(x => x.Image)
-                           .FirstOrDefaultAsync(c => c.UserId == id);
+                           .FirstOrDefaultAsync(c => c.ProductId == prdid &&  c.UserId==id);
         }
 
         public bool IsReviewExixtsAsync(int id)
@@ -56,6 +56,7 @@ namespace DotNetWebAPI.Services
 
         public async Task<int> CountAsync(ReviewSearchModel reviewSearchModel)
         {
+            reviewSearchModel.Sort = null;
             return (await ApplySpecifications(reviewSearchModel)).Count;
         }
 

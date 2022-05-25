@@ -13,6 +13,8 @@ export class ProductDetialsComponent implements OnInit {
   productId?:number;
   quantity:number;
   colorArray: string[];
+  ReviewCount:number=0;
+
   constructor(private productService: ProductsService, private activatedRoute:ActivatedRoute,
     private router:Router) {
     this.product = {} as IProduct;
@@ -22,7 +24,7 @@ export class ProductDetialsComponent implements OnInit {
 
   ngOnInit(): void {
     this.productId = Number(this.activatedRoute.snapshot.paramMap.get('pid'));
-
+console.log(this.product.rating);
     this.productService.getProductById(this.productId).subscribe(
       (response) =>{
         this.product = response;
@@ -31,7 +33,7 @@ export class ProductDetialsComponent implements OnInit {
       },(error)=>{
         this.router.navigate(['/error'])
       });
-      
+
   }
   incrementQuantity():void {
     if(this.quantity < this.product.quantity)
@@ -39,7 +41,7 @@ export class ProductDetialsComponent implements OnInit {
   }
   decrementQuantity():void {
     if(this.quantity > 1)
-      this.quantity--; 
+      this.quantity--;
 
   }
   onKeyChange(event:any){
@@ -49,4 +51,13 @@ export class ProductDetialsComponent implements OnInit {
       this.quantity = this.product.quantity;
   }
 
+  GetReviewCount(count : number)
+  {
+    this.ReviewCount=count;
+  }
+
+  numSequence(n: number): Array<number> {
+
+    return new Array(n);
+  }
 }

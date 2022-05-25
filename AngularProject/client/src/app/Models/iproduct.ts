@@ -10,5 +10,6 @@ export interface IProduct {
     categoryID: number;
     category?: any;
     images?: any;
+    rating:number;
     orderProducts: any[];
 }

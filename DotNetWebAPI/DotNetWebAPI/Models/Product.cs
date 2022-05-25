@@ -1,4 +1,5 @@
 ﻿using AngularAPI.Enums;
+using DotNetWebAPI.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -34,5 +35,7 @@ namespace AngularProject.Models
         public string? OwnerId { get; set; }
         public User? Owner { get; set; }
         public ICollection<OrderProducts>? OrderProducts { get; set; }
+
+        public ICollection<Review>? Reviews { get; set; }  
     }
 }

@@ -14,6 +14,5 @@ namespace DotNetWebAPI.Models
         [ForeignKey(nameof(UserId))]
         public User user { get; set; }
 
-        public List<Product> Products { get; set; }
     }
 }
