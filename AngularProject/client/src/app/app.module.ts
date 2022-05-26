@@ -27,6 +27,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductListComponent } from './DashBoard/product-list/product-list.component';
 import { PipeTransformPipe } from './Pipes/pipe-transform.pipe';
 import { AddProductComponent } from './DashBoard/add-product/add-product.component';
+import { MatSliderModule } from '@angular/material/slider';
+import { DialogComponent } from './DashBoard/dialog/dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,22 +56,30 @@ import { AddProductComponent } from './DashBoard/add-product/add-product.compone
     ProductDetialsComponent,
     ProductListComponent,
     PipeTransformPipe,
-    AddProductComponent
+    AddProductComponent,
+    DialogComponent
+    
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-  //  TranslateModule.forRoot({
-  //    loader: {
-  //      provide: TranslateLoader,
-  //      useFactory: httpTranslateLoader,
-  //      deps: [HttpClient]
-  //    }
-  //  }),
-    AppRoutingModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    AccordionModule
+    //  TranslateModule.forRoot({
+      //    loader: {
+        //      provide: TranslateLoader,
+        //      useFactory: httpTranslateLoader,
+        //      deps: [HttpClient]
+        //    }
+        //  }),
+        AppRoutingModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        AccordionModule,
+        MatSliderModule,
+        MatDialogModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatButtonModule
   ],
 
   providers: [],

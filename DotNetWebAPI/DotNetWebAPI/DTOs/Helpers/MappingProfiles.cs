@@ -12,7 +12,7 @@ namespace AngularAPI.Dtos.Helpers
         public MappingProfiles()
         {
             CreateMap<Product, ProductToReturnDto>()
-                .ForMember(d => d.Category, o => o.MapFrom(s => s.Category.Name))
+                //.ForMember(d => d.Category, o => o.MapFrom(s => s.Category.Name))
                 .ForMember(d => d.Owner, o => o.MapFrom<ProductOwnerResolver<ProductToReturnDto>>())
                 .ForMember(d => d.Images, o => o.MapFrom<ProductUrlResolver>());
                 //.ForMember(d => d)
@@ -22,6 +22,11 @@ namespace AngularAPI.Dtos.Helpers
                 .ForMember(d => d.OrderProduct, o => o.MapFrom(s => s.OrderProducts))
                 //.ForMember(d => d.Owner, o => o.MapFrom<ProductOwnerResolver<AdminProductDto>>())
                 .ForMember(d => d.Image, o => o.MapFrom<AdminProductUrlResolver>());
+
+            //CreateMap<AdminProductDto, Product>()
+            //   .ForMember(d => d.OrderProducts, o => o.MapFrom(s => s.OrderProduct))
+            //   //.ForMember(d => d.Owner, o => o.MapFrom<ProductOwnerResolver<AdminProductDto>>())
+            //   .ForMember(d => d.Image, o => o.MapFrom<AdminProductUrlResolver>());
 
             CreateMap<ProductToAdd, Product>()
                 .ForMember(d => d.Color, o => o.MapFrom(s => s.Color));

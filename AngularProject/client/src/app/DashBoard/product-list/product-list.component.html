@@ -2,12 +2,12 @@
   <!-- <div class="alert alert-success" role="alert">
     A simple success alert—check it out!
   </div> -->
-   <!-- (click)="AddProduct()" -->
+  <!-- (click)="AddProduct()" -->
 
-   <a  routerLink="/AddProduct/Owner" class="btn btn-dark m-3 p- px-4" style="float: right;">
+  <a routerLink="/AddProduct/Owner" class="btn btn-dark m-3 p- px-4" style="float: right;">
     Add Product
-   </a>
-  
+  </a>
+  <button mat-button (click)="openDialog2()">Open dialog</button>
 
   <table class="table table-hover">
     <thead>
@@ -27,24 +27,24 @@
     </thead>
     <tbody #scrollBottom>
       <tr *ngFor="let product of products">
-        <th scope="row">{{product.id}}</th>
-        <td> <img width="50px" *ngIf="product.images[0]" [src]="product.images[0]" alt="img"></td>
-        <td>{{product.title_EN | pipeTransform}}</td>
-        <td>{{product.title_AR | pipeTransform}}</td>
-        <td>{{product.details_EN | pipeTransform}}</td>
-        <td>{{product.details_AR | pipeTransform}}</td>
-        <td>{{product.price | currency}}</td>
-        <td>{{product.color}}</td>
-        <td>{{product.quantity}}</td>
-        <td>{{product.category}}</td>
+          <th scope="row">{{product.id}}</th>
+          <td> <img width="50px" *ngIf="product.images[0]" [src]="product.images[0]" alt="img"></td>
+          <td>{{product.title_EN | pipeTransform}}</td>
+          <td>{{product.title_AR | pipeTransform}}</td>
+          <td>{{product.details_EN | pipeTransform}}</td>
+          <td>{{product.details_AR | pipeTransform}}</td>
+          <td>{{product.price | currency}}</td>
+          <td>{{product.color}}</td>
+          <td>{{product.quantity}}</td>
+          <td >{{product.category.name}}</td>
         <td>
           <div class="btn-group mt-2" role="group">
-            <button [routerLink]="'/Products/'+product.id" type="submit" class="btn btn-success" (click)="onSelect(product)"><i class="fa fa-list"
-                aria-hidden="true"> </i></button>
-            <button [routerLink]="'/Products/'+product.id" type="submit" class="btn btn-primary" (click)="onUpdate(product)"><i class="fa fa-pencil"
+            <button [routerLink]="'/Products/'+product.id" type="submit" class="btn btn-success"
+              (click)="onSelect(product)"><i class="fa fa-list" aria-hidden="true"> </i></button>
+            <button type="submit" class="btn btn-primary" (click)="openDialog(product.id)"><i class="fa fa-pencil"
                 aria-hidden="true"></i></button>
-            <button [routerLink]="'/Products/'+product.id" type="submit" class="btn btn-danger" (click)="onDelete(product)" 
-            data-toggle="modal" data-target="#exampleModal">
+            <button [routerLink]="'/Products/'+product.id" type="submit" class="btn btn-danger"
+              (click)="onDelete(product)" data-toggle="modal" data-target="#exampleModal">
               <i class="fa fa-trash-o" aria-hidden="true"></i>
             </button>
           </div>

@@ -57,6 +57,8 @@ builder.Services.AddScoped<ICartRepository, CartRepository>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
 
+
+
 // adding db context service
 builder.Services.AddDbContext<ShoppingDbContext>(
     options => options.UseSqlServer(
