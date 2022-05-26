@@ -149,7 +149,7 @@ namespace AngularAPI.Controllers
         {
             var productMapped = mapper.Map<ProductToAdd, Product>
                (product);
-            if (id != product.Id)
+            if (id != productMapped.Id)
             {
                 return BadRequest();
             }

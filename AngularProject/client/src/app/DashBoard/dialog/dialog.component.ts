@@ -62,10 +62,11 @@ export class DialogComponent implements OnInit {
    
     /// Mapping !
     productToAdd.id = product?.id;
-    this.catService.getAllCategories().subscribe((respons)=>
-    {
-      productToAdd.categoryID = respons.find(c => c.name == product?.category)?.id ?? 1
-    });
+    console.log(product?.category)
+    
+    productToAdd.categoryID = this.categories?.find(c => c.name == product?.category)?.id ?? 1
+    console.log(productToAdd.categoryID )
+
     productToAdd.color = this.colorArray.findIndex(o => o == product?.color ?? "Blue");
     productToAdd.details_AR = product?.details_AR ?? "";
     productToAdd.details_EN = product?.details_EN ?? "";
@@ -87,5 +88,9 @@ export class DialogComponent implements OnInit {
     },(error)=>{
       console.log(error)
     })
+  }
+
+  func(cat:string){
+    return this.categories?.find(c=> c.name==cat)?.id ?? 0
   }
 }

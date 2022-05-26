@@ -85,7 +85,13 @@ export class ProductListComponent implements OnInit, AfterViewChecked{
     // console.log("test");
 
   }
-  
+  func(catId:number){
+    var ss ;
+    this.catServ?.getAllCategories().subscribe((s)=>{
+     ss =  s.find(c=> c.id==catId)?.name ?? 0
+    })
+    return ss;
+  }
 
 
   getProductFilteration() {

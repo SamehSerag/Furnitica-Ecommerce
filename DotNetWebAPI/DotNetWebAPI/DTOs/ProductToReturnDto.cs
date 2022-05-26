@@ -16,6 +16,7 @@ namespace AngularAPI.Dtos
         public int Quantity { get; set; }
         public ICollection<string>? Images { get; set; }
         public string? Category { get; set; }
+        public int? CategoryID { get; set; }
         public OwnerDto? Owner { get; set; }
 
     }

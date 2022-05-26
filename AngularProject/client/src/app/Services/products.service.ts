@@ -48,7 +48,7 @@ export class ProductsService {
   // }
 
   addProduct(newPrd: FormData): Observable<IOwnerProduct>{
-    return this.httpClinet.post<IOwnerProduct>(`${environment.APIURL}/api/Products/Owner`,newPrd)
+    return this.httpClinet.post<IOwnerProduct>(`${environment.APIURL}/api/products/owner`,newPrd)
     .pipe(
       retry(2),
       catchError(this.handleError)

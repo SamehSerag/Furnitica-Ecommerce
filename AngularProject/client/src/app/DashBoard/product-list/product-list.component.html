@@ -36,7 +36,7 @@
           <td>{{product.price | currency}}</td>
           <td>{{product.color}}</td>
           <td>{{product.quantity}}</td>
-          <td>{{product.category}}</td>
+          <td>{{func(product.categoryID)}}</td>
         <td>
           <div class="btn-group mt-2" role="group">
             <button [routerLink]="'/Products/'+product.id" type="submit" class="btn btn-success"
