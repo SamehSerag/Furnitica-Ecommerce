@@ -86,9 +86,9 @@ export class ProductListComponent implements OnInit, AfterViewChecked{
 
   }
   func(catId:number){
-    var ss ;
+    var ss = "s" ;
     this.catServ?.getAllCategories().subscribe((s)=>{
-     ss =  s.find(c=> c.id==catId)?.name ?? 0
+      ss =  s.find(c=> c.id==catId)?.name ?? "s"
     })
     return ss;
   }
@@ -99,6 +99,7 @@ export class ProductListComponent implements OnInit, AfterViewChecked{
       response => {
         this.pagination = response;
         this.products = response.data;
+        console.log(this.products[0]);
       });
   }
   scrollToBottom(): void {

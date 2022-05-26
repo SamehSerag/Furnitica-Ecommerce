@@ -29,21 +29,23 @@
     <input min="0" type="number" matInput [(ngModel)]="data.quantity">
   </mat-form-field>
 
-  <mat-select placeholder="Category" [(ngModel)]="data.categoryID" >
+  <mat-select placeholder="Category" [(ngModel)]="data.categoryID" 
+  (selectionChange)="changeCat($event)">
     <mat-option *ngFor="let item of categories; let i=index" [value]="item.id">
-      {{data.categoryID}}
+      {{item.name}}
     </mat-option>
     </mat-select> 
     
-    <mat-select placeholder="Color" [value]="data.color">
-    <mat-option *ngFor="let item of colorArray; let i=index" [value]="(i+1)" >
+    <mat-select placeholder="Color" [value]="colorIndex"
+    (selectionChange)="changeColor($event)">
+    <mat-option *ngFor="let item of colorArray; let i=index" [value]="i" >
       {{item}}
     </mat-option>
 
   </mat-select>
 
   <div mat-dialog-actions [align]="'end'">
-    <button mat-raised-button color="warn" mat-dialog-close> Close </button>
+    <button mat-raised-button color="warn" mat-dialog-close (click)="onClose()"> Close </button>
     <button mat-raised-button color="primary" mat-dialog-close 
         (click)="onUpdate()"> Update </button>
   </div>

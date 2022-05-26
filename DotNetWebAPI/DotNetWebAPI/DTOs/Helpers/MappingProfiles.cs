@@ -12,7 +12,7 @@ namespace AngularAPI.Dtos.Helpers
         public MappingProfiles()
         {
             CreateMap<Product, ProductToReturnDto>()
-                .ForMember(d => d.Category, o => o.MapFrom(s => s.Category.Name))
+                //.ForMember(d => d.Category, o => o.MapFrom(s => s.Category.Name))
                 .ForMember(d => d.Owner, o => o.MapFrom<ProductOwnerResolver<ProductToReturnDto>>())
                 .ForMember(d => d.Images, o => o.MapFrom<ProductUrlResolver>());
                 //.ForMember(d => d)

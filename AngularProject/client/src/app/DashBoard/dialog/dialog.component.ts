@@ -1,8 +1,9 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, ElementRef, Inject, OnInit } from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA,MatDialogRef} from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ICategory } from 'src/app/Models/icategories';
 import { IProduct } from 'src/app/Models/iproduct';
+import { Category } from 'src/app/Models/Owner/IOwnerProduct';
 import { IProductToAdd } from 'src/app/Models/Owner/IProductToAdd';
 import { ProductToAdd } from 'src/app/Models/Owner/ProductToAdd';
 import { CategoryService } from 'src/app/Services/category.service';
@@ -17,13 +18,20 @@ import { ProductListComponent } from '../product-list/product-list.component';
 export class DialogComponent implements OnInit {
   categories? : ICategory[];
   colorArray: string[];
-
+  prevState!: ProductToAdd;
+  colorIndex: number;
   constructor(@Inject(MAT_DIALOG_DATA) public data: IProduct,
   private catService: CategoryService, private productsService: ProductsService
   ,private router: Router) {
     this.colorArray = ["Blue", "Green", "Yellow", "Brown", "Pink", "Red"];
+    this.prevState = new ProductToAdd();
 
+    this.prevState = this.mappingFunction(data);
     // console.log("data = " + data.images);
+    // this.prevState.color = 0;
+    console.log(" this.prevState = " +  this.prevState.color);
+    console.log(data.color);
+    this.colorIndex = this.colorArray.findIndex(c => c == data.color);
   }
 
   ngOnInit(): void {
@@ -31,41 +39,29 @@ export class DialogComponent implements OnInit {
       this.categories = response;
     })
   }
+  changeCat(item:any){
+    console.log("Item: ");
+    console.log(item.value);
 
-  // onUpdate(){
-  //   var files = this.imageInput.nativeElement.files;
-  //   if (files.length === 0) {
-  //     return;
-  //   }
-  //   let filesToUpload: File[] = files;
-  //   const formData = new FormData();
+    this.data.category.name = this.categories?.find(c => c.id== item.value)?.name ?? "";
+    this.data.category.id = item.value;
+    this.data.categoryID = item.value;
+  }
+  changeColor(item:any){
+    console.log(item);
+    this.data.color = this.colorArray[item.value];
+  }
 
-
-  //   for (let i = 0; i < filesToUpload.length; i++) {
-  //     formData.append("files", filesToUpload[i]);
-  //   }
-  //   formData.append("Title_EN", `${this.productToAdd.title_EN}`);
-  //   formData.append("Title_AR", `${this.productToAdd.title_AR}`);
-  //   formData.append("Details_EN", `${this.productToAdd.details_EN}`);
-  //   formData.append("Details_AR", `${this.productToAdd.details_AR}`);
-  //   formData.append("price", `${this.productToAdd.price}`);
-  //   formData.append("Color", `${this.productToAdd.color}`);
-  //   formData.append("Quantity", `${this.productToAdd.quantity}`);
-  //   formData.append("CategoryID", `${this.productToAdd.categoryID}`);
-  //   formData.append("OwnerId", `${this.productToAdd.ownerId}`);
-
-  //   this.prdService.addProduct(formData).subscribe(observer)
-  //   this.productsService.updateProduct(this.data.id, this.data)
-  // }
+ 
   private mappingFunction(product: IProduct): ProductToAdd{
     var productToAdd = new ProductToAdd();
    
     /// Mapping !
     productToAdd.id = product?.id;
-    console.log(product?.category)
+    console.log(product?.category);
     
-    productToAdd.categoryID = this.categories?.find(c => c.name == product?.category)?.id ?? 1
-    console.log(productToAdd.categoryID )
+    productToAdd.categoryID = this.data.categoryID;
+    console.log(productToAdd.categoryID );
 
     productToAdd.color = this.colorArray.findIndex(o => o == product?.color ?? "Blue");
     productToAdd.details_AR = product?.details_AR ?? "";
@@ -90,7 +86,7 @@ export class DialogComponent implements OnInit {
     })
   }
 
-  func(cat:string){
-    return this.categories?.find(c=> c.name==cat)?.id ?? 0
+  onClose(){
+    // this.data = this.prevState;
   }
 }
