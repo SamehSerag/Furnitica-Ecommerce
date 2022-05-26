@@ -1,12 +1,16 @@
 import { DOCUMENT } from '@angular/common';
 import { AfterViewChecked, Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { IPagination } from 'src/app/Models/ipagination';
 import { IProduct } from 'src/app/Models/iproduct';
-import { IOwnerProduct } from 'src/app/Models/Owner/IOwnerProduct';
+import { Category, IOwnerProduct } from 'src/app/Models/Owner/IOwnerProduct';
 import { IProductToAdd } from 'src/app/Models/Owner/IProductToAdd';
+import { ProductToAdd } from 'src/app/Models/Owner/ProductToAdd';
 import { ProductsSearchModel } from 'src/app/Models/ProductsSearchModel';
+import { CategoryService } from 'src/app/Services/category.service';
 import { ProductsService } from 'src/app/Services/products.service';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-product-list',
@@ -20,10 +24,14 @@ export class ProductListComponent implements OnInit, AfterViewChecked{
   productToDelete?: IProduct ;
   pagination!: IPagination;
   productsSearchModel: ProductsSearchModel;
+  colorArray: string[];
+
+  ownerId: string="1";
 
   constructor(@Inject(DOCUMENT) private dom: Document,
-    private prdService: ProductsService, private router: Router) {
-
+    private prdService: ProductsService, private router: Router, public dialog: MatDialog
+    , private catServ: CategoryService) {
+      this.colorArray = ["Blue", "Green", "Yellow", "Brown", "Pink", "Red"];
     this.products = [];
     this.productsSearchModel = new ProductsSearchModel();
     this.productToDelete = undefined;
@@ -35,9 +43,49 @@ export class ProductListComponent implements OnInit, AfterViewChecked{
   }
 
   ngOnInit(): void {
-    this.productsSearchModel.ownerId = "1";
+    this.productsSearchModel.ownerId = this.ownerId;
     this.getProductFilteration();
   }
+  openDialog2() {
+    this.dialog.open(DialogComponent, {
+      // data: {
+      //   animal: 'panda',
+      // },
+      data: {
+        products: this.products[0],
+      },
+    });
+  }
+  openDialog(prId:number) {
+    // var product = this.products.find(p => p.id == prId); 
+    // var productToAdd = new ProductToAdd();
+   
+    // /// Mapping !
+    // productToAdd.id = product?.id;
+    // this.catServ.getAllCategories().subscribe((respons)=>
+    // {
+    //   productToAdd.categoryID = respons.find(c => c.name == product?.category)?.id ?? 1
+    // });
+    // productToAdd.color = this.colorArray.findIndex(o => o == product?.color ?? "Blue");
+    // productToAdd.details_AR = product?.details_AR ?? "";
+    // productToAdd.details_EN = product?.details_EN ?? "";
+    // productToAdd.ownerId = this.ownerId;
+    // productToAdd.price = product?.price ?? 0;
+    // productToAdd.quantity = product?.quantity ?? 0;
+    // productToAdd.title_AR = product?.title_AR ?? "";
+    // productToAdd.title_EN = product?.title_EN ?? "";
+
+    // console.log(product);
+    // console.log(productToAdd);
+
+    this.dialog.open(DialogComponent, {
+      data: this.products.find(p => p.id == prId) ,
+    });
+    
+    // console.log("test");
+
+  }
+  
 
 
   getProductFilteration() {

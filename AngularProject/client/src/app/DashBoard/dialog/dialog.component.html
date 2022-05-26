@@ -1,0 +1,64 @@
+<h1 mat-dialog-title>Update Product</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Title In English</mat-label>
+    <textarea matInput [(ngModel)]="data.title_EN"></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Title In Arabic</mat-label>
+    <textarea matInput [(ngModel)]="data.title_AR"></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Details In English</mat-label>
+    <textarea matInput [(ngModel)]="data.details_EN"></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Details In Arabic</mat-label>
+    <textarea matInput [(ngModel)]="data.details_AR"></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Price</mat-label>
+    <input min="0" type="number" matInput [(ngModel)]="data.price">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Quantity</mat-label>
+    <input min="0" type="number" matInput [(ngModel)]="data.quantity">
+  </mat-form-field>
+
+  <mat-select placeholder="Category" [value]="data.categoryID">
+    <mat-option *ngFor="let item of categories; let i=index" [value]="item.id">
+      {{item.name}}
+    </mat-option>
+    </mat-select> 
+    
+    <mat-select placeholder="Color" [value]="data.color">
+    <mat-option *ngFor="let item of colorArray; let i=index" [value]="(i+1)" >
+      {{item}}
+    </mat-option>
+
+  </mat-select>
+
+  <div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close> Close </button>
+    <button mat-raised-button color="primary" mat-dialog-close 
+        (click)="onUpdate()"> Update </button>
+  </div>
+
+  <!-- My favorite animal is:
+  {{data.products}} -->
+  <!-- <ul>
+    <li>
+      <span *ngIf="data.animal === 'panda'">&#10003;</span> Panda
+    </li>
+    <li>
+      <span *ngIf="data.animal === 'unicorn'">&#10003;</span> Unicorn
+    </li>
+    <li>
+      <span *ngIf="data.animal === 'lion'">&#10003;</span> Lion
+    </li>
+  </ul> -->
+</div>

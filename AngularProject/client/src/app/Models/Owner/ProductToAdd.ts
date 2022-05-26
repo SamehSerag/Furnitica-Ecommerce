@@ -1,4 +1,5 @@
 export class ProductToAdd {
+    id?: number;
     title_EN!: string;
     title_AR!: string;
     details_EN!: string;

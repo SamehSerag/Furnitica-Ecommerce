@@ -2,6 +2,7 @@
 {
     public class ProductToAdd
     {
+        public int Id { get; set; }
         public string Title_EN { get; set; }
         public string Title_AR { get; set; }
         public string Details_EN { get; set; }

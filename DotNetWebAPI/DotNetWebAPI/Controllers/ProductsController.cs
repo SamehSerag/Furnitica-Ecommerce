@@ -145,8 +145,10 @@ namespace AngularAPI.Controllers
         // PUT: api/Products/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("owner/{id}")]
-        public async Task<IActionResult> PutProduct(int id, Product product)
+        public async Task<IActionResult> PutProduct(int id, ProductToAdd product)
         {
+            var productMapped = mapper.Map<ProductToAdd, Product>
+               (product);
             if (id != product.Id)
             {
                 return BadRequest();
@@ -154,7 +156,7 @@ namespace AngularAPI.Controllers
             try
             {
                 //await _context.SaveChangesAsync();
-                await _productRepository.UpdateProductAsync(id, product);
+                await _productRepository.UpdateProductAsync(id, productMapped);
             }
             catch (DbUpdateConcurrencyException)
             {
