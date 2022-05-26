@@ -317,6 +317,7 @@
                                       </span>
                                     </div>
                                     <span class="add">
+                                      <app-addtocart [productId]="product.id"></app-addtocart>
                                       <button class="custom-class btn btn-primary add-to-cart add-item"
                                         data-button-action="add-to-cart" type="button" 
                                         [hidden]="product.quantity == 0">

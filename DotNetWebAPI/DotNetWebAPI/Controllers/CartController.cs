@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AngularAPI.Controllers
 {
-    //[Route("api/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class CartController : ControllerBase
     {
@@ -28,11 +28,12 @@ namespace AngularAPI.Controllers
 
         // Add a single product into the shopping cart or Increase the quantity of the product by ONE
         [HttpPost]
-        [Route("AddToCart/{userId}/{productId}")]
-        public int Post(string userId, int productId)
+        [Route("AddToCart/{productId}")]
+        public int Post(int productId)
         {
-            _cartRepository.AddProductToCart(userId, productId);
-            return _cartRepository.GetCartItemCount(userId);
+            User? user = HttpContext.Items["User"] as User;
+            _cartRepository.AddProductToCart(user.Id, productId);
+            return _cartRepository.GetCartItemCount(user.Id);
         }
 
         // Reduces the quantity by one for an item in shopping cart

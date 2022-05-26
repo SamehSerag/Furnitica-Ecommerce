@@ -1,0 +1,86 @@
+<div class="docs-example-viewer-wrapper">
+    <div class="docs-example-viewer-title mat-elevation-z2">
+        <div class="docs-example-viewer-title-spacer">
+            <h2>Cart Items</h2>
+            <div *ngIf="cartItems && cartItems.length>0">
+                <button type="button" (click)="clearCart()">Clear cart</button>
+            </div>
+        </div>
+    </div>
+    <ng-template #emptycart>
+        <div class="card" *ngIf="!isLoading">
+            <div class="card-title">
+                Shopping cart is empty
+            </div>
+            <div class="card-content">
+                <button class="raised-button primary" [routerLink]='["/"]'>Continue shopping</button>
+            </div>
+        </div>
+    </ng-template>
+    <div *ngIf="isLoading" class="spinner-container">
+    </div>
+    <div class="card" *ngIf="cartItems.length>0; else emptycart">
+        <div class="card-content">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Title</th>
+                        <th>MRP</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+        <table class="table">
+            <tbody>
+                <tr *ngFor="let item of cartItems">
+                    <div class="card-content">
+                        <td><img [src]=""/></td>
+                        <!-- <td> <img class="img-fluid image-cover" [src]="Img(i, 0)"  alt="img"></td> -->
+                        <td><a [routerLink]="['/product/details_EN',item.product.id]">{{item.product.title_EN}}</a></td>
+                        <td>{{ item.product.price | currency : 'INR' }}</td>
+                        <td>
+                            <div class="btn-container">
+                                <div class="btn-minus"><button [disabled]="item.quantity < 2 ? true : false"
+                                        class="primary" (click)="deleteOneCartItem(item.product.id)">
+                                        <i>remove_circle</i>
+                                    </button>
+                                </div>
+                                <div class="div-quantity">{{item.quantity}}</div>
+                                <div class="btn-plus"><button mat-icon-button color="warn"
+                                        (click)="addToCart(item.product.id)">
+                                        <i>add_circle</i>
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>{{ item.product.price * item.quantity | currency : 'INR'}}</td>
+                        <td><button mat-icon-button color="accent" matTooltip="Delete item"
+                                (click)="deleteCartItem(item.product.id)">
+                                <i>delete</i>
+                            </button></td>
+                    </div>
+                </tr>
+            </tbody>
+            <tfoot class="table">
+                <tr>
+                    <div class="card-content">
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <td>Cart Total:</td>
+                        <th>{{totalPrice| currency : 'INR' }}</th>
+                        <th>
+                            <button class="mat-elevation-z4" mat-raised-button color="warn"
+                                [routerLink]='["/checkout"]'>CheckOut</button>
+                        </th>
+                    </div>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

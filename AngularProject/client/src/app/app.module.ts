@@ -18,6 +18,8 @@ import { RegisterComponent } from './Components/register/register.component';
 import { LoginComponent } from './Components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { ProductDetialsComponent } from './Components/product-detials/product-detials.component';
+import { AddtocartComponent } from './Components/addtocart/addtocart.component';
+import { ShoppingcartComponent } from './Components/shoppingcart/shoppingcart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +35,8 @@ import { ProductDetialsComponent } from './Components/product-detials/product-de
     RegisterComponent,
     LoginComponent,
     ProductDetialsComponent,
+    AddtocartComponent,
+    ShoppingcartComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,3 +59,4 @@ export class AppModule { }
 export function httpTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
+
