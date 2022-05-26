@@ -1,4 +1,4 @@
-import { Component, ElementRef, Inject, OnInit } from '@angular/core';
+import { Component, ElementRef, Inject, OnDestroy, OnInit } from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA,MatDialogRef} from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ICategory } from 'src/app/Models/icategories';
@@ -15,7 +15,7 @@ import { ProductListComponent } from '../product-list/product-list.component';
   templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.css']
 })
-export class DialogComponent implements OnInit {
+export class DialogComponent implements OnInit, OnDestroy{
   categories? : ICategory[];
   colorArray: string[];
   prevState!: ProductToAdd;
@@ -32,6 +32,9 @@ export class DialogComponent implements OnInit {
     console.log(" this.prevState = " +  this.prevState.color);
     console.log(data.color);
     this.colorIndex = this.colorArray.findIndex(c => c == data.color);
+  }
+  ngOnDestroy(): void {
+    this.onClose();
   }
 
   ngOnInit(): void {
@@ -78,6 +81,7 @@ export class DialogComponent implements OnInit {
   }
   onUpdate(){
     var p = this.mappingFunction(this.data);
+    this.prevState = p;
     this.productsService.updateProduct(this.data.id??0, p).subscribe((response)=>{
       console.log("Updated Successfully")
 
@@ -87,6 +91,18 @@ export class DialogComponent implements OnInit {
   }
 
   onClose(){
-    // this.data = this.prevState;
+    this.data.categoryID = this.prevState.categoryID;
+    this.data.category.name = this.categories?.find(c => c.id== this.data.categoryID)?.name ?? "";
+    this.data.category.id = this.data.categoryID;
+
+    this.data.color = this.colorArray[this.prevState.color];
+
+    this.data.details_AR = this.prevState.details_AR;
+    this.data.details_EN = this.prevState.details_EN;
+    this.data.price = this.prevState.price;
+    this.data.quantity = this.prevState.quantity;
+    this.data.title_AR = this.prevState.title_AR;
+    this.data.title_EN = this.prevState.title_EN;
+
   }
 }

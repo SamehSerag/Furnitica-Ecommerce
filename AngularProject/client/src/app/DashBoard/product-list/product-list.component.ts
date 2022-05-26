@@ -48,35 +48,14 @@ export class ProductListComponent implements OnInit, AfterViewChecked{
   }
   openDialog2() {
     this.dialog.open(DialogComponent, {
-      // data: {
-      //   animal: 'panda',
-      // },
+      width:'100px',
+      panelClass: 'my-class',
       data: {
         products: this.products[0],
       },
     });
   }
   openDialog(prId:number) {
-    // var product = this.products.find(p => p.id == prId); 
-    // var productToAdd = new ProductToAdd();
-   
-    // /// Mapping !
-    // productToAdd.id = product?.id;
-    // this.catServ.getAllCategories().subscribe((respons)=>
-    // {
-    //   productToAdd.categoryID = respons.find(c => c.name == product?.category)?.id ?? 1
-    // });
-    // productToAdd.color = this.colorArray.findIndex(o => o == product?.color ?? "Blue");
-    // productToAdd.details_AR = product?.details_AR ?? "";
-    // productToAdd.details_EN = product?.details_EN ?? "";
-    // productToAdd.ownerId = this.ownerId;
-    // productToAdd.price = product?.price ?? 0;
-    // productToAdd.quantity = product?.quantity ?? 0;
-    // productToAdd.title_AR = product?.title_AR ?? "";
-    // productToAdd.title_EN = product?.title_EN ?? "";
-
-    // console.log(product);
-    // console.log(productToAdd);
 
     this.dialog.open(DialogComponent, {
       data: this.products.find(p => p.id == prId) ,
