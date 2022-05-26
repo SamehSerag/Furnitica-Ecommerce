@@ -16,7 +16,6 @@ import { IndexComponent } from './index.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'main-shop', component:MainShopComponent },
-  { path: 'products/:pid', component:ProductDetialsComponent },
   { path: 'profile', component:EditProfileComponent},
   { path: 'Orders', component:OrdersComponent},
   { path: 'Orders/pending', component:PendingOrdersComponent},
@@ -26,6 +25,7 @@ const routes: Routes = [
   { path: 'Register', component:RegisterComponent},
   { path: 'Login', component:LoginComponent},
   { path: 'Product/Owner', component: ProductListComponent},
+  { path: 'AddProduct/Owner', component: AddProductComponent},
   { path: 'AddProduct/Owner', component: AddProductComponent},
 ];
 

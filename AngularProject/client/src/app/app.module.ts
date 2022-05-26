@@ -27,6 +27,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductListComponent } from './DashBoard/product-list/product-list.component';
 import { PipeTransformPipe } from './Pipes/pipe-transform.pipe';
 import { AddProductComponent } from './DashBoard/add-product/add-product.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,20 +45,26 @@ import { AddProductComponent } from './DashBoard/add-product/add-product.compone
     LoginComponent,
     OrdersComponent,
     PendingOrdersComponent,
+    ProductReviewsComponent,
+    AllOrdersComponent,
     ProductDetialsComponent,
-    AllOrdersComponent
+    ProductListComponent,
+    PipeTransformPipe,
+    AddProductComponent
   ],
   imports: [
-
-    // TranslateModule.forRoot({
-    //   loader: {
-    //     provide: TranslateLoader,
-    //     useFactory: httpTranslateLoader,
-    //     deps: [HttpClient]
-    //   }
-    // }),
+    BrowserModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     AccordionModule
   ],

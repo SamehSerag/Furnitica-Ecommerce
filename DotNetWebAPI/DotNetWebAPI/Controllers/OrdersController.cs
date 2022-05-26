@@ -1,6 +1,7 @@
 ﻿using AngularProject.Models;
 using DotNetWebAPI.Models;
 using DotNetWebAPI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Data.Entity.Infrastructure;

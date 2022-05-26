@@ -40,3 +40,17 @@
     display: flex;
     flex-wrap: wrap;
 }
+.showAll{
+    background: #f7bc3d;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+.filters{
+    justify-content: space-between;
+    align-items: center;
+}
+.Text-dirc{
+    text-align: right;
+}

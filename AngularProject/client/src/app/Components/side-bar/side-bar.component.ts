@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IUser } from 'src/app/Models/IUser';
 import { AuthService } from 'src/app/Services/auth.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-side-bar',
@@ -8,11 +9,14 @@ import { AuthService } from 'src/app/Services/auth.service';
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent implements OnInit {
-
+  textEn: boolean = true;
+  textAr: boolean=false;
   loggedIn : boolean = false;
   loggedUser : string = "";
 
-  constructor(private auth : AuthService) {
+  constructor(private auth : AuthService, public translate: TranslateService) {
+    translate.addLangs(['en', 'nl']);
+    translate.setDefaultLang('en');
   }
 
   ngOnInit(): void {
@@ -62,5 +66,33 @@ export class SideBarComponent implements OnInit {
     console.log("logging out........");
     this.auth.Logout();
   }
+
+/**********************************************
+ * 
+ * Switching LAnguage
+ * 
+ * ****************************************** */
+ switchLang(lang: string) {
+  this.translate.use(lang);
+  if (lang == 'nl') {
+    this.textEn = false;
+    this.textAr = true;
+    this.translate.use("nl");
+    //  this.setSession("lang", "ar");
+    document.getElementById("arabicBoostrap")?.setAttribute('href', 'assets/LangFolders/bootstrap-rtl.css');
+    document.getElementById("en")?.setAttribute('href', '');
+
+
+  } else {
+    this.textEn = true;
+    this.textAr = false;
+    this.translate.use("en");
+    //  this.setSession("lang", "en");
+    document.getElementById("arabicBoostrap")?.setAttribute('href', '');
+
+    document.getElementById("en")?.setAttribute('href', 'assets/LangFolders/bootstrap.css');
+  }
+}
+
 
 }
