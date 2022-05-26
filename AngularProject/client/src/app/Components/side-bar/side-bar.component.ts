@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { IUser } from 'src/app/Models/IUser';
 import { AuthService } from 'src/app/Services/auth.service';
 
@@ -11,13 +12,21 @@ export class SideBarComponent implements OnInit {
 
   loggedIn : boolean = false;
   loggedUser : string = "";
-
-  constructor(private auth : AuthService) {
+  @ViewChild('searchInput') searchInput!: ElementRef; 
+  constructor(private auth : AuthService, private router: Router) {
   }
 
   ngOnInit(): void {
     this.addUserDataSetItemHandler();
     this.updateState();
+  }
+  
+  searhcQuery(){
+    console.log(this.searchInput);
+    this.router.navigate(
+      ['/main-shop'],
+      { queryParams: { search: `${this.searchInput.nativeElement.value}` } }
+    );
   }
 
   updateState() {

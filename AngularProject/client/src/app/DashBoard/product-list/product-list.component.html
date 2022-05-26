@@ -7,7 +7,7 @@
   <a routerLink="/AddProduct/Owner" class="btn btn-dark m-3 p- px-4" style="float: right;">
     Add Product
   </a>
-  <button mat-button (click)="openDialog2()">Open dialog</button>
+  <!-- <button mat-button (click)="openDialog2()">Open dialog</button> -->
 
   <table class="table table-hover">
     <thead>
@@ -26,27 +26,27 @@
       </tr>
     </thead>
     <tbody #scrollBottom>
-      <tr *ngFor="let product of products">
-          <th scope="row">{{product.id}}</th>
-          <td> <img width="50px" *ngIf="product.images[0]" [src]="product.images[0]" alt="img"></td>
-          <td>{{product.title_EN | pipeTransform}}</td>
-          <td>{{product.title_AR | pipeTransform}}</td>
-          <td>{{product.details_EN | pipeTransform}}</td>
-          <td>{{product.details_AR | pipeTransform}}</td>
-          <td>{{product.price | currency}}</td>
-          <td>{{product.color}}</td>
-          <td>{{product.quantity}}</td>
-          <td >{{product.category.name}}</td>
+      <tr *ngFor="let product of products"  style="cursor: pointer;">
+          <th (click)="openDialog(product.id)" scope="row">{{product.id}}</th>
+          <td (click)="openDialog(product.id)"> <img width="50px" *ngIf="product.images[0]" [src]="product.images[0]" alt="img"></td>
+          <td (click)="openDialog(product.id)">{{product.title_EN | pipeTransform}}</td>
+          <td (click)="openDialog(product.id)">{{product.title_AR | pipeTransform}}</td>
+          <td (click)="openDialog(product.id)">{{product.details_EN | pipeTransform}}</td>
+          <td (click)="openDialog(product.id)">{{product.details_AR | pipeTransform}}</td>
+          <td (click)="openDialog(product.id)">{{product.price | currency}}</td>
+          <td (click)="openDialog(product.id)">{{product.color}}</td>
+          <td (click)="openDialog(product.id)">{{product.quantity}}</td>
+          <td (click)="openDialog(product.id)">{{product.category.name}}</td>
         <td>
-          <div class="btn-group mt-2" role="group">
-            <button [routerLink]="'/Products/'+product.id" type="submit" class="btn btn-success"
-              (click)="onSelect(product)"><i class="fa fa-list text-white" aria-hidden="true"> </i></button>
-            <button type="submit" class="btn btn-primary" (click)="openDialog(product.id)"><i class="fa fa-pencil text-white"
-                aria-hidden="true"></i></button>
-            <button [routerLink]="'/Product/Owner'" type="submit" class="btn btn-danger"
+          <div class="btn-group" role="group">
+            <a [routerLink]="'/Products/'+product.id" type="submit" title="  As User  "
+              (click)="onSelect(product)"><i class="fa fa-eye text-dark fa-green" aria-hidden="true"> </i></a>
+            <!-- <button type="submit" class="btn btn-primary" (click)="openDialog(product.id)"><i class="fa fa-pencil text-white"
+                aria-hidden="true"></i></button> -->
+            <a [routerLink]="'/Product/Owner'" type="submit"
               (click)="onDelete(product)" data-toggle="modal" data-target="#exampleModal">
-              <i class="fa fa-trash-o text-white" aria-hidden="true"></i>
-            </button>
+              <i class="fa fa-trash-o text-dark fa-red" title="  Delete  " aria-hidden="true"></i>
+            </a>
           </div>
         </td>
       </tr>
