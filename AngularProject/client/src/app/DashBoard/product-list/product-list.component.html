@@ -40,12 +40,12 @@
         <td>
           <div class="btn-group mt-2" role="group">
             <button [routerLink]="'/Products/'+product.id" type="submit" class="btn btn-success"
-              (click)="onSelect(product)"><i class="fa fa-list" aria-hidden="true"> </i></button>
-            <button type="submit" class="btn btn-primary" (click)="openDialog(product.id)"><i class="fa fa-pencil"
+              (click)="onSelect(product)"><i class="fa fa-list text-white" aria-hidden="true"> </i></button>
+            <button type="submit" class="btn btn-primary" (click)="openDialog(product.id)"><i class="fa fa-pencil text-white"
                 aria-hidden="true"></i></button>
-            <button [routerLink]="'/Products/'+product.id" type="submit" class="btn btn-danger"
+            <button [routerLink]="'/Product/Owner'" type="submit" class="btn btn-danger"
               (click)="onDelete(product)" data-toggle="modal" data-target="#exampleModal">
-              <i class="fa fa-trash-o" aria-hidden="true"></i>
+              <i class="fa fa-trash-o text-white" aria-hidden="true"></i>
             </button>
           </div>
         </td>
