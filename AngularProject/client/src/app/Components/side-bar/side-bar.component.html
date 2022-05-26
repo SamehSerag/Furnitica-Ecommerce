@@ -67,10 +67,16 @@
                                         <td>£92.96</td>
                                     </tr>
 
+                                    <!-- <button mat-icon-button [routerLinkActive]='["link-active"]' [routerLink]='["/shopping-cart"]'>
+                                        <i badge="{{cartItemCount$ | async}}" matBadgeColor="warn">shopping_cart</i>
+                                    </button> -->
+
+
+
                                     <tr>
                                         <td colspan="3" class="d-flex justify-content-center">
                                             <div class="cart-button">
-                                                <a href="product-cart.html" title="View Cart">View Cart</a>
+                                                <a [routerLinkActive]='["link-active"]' [routerLink]='["/shopping-cart"]' title="View Cart">View Cart</a>
                                                 <a href="product-checkout.html" title="Checkout">Checkout</a>
                                             </div>
                                         </td>
@@ -346,9 +352,15 @@
                                             </tr>
 
                                             <tr>
+                                                <!-- <li routerLinkActive="nav-link">
+                                                    <a  routerLink="/main-shop" class="parent">Shop</a> -->
+
+                                                    <!-- <button mat-icon-button [routerLinkActive]='["link-active"]' [routerLink]='["/shopping-cart"]'>
+                                                        <mat-icon matBadge="{{cartItemCount$ | async}}" matBadgeColor="warn">shopping_cart</mat-icon>
+                                                    </button> -->
                                                 <td colspan="3" class="d-flex justify-content-center">
                                                     <div class="cart-button">
-                                                        <a href="product-cart.html" title="View Cart">View Cart</a>
+                                                        <a routerLink="/shopping-cart" title="View Cart">View Cart</a>
                                                         <a href="product-checkout.html" title="Checkout">Checkout</a>
                                                     </div>
                                                 </td>
