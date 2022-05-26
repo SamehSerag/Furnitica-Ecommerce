@@ -9,20 +9,20 @@ import { CategoryService } from 'src/app/Services/category.service';
 })
 export class MainCatergoriesComponent implements OnInit {
 
-  categories : ICategory[] =[];
+  categories: ICategory[] = [];
 
-  constructor(private categoryService : CategoryService) {
+  constructor(private categoryService: CategoryService) {
 
   }
 
   ngOnInit(): void {
-   this.categoryService.getAllCategories()
-   .subscribe( categories =>{
-     this.categories = categories;
-     console.log(this.categories);
-   }
+    this.categoryService.getAllCategories()
+      .subscribe(categories => {
+        this.categories = categories;
+        console.log(this.categories);
+      }
 
-   );
+      );
   }
 
 }

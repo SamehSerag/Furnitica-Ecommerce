@@ -17,9 +17,21 @@ import { EditProfileComponent } from './Components/edit-profile/edit-profile.com
 import { RegisterComponent } from './Components/register/register.component';
 import { LoginComponent } from './Components/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { OrdersComponent } from './Components/orders/orders.component';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { PendingOrdersComponent } from './DashBoard/pending-orders/pending-orders.component';
+import { AllOrdersComponent } from './DashBoard/all-orders/all-orders.component';
 import { ProductDetialsComponent } from './Components/product-detials/product-detials.component';
+
 import { AddtocartComponent } from './Components/addtocart/addtocart.component';
 import { ShoppingcartComponent } from './Components/shoppingcart/shoppingcart.component';
+
+import { ProductReviewsComponent } from './Components/product-reviews/product-reviews.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductListComponent } from './DashBoard/product-list/product-list.component';
+import { PipeTransformPipe } from './Pipes/pipe-transform.pipe';
+import { AddProductComponent } from './DashBoard/add-product/add-product.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,23 +46,36 @@ import { ShoppingcartComponent } from './Components/shoppingcart/shoppingcart.co
     EditProfileComponent,
     RegisterComponent,
     LoginComponent,
+    OrdersComponent,
+    PendingOrdersComponent,
+    ProductReviewsComponent,
+    AllOrdersComponent,
     ProductDetialsComponent,
+
     AddtocartComponent,
     ShoppingcartComponent,
+
+    ProductListComponent,
+    PipeTransformPipe,
+    AddProductComponent
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: httpTranslateLoader,
-        deps: [HttpClient]
-      }
-    }),
+  //  TranslateModule.forRoot({
+  //    loader: {
+  //      provide: TranslateLoader,
+  //      useFactory: httpTranslateLoader,
+  //      deps: [HttpClient]
+  //    }
+  //  }),
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    AccordionModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

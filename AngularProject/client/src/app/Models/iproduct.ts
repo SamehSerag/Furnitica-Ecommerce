@@ -7,6 +7,8 @@ export interface IProduct {
     price: number;
     color: string;
     quantity: number;
-    images: string[];
-    category: string;
+    categoryID: number;
+    category?: any;
+    images?: any;
+    orderProducts: any[];
 }

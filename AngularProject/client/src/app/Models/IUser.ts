@@ -1,9 +1,10 @@
 import { Gender } from "../Enums/Gender";
 
 export interface IUser {
-  userId: number;
-  username : string;
+  userName : string;
   email : string;
-  gender : Gender;
   address : string;
+  phoneNumber : String;
+  gender : Gender;
+  imageId : number;
 }

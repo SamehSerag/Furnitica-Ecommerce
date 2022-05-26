@@ -21,6 +21,7 @@ namespace AngularAPI.Repository
 
         public async Task AddProductAsync(Product product)
         {
+            
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
         }
@@ -43,7 +44,8 @@ namespace AngularAPI.Repository
         {
 
             IQueryable<Product> query = _context.Products.Include(p => p.Images)
-                .Include(p => p.Category);
+                .Include(p => p.Category)
+                .Include(p => p.Owner);
 
             if(productSearchModel != null)
             {
@@ -97,6 +99,12 @@ namespace AngularAPI.Repository
                 if(productSearchModel.Color != null)
                     query = query.Where(p=> p.Color == productSearchModel.Color);
 
+                if (!string.IsNullOrEmpty(productSearchModel.OwnerId))
+                {
+                    query = query.Where(p => p.OwnerId 
+                                    == productSearchModel.OwnerId);
+                }
+
                IProductRepository.TotalItems = query.Count();
                 query = query.Skip((productSearchModel.PageIndex - 1) * 
                     productSearchModel.PageSize).Take(productSearchModel.PageSize);
@@ -106,8 +114,18 @@ namespace AngularAPI.Repository
         }
         public async Task<Product> GetProductByIdAsync(int id)
         {
+
+            //Product product = new Product() {Title_EN = "SS", Title_AR="ss", Details_EN="ss"
+            //, Details_AR="dd", price=10, OwnerId ="1", Quantity=5, CategoryID =1, Color = Enums.Color.Green};
+            //product.Images = new List<Image>();
+            //product.Images.Add(new Image() { Src = "dddd" });
+
+            //_context.Products.Add(product);
+            //_context.SaveChanges();
+
             return await _context.Products
                 .Include(p => p.Images)
+                .Include(p => p.Owner)
                 .Include(p => p.Category)
                 .FirstOrDefaultAsync(p => p.Id == id);
         }

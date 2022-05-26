@@ -221,6 +221,9 @@
                                 </div> -->
                             </li>
                             <li routerLinkActive="nav-link">
+                                <a routerLink="/Product/Owner" class="parent"> Admin Shop</a>
+                            </li>
+                            <li routerLinkActive="nav-link">
                                 <a href="contact.html" class="parent">Contact US</a>
                             </li>
                         </ul>
@@ -241,50 +244,51 @@
                         <div class="myaccount-title">
                             <a href="#acount" data-toggle="collapse" class="acount">
                                 <i class="fa fa-user" aria-hidden="true"></i>
-                                <span>Account</span>
+                                <span *ngIf="loggedIn" > {{loggedUser}} </span>
+                                <span *ngIf="!loggedIn" > Account </span>
                                 <i class="fa fa-angle-down" aria-hidden="true"></i>
                             </a>
                         </div>
                         <div id="acount" class="collapse">
                             <div class="account-list-content">
-                                <div>
-                                    <a class="login" href="/edit-profile" rel="nofollow" title="Log in to your customer account">
+                                <div *ngIf="loggedIn">
+                                    <a  class="login" [routerLink]="['/profile']" routerLinkActive="router-link-active"  rel="nofollow" title="Log in to your customer account">
                                         <i class="fa fa-cog"></i>
                                         <span>My Account</span>
                                     </a>
                                 </div>
-                                <div>
+                                <div *ngIf="!loggedIn">
                                     <a class="login" [routerLink]="['/Login']" routerLinkActive="router-link-active" href="user-login.html" rel="nofollow" title="Log in to your customer account">
                                         <i class="fa fa-sign-in"></i>
                                         <span>Sign in</span>
                                     </a>
                                 </div>
-                                <div>
+                                <div *ngIf="!loggedIn">
                                     <a class="register" [routerLink]="['/Register']" routerLinkActive="router-link-active" href="user-register.html" rel="nofollow" title="Register Account">
                                         <i class="fa fa-user"></i>
                                         <span>Register Account</span>
                                     </a>
                                 </div>
-                                <div>
+                                <div *ngIf="loggedIn">
                                     <a class="check-out" href="product-checkout.html" rel="nofollow" title="Checkout">
                                         <i class="fa fa-check" aria-hidden="true"></i>
                                         <span>Checkout</span>
                                     </a>
                                 </div>
-                                <div>
+                                <div *ngIf="loggedIn">
                                     <a href="user-wishlist.html" title="My Wishlists">
                                         <i class="fa fa-heart"></i>
                                         <span>My Wishlists</span>
                                     </a>
                                 </div>
-                                <div>
-                                    <a class="login" [routerLink]="['/Login']" routerLinkActive="router-link-active" title="Logout">
+                                <div *ngIf="loggedIn">
+                                    <a (click)="Logout()" class="login" [routerLink]="['/Login']" routerLinkActive="router-link-active" title="Logout">
                                         <i class="fa fa-sign-out"></i>
                                         <span>Sign Out</span>
                                     </a>
                                 </div>
-                                <div id="desktop_currency_selector" class="currency-selector groups-selector hidden-sm-down">
-                                    <ul class="list-inline">
+                                <div *ngIf="loggedIn" id="desktop_currency_selector" class="currency-selector groups-selector hidden-sm-down">
+                                  <ul class="list-inline">
                                         <li>
                                             <a title="Euro" rel="nofollow" href="#">EUR</a>
                                         </li>
@@ -293,6 +297,7 @@
                                         </li>
                                     </ul>
                                 </div>
+
                                 <div id="desktop_language_selector" class="language-selector groups-selector hidden-sm-down">
                                     <ul class="list-inline">
                                         <li class="list-inline-item current">
@@ -302,17 +307,7 @@
                                         </li>
                                         <li class="list-inline-item">
                                             <a href="#">
-                                                <img class="img-fluid" src="../../../assets/img/home/home1-flas2.jpg" alt="Italiano" width="16" height="11">
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#">
-                                                <img class="img-fluid" src="../../../assets/img/home/home1-flas3.jpg" alt="Français" width="16" height="11">
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#">
-                                                <img class="img-fluid" src="../../../assets/img/home/home1-flas4.jpg" alt="Español" width="16" height="11">
+                                                <img class="img-fluid" src="../../../assets/img/home/eg-flag.jpg" alt="Arabic" width="16" height="11">
                                             </a>
                                         </li>
                                     </ul>

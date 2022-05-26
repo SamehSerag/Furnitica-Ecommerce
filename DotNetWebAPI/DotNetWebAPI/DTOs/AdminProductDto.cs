@@ -1,5 +1,6 @@
 ﻿using AngularAPI.Enums;
 using AngularProject.Models;
+using DotNetWebAPI.DTOs;
 
 namespace AngularAPI.Dtos
 {
@@ -17,8 +18,7 @@ namespace AngularAPI.Dtos
         public int Quantity { get; set; }
 
         public int CategoryID { get; set; }
-
-        public Category? Category { get; set; }
+        public ProductCategoryDto? Category { get; set; }
         public ICollection<ImageDto>? Image { get; set; }
         public ICollection<OrderProductDto>? OrderProduct { get; set; } 
 

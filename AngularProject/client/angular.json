@@ -27,12 +27,13 @@
               "src/assets"
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/assets/libs/bootstrap/css/bootstrap.min.css",
               "src/assets/libs/font-awesome/css/font-awesome.min.css",
               "src/assets/libs/nivo-slider/css/nivo-slider.css",
               "src/assets/libs/nivo-slider/css/animate.css",
-              "src/assets/libs/nivo-slider/css/style.css",
 
+              "src/assets/libs/nivo-slider/css/style.css",
               "src/assets/libs/font-material/css/material-design-iconic-font.min.css",
               "src/assets/libs/slider-range/css/jslider.css",
               "src/assets/libs/owl-carousel/assets/owl.carousel.min.css",

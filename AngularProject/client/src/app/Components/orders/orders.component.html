@@ -1,0 +1,149 @@
+<div class="product-cart checkout-cart blog">
+    <div class="main-content" id="cart">
+        <!-- main -->
+        <div id="wrapper-site">
+
+            <div class="container">
+                <div class="row">
+                    <div id="content-wrapper" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 onecol">
+                        <section id="main">
+                            <div class="cart-grid row">
+                                <div class="col-md-9 col-xs-12 check-info">
+                                    <h1 class="title-page">All Orders</h1>
+                                    <div class="cart-container">
+                                        <div class="cart-overview js-cart">
+
+                                            <accordion [isAnimated]="true">
+
+                                                <accordion-group [isOpen]="true" *ngFor="let order of allOrders"
+                                                    heading="Order number : &nbsp; ({{order.id}})  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date: &nbsp; ({{order.date | date:'dd/MM/yyyy'}})">
+
+                                                    <div class="row">
+
+                                                        <div class="col-md-1 actions">
+                                                            <div *ngIf="order.state==0">
+                                                                <i class="fa fa-trash-o DeleteProduct"
+                                                                (click)='DeleteOrder(order.id)'></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-11">
+                                                            <div class=" main-title">
+                                                                <label>Order details ({{order.orderProducts.length}}
+                                                                    items)</label>
+                                                                <span *ngIf="order.state==0"
+                                                                    class="pending">Pending</span>
+                                                                <span *ngIf="order.state==1"
+                                                                    class="accepted">Accepted</span>
+                                                                <span *ngIf="order.state==2"
+                                                                    class="rejected">Rejected</span>
+
+                                                            </div>
+
+                                                            <table class="table table-bordered">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th style="text-align: center;" scope="col">
+                                                                            Product
+                                                                            Title</th>
+                                                                        <th style="text-align: center;" scope="col">
+                                                                            Quntity
+                                                                        </th>
+                                                                        <th style="text-align: center;" scope="col">
+                                                                            Details
+                                                                        </th>
+                                                                        <th style="text-align: center;" scope="col">
+                                                                            product
+                                                                            Price</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr *ngFor="let orderD of order.orderProducts">
+                                                                        <td style="text-align: center;">
+                                                                            {{orderD.product.title_EN}}</td>
+                                                                        <td style="text-align: center;">
+                                                                            {{orderD.product.quantity}}</td>
+                                                                        <td style="text-align: center;">
+                                                                            {{orderD.product.details_EN}}</td>
+                                                                        <td style="text-align: center;">
+                                                                            {{orderD.product.price}}</td>
+                                                                    </tr>
+
+                                                                </tbody>
+                                                            </table>
+                                                            <div class="main-title">
+                                                                <label>Total Price: {{order.totalPrice}}$</label>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </accordion-group>
+                                            </accordion>
+                                        </div>
+                                    </div>
+                                    <a href="product-checkout.html" class="continue btn btn-primary pull-xs-right">
+                                        Continue
+                                    </a>
+                                </div>
+                                <div class="cart-grid-right col-xs-12 col-lg-3">
+                                    <div class="cart-summary">
+                                        <div class="cart-detailed-totals">
+                                            <div class="cart-summary-products">
+                                                <div class="summary-label">There are 3 item in your cart</div>
+                                            </div>
+                                            <div class="cart-summary-line" id="cart-subtotal-products">
+                                                <span class="label js-subtotal">
+                                                    Total products:
+                                                </span>
+                                                <span class="value">£200.00</span>
+                                            </div>
+                                            <div class="cart-summary-line" id="cart-subtotal-shipping">
+                                                <span class="label">
+                                                    Total Shipping:
+                                                </span>
+                                                <span class="value">Free</span>
+                                                <div>
+                                                    <small class="value"></small>
+                                                </div>
+                                            </div>
+                                            <div class="cart-summary-line cart-total">
+                                                <span class="label">Total:</span>
+                                                <span class="value">£200.00 (tax incl.)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="block-reassurance">
+                                        <ul>
+                                            <li>
+                                                <div class="block-reassurance-item">
+                                                    <img src="img/product/check1.png"
+                                                        alt="Security policy (edit with Customer reassurance module)">
+                                                    <span>Security policy (edit with Customer reassurance module)</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="block-reassurance-item">
+                                                    <img src="img/product/check2.png"
+                                                        alt="Delivery policy (edit with Customer reassurance module)">
+                                                    <span>Delivery policy (edit with Customer reassurance module)</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="block-reassurance-item">
+                                                    <img src="img/product/check3.png"
+                                                        alt="Return policy (edit with Customer reassurance module)">
+                                                    <span>Return policy (edit with Customer reassurance module)</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

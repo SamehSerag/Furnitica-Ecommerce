@@ -17,6 +17,8 @@ using System.IO;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IWebHostEnvironment;
 using AngularAPI.Data;
 using AngularAPI.Models;
+using DotNetWebAPI.DTOs;
+using DotNetWebAPI.DTOs.Helpers;
 
 namespace AngularAPI.Controllers
 {
@@ -87,7 +89,7 @@ namespace AngularAPI.Controllers
             return Ok(paginationMetaData);
         }
         // GET: api/Products/admin
-        [HttpGet("admin/")]
+        [HttpGet("owner/")]
         public async Task<ActionResult<AdminProductDto>> GetProductsByAdmin
             ([FromQuery] ProductSearchModel productSearchModel)
         {
@@ -123,8 +125,8 @@ namespace AngularAPI.Controllers
             return Ok(productDto);
         }
 
-        [HttpGet("admin/{id}")]
-        public async Task<ActionResult<ProductToReturnDto>> GetProductByAdmin(int id)
+        [HttpGet("owner/{id}")]
+        public async Task<ActionResult<AdminProductDto>> GetProductByAdmin(int id)
         {
             var product = await _productRepository.GetProductByIdAsync(id);
 
@@ -142,7 +144,7 @@ namespace AngularAPI.Controllers
 
         // PUT: api/Products/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("admin/{id}")]
+        [HttpPut("owner/{id}")]
         public async Task<IActionResult> PutProduct(int id, Product product)
         {
             if (id != product.Id)
@@ -169,19 +171,26 @@ namespace AngularAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Products
+        // POST: api/Products/onwer
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost("admin/")]
-        public async Task<ActionResult<Product>> PostProduct(Product product)
+        [HttpPost("owner")]
+        public async Task<ActionResult<AdminProductDto>> PostProduct([FromForm]ProductToAdd product)
         {
-            
-            await _productRepository.AddProductAsync(product);
 
-            return CreatedAtAction("GetProduct", new { id = product.Id }, product);
+            var productMapped = mapper.Map<ProductToAdd, Product>
+                (product);
+
+            /// Save Image Locally and then add path to database
+            var Images = ImageSaver.SaveLocally(product.files, environment);
+            productMapped.Images.AddRange(Images);
+
+            await _productRepository.AddProductAsync(productMapped);
+
+            return CreatedAtAction("GetProductByAdmin", new { id = productMapped.Id }, productMapped);
         }
 
-        // DELETE: api/Products/5
-        [HttpDelete("admin/{id}")]
+        // DELETE: api/Products/owner/5
+        [HttpDelete("owner/{id}")]
         public async Task<IActionResult> DeleteProduct(int id)
         {
             var product = await _productRepository.GetProductByIdAsync(id);

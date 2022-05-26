@@ -45,6 +45,8 @@ namespace AngularProject.Models
         public virtual Image? Image { get; set; }
         public virtual Cart? Cart { get; set; }
 
+
+        public virtual ICollection<Product>? Products { get; set; }
         //// list of orders
         public virtual ICollection<Order>? Orders { get; set; }
     }

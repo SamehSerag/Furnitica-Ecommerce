@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace AngularAPI.Migrations
+namespace DotNetWebAPI.Migrations
 {
     [DbContext(typeof(ShoppingDbContext))]
     partial class ShoppingDbContextModelSnapshot : ModelSnapshot
@@ -24,27 +24,32 @@ namespace AngularAPI.Migrations
 
             modelBuilder.Entity("AngularProject.Models.Cart", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("CartId")
+                        .HasColumnType("nvarchar(450)");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("Id");
+                    b.HasKey("CartId");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("Carts");
                 });
 
             modelBuilder.Entity("AngularProject.Models.CartProduct", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("CartProductId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CartProductId"), 1L, 1);
 
-                    b.Property<int>("CartId")
-                        .HasColumnType("int");
+                    b.Property<string>("CartId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
@@ -52,11 +57,7 @@ namespace AngularAPI.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("CartId");
-
-                    b.HasIndex("ProductId");
+                    b.HasKey("CartProductId");
 
                     b.ToTable("CartProducts");
                 });
@@ -70,7 +71,6 @@ namespace AngularAPI.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -181,6 +181,9 @@ namespace AngularAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("OwnerId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
@@ -198,6 +201,8 @@ namespace AngularAPI.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryID");
+
+                    b.HasIndex("OwnerId");
 
                     b.ToTable("Products");
                 });
@@ -268,8 +273,6 @@ namespace AngularAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CartID");
-
                     b.HasIndex("ImageId");
 
                     b.HasIndex("NormalizedEmail")
@@ -281,6 +284,40 @@ namespace AngularAPI.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("DotNetWebAPI.Models.Review", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ReviewBody")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("starsCount")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -416,23 +453,13 @@ namespace AngularAPI.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("AngularProject.Models.CartProduct", b =>
+            modelBuilder.Entity("AngularProject.Models.Cart", b =>
                 {
-                    b.HasOne("AngularProject.Models.Cart", "Cart")
-                        .WithMany("CartProducts")
-                        .HasForeignKey("CartId")
+                    b.HasOne("AngularProject.Models.User", null)
+                        .WithOne("Cart")
+                        .HasForeignKey("AngularProject.Models.Cart", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("AngularProject.Models.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Cart");
-
-                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("AngularProject.Models.Image", b =>
@@ -475,29 +502,46 @@ namespace AngularAPI.Migrations
             modelBuilder.Entity("AngularProject.Models.Product", b =>
                 {
                     b.HasOne("AngularProject.Models.Category", "Category")
-                        .WithMany()
+                        .WithMany("Products")
                         .HasForeignKey("CategoryID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("AngularProject.Models.User", "Owner")
+                        .WithMany("Products")
+                        .HasForeignKey("OwnerId");
+
                     b.Navigation("Category");
+
+                    b.Navigation("Owner");
                 });
 
             modelBuilder.Entity("AngularProject.Models.User", b =>
                 {
-                    b.HasOne("AngularProject.Models.Cart", "Cart")
-                        .WithMany()
-                        .HasForeignKey("CartID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("AngularProject.Models.Image", "Image")
                         .WithMany()
                         .HasForeignKey("ImageId");
 
-                    b.Navigation("Cart");
-
                     b.Navigation("Image");
+                });
+
+            modelBuilder.Entity("DotNetWebAPI.Models.Review", b =>
+                {
+                    b.HasOne("AngularProject.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AngularProject.Models.User", "user")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("user");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -551,9 +595,9 @@ namespace AngularAPI.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("AngularProject.Models.Cart", b =>
+            modelBuilder.Entity("AngularProject.Models.Category", b =>
                 {
-                    b.Navigation("CartProducts");
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("AngularProject.Models.Order", b =>
@@ -570,7 +614,11 @@ namespace AngularAPI.Migrations
 
             modelBuilder.Entity("AngularProject.Models.User", b =>
                 {
+                    b.Navigation("Cart");
+
                     b.Navigation("Orders");
+
+                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }

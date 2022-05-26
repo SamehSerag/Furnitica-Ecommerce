@@ -1,0 +1,37 @@
+
+.DeleteProduct{
+    color: rgb(159, 13, 13);
+    font-size: 26px;
+}
+.editOrder{
+    color: #a7d6dd;
+    font-size: 26px;
+}
+.main-title{
+    display:flex;
+    justify-content: space-around;
+    align-items: baseline;
+}
+.accepted{
+    color: #100f0f;
+    background: #04c104;
+    border-radius: 10px;
+    padding: 4px;
+}
+.pending{
+    color: #100f0f;
+    background: #f6e024;
+    border-radius: 10px;
+    padding: 4px;
+}
+.rejected{
+    color: #100f0f;
+    background: #ff3822;
+    border-radius: 10px;
+    padding: 4px;
+}
+.actions{
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}

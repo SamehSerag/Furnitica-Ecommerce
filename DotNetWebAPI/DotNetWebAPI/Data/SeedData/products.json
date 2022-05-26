@@ -1,0 +1,53 @@
+﻿[
+  {
+    "Title_EN": "Table lamp-Yellow & Beige",
+    "Title_AR": "مصباح طاولة - أصفر وبيج",
+    "Details_EN": "Visually stunning and completely chic! This table lamp features a beech wooden legs that will enhance the style in your space, and the yellow fabric shade is the perfect finishing touch to shed light across your room. This table lamp is with socket, but without lamps.",
+    "Details_AR": "مذهلة بصريا وأنيقة تماما! يتميز مصباح الطاولة هذا بأرجل خشبية من خشب الزان ستحسن من أناقة مساحتك ، وغطاء القماش الأصفر هو اللمسة النهائية المثالية لإلقاء الضوء على غرفتك. مصباح الطاولة هذا مزود بمقبس ، لكن بدون مصابيح.",
+    "price": 1500,
+    "Quantity": 15,
+    "Color": 1,
+    "CategoryID": 3
+
+  },
+  {
+    "Title_EN": "Table Lamp-Black&Brown",
+    "Title_AR": "مصباح طاولة - أسود وبني",
+    "Details_EN": "Illuminate your living room, family room, or office with this Modern styled table lamp, made of Steel stand with electrostatic painting. It defines casual elegance and brings an easy modern touch to any living space. This table lamp is with socket, but without lamps.",
+    "Details_AR": "أضيء غرفة معيشتك أو غرفة عائلتك أو مكتبك بمصباح الطاولة الحديث هذا ، المصنوع من حامل فولاذي بطلاء إلكتروستاتيكي. إنه يحدد الأناقة غير الرسمية ويضفي لمسة عصرية سهلة على أي مساحة معيشة. مصباح الطاولة هذا مزود بمقبس ، لكن بدون مصابيح.",
+    "price": 300,
+    "Quantity": 5,
+    "Color": 2,
+    "CategoryID": 3
+  },
+  {
+    "Title_EN": "Steel Side Table - Gold & White",
+    "Title_AR": "طاولة جانبية من الصلب - ذهبي وابيض",
+    "Details_EN": "Set of three side tables featuring Brushed Steel base with electrostatic painting and White marble top can be used in the living room.,",
+    "Details_AR": "مجموعة من ثلاث طاولات جانبية تتميز بقاعدة فولاذية مصقولة بطلاء إلكتروستاتيكي وسطح من الرخام الأبيض يمكن استخدامها في غرفة المعيشة.",
+    "price": 1950,
+    "Quantity": 20,
+    "Color": 2,
+    "CategoryID": 1
+  },
+  {
+    "Title_EN": "Bed - Gray",
+    "Title_AR": "سرير - رمادي,",
+    "Details_EN": "Made of Counter Wood and Beech Wood.Sponge, density 33. Hummer Fabric.",   
+    "Details_AR": "مصنوع من الخشب المضاد وخشب الزان. اسفنجة كثيفة 33.قماش هامر.",
+    "price": 2600,
+    "Quantity": 1,
+    "Color": 2,
+    "CategoryID": 18
+  },
+  {
+    "Title_EN": "Bed - Black",
+    "Title_AR": "سرير - رمادي,",
+    "Details_EN": "Made of Counter Wood and Beech Wood.",   
+    "Details_AR": "مصنوع من الخشب المضاد وخشب الزان",
+    "price": 2800,
+    "Quantity": 2,
+    "Color": 1,
+    "CategoryID": 18
+  }
+]
