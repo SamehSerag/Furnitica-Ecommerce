@@ -1,13 +1,11 @@
-﻿using AngularAPI.Repository;
-using AngularAPI.Services;
+﻿using AngularAPI.Services;
 using AngularProject.Models;
 using DotNetWebAPI.DTOs;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AngularAPI.Controllers
 {
-    //[Route("api/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class CartController : ControllerBase
     {
@@ -18,53 +16,50 @@ namespace AngularAPI.Controllers
             _cartRepository = cartRepository;
         }
 
-        // Get the list of products in the shopping cart
-        [HttpGet("userId")]
-        public async Task<List<CartProductDto>> Get(string userId)
+        // Get the list of products in the shopping cart 
+        [HttpGet]
+        [Route("GetAllProducts")]
+        public async Task<List<CartProductDto>> Get()
         {
-            string cartid = _cartRepository.GetCart(userId);
+            User? user = HttpContext.Items["User"] as User;
+            string cartid = _cartRepository.GetCart(user.Id);
             return await Task.FromResult(_cartRepository.GetProductsAvailableInCart(cartid)).ConfigureAwait(true);
         }
 
-        // Add a single product into the shopping cart or Increase the quantity of the product by ONE
+        // Add a single product into the shopping cart or Increase the quantity of the product by ONE (Tested)
         [HttpPost]
-
         [Route("AddToCart/{productId}")]
         public int Post(int productId)
         {
             User? user = HttpContext.Items["User"] as User;
             _cartRepository.AddProductToCart(user.Id, productId);
             return _cartRepository.GetCartItemCount(user.Id);
-
-        [Route("AddToCart/{userId}/{productId}")]
-        public int Post(string userId, int productId)
-        {
-            _cartRepository.AddProductToCart(userId, productId);
-            return _cartRepository.GetCartItemCount(userId);
-
         }
 
-        // Reduces the quantity by one for an item in shopping cart
-        [HttpPut("{userId}/{productId}")]
-        public int Put(string userId, int productId)
+        // Reduces the quantity by one for an item in shopping cart (Tested)
+        [HttpPut("{productId}")]
+        public int Put(int productId)
         {
-            _cartRepository.DeleteOneCartItem(userId, productId);
-            return _cartRepository.GetCartItemCount(userId);
+            User? user = HttpContext.Items["User"] as User;
+            _cartRepository.DeleteOneCartItem(user.Id, productId);
+            return _cartRepository.GetCartItemCount(user.Id);
         }
 
-        // Delete a single item from the cart 
-        [HttpDelete("{userId}/{productId}")]
-        public int Delete(string userId, int productId)
+        // Delete a single item from the cart (Tested)
+        [HttpDelete("{productId}")]
+        public int Delete(int productId)
         {
-            _cartRepository.RemoveCartItem(userId, productId);
-            return _cartRepository.GetCartItemCount(userId);
+            User? user = HttpContext.Items["User"] as User;
+            _cartRepository.RemoveCartItem(user.Id, productId);
+            return _cartRepository.GetCartItemCount(user.Id);
         }
 
-        // Clear the shopping cart
-        [HttpDelete("{userId}")]
-        public int Delete(string userId)
+        // Clear the shopping cart (Tested)
+        [HttpDelete]
+        public int Delete()
         {
-            return _cartRepository.ClearCart(userId);
+            User? user = HttpContext.Items["User"] as User;
+            return _cartRepository.ClearCart(user.Id);
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using AngularProject.Data;
 using AngularProject.Models;
 using DotNetWebAPI.DTOs;
-using Microsoft.AspNetCore.Components;
 using Microsoft.EntityFrameworkCore;
 namespace AngularAPI.Services
 {
@@ -135,6 +134,7 @@ namespace AngularAPI.Services
         public Product GetProductData(int productId)
         {
             Product product = _dbContext.Products.FirstOrDefault(x => x.Id == productId);
+
             if (product != null)
             {
                 _dbContext.Entry(product).State = EntityState.Detached;
@@ -147,7 +147,7 @@ namespace AngularAPI.Services
         // ######################## Available Products in Cart ########################
         public List<CartProductDto> GetProductsAvailableInCart(string cartID)
         {
-            List<CartProductDto> cartItemList = new List<CartProductDto>();
+            var cartItemList = new List<CartProductDto>();
             List<CartProduct> cartItems = _dbContext.CartProducts.Where(x => x.CartId == cartID).ToList();
 
             foreach (CartProduct item in cartItems)

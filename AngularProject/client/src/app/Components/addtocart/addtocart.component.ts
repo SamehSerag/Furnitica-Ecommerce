@@ -13,7 +13,9 @@ export class AddtocartComponent implements OnInit {
   productId!: number;
   userId: string;
 
-  constructor(private cartService: CartService, private subscriptionService: SubscriptionService) {
+  constructor(
+    private cartService: CartService, 
+    private subscriptionService: SubscriptionService) {
     this.userId = localStorage.getItem('userId') as string;
   }
   addToCart()

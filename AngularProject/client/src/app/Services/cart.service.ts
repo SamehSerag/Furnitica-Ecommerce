@@ -7,10 +7,6 @@ import { ShoppingCart } from '../Models/shoppingcart';
   providedIn: 'root'
 })
 
-
-
-
-
 export class CartService {
   
   cartItemCount = 0;
@@ -29,7 +25,6 @@ export class CartService {
     );
     return this.http.post<number>(this.baseURL + `addToCart/${productId}`, {});
   }
-
   
 
   GetCart(userId: string) {
