@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using AngularProject.Data;
 using AngularProject.Models;
 using AngularAPI.Repository;
+using DotNetWebAPI.DTOs;
 
 namespace AngularAPI.Controllers
 {
@@ -97,10 +98,10 @@ namespace AngularAPI.Controllers
         public async Task<ActionResult<Product>> PostImagesToThereProducts(
            [FromForm] List<IFormFile> imagesFiles, [FromForm] int productId)
         {
-
+            var files = Request.Form.Files;
             if (imagesFiles != null)
             {
-                var folderPath = @"/images/products/";
+                var folderPath = @"/images/product/";
                 string folderPathWithRoot = environment.WebRootPath + folderPath;
 
                 if (!Directory.Exists(folderPathWithRoot))
@@ -129,6 +130,45 @@ namespace AngularAPI.Controllers
             return Ok(await productRepository.GetProductByIdAsync(productId));
             //return Ok();
         }
+
+
+        [HttpPost("AddImages2")]
+        public async Task<ActionResult<Product>> PostImagesToThereProducts2(
+          /*[FromForm] TestDto test*/ [FromForm] ProductToAdd test)
+        {
+            var files = Request.Form.Files;
+            //if (imagesFiles != null)
+            //{
+            //    var folderPath = @"/images/product/";
+            //    string folderPathWithRoot = environment.WebRootPath + folderPath;
+
+            //    if (!Directory.Exists(folderPathWithRoot))
+            //    {
+            //        Directory.CreateDirectory(folderPathWithRoot);
+            //    }
+
+            //    foreach (var image in imagesFiles)
+            //    {
+            //        using (FileStream fileStream = System.IO.File.Create(
+            //            folderPathWithRoot + image.FileName))
+            //        {
+            //            image.CopyTo(fileStream);
+            //            fileStream.Flush();
+            //        }
+            //        Image img = new Image();
+            //        img.ProductId = productId;
+            //        img.Src = folderPath + image.FileName;
+
+            //        _context.Images.Add(img);
+            //    }
+            //}
+
+            //await _context.SaveChangesAsync();
+
+            return Ok(await productRepository.GetProductByIdAsync(1));
+            //return Ok();
+        }
+
 
         // DELETE: api/Images/5
         [HttpDelete("{id}")]

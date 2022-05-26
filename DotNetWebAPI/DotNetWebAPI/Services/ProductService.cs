@@ -21,6 +21,7 @@ namespace AngularAPI.Repository
 
         public async Task AddProductAsync(Product product)
         {
+            
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
         }
@@ -114,6 +115,15 @@ namespace AngularAPI.Repository
         }
         public async Task<Product> GetProductByIdAsync(int id)
         {
+
+            //Product product = new Product() {Title_EN = "SS", Title_AR="ss", Details_EN="ss"
+            //, Details_AR="dd", price=10, OwnerId ="1", Quantity=5, CategoryID =1, Color = Enums.Color.Green};
+            //product.Images = new List<Image>();
+            //product.Images.Add(new Image() { Src = "dddd" });
+
+            //_context.Products.Add(product);
+            //_context.SaveChanges();
+
             return await _context.Products
                 .Include(p => p.Images)
                 .Include(p => p.Owner)
