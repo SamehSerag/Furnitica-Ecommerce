@@ -18,9 +18,7 @@ export class MainCatergoriesComponent implements OnInit {
     this.categoryService.getAllCategories()
       .subscribe(categories => {
         this.categories = categories;
-      }
-
-      );
+      });
   }
 
 }

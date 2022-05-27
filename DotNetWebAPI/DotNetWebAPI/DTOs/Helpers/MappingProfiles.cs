@@ -15,7 +15,7 @@ namespace AngularAPI.Dtos.Helpers
                 .ForMember(d => d.Category, o => o.MapFrom(s => s.Category.Name))
                 .ForMember(d => d.Owner, o => o.MapFrom<ProductOwnerResolver<ProductToReturnDto>>())
                 .ForMember(d => d.Images, o => o.MapFrom<ProductUrlResolver>())
-                .ForMember(d => d.Rating, o => o.MapFrom(s => s.Reviews.Count != 0 ? s.Reviews.Average(r => r.starsCount) : 0));
+                .ForMember(d => d.Rating, o => o.MapFrom(s => s.Reviews.Count != 0 ? (int)s.Reviews.Average(r => r.starsCount) : 0));
             //.ForMember(d => d)
             //.ForMember(d => d.Images, o => o.MapFrom(s => s.Images.Select(i => i.Src)));
 
@@ -40,6 +40,12 @@ namespace AngularAPI.Dtos.Helpers
              .ForMember(d => d.UserName, o => o.MapFrom(s => s.user.UserName))
              .ForMember(d => d.UserImg, o => o.MapFrom(s => s.user.Image.Src));
 
+            CreateMap<WishListProduct, WishListDto>()
+           .ForMember(d => d.title_EN, o => o.MapFrom(s => s.product.Title_EN))
+           .ForMember(d => d.title_AR, o => o.MapFrom(s => s.product.Title_AR))
+           .ForMember(d => d.price, o => o.MapFrom(s => s.product.price))
+           .ForMember(d => d.availability, o => o.MapFrom(s => s.product.Quantity == 0 ? "Out Of Stock" : "In Stock"))
+           .ForMember(d => d.Image, o => o.MapFrom(s => (s.product.Images.Count != 0) ? s.product.Images[0].ToString() : ""));
         }
     }
 }

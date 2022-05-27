@@ -5,9 +5,11 @@ namespace DotNetWebAPI.Models
 {
     public class WishListProduct
     {
-        [ForeignKey("wishList")]
-        public int WishListId { get; set; }
-        WishList wishList { get; set; }
+        [ForeignKey("user")]
+        public string UserId { get; set; }
+
+        public User user { get; set; }
+
 
         [ForeignKey("product")]
         public int ProductId { get; set; }

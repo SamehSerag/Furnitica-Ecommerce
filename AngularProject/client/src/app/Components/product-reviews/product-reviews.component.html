@@ -1,4 +1,4 @@
-<form class="new-review-form">
+<form class="new-review-form" (ngSubmit)="SubmitReview()">
 
     <h3 class="spr-form-title">Write a review</h3>
     <fieldset>
@@ -8,7 +8,7 @@
                 <input type="radio" name="starsCount" id="star5" name="rating" [(ngModel)]="userReview.starsCount" [value]=5/>
                 <label class="full" for="star5"></label>
                 <input type="radio" name="starsCount" id="star4" name="rating" [(ngModel)]="userReview.starsCount" [value]=4/>
-                <label class="fullt" for="star4"></label>
+                <label class="full" for="star4"></label>
                 <input type="radio" name="starsCount" id="star3" name="rating" [(ngModel)]="userReview.starsCount" [value]=3/>
                 <label class="full" for="star3"></label>
                 <input type="radio" name="starsCount" id="star2" name="rating" [(ngModel)]="userReview.starsCount" [value]=2/>
@@ -21,7 +21,7 @@
     <fieldset>
         <div class="spr-form-review-body">
             <div class="spr-form-input">
-                <textarea class="spr-form-input-textarea" name="reviewBody" rows="5" cols="5" placeholder="Write your comments here" [(ngModel)]="userReview.reviewBody" required>{{userReview.reviewBody}}</textarea>
+                <textarea class="spr-form-input-textarea" name="reviewBody" rows="5" cols="5" placeholder="Write your comments here" [(ngModel)]="userReview.reviewBody" required></textarea>
             </div>
         </div>
     </fieldset>
@@ -42,8 +42,12 @@
                     </span>
                     <div class="rating">
                         <div class="star-content">
-                            <i class="fa fa-star" *ngFor="let n of numSequence(review.starsCount!)"></i>
-                            <i class="fa fa-star-o" *ngFor="let n of numSequence(5-review.starsCount!);"></i>
+                            <ng-container *ngIf=" review.starsCount! > 0">
+                                <i class="fa fa-star" *ngFor="let n of (review.starsCount!)|asList"></i>
+                            </ng-container>
+                            <ng-container *ngIf="review.starsCount!=5">
+                                <i class="fa fa-star-o" *ngFor="let n of (5-review.starsCount!)|asList"></i>
+                            </ng-container>
                         </div>
                     </div>
                 </div>

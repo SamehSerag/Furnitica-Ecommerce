@@ -9,10 +9,10 @@ namespace DotNetWebAPI.Models
         [Key]
         public int Id { get; set; }
 
-        public string UserId { get; set; }
+        public string? UserId { get; set; }
 
         [ForeignKey(nameof(UserId))]
-        public User user { get; set; }
+        public User? user { get; set; }
 
         public string ReviewBody { get; set; }
 
@@ -23,6 +23,6 @@ namespace DotNetWebAPI.Models
         public int ProductId { get; set; }
 
         [ForeignKey("ProductId")]
-        public Product Product { get; set; }
+        public Product? Product { get; set; }
     }
 }

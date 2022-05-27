@@ -17,7 +17,7 @@ namespace AngularAPI.Dtos
         public ICollection<string>? Images { get; set; }
         public string? Category { get; set; }
 
-        public float Rating { get; set; }
+        public int Rating { get; set; }
         public OwnerDto? Owner { get; set; }
 
     }

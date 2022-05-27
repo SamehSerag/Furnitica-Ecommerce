@@ -11,7 +11,7 @@ export class ProductReviewsComponent implements OnInit {
   @Input() ProductId?: number = 0;
   reviews: IReview[] = [];
   userReview: IReview = <IReview>{};
-  newReview: IReview = <IReview>{};
+  reviewExist: boolean = false;
   @Output() ReviewCount = new EventEmitter<number>();
 
   constructor(private reviewService: ReviewsService) { }
@@ -19,8 +19,6 @@ export class ProductReviewsComponent implements OnInit {
   ngOnInit(): void {
     this.GetReviews();
     this.GetUserReview();
-
-    console.log(this.reviews);
   }
 
   GetReviews() {
@@ -36,20 +34,26 @@ export class ProductReviewsComponent implements OnInit {
       this.reviewService.getUserReview(this.ProductId)
         .subscribe(review => {
           this.userReview = review;
+          if (review != {})
+            this.reviewExist=true;
         });
   }
 
   SubmitReview() {
-console.log("Reviews");
-console.log(this.newReview);
-console.log(this.userReview);
-
-   }
-  PostReview() { }
-  PutReview() { }
-
-  numSequence(n: number): Array<number> {
-    return new Array(n);
+    if (this.reviewExist) {
+      this.PutReview();
+    } else {
+      this.PostReview();
+    }
+  }
+  PostReview() {
+    console.log("Post");
+    this.userReview.productId=this.ProductId;
+    this.reviewService.postReview(this.userReview).subscribe();
+  }
+  PutReview() {
+    console.log("Put");
+    this.reviewService.putReview(this.userReview).subscribe();
   }
 }
 

@@ -313,9 +313,7 @@
                                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                         <span>Add to cart</span>
                                                                         </button>
-                                                                        <a class="addToWishlist" href="#">
-                                                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                                                        </a>
+                                                                        <app-wishlist-heart [productId]="product.id"></app-wishlist-heart>
                                                                         </span>
                                                                     </div>
                                                                 </div>
@@ -345,13 +343,12 @@
                                                                 <span>REVIEW :</span>
                                                                 <div class="rating">
                                                                     <div class="star-content">
-                                                                        <!-- <ng-component *ngIf="!!product.Rating ;else noStars"> -->
-                                                                        <i class="fa fa-star" *ngFor="let n of numSequence(product.rating)"></i>
-                                                                        <i class="fa fa-star-o" *ngFor="let n of numSequence(5-product.rating);"></i>
-                                                                        <!-- </ng-component>
-                                                                        <ng-template #noStars>
-                                                                            <i class="fa fa-star-o" *ngFor="let n of numSequence(5);"></i>
-                                                                        </ng-template> -->
+                                                                        <ng-container *ngIf="product.rating>0">
+                                                                            <i class="fa fa-star" *ngFor="let n of (product.rating)|asList"></i>
+                                                                        </ng-container>
+                                                                        <ng-container *ngIf="product.rating!=5">
+                                                                            <i class="fa fa-star-o" *ngFor="let n of (5-product.rating)|asList"></i>
+                                                                        </ng-container>
                                                                     </div>
                                                                 </div>
                                                             </div>

@@ -27,6 +27,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductListComponent } from './DashBoard/product-list/product-list.component';
 import { PipeTransformPipe } from './Pipes/pipe-transform.pipe';
 import { AddProductComponent } from './DashBoard/add-product/add-product.component';
+import { SideCategoryCatalogComponent } from './Components/side-category-catalog/side-category-catalog.component';
+import { WishlistComponent } from './Components/wishlist/wishlist.component';
+import { WishlistHeartComponent } from './Components/wishlist-heart/wishlist-heart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +51,10 @@ import { AddProductComponent } from './DashBoard/add-product/add-product.compone
     ProductDetialsComponent,
     ProductListComponent,
     PipeTransformPipe,
-    AddProductComponent
+    AddProductComponent,
+    SideCategoryCatalogComponent,
+    WishlistComponent,
+    WishlistHeartComponent
   ],
   imports: [
     BrowserModule,

@@ -3958,6 +3958,7 @@ footer [class~="title-block"],
 
 .tab-content .item .product-miniature:hover .addToWishlist {
     opacity: 1 !important;
+    cursor: pointer;
 }
 
 #home2 header [class~="header-top"] [class~="margin-0"] #search_widget [class~="search-header-top"],

@@ -12,10 +12,12 @@ import { PendingOrdersComponent } from './DashBoard/pending-orders/pending-order
 import { AddProductComponent } from './DashBoard/add-product/add-product.component';
 import { ProductListComponent } from './DashBoard/product-list/product-list.component';
 import { IndexComponent } from './index.component';
+import { WishlistComponent } from './Components/wishlist/wishlist.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'main-shop', component:MainShopComponent },
+  { path: 'main-shop/:catId', component:MainShopComponent },
   { path: 'products/:pid', component:ProductDetialsComponent },
   { path: 'profile', component:EditProfileComponent},
   { path: 'Orders', component:OrdersComponent},
@@ -27,6 +29,7 @@ const routes: Routes = [
   { path: 'Login', component:LoginComponent},
   { path: 'Product/Owner', component: ProductListComponent},
   { path: 'AddProduct/Owner', component: AddProductComponent},
+  { path: 'wishlist', component: WishlistComponent},
 ];
 
 @NgModule({

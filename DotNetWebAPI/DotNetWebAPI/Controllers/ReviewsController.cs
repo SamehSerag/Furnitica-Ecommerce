@@ -70,14 +70,16 @@ namespace DotNetWebAPI.Controllers
         [HttpGet("/api/UserReview/{prdid}")]
         public async Task<ActionResult<ReviewDto>> GetUserReview(int prdid)
         {
-            User? user = HttpContext.Items["User"] as User;
+            /* User? user = HttpContext.Items["User"] as User;
 
-            if (user == null)
-            {
-                return NotFound();
-            }
+             if (user == null)
+             {
+                 return NotFound();
+             }
 
-            var review = await _repo.GetReviewByUserIdAsync(user?.Id, prdid);
+             var review = await _repo.GetReviewByUserIdAsync(user?.Id, prdid);*/
+
+            var review = await _repo.GetReviewByUserIdAsync("2dec20bc-7da6-411b-999c-2f45e40c9e16", prdid);
 
             if (review == null)
             {
@@ -97,14 +99,15 @@ namespace DotNetWebAPI.Controllers
             {
                 return BadRequest();
             }
-            User? user = HttpContext.Items["User"] as User;
+          /*  User? user = HttpContext.Items["User"] as User;
 
             if (user == null)
             {
                 return NotFound();
             }
-
-            review.UserId = user.Id;
+*/
+            review.UserId = "2dec20bc-7da6-411b-999c-2f45e40c9e16";
+                //user.Id;
 
             try
             {
@@ -130,6 +133,7 @@ namespace DotNetWebAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Review>> PostReview(Review review)
         {
+            review.UserId = "2dec20bc-7da6-411b-999c-2f45e40c9e16";
             await _repo.AddReviewAsync(review);
 
             return CreatedAtAction("GetReview", new { id = review.Id }, review);

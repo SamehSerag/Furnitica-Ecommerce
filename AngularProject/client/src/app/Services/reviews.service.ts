@@ -14,7 +14,7 @@ export class ReviewsService {
     this.httpOption = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
-        , Authorization: 'my-auth-token'
+         , Authorization: 'my-auth-token'
       })
     };
   }

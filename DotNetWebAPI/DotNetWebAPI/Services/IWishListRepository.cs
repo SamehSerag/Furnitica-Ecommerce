@@ -5,9 +5,9 @@ namespace DotNetWebAPI.Services
 {
     public interface IWishListRepository
     {
-        public void AddToWishList(int prdId, string userId);
-        public void RemoveFromWishList(int prdId, string userId);
-        public Task<IEnumerable<WishListProduct>> GetUserWishList(string id);
+        public Task AddToWishList(int prdId, string userId);
+        public Task RemoveFromWishList(int prdId, string userId);
+        public Task<IReadOnlyList<WishListProduct>> GetUserWishList(string id);
 
         public bool WishListProductExists(int prdId, string userId);
 

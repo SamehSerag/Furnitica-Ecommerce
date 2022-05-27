@@ -34,7 +34,7 @@
                                 <div class="row">
                                     <div class="sidebar-3 sidebar-collection col-lg-3 col-md-4 col-sm-4">
 
-                                        <!-- category menu -->
+                                        <!-- category menu
                                         <div class="sidebar-block">
                                             <div class="title-block">Categories</div>
                                             <div class="block-content">
@@ -93,87 +93,13 @@
                                                 </div>
 
                                             </div>
-                                        </div>
+                                        </div> -->
 
                                         <!-- best seller -->
                                         <div class="sidebar-block">
                                             <div class="title-block">Catalog</div>
                                             <div class="new-item-content">
-                                                <h3 class="title-product">categories</h3>
-                                                <ul class="scroll-product">
-                                                    <li>
-                                                        <label class="check">
-                              <input type="checkbox">
-                              <span class="checkmark"></span>
-                            </label>
-                                                        <a href="#">
-                                                            <b>side table</b>
-                                                            <span class="quantity">(30)</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <label class="check">
-                              <input type="checkbox">
-                              <span class="checkmark"></span>
-                            </label>
-                                                        <a href="#">
-                                                            <b>floor lamp</b>
-                                                            <span class="quantity">(32)</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <label class="check">
-                              <input type="checkbox">
-                              <span class="checkmark"></span>
-                            </label>
-                                                        <a href="#">
-                                                            <b>ottoman</b>
-                                                            <span class="quantity">(67)</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <label class="check">
-                              <input type="checkbox">
-                              <span class="checkmark"></span>
-                            </label>
-                                                        <a href="#">
-                                                            <b>armchair</b>
-                                                            <span class="quantity">(15)</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <label class="check">
-                              <input type="checkbox">
-                              <span class="checkmark"></span>
-                            </label>
-                                                        <a href="#">
-                                                            <b>ottoman</b>
-                                                            <span class="quantity">(24)</span>
-
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <label class="check">
-                              <input type="checkbox">
-                              <span class="checkmark"></span>
-                            </label>
-                                                        <a href="#">
-                                                            <b>CUSHION</b>
-                                                            <span class="quantity">(20)</span>
-
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <label class="check">
-                              <input type="checkbox">
-                              <span class="checkmark"></span>
-                            </label>
-                                                        <a href="#">
-                                                            <b>Pineapple</b>
-                                                            <span class="quantity">(21)</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
+                                                <app-side-category-catalog (ChangeCategory)="ChangeCategories($event)"></app-side-category-catalog>
                                             </div>
                                             <div class="new-item-content">
                                                 <h3 class="title-product">Manufacture</h3>
@@ -416,11 +342,12 @@
                                                                     </div>
                                                                     <div class="rating">
                                                                         <div class="star-content">
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
+                                                                            <ng-container *ngIf="product.rating > 0">
+                                                                                <i class="fa fa-star" *ngFor="let n of (product.rating)|asList"></i>
+                                                                            </ng-container>
+                                                                            <ng-container *ngIf="product.rating!=5">
+                                                                                <i class="fa fa-star-o" *ngFor="let n of (5-product.rating)|asList"></i>
+                                                                            </ng-container>
                                                                         </div>
                                                                     </div>
                                                                     <div class="product-group-price">
@@ -436,9 +363,9 @@
                                                                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                                                         </a>
                                                                     </form>
-                                                                    <a class="addToWishlist" href="#" data-rel="1" onclick="">
-                                                                        <i class="fa fa-heart" aria-hidden="true"></i>
-                                                                    </a>
+                                                                    <!-- /////////////////////////////////////////////////////////////// -->
+                                                                    <app-wishlist-heart [productId]="product.id"></app-wishlist-heart>
+                                                                    <!--  ///////////////////////////////////////////////////////////////////////// -->
                                                                     <a [routerLink]="'/products/'+product.id" class="quick-view hidden-sm-down" data-link-action="quickview">
                                                                         <i class="fa fa-eye" aria-hidden="true"></i>
                                                                     </a>

@@ -14,43 +14,33 @@ namespace DotNetWebAPI.Services
             this._context = context;
         }
 
-        public async Task<IEnumerable<WishListProduct>> GetUserWishList(string userId)
+        public async Task<IReadOnlyList<WishListProduct>> GetUserWishList(string userId)
         {
-            if (_context.WishLists.Any(W => W.UserId == userId))
-                _context.WishLists.Add(new WishList() { UserId = userId });
-
-            var wishlist = await _context.WishLists.FirstOrDefaultAsync(W => W.UserId == userId);
 
             return await _context.WishListProducts
-                .Where(W => W.WishListId == wishlist.Id)
+                .Where(W => W.UserId == userId)
                 .Include(W => W.product)
                 .ThenInclude(P => P.Images)
                 .ToListAsync();
         }
 
 
-        public async void AddToWishList(int prdId, string userId)
+        public async Task AddToWishList(int prdId, string userId)
         {
-            if (_context.WishLists.Any(W => W.UserId == userId))
-                await _context.WishLists.AddAsync(new WishList() { UserId = userId });
-
-            var wishlist = _context.WishLists.FirstOrDefault(W => W.UserId == userId);
-
-            await _context.WishListProducts.AddAsync(new WishListProduct() { ProductId = prdId, WishListId = wishlist.Id });
+            await _context.WishListProducts.AddAsync(new WishListProduct() { ProductId = prdId, UserId = userId });
+            await _context.SaveChangesAsync();
 
         }
-        public void RemoveFromWishList(int prdId, string userId)
+        public async Task RemoveFromWishList(int prdId, string userId)
         {
-            var wishlist = _context.WishLists.FirstOrDefault(W => W.UserId == userId);
+            _context.WishListProducts.Remove(new WishListProduct() { ProductId = prdId, UserId = userId });
+            await _context.SaveChangesAsync();
 
-            _context.WishListProducts.Remove(new WishListProduct() { ProductId = prdId, WishListId = wishlist.Id });
         }
 
         public bool WishListProductExists(int prdId, string userId)
         {
-            var wishlist = _context.WishLists.FirstOrDefault(W => W.UserId == userId);
-
-            return _context.WishListProducts.Any(W => W.WishListId == wishlist.Id && W.ProductId == prdId);
+            return _context.WishListProducts.Any(W => W.UserId == userId && W.ProductId == prdId);
         }
 
     }
