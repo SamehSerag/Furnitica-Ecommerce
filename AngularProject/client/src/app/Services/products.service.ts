@@ -39,9 +39,19 @@ export class ProductsService {
   }
 
   getPriceRange(){
-    // this.httpClinet.get<any>(`${environment.APIURL}/api/products`).subscribe((resp)=>{
-    //   console.log(resp.headers.get('X-PriceRange'));
-    // });
+    this.httpClinet.get<any>(`${environment.APIURL}/api/products`,{observe: 'response'})
+    .subscribe({
+      next: (res)=>{
+        console.log(res);
+      },
+      error: (err)=>{
+        console.log(err);
+      },
+      complete: ()=>{
+        console.log("Error");
+
+      }
+    });
   }
   // addProduct(newPrd: IProductToAdd): Observable<IProductToAdd>{
   //   return this.httpClinet.post<IProductToAdd>(`${environment.APIURL}/api/products/owner`, 
