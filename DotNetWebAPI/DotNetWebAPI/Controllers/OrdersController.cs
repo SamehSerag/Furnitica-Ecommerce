@@ -1,6 +1,7 @@
 ﻿using AngularProject.Models;
 using DotNetWebAPI.Models;
 using DotNetWebAPI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Data.Entity.Infrastructure;
@@ -24,6 +25,11 @@ namespace DotNetWebAPI.Controllers
         public async Task<ActionResult<IEnumerable<Order>>> GetOrders([FromQuery] OrderSearchModel orderSearchModel)
         {
             return await _orderRepo.ReturnAllOrders(orderSearchModel);
+        }    
+        [HttpGet("AdminOrders")]
+        public async Task<ActionResult<IEnumerable<Order>>> ReturnAdminOrders([FromQuery] OrderSearchModel orderSearchModel)
+        {
+            return await _orderRepo.ReturnAllAdminOrders(orderSearchModel);
         }
         //Done
         // GET: api/Orders/5

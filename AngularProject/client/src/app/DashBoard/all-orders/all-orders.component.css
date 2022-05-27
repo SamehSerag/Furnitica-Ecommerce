@@ -2,11 +2,13 @@
 .DeleteProduct{
     color: rgb(159, 13, 13);
     font-size: 26px;
+    cursor: pointer;
 }
 
 .AcceptProduct{
     color: rgb(20, 167, 44);
     font-size: 26px;
+    cursor: pointer;
 }
 .editOrder{
     color: #a7d6dd;
@@ -39,4 +41,22 @@
     align-items: center;
     display: flex;
     flex-wrap: wrap;
+}
+.showAll{
+    background: #f7bc3d;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.filters{
+    justify-content: space-between;
+    align-items: center;
+}
+.Text-dirc{
+    text-align: right;
+}
+.btn-dirc{
+    text-align: revert;
 }

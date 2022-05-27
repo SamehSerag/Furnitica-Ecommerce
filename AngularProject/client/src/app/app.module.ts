@@ -74,13 +74,13 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     HttpClientModule,
-    //  TranslateModule.forRoot({
-      //    loader: {
-        //      provide: TranslateLoader,
-        //      useFactory: httpTranslateLoader,
-        //      deps: [HttpClient]
-        //    }
-        //  }),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
         AppRoutingModule,
         FormsModule,
         BrowserAnimationsModule,

@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { IUser } from 'src/app/Models/IUser';
 import { AuthService } from 'src/app/Services/auth.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-side-bar',
@@ -9,11 +10,16 @@ import { AuthService } from 'src/app/Services/auth.service';
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent implements OnInit {
-
+ textEn: boolean = true;
+  textAr: boolean = false;
   loggedIn : boolean = false;
   loggedUser : string = "";
+    IsEnglish:boolean=true;
+
   @ViewChild('searchInput') searchInput!: ElementRef; 
   constructor(private auth : AuthService, private router: Router) {
+    translate.addLangs(['en', 'nl']);
+    translate.setDefaultLang('en');
   }
 
   ngOnInit(): void {
@@ -37,11 +43,6 @@ export class SideBarComponent implements OnInit {
       let user : IUser = JSON.parse(userdata);
       this.loggedIn = true;
       this.loggedUser = user.userName;
-      console.log("Ligged In = ", this.loggedIn);
-      console.log("user-data = " + userdata);
-      console.log("user-data-obj = ", user);
-      console.log("username = " + user.userName);
-      console.log(this.loggedUser + " is logged in!");
     }
     else {
       this.loggedIn = false;
@@ -71,5 +72,40 @@ export class SideBarComponent implements OnInit {
     console.log("logging out........");
     this.auth.Logout();
   }
+/**********************************************
+   * 
+   * Switching LAnguage
+   * 
+   * ****************************************** */
+  switchLang(lang: string) {
+    debugger
+    this.translate.use(lang);
+    if (lang == 'nl') {
+      this.textEn = false;
+      this.textAr = true;
+      this.translate.use("nl");
+      //  this.setSession("lang", "ar");
+      document.getElementById("arabicBoostrap")?.setAttribute('href', 'assets/LangFolders/r.css');
+      document.getElementById("en")?.setAttribute('href', '');
+      localStorage.removeItem('Lang');
+      localStorage.setItem("Lang","ar");
+      window.location.reload();
+
+    } else {
+      this.textEn = true;
+      this.textAr = false;
+      this.translate.use("en");
+      //  this.setSession("lang", "en");
+      document.getElementById("arabicBoostrap")?.setAttribute('href', '');
+
+      document.getElementById("en")?.setAttribute('href', 'assets/LangFolders/l.css');
+      localStorage.removeItem("Lang");
+
+      localStorage.setItem("Lang","en");
+      window.location.reload();    
+    }
+  }
+
 
 }
+

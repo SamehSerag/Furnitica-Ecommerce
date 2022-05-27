@@ -1,4 +1,4 @@
-<div class="main-content">
+<div class="main-content header-top">
     <div class="wrap-banner">
 
         <!-- breadcrumb -->
@@ -21,7 +21,7 @@
             </div>
         </nav>
 
-        <div class="acount head-acount">
+        <div class="acount head-acount ">
             <div class="container">
                 <div id="main" class="pt-3">
                     <h1 class="title-page">My Account</h1>
@@ -34,7 +34,7 @@
                         </span>
                       </span>
 
-                        <table class="std table">
+                        <table class="std table  text-center">
                             <tbody>
                                 <tr>
                                     <th class="first_item">Username :</th>
@@ -61,7 +61,7 @@
                         </table>
 
                     </div>
-                    <button *ngIf="!editing" (click)="StartEditing()" class="btn btn-outline-dark px-2 py-1" data-link-action="sign-in" type="submit">
+                    <button *ngIf="!editing" (click)="StartEditing()" class="btn btn-outline-dark" data-link-action="sign-in" type="submit">
                       Edit
                     </button>
 
