@@ -4,29 +4,53 @@
         <div id="wrapper-site">
 
             <div class="container">
+
                 <div class="row">
+
                     <div id="content-wrapper" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 onecol">
                         <section id="main">
                             <div class="cart-grid row">
                                 <div class="col-md-9 col-xs-12 check-info">
-                                    <h1 class="title-page">All Orders</h1>
-                                    <div class="cart-container">
+                                    <!---------------------------Inner Filter------------------------------------>
+                                    <div class="row filters">
+                                        <div class="col-md-4">
+                                            <form [formGroup]="form">
+                                                <div class="form-group">
+                                                    <label for="website">Select Filter Option:</label>
+                                                    <select formControlName="website" class="form-control"
+                                                        (change)="FilterAllOrders($event)">
+                                                        <option selected>Filter Option:</option>
+                                                        <option *ngFor="let Op of FilterOn">{{Op}}</option>
+                                                    </select>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="col-md-6 Text-dirc">
+                                            <button class="showAll" (click)="ShowAllOrders()">Show All Orders</button>
+                                        </div>
+                                    </div>
+                                    <!--------------------------- End Inner Filter------------------------------------>
+
+                                    <!--------------------------- Show All Orders------------------------------------>
+
+                                    <div class="cart-container" *ngIf="!IsFilterd">
                                         <div class="cart-overview js-cart">
+                                            <div>
+                                                <div *ngFor="let order of allOrders">
 
-                                            <accordion [isAnimated]="true">
-
-                                                <accordion-group [isOpen]="true" *ngFor="let order of allOrders"
-                                                    heading="Order number : &nbsp; ({{order.id}})  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date: &nbsp; ({{order.date | date:'dd/MM/yyyy'}})">
-
-                                                    <div class="row">
+                                                    <div class="row orderContaine">
 
                                                         <div class="col-md-1 actions">
-                                                            <div *ngIf="order.state==0">
+                                                            <div *ngIf="order.state==0" class="px-2">
                                                                 <i class="fa fa-trash-o DeleteProduct"
-                                                                (click)='DeleteOrder(order.id)'></i>
+                                                                    (click)='DeleteOrder(order.id)'></i>
+                                                            </div>
+                                                            <div *ngIf="order.state==0">
+                                                                <i class="fa fa-check AcceptProduct"
+                                                                    (click)='AcceptOrders(order.id)'></i>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-11">
+                                                        <div class="col-md-11 TabelHolder">
                                                             <div class=" main-title">
                                                                 <label>Order details ({{order.orderProducts.length}}
                                                                     items)</label>
@@ -39,8 +63,88 @@
 
                                                             </div>
 
-                                                            <table class="table table-bordered">
-                                                                <thead>
+                                                            <table class="table">
+
+                                                                <tbody>
+                                                                    <tr *ngFor="let orderD of order.orderProducts">
+                                                                        <td style="text-align: center;">
+
+                                                                        </td>
+                                                                        <td style="text-align: center;">
+                                                                            <p>Product Name</p>
+                                                                            <div *ngIf="!IsEnglish">
+                                                                                {{orderD.product.title_AR}}</div>
+                                                                            <div *ngIf="IsEnglish">
+                                                                                {{orderD.product.title_EN}}</div>
+                                                                        </td>
+
+                                                                        <td style="text-align: center;">
+                                                                            <p>Product Quantity</p>
+                                                                            <div>{{orderD.product.quantity}}</div>
+                                                                        </td>
+
+                                                                        <td style="text-align: center;">
+                                                                            <p> Product Price</p>
+                                                                            <div> {{orderD.product.price}}</div>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                </tbody>
+                                                                <div class="main-title">
+                                                                    <label class="totalPrice">Total Price:
+                                                                        {{order.totalPrice}}$</label>
+
+                                                                </div>
+                                                            </table>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="text-center" *ngIf="allOrders.length === 0">
+                                            <h4>There is no orders yet</h4>
+                                            <img src="../../../assets/img/other/delver1.jpg" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <!---------------------------End Show All Orders------------------------------------>
+
+                                    <!--------------------------- Show Filtered Orders------------------------------------>
+                                    <div class="cart-container" *ngIf="IsFilterd">
+                                        <div class="cart-overview js-cart">
+
+                                            <div>
+                                                <div *ngFor="let order of FilterdData">
+
+                                                    <div class="row orderContaine">
+
+                                                        <div class="col-md-1 actions">
+                                                            <div *ngIf="order.state==0" class="px-2">
+                                                                <i class="fa fa-trash-o DeleteProduct"
+                                                                    (click)='DeleteOrder(order.id)'></i>
+                                                            </div>
+                                                            <div *ngIf="order.state==0">
+                                                                <i class="fa fa-check AcceptProduct"
+                                                                    (click)='AcceptOrders(order.id)'></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-11 TabelHolder">
+                                                            <div class=" main-title">
+                                                                <label>Order details ({{order.orderProducts.length}}
+                                                                    items)</label>
+                                                                <span *ngIf="order.state==0"
+                                                                    class="pending">Pending</span>
+                                                                <span *ngIf="order.state==1"
+                                                                    class="accepted">Accepted</span>
+                                                                <span *ngIf="order.state==2"
+                                                                    class="rejected">Rejected</span>
+
+                                                            </div>
+
+                                                            <table class="table">
+                                                                <!-- <thead>
                                                                     <tr>
                                                                         <th style="text-align: center;" scope="col">
                                                                             Product
@@ -48,43 +152,56 @@
                                                                         <th style="text-align: center;" scope="col">
                                                                             Quntity
                                                                         </th>
-                                                                        <th style="text-align: center;" scope="col">
-                                                                            Details
-                                                                        </th>
+
                                                                         <th style="text-align: center;" scope="col">
                                                                             product
                                                                             Price</th>
                                                                     </tr>
-                                                                </thead>
+                                                                </thead> -->
                                                                 <tbody>
                                                                     <tr *ngFor="let orderD of order.orderProducts">
                                                                         <td style="text-align: center;">
-                                                                            {{orderD.product.title_EN}}</td>
+
+                                                                        </td>
                                                                         <td style="text-align: center;">
-                                                                            {{orderD.product.quantity}}</td>
+                                                                            <p>Product Name</p>
+                                                                            <div>{{orderD.product.title_EN}}</div>
+                                                                        </td>
+
                                                                         <td style="text-align: center;">
-                                                                            {{orderD.product.details_EN}}</td>
+                                                                            <p>Product Quantity</p>
+                                                                            <div>{{orderD.product.quantity}}</div>
+                                                                        </td>
+
                                                                         <td style="text-align: center;">
-                                                                            {{orderD.product.price}}</td>
+                                                                            <p> Product Price</p>
+                                                                            <div> {{orderD.product.price}}</div>
+                                                                        </td>
                                                                     </tr>
 
                                                                 </tbody>
-                                                            </table>
-                                                            <div class="main-title">
-                                                                <label>Total Price: {{order.totalPrice}}$</label>
+                                                                <div class="main-title">
+                                                                    <label class="totalPrice">Total Price:
+                                                                        {{order.totalPrice}}$</label>
 
-                                                            </div>
+                                                                </div>
+                                                            </table>
+
                                                         </div>
 
                                                     </div>
 
-                                                </accordion-group>
-                                            </accordion>
+                                                </div>
+                                            </div>
+                                            <div class="text-center" *ngIf="FilterdData.length === 0">
+                                                <h4>There is no orders yet</h4>
+                                                <img src="../../../assets/img/other/delver1.jpg" class="img-fluid">
+                                            </div>
+
                                         </div>
                                     </div>
-                                    <a href="product-checkout.html" class="continue btn btn-primary pull-xs-right">
-                                        Continue
-                                    </a>
+
+                                    <!---------------------------End Show Filtered Orders------------------------------------>
                                 </div>
                                 <div class="cart-grid-right col-xs-12 col-lg-3">
                                     <div class="cart-summary">
@@ -112,31 +229,6 @@
                                                 <span class="value">£200.00 (tax incl.)</span>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div id="block-reassurance">
-                                        <ul>
-                                            <li>
-                                                <div class="block-reassurance-item">
-                                                    <img src="img/product/check1.png"
-                                                        alt="Security policy (edit with Customer reassurance module)">
-                                                    <span>Security policy (edit with Customer reassurance module)</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="block-reassurance-item">
-                                                    <img src="img/product/check2.png"
-                                                        alt="Delivery policy (edit with Customer reassurance module)">
-                                                    <span>Delivery policy (edit with Customer reassurance module)</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="block-reassurance-item">
-                                                    <img src="img/product/check3.png"
-                                                        alt="Return policy (edit with Customer reassurance module)">
-                                                    <span>Return policy (edit with Customer reassurance module)</span>
-                                                </div>
-                                            </li>
-                                        </ul>
                                     </div>
                                 </div>
                             </div>

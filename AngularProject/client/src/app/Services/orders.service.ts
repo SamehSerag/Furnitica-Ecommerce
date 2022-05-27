@@ -8,13 +8,22 @@ import { IOrder } from '../Models/iorder';
   providedIn: 'root'
 })
 export class OrdersService {
+  auth_token = localStorage.getItem("access-token");
 
   constructor(private httpClient: HttpClient) { }
 
   getAllOrders() {
-    return this.httpClient.get<IOrder[]>(`${environment.APIURL}/api/Orders`)
+    let headers: HttpHeaders = new HttpHeaders();
+    headers = headers.append('Content-Type', 'application/json');
+    headers = headers.append('Authorization', 'Bearer ' + localStorage.getItem("access-token"));
+    return this.httpClient.get<IOrder[]>(`${environment.APIURL}/api/Orders`,{headers: headers})
   }
-
+  getOrderssFilteration(filteration:string) {
+    let headers: HttpHeaders = new HttpHeaders();
+    headers = headers.append('Content-Type', 'application/json');
+    headers = headers.append('Authorization', 'Bearer ' + localStorage.getItem("access-token"));
+    return this.httpClient.get<IOrder>(`${environment.APIURL}/api/Orders?OrdeState=${filteration}`,{headers: headers});
+  }
   deleteOrder(orderID: number) {
     let headers: HttpHeaders = new HttpHeaders();
     headers = headers.append('Content-Type', 'application/json');
@@ -25,12 +34,20 @@ export class OrdersService {
   AcceptOrder(orderID: number) {
     let headers: HttpHeaders = new HttpHeaders();
     headers = headers.append('Content-Type', 'application/json');
-    headers = headers.append('Authorization', 'Bearer ' + localStorage.getItem("token"));
-    
-    return this.httpClient.post<number>(`${environment.APIURL}/api/Orders/acceptOrder/` + orderID, { headers: headers })
+    headers = headers.append('Authorization', 'Bearer ' + localStorage.getItem("access-token"));
+
+    console.log("Token",this.auth_token)
+    return this.httpClient.put<number>(`${environment.APIURL}/api/Orders/acceptOrder/` + orderID, { headers: headers })
   }
   /////////////////Admin///////////////////////////
   getAllPendingOrders() {
     return this.httpClient.get<IOrder[]>(`${environment.APIURL}/api/Orders/PendingOrders`)
+  }
+  ///////////////////ADMIN API/////////////////////
+  getAllAdminOrders() {
+    let headers: HttpHeaders = new HttpHeaders();
+    headers = headers.append('Content-Type', 'application/json');
+    headers = headers.append('Authorization', 'Bearer ' + localStorage.getItem("access-token"));
+    return this.httpClient.get<IOrder[]>(`${environment.APIURL}/api/Orders/AdminOrders`,{headers: headers})
   }
 }
