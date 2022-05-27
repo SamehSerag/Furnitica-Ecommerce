@@ -18,6 +18,8 @@ namespace AngularAPI.Dtos
         //public string? Category { get; set; }
         public ProductCategoryDto? Category { get; set; }
         public int? CategoryID { get; set; }
+
+        public int Rating { get; set; }
         public OwnerDto? Owner { get; set; }
 
     }

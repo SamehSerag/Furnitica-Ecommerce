@@ -1,19 +1,19 @@
 ﻿using AngularProject.Models;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DotNetWebAPI.Models
 {
-    public class WishList
+    public class WishListProduct
     {
-        [Key]
-        public int Id { get; set; }
-
+        [ForeignKey("user")]
         public string UserId { get; set; }
 
-        [ForeignKey(nameof(UserId))]
         public User user { get; set; }
 
-        public List<Product> Products { get; set; }
+
+        [ForeignKey("product")]
+        public int ProductId { get; set; }
+
+        public Product product { get; set; }
     }
 }

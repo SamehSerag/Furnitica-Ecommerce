@@ -16,11 +16,12 @@ namespace DotNetWebAPI.Services
         {
 
             _context = context;
+            
         }
         public async Task<ActionResult<IEnumerable<Order>>> ReturnAllOrders(OrderSearchModel orderSearchModel)
         {
-            IQueryable<Order> query = _context.Orders.AsQueryable()
-                .Include(o => o.OrderProducts).ThenInclude(P=>P.Product);
+            IQueryable<Order> query = _context.Orders.Where(w => w.UserID == "2dec20bc-7da6-411b-999c-2f45e40c9e16")
+                .Include(o => o.OrderProducts).ThenInclude(P => P.Product);
             if (orderSearchModel != null)
             {
                 if (!string.IsNullOrEmpty(orderSearchModel.OrdeState))
@@ -55,6 +56,53 @@ namespace DotNetWebAPI.Services
             }
             return await query.ToListAsync();
         }
+        /******************************************
+         * GET ALL ADMIN ORDERS
+         * ***************************************/
+        public async Task<ActionResult<IEnumerable<Order>>> ReturnAllAdminOrders(OrderSearchModel orderSearchModel)
+        {
+            IQueryable<Order> query = _context.Orders.Where(x => x.OrderProducts.Any(y => y.Product.OwnerId == "2dec20bc-7da6-411b-999c-2f45e40c9e16"))
+                .Include(o => o.OrderProducts).ThenInclude(P => P.Product);
+
+            if (orderSearchModel != null)
+            {
+                if (!string.IsNullOrEmpty(orderSearchModel.OrdeState))
+                {
+                    switch (orderSearchModel.OrdeState)
+                    {
+                        //Pending, Accepted, Rejected
+                        case "Pending"://LastWeek
+                            query = query.Where(x => x.State == OrderState.Pending);
+                            break;
+                        case "Accepted"://LastMonth
+                            query = query.Where(x => x.State == OrderState.Accepted);
+                            break;
+                        case "Rejected":
+                            query = query.Where(x => x.State == OrderState.Rejected);
+                            break;
+                    }
+                }
+                if (!string.IsNullOrEmpty(orderSearchModel.orderDate))
+                {
+                    switch (orderSearchModel.OrdeState)
+                    {
+                        case "Newest":// newest Descending
+                            query = query.OrderByDescending(x => x.Date);
+                            break;
+                        case "Oldest":// oldest
+                            query = query.OrderBy(x => x.Date);
+                            break;
+                    }
+                }
+
+            }
+            return await query.ToListAsync();
+        }
+        /// <summary>
+        /// ////////
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
 
         public async Task<ActionResult<Order>> ReturnOrderById(int orderId)
         {
@@ -96,9 +144,10 @@ namespace DotNetWebAPI.Services
         }
         public async Task AcceptOrder(int orderId)
         {
-            var order = await _context.Orders.FirstOrDefaultAsync(o=>o.Id== orderId);
-                       order.State = OrderState.Accepted;
-              _context.SaveChangesAsync();
+            var order = await _context.Orders.FirstOrDefaultAsync(o => o.Id == orderId);
+            order.State = OrderState.Accepted;
+
+            await _context.SaveChangesAsync();
         }
         public async Task PendingOrder(int orderId)
         {

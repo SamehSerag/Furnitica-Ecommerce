@@ -14,8 +14,8 @@ namespace AngularAPI.Services
         public string GetCart(string userId);
         public void RemoveCartItem(string userId, int productId);
         public void DeleteOneCartItem(string userId, int productId);
-        public int GetCartItemCount(string userId);
-        public int ClearCart(string userId);
+        public List<CartProductDto> GetCartItemCount(string userId);
+        public List<CartProductDto> ClearCart(string userId);
         public void DeleteCart(string cartId);
         public List<CartProductDto> GetProductsAvailableInCart(string cartID);
         public Product GetProductData(int productId);

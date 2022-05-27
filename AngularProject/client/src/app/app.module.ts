@@ -35,6 +35,11 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { SideCategoryCatalogComponent } from './Components/side-category-catalog/side-category-catalog.component';
+import { WishlistComponent } from './Components/wishlist/wishlist.component';
+import { WishlistHeartComponent } from './Components/wishlist-heart/wishlist-heart.component';
+import { AddtocartComponent } from './Components/addtocart/addtocart.component';
+import { ShoppingcartComponent } from './Components/shoppingcart/shoppingcart.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -59,19 +64,23 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductListComponent,
     PipeTransformPipe,
     AddProductComponent,
-    DialogComponent
-    
+    DialogComponent,
+    SideCategoryCatalogComponent,
+    WishlistComponent,
+    WishlistHeartComponent,
+    AddtocartComponent,
+    ShoppingcartComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    //  TranslateModule.forRoot({
-      //    loader: {
-        //      provide: TranslateLoader,
-        //      useFactory: httpTranslateLoader,
-        //      deps: [HttpClient]
-        //    }
-        //  }),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
         AppRoutingModule,
         FormsModule,
         BrowserAnimationsModule,
@@ -83,7 +92,7 @@ import { ReactiveFormsModule } from '@angular/forms';
         MatSelectModule,
         MatButtonModule,
         NgxSliderModule,
-        ReactiveFormsModule,
+        ReactiveFormsModule
   ],
 
   providers: [],

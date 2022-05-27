@@ -40,14 +40,15 @@ namespace AngularAPI.Repository
         //}
         public async Task<IReadOnlyList<Product>> GetAllProductsAsync
             (ProductSearchModel productSearchModel)
-            
+
         {
 
             IQueryable<Product> query = _context.Products.Include(p => p.Images)
                 .Include(p => p.Category)
-                .Include(p => p.Owner);
+                .Include(p => p.Owner)
+                .Include(p => p.Reviews);
 
-            if(productSearchModel != null)
+            if (productSearchModel != null)
             {
                 if (productSearchModel.Category != null)
                 {
@@ -59,7 +60,7 @@ namespace AngularAPI.Repository
                         predicate = predicate.Or(p => p.CategoryID == category);
                     }
 
-                    if(!(productSearchModel.Category.Count == 1 
+                    if (!(productSearchModel.Category.Count == 1
                         && productSearchModel.Category[0] == null))
                         query = query.Where(predicate);
                 }
@@ -75,12 +76,12 @@ namespace AngularAPI.Repository
 
                 if (!string.IsNullOrEmpty(productSearchModel.Sortby))
                 {
-                
+
                     var propertyInfo = typeof(Product).GetProperty(productSearchModel.Sortby);
-                    if(propertyInfo != null)
+                    if (propertyInfo != null)
                     {
                         var param = Expression.Parameter(typeof(Product));
-                        var expr = Expression.Lambda < Func <Product, object> > (
+                        var expr = Expression.Lambda<Func<Product, object>>(
                               Expression.Convert(Expression.Property(param, propertyInfo), typeof(object)),
                               param
                                );
@@ -96,12 +97,12 @@ namespace AngularAPI.Repository
                     query = query.Where(p => p.price >= productSearchModel.MinPrice
                     && p.price <= productSearchModel.MaxPrice);
 
-                if(productSearchModel.Color != null)
-                    query = query.Where(p=> p.Color == productSearchModel.Color);
+                if (productSearchModel.Color != null)
+                    query = query.Where(p => p.Color == productSearchModel.Color);
 
                 if (!string.IsNullOrEmpty(productSearchModel.OwnerId))
                 {
-                    query = query.Where(p => p.OwnerId 
+                    query = query.Where(p => p.OwnerId
                                     == productSearchModel.OwnerId);
                 }
 
@@ -130,12 +131,13 @@ namespace AngularAPI.Repository
                 .Include(p => p.Images)
                 .Include(p => p.Owner)
                 .Include(p => p.Category)
+                .Include(p => p.Reviews)
                 .FirstOrDefaultAsync(p => p.Id == id);
         }
 
-        public bool IsProductExixtsAsync(int id )
+        public bool IsProductExixtsAsync(int id)
         {
-            return  _context.Products.Any(p => p.Id == id);
+            return _context.Products.Any(p => p.Id == id);
         }
 
         public async Task<Product> UpdateProductAsync(int id, Product product)

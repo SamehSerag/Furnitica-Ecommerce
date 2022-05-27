@@ -2094,9 +2094,9 @@ footer [class~="title-block"] {
 #tiva-searchBox {
   width: 100%;
 }
-[class~="main-menu"] [class~="menu"] [class~="menu-top"] li [class~="parent"] {
-  font-size: 0.8rem;
-}
+ /* [class~="main-menu"] [class~="menu"] [class~="menu-top"] li [class~="parent"] {
+  font-size: 1.1rem;
+}  */
 #wrapper-site #content-wrapper #main [class~="living-room"] [class~="groupcategoriestab-vertical"] [class~="grouptab"] [class~="flex-3"] [class~="block-title-content"] [class~="title-block"] {
   line-height: 1;
 }
@@ -23077,9 +23077,9 @@ footer [class~="title-block"] {
 #tiva-searchBox {
   width: 100%;
 }
-[class~="main-menu"] [class~="menu"] [class~="menu-top"] li [class~="parent"] {
+/* [class~="main-menu"] [class~="menu"] [class~="menu-top"] li [class~="parent"] {
   font-size: 0.8rem;
-}
+} */
 #wrapper-site #content-wrapper #main [class~="living-room"] [class~="groupcategoriestab-vertical"] [class~="grouptab"] [class~="flex-3"] [class~="block-title-content"] [class~="title-block"] {
   line-height: 1;
 }
