@@ -44,7 +44,13 @@ export class DialogComponent implements OnInit, OnDestroy{
   ngOnInit(): void {
 
     this.ownerForm = new FormGroup({
-      name: new FormControl('', [Validators.required]),
+      title_en: new FormControl('', [Validators.required]),
+      title_ar: new FormControl('', [Validators.required]),
+      titleEn_details: new FormControl('', [Validators.required]),
+      titleAr_details: new FormControl('', [Validators.required]),
+      price: new FormControl('', [Validators.required]),
+      quantity: new FormControl('', [Validators.required]),
+      color: new FormControl('', [Validators.required]),
     
     });
 
