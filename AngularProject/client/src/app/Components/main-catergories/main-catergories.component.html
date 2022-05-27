@@ -1,6 +1,6 @@
 <ul class="menu level1">
     <li class="item" [class.toggleable]="i>10" [class.menu-hidden]="i>10" *ngFor="let category of categories; let i = index">
-        <a href="/" class="hasicon" title="SIDE TABLE">
+        <a href="/main-shop/{{category.id}}" class="hasicon" title="SIDE TABLE">
             <img src="../../../assets/img/home/{{category.image}}" alt="img">{{category.name}}
         </a>
     </li>

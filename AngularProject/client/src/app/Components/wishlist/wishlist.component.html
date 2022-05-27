@@ -1,0 +1,91 @@
+<div class="main-content">
+    <div class="wrap-banner">
+
+        <!-- breadcrumb -->
+        <nav class="breadcrumb-bg">
+            <div class="container no-index">
+                <div class="breadcrumb">
+                    <ol>
+                        <li>
+                            <a href="#">
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>Wishlists</span>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+
+    <!-- main -->
+    <div id="wrapper-site">
+        <div class="container">
+            <div class="row">
+                <div id="content-wrapper" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 onecol">
+                    <div id="main">
+                        <div id="content" class="page-content">
+                            <div id="mywishlist">
+                                <h1 class="title-page">My Wishlist ♥</h1>
+
+                                <div id="block-history" class="block-center">
+                                    <table class="std table">
+                                        <thead>
+                                            <tr>
+                                                <th class="first_item">Image</th>
+                                                <th class="item mywishlist_first">Name</th>
+                                                <th class="item mywishlist_first">Price</th>
+                                                <th class="item mywishlist_second">InStock</th>
+                                                <th class="item mywishlist_second"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr id="wishlist_1" *ngFor="let wishItem of wishlist">
+                                                <td>
+                                                    <ng-container *ngIf="wishItem.image == '' ;else NoImg">
+                                                        <img class="img-fluid image-cover" [src]="wishItem.image" alt="img">
+                                                    </ng-container>
+                                                    <ng-template #NoImg>
+                                                        <img class="img-fluid image-cover" src="../../../assets/img/product/noImg.jpg" alt="img">
+                                                    </ng-template>
+                                                </td>
+                                                <td class="bold align_center">
+                                                    {{wishItem.title_EN}}
+                                                </td>
+                                                <td>
+                                                    {{wishItem.price}}
+                                                </td>
+                                                <td>{{wishItem.availability}}</td>
+
+                                                <td>
+                                                    <div class="product-buttons d-flex justify-content-center">
+                                                        <a [routerLink]="'/products/'+wishItem.productId">
+                                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="product-buttons d-flex justify-content-center">
+                                                        <a onclick="RemoveFromWishlist(wishItem.productId)">
+                                                            <i class="fa fa-heart" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

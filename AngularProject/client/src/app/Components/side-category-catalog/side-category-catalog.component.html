@@ -1,0 +1,14 @@
+<h3 class="title-product">
+    categories</h3>
+<ul class="scroll-product">
+    <li *ngFor="let category of categories">
+        <label class="check">
+        <input type="checkbox" (change)="changeCat(category.id)" [checked]="CatExist(category.id)">
+        <span class="checkmark"></span>
+        </label>
+        <a>
+            <b>{{category.name}}</b>
+            <span class="quantity">({{category.count}})</span>
+        </a>
+    </li>
+</ul>
