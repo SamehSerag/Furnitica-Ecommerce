@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { catchError, Observable, ObservableInput, tap } from "rxjs";
 import { environment } from "src/environments/environment";
@@ -45,9 +45,11 @@ export class AuthService {
     return res;
   }
   isAdmin() : Observable<any> {
+    let headers : HttpHeaders = new HttpHeaders().set("Authorization", "Bearer " + localStorage["access-token"]);
+
     console.log("55555555555555555555");
-    let res = this.http.get<any>(`${environment.AuthAPIURL}/testAdmin`, {observe: 'response'}).pipe(
-      tap(data => console.log("data = " + JSON.stringify(data))),
+    let res = this.http.get<any>(`${environment.AuthAPIURL}/testAdmin`, {headers, observe: 'response'}).pipe(
+      tap(data => {console.log("ana alaa")}),
       catchError(this.habdleError)
       
     );
