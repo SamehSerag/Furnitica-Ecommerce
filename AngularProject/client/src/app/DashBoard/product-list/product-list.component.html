@@ -1,104 +1,103 @@
 <div class="container contentDir">
-  <!-- <div class="alert alert-success" role="alert">
+    <!-- <div class="alert alert-success" role="alert">
     A simple success alert—check it out!
   </div> -->
-  <!-- (click)="AddProduct()" -->
+    <!-- (click)="AddProduct()" -->
 
-  <a routerLink="/AddProduct/Owner" class="btn btn-dark m-3 p- px-4" style="float: right;">
+    <a routerLink="/Orders/allOrders" class="btn btn-dark m-3 p- px-4" style="float: right;">
+    Manage Orders
+  </a>
+    <a routerLink="/AddProduct/Owner" class="btn btn-dark m-3 p- px-4" style="float: right;">
     Add Product
   </a>
-  <!-- <button mat-button (click)="openDialog2()">Open dialog</button> -->
+    <!-- <button mat-button (click)="openDialog2()">Open dialog</button> -->
 
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Image</th>
-        <th scope="col">Title_EN</th>
-        <th scope="col">Title_AR</th>
-        <th scope="col">Details_EN</th>
-        <th scope="col">Details_AR</th>
-        <th scope="col">Price</th>
-        <th scope="col">Color</th>
-        <th scope="col">Quantity</th>
-        <th scope="col">Category</th>
-        <th scope="col">Actions</th>
-      </tr>
-    </thead>
-    <tbody #scrollBottom>
-      <tr *ngFor="let product of products"  style="cursor: pointer;">
-          <th (click)="openDialog(product.id)" scope="row">{{product.id}}</th>
-          <td (click)="openDialog(product.id)"> <img width="50px" *ngIf="product.images[0]" [src]="product.images[0]" alt="img"></td>
-          <td (click)="openDialog(product.id)">{{product.title_EN | pipeTransform}}</td>
-          <td (click)="openDialog(product.id)">{{product.title_AR | pipeTransform}}</td>
-          <td (click)="openDialog(product.id)">{{product.details_EN | pipeTransform}}</td>
-          <td (click)="openDialog(product.id)">{{product.details_AR | pipeTransform}}</td>
-          <td (click)="openDialog(product.id)">{{product.price | currency}}</td>
-          <td (click)="openDialog(product.id)">{{product.color}}</td>
-          <td (click)="openDialog(product.id)">{{product.quantity}}</td>
-          <td (click)="openDialog(product.id)">{{product.category.name}}</td>
-        <td>
-          <div class="btn-group" role="group">
-            <a [routerLink]="'/Products/'+product.id" type="submit" title="  As User  "
-              (click)="onSelect(product)"><i class="fa fa-eye text-dark fa-green" aria-hidden="true"> </i></a>
-            <!-- <button type="submit" class="btn btn-primary" (click)="openDialog(product.id)"><i class="fa fa-pencil text-white"
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Image</th>
+                <th scope="col">Title_EN</th>
+                <th scope="col">Title_AR</th>
+                <th scope="col">Details_EN</th>
+                <th scope="col">Details_AR</th>
+                <th scope="col">Price</th>
+                <th scope="col">Color</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Category</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody #scrollBottom>
+            <tr *ngFor="let product of products" style="cursor: pointer;">
+                <th (click)="openDialog(product.id)" scope="row">{{product.id}}</th>
+                <td (click)="openDialog(product.id)"> <img width="50px" *ngIf="product.images[0]" [src]="product.images[0]" alt="img"></td>
+                <td (click)="openDialog(product.id)">{{product.title_EN | pipeTransform}}</td>
+                <td (click)="openDialog(product.id)">{{product.title_AR | pipeTransform}}</td>
+                <td (click)="openDialog(product.id)">{{product.details_EN | pipeTransform}}</td>
+                <td (click)="openDialog(product.id)">{{product.details_AR | pipeTransform}}</td>
+                <td (click)="openDialog(product.id)">{{product.price | currency}}</td>
+                <td (click)="openDialog(product.id)">{{product.color}}</td>
+                <td (click)="openDialog(product.id)">{{product.quantity}}</td>
+                <td (click)="openDialog(product.id)">{{product.category.name}}</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a [routerLink]="'/Products/'+product.id" type="submit" title="  As User  " (click)="onSelect(product)"><i class="fa fa-eye text-dark fa-green" aria-hidden="true"> </i></a>
+                        <!-- <button type="submit" class="btn btn-primary" (click)="openDialog(product.id)"><i class="fa fa-pencil text-white"
                 aria-hidden="true"></i></button> -->
-            <a [routerLink]="'/Product/Owner'" type="submit"
-              (click)="onDelete(product)" data-toggle="modal" data-target="#exampleModal">
-              <i class="fa fa-trash-o text-dark fa-red" title="  Delete  " aria-hidden="true"></i>
-            </a>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+                        <a [routerLink]="'/Product/Owner'" type="submit" (click)="onDelete(product)" data-toggle="modal" data-target="#exampleModal">
+                            <i class="fa fa-trash-o text-dark fa-red" title="  Delete  " aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
-  <nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-end">
-      <li [ngClass]="{'page-item':1, 'disabled' : !pagination.hasPreviousPage}">
-        <a rel="prev" routerLink="/Product/Owner" class="page-link" (click)="previousPage()">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-end">
+            <li [ngClass]="{'page-item':1, 'disabled' : !pagination.hasPreviousPage}">
+                <a rel="prev" routerLink="/Product/Owner" class="page-link" (click)="previousPage()">
           Previous
         </a>
-      </li>
-      <li *ngFor="let item of pagination.totalPages | asList; let i=index;"
-        [ngClass]="{'page-item':1, 'active' : pagination.pageIndex == (i+1) }">
-        <a class="page-link" rel="nofollow" routerLink="/Product/Owner" (click)="paginate(i+1)">
+            </li>
+            <li *ngFor="let item of pagination.totalPages | asList; let i=index;" [ngClass]="{'page-item':1, 'active' : pagination.pageIndex == (i+1) }">
+                <a class="page-link" rel="nofollow" routerLink="/Product/Owner" (click)="paginate(i+1)">
           {{i+1}}
         </a>
-      </li>
-      <li [ngClass]="{'page-item':1, 'disabled' : !pagination.hasNextPage}">
-        <a rel="next" routerLink="/Product/Owner" class="page-link" (click)="nextPage()">
+            </li>
+            <li [ngClass]="{'page-item':1, 'disabled' : !pagination.hasNextPage}">
+                <a rel="next" routerLink="/Product/Owner" class="page-link" (click)="nextPage()">
           Next
         </a>
-      </li>
+            </li>
 
-    </ul>
-  </nav>
+        </ul>
+    </nav>
 
-  <!-- Button trigger modal -->
-  <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    <!-- Button trigger modal -->
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
     Launch demo modal
   </button> -->
 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Be Careful</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Be Careful</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
+                </div>
+                <div class="modal-body">
+                    Are you sure, this product will be delete from database ?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="Delete()"> Delete</button>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-          Are you sure, this product will be delete from database ?
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="Delete()"> Delete</button>
-        </div>
-      </div>
     </div>
-  </div>
 </div>

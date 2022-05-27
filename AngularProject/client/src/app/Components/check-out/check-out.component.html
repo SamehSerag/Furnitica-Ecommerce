@@ -9,12 +9,9 @@
                         <div class=" main-title">
                             <label>Order details ({{order.orderProducts.length}}
                                 items)</label>
-                            <span *ngIf="order.state==0"
-                                class="pending">Pending</span>
-                            <span *ngIf="order.state==1"
-                                class="accepted">Accepted</span>
-                            <span *ngIf="order.state==2"
-                                class="rejected">Rejected</span>
+                            <span *ngIf="order.state==0" class="pending">Pending</span>
+                            <span *ngIf="order.state==1" class="accepted">Accepted</span>
+                            <span *ngIf="order.state==2" class="rejected">Rejected</span>
 
                         </div>
 
@@ -23,7 +20,7 @@
                             <tbody>
                                 <tr *ngFor="let orderD of order.orderProducts">
                                     <td style="text-align: center;">
-                                        <img class="img-fluid" src="assets/img/product/noImg.jpg"/>
+                                        <img height="100" width="100" class="img-fluid" src="assets/img/product/noImg.jpg" />
                                     </td>
                                     <td style="text-align: center;">
                                         <p>Product Name</p>
@@ -58,5 +55,5 @@
             </div>
         </div>
     </div>
-  
+
 </div>

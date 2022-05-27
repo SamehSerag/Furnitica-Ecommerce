@@ -155,13 +155,13 @@ namespace DotNetWebAPI.Services
         {
             var order = await _context.Orders.FirstOrDefaultAsync(o => o.Id == orderId);
             order.State = OrderState.Pending;
-            _context.SaveChangesAsync();
+           await _context.SaveChangesAsync();
         }
         public async Task RejectOrder(int orderId)
         {
             var order = await _context.Orders.FirstOrDefaultAsync(o => o.Id == orderId);
             order.State = OrderState.Rejected;
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
     }
