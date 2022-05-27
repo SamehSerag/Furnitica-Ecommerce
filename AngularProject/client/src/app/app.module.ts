@@ -35,7 +35,9 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
-
+import { SideCategoryCatalogComponent } from './Components/side-category-catalog/side-category-catalog.component';
+import { WishlistComponent } from './Components/wishlist/wishlist.component';
+import { WishlistHeartComponent } from './Components/wishlist-heart/wishlist-heart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,8 +60,10 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
     ProductListComponent,
     PipeTransformPipe,
     AddProductComponent,
-    DialogComponent
-    
+    DialogComponent,
+    SideCategoryCatalogComponent,
+    WishlistComponent,
+    WishlistHeartComponent
   ],
   imports: [
     BrowserModule,

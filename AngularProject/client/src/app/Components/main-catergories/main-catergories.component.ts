@@ -12,17 +12,13 @@ export class MainCatergoriesComponent implements OnInit {
   categories: ICategory[] = [];
 
   constructor(private categoryService: CategoryService) {
-
   }
 
   ngOnInit(): void {
     this.categoryService.getAllCategories()
       .subscribe(categories => {
         this.categories = categories;
-        console.log(this.categories);
-      }
-
-      );
+      });
   }
 
 }

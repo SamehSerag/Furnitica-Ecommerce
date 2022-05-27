@@ -12,5 +12,6 @@ export interface IProduct {
     categoryID: number;
     category: Category;
     images?: any;
+    rating:number;
     orderProducts: any[];
 }

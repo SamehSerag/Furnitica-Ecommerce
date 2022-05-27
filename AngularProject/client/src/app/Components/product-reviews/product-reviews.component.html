@@ -1,1 +1,64 @@
-<p>product-reviews works!</p>
+<form class="new-review-form" (ngSubmit)="SubmitReview()">
+
+    <h3 class="spr-form-title">Write a review</h3>
+    <fieldset>
+        <div class="spr-form-review-rating">
+            <label class="spr-form-label">Your Rating</label>
+            <fieldset class="ratings">
+                <input type="radio" name="starsCount" id="star5" name="rating" [(ngModel)]="userReview.starsCount" [value]=5/>
+                <label class="full" for="star5"></label>
+                <input type="radio" name="starsCount" id="star4" name="rating" [(ngModel)]="userReview.starsCount" [value]=4/>
+                <label class="full" for="star4"></label>
+                <input type="radio" name="starsCount" id="star3" name="rating" [(ngModel)]="userReview.starsCount" [value]=3/>
+                <label class="full" for="star3"></label>
+                <input type="radio" name="starsCount" id="star2" name="rating" [(ngModel)]="userReview.starsCount" [value]=2/>
+                <label class="full" for="star2"></label>
+                <input type="radio" name="starsCount" id="star1" name="rating" [(ngModel)]="userReview.starsCount" [value]=1/>
+                <label class="full" for="star1"></label>
+            </fieldset>
+        </div>
+    </fieldset>
+    <fieldset>
+        <div class="spr-form-review-body">
+            <div class="spr-form-input">
+                <textarea class="spr-form-input-textarea" name="reviewBody" rows="5" cols="5" placeholder="Write your comments here" [(ngModel)]="userReview.reviewBody" required></textarea>
+            </div>
+        </div>
+    </fieldset>
+    <div class="submit">
+        <input type="submit" name="addComment" id="submitComment" class="btn btn-default" value="Submit Review">
+    </div>
+</form>
+<ng-container *ngIf="reviews!=[];else NoReview">
+
+    <div class="spr-form">
+        <div class="user-comment">
+            <div class="spr-review" *ngFor="let review of reviews">
+                <div class="spr-review-header">
+                    <span class="spr-review-header-byline">
+                  <img src="../../../assets/img/product/noImg.jpg" class="reviewer-img">
+                <strong>{{review.userName}}</strong> -
+                <span>{{review.createdDate | date}}</span>
+                    </span>
+                    <div class="rating">
+                        <div class="star-content">
+                            <ng-container *ngIf=" review.starsCount! > 0">
+                                <i class="fa fa-star" *ngFor="let n of (review.starsCount!)|asList"></i>
+                            </ng-container>
+                            <ng-container *ngIf="review.starsCount!=5">
+                                <i class="fa fa-star-o" *ngFor="let n of (5-review.starsCount!)|asList"></i>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+                <div class="spr-review-content">
+                    <p class="spr-review-content-body">{{review.reviewBody}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+<ng-template #NoReview>
+    <h4>Be the first to review!!</h4>
+    <img class="img-fluid image-cover" src="../../../assets/img/no-reviews.png" alt="img">
+</ng-template>

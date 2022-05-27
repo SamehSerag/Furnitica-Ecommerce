@@ -35,21 +35,22 @@ export class MainShopComponent implements OnInit, OnChanges {
     @Inject(DOCUMENT) private dom: Document, private router:Router, 
     private activatedRoute: ActivatedRoute) {
     this.products=[];
+
     this.sortArray = ["Sort by", "Name, A to Z", "Name, Z to A",
-                      "Price, low to high", "Price, high to low"];
+      "Price, low to high", "Price, high to low"];
     this.colorArray = ["Blue", "Green", "Yellow", "Brown", "Pink", "Red"];
     // this.sortArrayValues = ["Sort by", "Title_EN", "Title_EN", "price", "price"];
 
 
     this.productsSearchModel = new ProductsSearchModel();
-   }
+  }
 
 
-  public IfImgFound(i:number, imageIndex: number): boolean{
+  public IfImgFound(i: number, imageIndex: number): boolean {
     return this.products[i].images[imageIndex] != null ? true : false;
   }
 
-  public Img(i:number, imageIndex: number): string{
+  public Img(i: number, imageIndex: number): string {
     return this.products[i].images[imageIndex];
   }
   ngOnChanges(changes: SimpleChanges): void {
@@ -58,6 +59,18 @@ export class MainShopComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
+    if (this.activatedRoute.snapshot.paramMap.get('catId') != null)
+      this.productsSearchModel.category.push(Number(this.activatedRoute.snapshot.paramMap.get('catId')));
+
+      console.log(this.products);
+    // this.prdService.getAllProducts().subscribe(
+    //   response => {
+    //     this.pagination = response;
+    //     this.products = response.data;
+    //   });
+    //this.filterByCat(Number(this.activatedRoute.snapshot.paramMap.get('catId')));
+
+    this.getProductFilteration();
 
     this.activatedRoute.queryParams
       .subscribe(params => {
@@ -75,9 +88,10 @@ export class MainShopComponent implements OnInit, OnChanges {
     //     this.products = response.data;
     //   });
       // console.log(this.productsSearchModel.toString());
+
   }
 
-  filterByCat(catId:number):void{
+  filterByCat(catId: number): void {
     this.prdService.getProductsByCatId(catId).subscribe(
       response => {
         this.pagination = response;
@@ -86,7 +100,12 @@ export class MainShopComponent implements OnInit, OnChanges {
     );
   }
 
-  getProductFilteration(){
+  ChangeCategories(categories: number[]) {
+    this.productsSearchModel.category = categories;
+    this.getProductFilteration();
+  }
+
+  getProductFilteration() {
     this.prdService.getProductsFilteration(this.productsSearchModel.toString()).subscribe(
       response => {
         this.pagination = response;
@@ -94,24 +113,23 @@ export class MainShopComponent implements OnInit, OnChanges {
         console.log(this.products.length);
       })
 
-      // this.router.navigate(["/main-shop"]);
       this.prdService.getPriceRange();
       console.log(this.productsSearchModel.toString())
-      
+
   }
 
 
-  sort(event:any):void {
+  sort(event: any): void {
     var selected = event.target.value;
 
-    if(selected == 1 || selected == 2)
-      this.productsSearchModel.sortby ="Title_EN";
-    else if( selected == 3 || selected == 4)
+    if (selected == 1 || selected == 2)
+      this.productsSearchModel.sortby = "Title_EN";
+    else if (selected == 3 || selected == 4)
       this.productsSearchModel.sortby = "price";
     else
-      this.productsSearchModel.sortby="";
+      this.productsSearchModel.sortby = "";
 
-    if(selected == 1 || selected == 3)
+    if (selected == 1 || selected == 3)
       this.productsSearchModel.sortdir = "asc";
     else
       this.productsSearchModel.sortdir = "dasc";
@@ -121,31 +139,31 @@ export class MainShopComponent implements OnInit, OnChanges {
   }
 
   /// Pagination
-  paginate(pageIndex:number):void{
+  paginate(pageIndex: number): void {
 
     this.productsSearchModel.pageIndex = pageIndex;
     this.getProductFilteration();
 
     // this.dom.body.scrollTop =0;
-    this.dom.documentElement.scrollTop=100;
+    this.dom.documentElement.scrollTop = 100;
 
 
   }
-  nextPage(): void{
-    if(this.pagination.hasNextPage){
+  nextPage(): void {
+    if (this.pagination.hasNextPage) {
       this.paginate(++this.productsSearchModel.pageIndex);
     }
   }
-  previousPage():void{
-    if(this.pagination.hasPreviousPage){
+  previousPage(): void {
+    if (this.pagination.hasPreviousPage) {
       this.paginate(--this.productsSearchModel.pageIndex);
     }
   }
-  pricefun(event:any):void{
+  pricefun(event: any): void {
     console.log(event.target);
   }
 
-  colorChanged(colorId:number){
+  colorChanged(colorId: number) {
     this.productsSearchModel.color = colorId;
     this.getProductFilteration();
   }
@@ -158,4 +176,5 @@ export class MainShopComponent implements OnInit, OnChanges {
 
     this.getProductFilteration();
   }
+
 }
