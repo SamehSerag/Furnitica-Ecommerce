@@ -86,24 +86,24 @@ namespace AngularAPI.Services
         }
 
         // Count produts in the cart
-        public int GetCartItemCount(string userId)
+        public List<CartProductDto> GetCartItemCount(string userId)
         {
             string cartId = GetCart(userId);
 
-            if (!string.IsNullOrEmpty(cartId))
-            {
-                int cartItemCount = _dbContext.CartProducts.Where(x => x.CartId == cartId).Sum(x => x.Quantity);
+            //if (!string.IsNullOrEmpty(cartId))
+            //{
+            //    int cartItemCount = _dbContext.CartProducts.Where(x => x.CartId == cartId).Sum(x => x.Quantity);
 
-                return cartItemCount;
-            }
-            else
-            {
-                return 0;
-            }
+            //    return cartItemCount;
+            //}
+            //else
+            //{
+            //}
+                return GetProductsAvailableInCart(cartId);
         }
 
         // Clear all items from the cart
-        public int ClearCart(string userId)
+        public List<CartProductDto>  ClearCart(string userId)
         {
 
             string cartId = GetCart(userId);
@@ -117,7 +117,7 @@ namespace AngularAPI.Services
                     _dbContext.SaveChanges();
                 }
             }
-            return 0;
+            return GetProductsAvailableInCart(cartId);
         }
 
         // Delete the whole cart

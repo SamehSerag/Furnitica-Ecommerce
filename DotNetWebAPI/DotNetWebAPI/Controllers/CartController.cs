@@ -22,23 +22,23 @@ namespace AngularAPI.Controllers
         public async Task<List<CartProductDto>> Get()
         {
             User? user = HttpContext.Items["User"] as User;
-            string cartid = _cartRepository.GetCart(user.Id);
+            string cartid = _cartRepository.GetCart(user!.Id);
             return await Task.FromResult(_cartRepository.GetProductsAvailableInCart(cartid)).ConfigureAwait(true);
         }
 
         // Add a single product into the shopping cart or Increase the quantity of the product by ONE (Tested)
         [HttpPost]
         [Route("AddToCart/{productId}")]
-        public int Post(int productId)
+        public List<CartProductDto> Post(int productId)
         {
             User? user = HttpContext.Items["User"] as User;
-            _cartRepository.AddProductToCart(user.Id, productId);
+            _cartRepository.AddProductToCart(user!.Id, productId);
             return _cartRepository.GetCartItemCount(user.Id);
         }
 
         // Reduces the quantity by one for an item in shopping cart (Tested)
         [HttpPut("{productId}")]
-        public int Put(int productId)
+        public  List<CartProductDto> Put(int productId)
         {
             User? user = HttpContext.Items["User"] as User;
             _cartRepository.DeleteOneCartItem(user.Id, productId);
@@ -47,7 +47,7 @@ namespace AngularAPI.Controllers
 
         // Delete a single item from the cart (Tested)
         [HttpDelete("{productId}")]
-        public int Delete(int productId)
+        public List<CartProductDto> Delete(int productId)
         {
             User? user = HttpContext.Items["User"] as User;
             _cartRepository.RemoveCartItem(user.Id, productId);
@@ -56,10 +56,10 @@ namespace AngularAPI.Controllers
 
         // Clear the shopping cart (Tested)
         [HttpDelete]
-        public int Delete()
+        public List<CartProductDto> Delete()
         {
             User? user = HttpContext.Items["User"] as User;
-            return _cartRepository.ClearCart(user.Id);
+            return  _cartRepository.ClearCart(user.Id);
         }
     }
 }
