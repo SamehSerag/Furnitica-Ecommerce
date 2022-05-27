@@ -18,6 +18,7 @@ export class ProfileService {
 
   getProfile () : Observable<any> {
     let headers : HttpHeaders = new HttpHeaders().set("Authorization", "Bearer " + localStorage["access-token"]);
+    // let headers : HttpHeaders = new HttpHeaders().set("Authorization", "Bearer " + localStorage["access-token"]);
     let url = `${environment.BaseUrl}/User`;
     let res = this.http.get<any>(url, {headers, observe: "response"} ).pipe (
       tap(data => console.log(JSON.stringify(data))),
@@ -38,7 +39,11 @@ export class ProfileService {
 
   updateProfile (user : IUser) : Observable<any> {
     let headers : HttpHeaders = new HttpHeaders().set("Authorization", "Bearer " + localStorage["access-token"]);
+    // let headers : HttpHeaders = new HttpHeaders().set("Authorization", "Bearer " + localStorage["access-token"]);
+
     let url = `${environment.BaseUrl}/User`;
+    console.log("cart req header", headers);
+
     let res = this.http.put<any>(url, user, {headers, observe: "response"} ).pipe (
       tap(data => console.log(JSON.stringify(data))),
       catchError(this.habdleError)

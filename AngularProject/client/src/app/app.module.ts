@@ -38,6 +38,10 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { SideCategoryCatalogComponent } from './Components/side-category-catalog/side-category-catalog.component';
 import { WishlistComponent } from './Components/wishlist/wishlist.component';
 import { WishlistHeartComponent } from './Components/wishlist-heart/wishlist-heart.component';
+import { AddtocartComponent } from './Components/addtocart/addtocart.component';
+import { ShoppingcartComponent } from './Components/shoppingcart/shoppingcart.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +67,9 @@ import { WishlistHeartComponent } from './Components/wishlist-heart/wishlist-hea
     DialogComponent,
     SideCategoryCatalogComponent,
     WishlistComponent,
-    WishlistHeartComponent
+    WishlistHeartComponent,
+    AddtocartComponent,
+    ShoppingcartComponent,
   ],
   imports: [
     BrowserModule,
@@ -86,6 +92,7 @@ import { WishlistHeartComponent } from './Components/wishlist-heart/wishlist-hea
         MatSelectModule,
         MatButtonModule,
         NgxSliderModule,
+        ReactiveFormsModule
   ],
 
   providers: [],
