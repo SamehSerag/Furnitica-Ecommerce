@@ -26,17 +26,6 @@ export class SideBarComponent implements OnInit {
   ngOnInit(): void {
     this.addUserDataSetItemHandler();
     this.updateState();
-    this.auth.isAdmin().subscribe({
-      next: (res) =>{
-        this.isAdmin = true;
-        console.log("ressssssssssssssssssssssssssssssssssssssssssss", res);
-
-      },
-      error: (e)=>{
-        this.isAdmin = false;
-        console.log("errorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr", e);
-      },
-    })
   }
 
   searhcQuery(){

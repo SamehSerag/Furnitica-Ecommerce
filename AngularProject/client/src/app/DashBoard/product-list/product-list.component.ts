@@ -39,7 +39,7 @@ export class ProductListComponent implements OnInit, AfterViewChecked{
   }
   ngAfterViewChecked(): void {
     // console.log(this.scrollBottom.nativeElement.scrollHeight)
-    
+
   }
 
   ngOnInit(): void {
@@ -60,7 +60,7 @@ export class ProductListComponent implements OnInit, AfterViewChecked{
     this.dialog.open(DialogComponent, {
       data: this.products.find(p => p.id == prId) ,
     });
-    
+
     // console.log("test");
 
   }
@@ -84,7 +84,7 @@ export class ProductListComponent implements OnInit, AfterViewChecked{
   scrollToBottom(): void {
     try {
       this.dom.documentElement.scrollTop = this.scrollBottom.nativeElement.scrollHeight;
-      
+
     } catch (err) { }
   }
 
@@ -93,7 +93,7 @@ export class ProductListComponent implements OnInit, AfterViewChecked{
       this.dom.documentElement.scrollTop = 100;
     } catch (err) { }
   }
-  
+
 
   onSelect(product: IProduct) {
 
@@ -102,7 +102,7 @@ export class ProductListComponent implements OnInit, AfterViewChecked{
 
   }
   onDelete(product: IProduct) {
-    this.productToDelete = product;   
+    this.productToDelete = product;
   }
   Delete(){
     if(this.productToDelete != null){
@@ -117,14 +117,14 @@ export class ProductListComponent implements OnInit, AfterViewChecked{
         Error: () => {
           alert("Error !!");
         }
-  
+
       }
       this.prdService.deleteProduct(this.productToDelete.id).subscribe(observer);
     }
-    
+
   }
 
- 
+
 
   /// Pagination
   paginate(pageIndex: number): void {
@@ -134,7 +134,7 @@ export class ProductListComponent implements OnInit, AfterViewChecked{
 
     // this.dom.body.scrollTop =0;
     this.scrollToTop();
-    
+
 
   }
   nextPage(): void {
@@ -147,7 +147,7 @@ export class ProductListComponent implements OnInit, AfterViewChecked{
       this.paginate(--this.productsSearchModel.pageIndex);
     }
   }
- 
+
 }
 
 
