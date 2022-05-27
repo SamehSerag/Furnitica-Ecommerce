@@ -168,7 +168,13 @@ namespace AngularAPI.Controllers
         [HttpPut("owner/{id}")]
         public async Task<IActionResult> PutProduct(int id, ProductToAdd product)
         {
-            product.OwnerId = CurUser.Id;
+            //product.OwnerId = CurUser.Id;
+            if (product.OwnerId != null)
+            {
+                CurUser = HttpContext.Items["User"] as User;
+
+                product.OwnerId = CurUser.Id;
+            }
 
             var productMapped = mapper.Map<ProductToAdd, Product>
                (product);
@@ -201,7 +207,13 @@ namespace AngularAPI.Controllers
         [HttpPost("owner")]
         public async Task<ActionResult<AdminProductDto>> PostProduct([FromForm]ProductToAdd product)
         {
-            product.OwnerId = CurUser.Id;
+
+            if (product.OwnerId != null)
+            {
+                CurUser = HttpContext.Items["User"] as User;
+
+                product.OwnerId = CurUser.Id;
+            }
             var productMapped = mapper.Map<ProductToAdd, Product>
                 (product);
 
