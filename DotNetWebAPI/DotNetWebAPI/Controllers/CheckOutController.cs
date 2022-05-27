@@ -32,8 +32,8 @@ namespace DotNetWebAPI.Controllers
         [HttpPost]
         public Task<Order> Post()
         {
-            User? user = HttpContext.Items["User"] as User;
-            var cartId = _cartRepository.GetCart(user.Id);
+           // User? user = HttpContext.Items["User"] as User;
+            var cartId = _cartRepository.GetCart("2dec20bc-7da6-411b-999c-2f45e40c9e16");
             var myCartItems = _cartRepository.GetProductsAvailableInCart(cartId); // List of cart Items
             List<OrderProducts> orderProducts = new();
 
@@ -52,7 +52,7 @@ namespace DotNetWebAPI.Controllers
 
             var myOrder = _orderRepository.CreateOrderAsync(new Order()
             {
-                UserID = user.Id,
+                UserID = "2dec20bc-7da6-411b-999c-2f45e40c9e16",
                 Date = DateTime.Now,
                 State = OrderState.Pending,
                 TotalPrice = Total,
