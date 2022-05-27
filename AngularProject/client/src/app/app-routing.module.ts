@@ -13,6 +13,7 @@ import { AddProductComponent } from './DashBoard/add-product/add-product.compone
 import { ProductListComponent } from './DashBoard/product-list/product-list.component';
 import { IndexComponent } from './index.component';
 import { WishlistComponent } from './Components/wishlist/wishlist.component';
+import { ShoppingcartComponent } from './Components/shoppingcart/shoppingcart.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
