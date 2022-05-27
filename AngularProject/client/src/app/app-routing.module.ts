@@ -30,6 +30,7 @@ const routes: Routes = [
   { path: 'Product/Owner', component: ProductListComponent},
   { path: 'AddProduct/Owner', component: AddProductComponent},
   { path: 'wishlist', component: WishlistComponent},
+  { path: 'shopping-cart', component: ShoppingcartComponent },
 ];
 
 @NgModule({
