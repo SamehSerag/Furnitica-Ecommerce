@@ -16,7 +16,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace DotNetWebAPI.Controllers
 {
 
-    [Authorize(Roles = "Client")]
+    //[Authorize(Roles = "Client")]
     [Route("api/[controller]")]
     [ApiController]
     public class WishListController : ControllerBase
@@ -41,7 +41,7 @@ namespace DotNetWebAPI.Controllers
 
             return await _repo.GetUserWishList(user.Id);*/
 
-            var wishlist =  await _repo.GetUserWishList("CurUser.Id");
+            var wishlist =  await _repo.GetUserWishList(CurUser.Id);
             var wishlistDto = _mapper.Map<IReadOnlyList<WishListProduct>, IReadOnlyList<WishListDto>>(wishlist);
             return wishlistDto;
         }
@@ -57,7 +57,7 @@ namespace DotNetWebAPI.Controllers
                /* User? user = HttpContext.Items["User"] as User;
 
                 _repo.AddToWishList(prdId, user.Id);*/
-                await _repo.AddToWishList(prdId, "CurUser.Id");
+                await _repo.AddToWishList(prdId, CurUser.Id);
 
             }
             catch (DbUpdateException)
@@ -84,7 +84,7 @@ namespace DotNetWebAPI.Controllers
             /*User? user = HttpContext.Items["User"] as User;
 
             _repo.RemoveFromWishList(prdId, user.Id);*/
-            await _repo.RemoveFromWishList(prdId, "CurUser.Id");
+            await _repo.RemoveFromWishList(prdId, CurUser.Id);
 
             return NoContent();
         }
@@ -94,7 +94,7 @@ namespace DotNetWebAPI.Controllers
             /*User? user = HttpContext.Items["User"] as User;
 
             return _repo.WishListProductExists(id, user.Id);*/
-            return _repo.WishListProductExists(id, "CurUser.Id");
+            return _repo.WishListProductExists(id, CurUser.Id);
         }
     }
 }

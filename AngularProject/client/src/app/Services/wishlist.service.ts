@@ -15,12 +15,14 @@ export class WishlistService {
         headers: new HttpHeaders({
           'Content-Type': 'application/json'
           //  , Authorization: 'my-auth-token'
-        })
+        }).set("Authorization", "Bearer " + localStorage["access-token"])
+
       };
   }
 
   getWishList(): Observable<IWishlist[]> {
-    return this.httpClient.get<IWishlist[]>(`${environment.APIURL}/api/WishList`);
+    let headers : HttpHeaders = new HttpHeaders().set("Authorization", "Bearer " + localStorage["access-token"]);
+    return this.httpClient.get<IWishlist[]>(`${environment.APIURL}/api/WishList`,{headers});
   }
 
   AddToWishlist(prdId: number):Observable<IWishlist[]> {
@@ -32,7 +34,8 @@ export class WishlistService {
   }
 
   RemoveFromWishlist(prdId: number){
-    return this.httpClient.delete(`${environment.APIURL}/api/WishList/${prdId}`)
+    let headers : HttpHeaders = new HttpHeaders().set("Authorization", "Bearer " + localStorage["access-token"]);
+    return this.httpClient.delete(`${environment.APIURL}/api/WishList/${prdId}`,{headers})
   }
 
   private handleError(error: HttpErrorResponse) {
