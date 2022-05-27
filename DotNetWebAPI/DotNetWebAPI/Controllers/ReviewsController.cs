@@ -83,7 +83,7 @@ namespace DotNetWebAPI.Controllers
 
              var review = await _repo.GetReviewByUserIdAsync(user?.Id, prdid);*/
             
-            var review = await _repo.GetReviewByUserIdAsync("CurUser.Id", prdid);
+            var review = await _repo.GetReviewByUserIdAsync(CurUser!.Id, prdid);
 
             if (review == null)
             {
@@ -111,7 +111,7 @@ namespace DotNetWebAPI.Controllers
               }
   */
 
-            review.UserId = "CurUser.Id";
+            review.UserId = CurUser!.Id;
                 //user.Id;
 
             try
@@ -138,7 +138,7 @@ namespace DotNetWebAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Review>> PostReview(Review review)
         {
-            review.UserId = "CurUser.Id";
+            review.UserId = CurUser!.Id;
             await _repo.AddReviewAsync(review);
 
             return CreatedAtAction("GetReview", new { id = review.Id }, review);
