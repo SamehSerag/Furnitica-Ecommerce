@@ -96,9 +96,10 @@ namespace DotNetWebAPI.Services
         }
         public async Task AcceptOrder(int orderId)
         {
-            var order = await _context.Orders.FirstOrDefaultAsync(o=>o.Id== orderId);
-                       order.State = OrderState.Accepted;
-              _context.SaveChangesAsync();
+            var order = await _context.Orders.FirstOrDefaultAsync(o=> o.Id== orderId);
+             order.State = OrderState.Accepted;
+             
+            await _context.SaveChangesAsync();
         }
         public async Task PendingOrder(int orderId)
         {

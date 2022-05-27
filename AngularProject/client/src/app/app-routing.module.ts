@@ -17,7 +17,6 @@ import { ShoppingcartComponent } from './Components/shoppingcart/shoppingcart.co
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'main-shop', component:MainShopComponent },
-  { path: 'products/:pid', component:ProductDetialsComponent },
   { path: 'profile', component:EditProfileComponent},
   { path: 'Orders', component:OrdersComponent},
   { path: 'Orders/pending', component:PendingOrdersComponent},
@@ -29,7 +28,6 @@ const routes: Routes = [
   { path: 'shopping-cart', component: ShoppingcartComponent },
   { path: 'Product/Owner', component: ProductListComponent},
   { path: 'AddProduct/Owner', component: AddProductComponent},
-
 ];
 
 @NgModule({
