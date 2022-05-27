@@ -16,8 +16,8 @@ export class SideBarComponent implements OnInit {
   loggedUser : string = "";
     IsEnglish:boolean=true;
 
-  @ViewChild('searchInput') searchInput!: ElementRef; 
-  constructor(private auth : AuthService, private router: Router) {
+  @ViewChild('searchInput') searchInput!: ElementRef;
+  constructor(private auth : AuthService, private router: Router,public translate: TranslateService) {
     translate.addLangs(['en', 'nl']);
     translate.setDefaultLang('en');
   }
@@ -26,7 +26,7 @@ export class SideBarComponent implements OnInit {
     this.addUserDataSetItemHandler();
     this.updateState();
   }
-  
+
   searhcQuery(){
     console.log(this.searchInput);
     this.router.navigate(
@@ -73,9 +73,9 @@ export class SideBarComponent implements OnInit {
     this.auth.Logout();
   }
 /**********************************************
-   * 
+   *
    * Switching LAnguage
-   * 
+   *
    * ****************************************** */
   switchLang(lang: string) {
     debugger
@@ -102,7 +102,7 @@ export class SideBarComponent implements OnInit {
       localStorage.removeItem("Lang");
 
       localStorage.setItem("Lang","en");
-      window.location.reload();    
+      window.location.reload();
     }
   }
 

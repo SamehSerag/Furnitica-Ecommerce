@@ -69,11 +69,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     WishlistComponent,
     WishlistHeartComponent,
     AddtocartComponent,
-    ShoppingcartComponent,
+    ShoppingcartComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
