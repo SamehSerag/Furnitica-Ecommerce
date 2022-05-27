@@ -111,7 +111,7 @@ namespace AngularAPI.Controllers
         [HttpGet("testAdmin")]
         public IActionResult TestAdmin()
         {
-            return Ok("Admin logged in success");
+            return Ok();
         }
 
 

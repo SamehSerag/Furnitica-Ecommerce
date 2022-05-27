@@ -33,7 +33,7 @@ export class SideBarComponent implements OnInit {
 
       },
       error: (e)=>{
-        this.isAdmin = true;
+        this.isAdmin = false;
         console.log("errorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr", e);
       },
     })
@@ -59,6 +59,17 @@ export class SideBarComponent implements OnInit {
     else {
       this.loggedIn = false;
     }
+    this.auth.isAdmin().subscribe({
+      next: (res) =>{
+        this.isAdmin = true;
+        console.log("ressssssssssssssssssssssssssssssssssssssssssss", res);
+
+      },
+      error: (e)=>{
+        this.isAdmin = false;
+        console.log("errorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr", e);
+      },
+    })
   }
 
   addUserDataSetItemHandler() {
