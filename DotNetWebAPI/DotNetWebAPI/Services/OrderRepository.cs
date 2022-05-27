@@ -106,8 +106,8 @@ namespace DotNetWebAPI.Services
 
         public async Task<ActionResult<Order>> ReturnOrderById(int orderId)
         {
-            var order = await _context.Orders.FindAsync(orderId);
-
+            var order = await _context.Orders.AsQueryable().Include(o => o.OrderProducts).ThenInclude(P => P.Product)
+                .FirstOrDefaultAsync(o => o.Id == orderId);
 
             return order;
         }
@@ -119,10 +119,12 @@ namespace DotNetWebAPI.Services
             return order;
 
         }
-        public async Task CreateOrderAsync(Order order)
+        public async Task<Order> CreateOrderAsync(Order order)
         {
             _context.Orders.Add(order);
             await _context.SaveChangesAsync();
+            return await _context.Orders.AsQueryable().Include(o => o.OrderProducts).ThenInclude(P => P.Product)
+                .FirstOrDefaultAsync(o => o.Id == order.Id);
 
         }
         public async Task DeleteOrderAsync(int OrderId)

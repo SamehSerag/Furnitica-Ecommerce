@@ -10,7 +10,7 @@ namespace DotNetWebAPI.Services
         Task<ActionResult<IEnumerable<Order>>> ReturnAllAdminOrders(OrderSearchModel orderSearchModel);
         Task<ActionResult<Order>> ReturnOrderById(int orderId);
 
-        Task CreateOrderAsync(Order order);
+        Task<Order> CreateOrderAsync(Order order);
         Task DeleteOrderAsync(int OrderId);
         Task<Order> PutOrder(int orderId, Order order);
         Task<IReadOnlyList<Order>> ReturnPendingOrders();
