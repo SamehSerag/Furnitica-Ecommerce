@@ -6,33 +6,33 @@
     <mat-form-field appearance="fill">
       <mat-label>Title In English</mat-label>
       <textarea formControlName="title_en" name="title_en" matInput [(ngModel)]="data.title_EN" ></textarea>
-      <mat-error *ngIf="hasError('title_en', 'required')">Title is required</mat-error>
+      <mat-error *ngIf="hasError('title_en', 'required')">English Title is required</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Title In Arabic</mat-label>
       <textarea formControlName="title_ar" name="title_ar" matInput [(ngModel)]="data.title_AR"></textarea>
-      <mat-error *ngIf="hasError('title_ar', 'required')">Title is required</mat-error>
+      <mat-error *ngIf="hasError('title_ar', 'required')">Arabic Title is required</mat-error>
 
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Details In English</mat-label>
       <textarea formControlName="titleEn_details" name="titleEn_details" matInput [(ngModel)]="data.details_EN"></textarea>
-      <mat-error *ngIf="hasError('titleEn_details', 'required')">Title is required</mat-error>
+      <mat-error *ngIf="hasError('titleEn_details', 'required')"> English Details is required</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Details In Arabic</mat-label>
       <textarea formControlName="titleAr_details" name="titleAr_details" matInput [(ngModel)]="data.details_AR"></textarea>
-      <mat-error *ngIf="hasError('titleAr_details', 'required')">Title is required</mat-error>
+      <mat-error *ngIf="hasError('titleAr_details', 'required')">Arabic Details is required</mat-error>
 
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Price</mat-label>
       <input formControlName="price" name="price" min="0" type="number" matInput [(ngModel)]="data.price">
-      <mat-error *ngIf="hasError('price', 'required')">Title is required</mat-error>
+      <mat-error *ngIf="hasError('price', 'required')">Price is required</mat-error>
       
       <span matPrefix>$&nbsp;</span>
       <span matSuffix>.00</span>
@@ -40,7 +40,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Quantity</mat-label>
       <input formControlName="quantity" name="quantity" min="0" type="number" matInput [(ngModel)]="data.quantity">
-      <mat-error *ngIf="hasError('quantity', 'required')">Title is required</mat-error>
+      <mat-error *ngIf="hasError('quantity', 'required')">Quantity is required</mat-error>
       
     </mat-form-field>
 
@@ -52,17 +52,17 @@
           {{item.name}}
         </mat-option>
       </mat-select>
-      <mat-error *ngIf="hasError('quantity', 'required')">Title is required</mat-error>
+      <mat-error *ngIf="hasError('quantity', 'required')">Category is required</mat-error>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Color</mat-label>
-      <mat-select formControlName="color" name="color" placeholder="Color" [value]="colorIndex" (selectionChange)="changeColor($event)">
+      <mat-select placeholder="Color" [value]="colorIndex" (selectionChange)="changeColor($event)">
         <mat-option *ngFor="let item of colorArray; let i=index" [value]="i">
           {{item}}
         </mat-option>
       </mat-select>
-      <mat-error *ngIf="hasError('color', 'required')">Title is required</mat-error>
+      <!-- <mat-error *ngIf="hasError('color2', 'required')">Title is required</mat-error> -->
     </mat-form-field>
     </form>
   </div>

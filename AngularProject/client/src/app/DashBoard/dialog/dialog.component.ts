@@ -50,7 +50,7 @@ export class DialogComponent implements OnInit, OnDestroy{
       titleAr_details: new FormControl('', [Validators.required]),
       price: new FormControl('', [Validators.required]),
       quantity: new FormControl('', [Validators.required]),
-      color: new FormControl('', [Validators.required]),
+      // color2: new FormControl('', [Validators.required])
     
     });
 
