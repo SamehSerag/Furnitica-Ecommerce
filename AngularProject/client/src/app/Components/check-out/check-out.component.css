@@ -1,0 +1,91 @@
+.DeleteProduct {
+    color: rgb(159, 13, 13);
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.AcceptProduct {
+    color: rgb(20, 167, 44);
+    font-size: 26px;
+}
+
+.showAll {
+    background: #f7bc3d;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.editOrder {
+    color: #a7d6dd;
+    font-size: 26px;
+}
+
+.main-title {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+.accepted {
+    color: #100f0f;
+    background: #04c104;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.pending {
+    color: #100f0f;
+    background: #f6e024;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.rejected {
+    color: #100f0f;
+    background: #ff3822;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.actions {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.table td, .table th {
+    padding: 3rem 0;
+    border-top: none;
+
+}
+
+.table td div {
+
+    font-weight: bold;
+}
+
+.TabelHolder {
+    margin: 3rem 0;
+}
+
+.card-header {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, .0) !important;
+    border-bottom: 1px solidrgba(0, 0, 0, .125);
+}
+
+.orderContaine {
+    border-bottom: 1px solid #f6e024;
+
+}
+
+.totalPrice {
+    font-weight: bold;
+}
+.Text-dirc{
+    text-align: right;
+}
