@@ -269,7 +269,9 @@
                             <div id="slider-range" class="tiva-filter">
                               <div class="filter-itemprice-filter">
                                 <div class="layout-slider">
-                                  <input id="price-filter" name="price" value="0;1000" />
+                                  <!-- <input id="price-filter" name="price" value="0;1000" /> -->
+                                  <ngx-slider (userChangeEnd)="priceChange()" [(value)]="value" [(highValue)]="highValue" 
+                                  [options]="options"></ngx-slider>
                                 </div>
                                 <div class="layout-slider-settings"></div>
                               </div>

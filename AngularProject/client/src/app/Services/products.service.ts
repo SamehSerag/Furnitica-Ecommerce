@@ -38,6 +38,11 @@ export class ProductsService {
     return this.httpClinet.get<IProduct>(`${environment.APIURL}/api/products/${prdId}`);
   }
 
+  getPriceRange(){
+    // this.httpClinet.get<any>(`${environment.APIURL}/api/products`).subscribe((resp)=>{
+    //   console.log(resp.headers.get('X-PriceRange'));
+    // });
+  }
   // addProduct(newPrd: IProductToAdd): Observable<IProductToAdd>{
   //   return this.httpClinet.post<IProductToAdd>(`${environment.APIURL}/api/products/owner`, 
   //   JSON.stringify(newPrd),this.httpOption)

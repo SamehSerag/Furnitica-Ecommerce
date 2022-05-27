@@ -8,6 +8,7 @@ import { Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductsSearchModel } from 'src/app/Models/ProductsSearchModel';
+import { Options } from "@angular-slider/ngx-slider";
 
 @Component({
   selector: 'app-main-shop',
@@ -15,6 +16,14 @@ import { ProductsSearchModel } from 'src/app/Models/ProductsSearchModel';
   styleUrls: ['./main-shop.component.css']
 })
 export class MainShopComponent implements OnInit, OnChanges {
+  value: number = 100;
+  highValue: number = 1000;
+  options: Options = {
+    floor: 0,
+    ceil: 1000
+  };
+
+
   sortArray: string[];
   colorArray: string[];
   // sortArrayValues: string[];
@@ -86,8 +95,9 @@ export class MainShopComponent implements OnInit, OnChanges {
       })
 
       // this.router.navigate(["/main-shop"]);
-
+      this.prdService.getPriceRange();
       console.log(this.productsSearchModel.toString())
+      
   }
 
 
@@ -137,6 +147,15 @@ export class MainShopComponent implements OnInit, OnChanges {
 
   colorChanged(colorId:number){
     this.productsSearchModel.color = colorId;
+    this.getProductFilteration();
+  }
+  priceChange(){
+    console.log(this.value);
+    console.log(this.highValue);
+
+    this.productsSearchModel.maxPrice = this.highValue;
+    this.productsSearchModel.minPrice = this.value;
+
     this.getProductFilteration();
   }
 }
