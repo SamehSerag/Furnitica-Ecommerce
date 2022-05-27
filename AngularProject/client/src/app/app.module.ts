@@ -35,6 +35,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -82,6 +83,7 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
         MatSelectModule,
         MatButtonModule,
         NgxSliderModule,
+        ReactiveFormsModule,
   ],
 
   providers: [],

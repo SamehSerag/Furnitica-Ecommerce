@@ -1,4 +1,5 @@
 import { Component, ElementRef, Inject, OnDestroy, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {MatDialog, MAT_DIALOG_DATA,MatDialogRef} from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ICategory } from 'src/app/Models/icategories';
@@ -16,10 +17,13 @@ import { ProductListComponent } from '../product-list/product-list.component';
   styleUrls: ['./dialog.component.css']
 })
 export class DialogComponent implements OnInit, OnDestroy{
+  public ownerForm!: FormGroup;
+  
   categories? : ICategory[];
   colorArray: string[];
   prevState!: ProductToAdd;
   colorIndex: number;
+
   constructor(@Inject(MAT_DIALOG_DATA) public data: IProduct,
   private catService: CategoryService, private productsService: ProductsService
   ,private router: Router) {
@@ -38,10 +42,24 @@ export class DialogComponent implements OnInit, OnDestroy{
   }
 
   ngOnInit(): void {
+
+    this.ownerForm = new FormGroup({
+      name: new FormControl('', [Validators.required]),
+    
+    });
+
     this.catService.getAllCategories().subscribe((response)=>{
       this.categories = response;
     })
   }
+
+  public hasError = (controlName: string, errorName: string) =>{
+    return this.ownerForm.controls[controlName].hasError(errorName);
+  }
+
+
+  
+
   changeCat(item:any){
     console.log("Item: ");
     console.log(item.value);
@@ -80,14 +98,16 @@ export class DialogComponent implements OnInit, OnDestroy{
     return productToAdd
   }
   onUpdate(){
-    var p = this.mappingFunction(this.data);
-    this.prevState = p;
-    this.productsService.updateProduct(this.data.id??0, p).subscribe((response)=>{
-      console.log("Updated Successfully")
-
-    },(error)=>{
-      console.log(error)
-    })
+    if(this.ownerForm.valid){
+      var p = this.mappingFunction(this.data);
+      this.prevState = p;
+      this.productsService.updateProduct(this.data.id??0, p).subscribe((response)=>{
+        console.log("Updated Successfully")
+  
+      },(error)=>{
+        console.log(error)
+      })
+    }
   }
 
   onClose(){

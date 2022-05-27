@@ -1,9 +1,12 @@
 <div class="myContent">
   <h1 mat-dialog-title style="text-align: center; font-weight: bold;">Update Product</h1>
   <div mat-dialog-content>
+    <form [formGroup]="ownerForm" autocomplete="off" novalidate (ngSubmit)="onUpdate()" fxLayout="column wrap"
+      fxLayoutAlign="center center" fxLayoutGap="10px">
     <mat-form-field appearance="fill">
       <mat-label>Title In English</mat-label>
       <textarea matInput [(ngModel)]="data.title_EN"></textarea>
+      <mat-error *ngIf="hasError('name', 'required')">Title is required</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
@@ -24,6 +27,8 @@
     <mat-form-field appearance="fill">
       <mat-label>Price</mat-label>
       <input min="0" type="number" matInput [(ngModel)]="data.price">
+      <span matPrefix>$&nbsp;</span>
+      <span matSuffix>.00</span>
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Quantity</mat-label>
@@ -49,10 +54,10 @@
 
       </mat-select>
     </mat-form-field>
-
+    </form>
   </div>
   <div mat-dialog-actions [align]="'end'">
     <button mat-raised-button color="warn" mat-dialog-close (click)="onClose()"> Close </button>
-    <button mat-raised-button color="primary" mat-dialog-close (click)="onUpdate()"> Update </button>
+    <button mat-raised-button color="primary" mat-dialog-close (click)="onUpdate()" [disabled]="!ownerForm.valid"> Update </button>
   </div>
 </div>
