@@ -61,12 +61,6 @@ export class CartService {
       catchError(this.habdleError)
     );
     return res;
-
-    // return this.http.get<any>(this.baseURL + userId)
-    //   .pipe(map((response: ShoppingCart[]) => {
-    //     this.cartItemCount = response.length;
-    //     return response;
-    //   }));
   }
 
   //* delete all instances of one item

@@ -41,6 +41,7 @@ import { WishlistHeartComponent } from './Components/wishlist-heart/wishlist-hea
 import { AddtocartComponent } from './Components/addtocart/addtocart.component';
 import { ShoppingcartComponent } from './Components/shoppingcart/shoppingcart.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CheckOutComponent } from './Components/check-out/check-out.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     WishlistHeartComponent,
     AddtocartComponent,
     ShoppingcartComponent,
+    CheckOutComponent,
   ],
   imports: [
     BrowserModule,
