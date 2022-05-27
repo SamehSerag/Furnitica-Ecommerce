@@ -1,0 +1,17 @@
+.header-top {
+    direction: rtl;
+}
+.contentDir{
+    direction: rtl;
+}
+.main-menu .menu .menu-top li a {
+    font-size: 13px!important;
+}
+.text-dir{
+    text-align: right;
+}
+.sidebar-3 .sidebar-block .new-item-content .scroll-product .checkmark {
+    left: 114px!important;
+    right:30px!important;
+    background-color: blueviolet!important;
+}
