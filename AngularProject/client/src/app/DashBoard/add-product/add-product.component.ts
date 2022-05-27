@@ -27,19 +27,11 @@ export class AddProductComponent implements OnInit {
 
   constructor(private categoryService: CategoryService, private prdService: ProductsService,
     private router: Router, private http: HttpClient) {
+      this.colorArray = ["Blue", "Green", "Yellow", "Brown", "Pink", "Red"];
+
     this.productToAdd = new ProductToAdd();
     this.productToAdd.ownerId = "1";
     this.productToAdd.categoryID = 1;
-    this.colorArray = ["Blue", "Green", "Yellow", "Brown", "Pink", "Red"];
-
-    // this.imageInput.nativeElement.quer
-    // this.imageInput.nativeElement.querySelector('#images')
-    // .addEventListener('change', ()=>{
-    //   console.log("changed!!!!!!!!!!!!!!!!");
-    // });
-
-    // this.productToAdd = new ProductToAdd();
-    // this.productToAdd.categoryID = this.categoriesList[0].id;
     this.productToAdd.color = 1;
     this.productToAdd.details_AR = "";
     this.productToAdd.details_EN = "";
