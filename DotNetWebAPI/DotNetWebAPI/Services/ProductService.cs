@@ -106,8 +106,11 @@ namespace AngularAPI.Repository
                                     == productSearchModel.OwnerId);
                 }
 
-                IProductRepository.TotalItems = query.Count();
-                query = query.Skip((productSearchModel.PageIndex - 1) *
+               IProductRepository.TotalItems = query.Count();
+               IProductRepository.MinPrice = query.Min(p => (int) p.price);
+               IProductRepository.MaxPrice = query.Max(p => (int)p.price);
+
+                query = query.Skip((productSearchModel.PageIndex - 1) * 
                     productSearchModel.PageSize).Take(productSearchModel.PageSize);
             }
 
