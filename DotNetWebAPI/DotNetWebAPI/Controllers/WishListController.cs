@@ -24,13 +24,13 @@ namespace DotNetWebAPI.Controllers
         private readonly ShoppingDbContext _context;
         private readonly IWishListRepository _repo;
         private readonly IMapper _mapper;
-        private readonly User? CurUser;
+        private readonly User? user;
         public WishListController(ShoppingDbContext context, IWishListRepository repo, IMapper mapper)
         {
             _context = context;
             _repo = repo;
             _mapper = mapper;
-            CurUser = HttpContext.Items["User"] as User;
+            user = HttpContext.Items["User"] as User;
         }
 
         // GET: api/WishListProducts
@@ -40,8 +40,8 @@ namespace DotNetWebAPI.Controllers
             /*User? user = HttpContext.Items["User"] as User;
 
             return await _repo.GetUserWishList(user.Id);*/
-
-            var wishlist =  await _repo.GetUserWishList("CurUser.Id");
+            User? user = HttpContext.Items["User"] as User;
+            var wishlist =  await _repo.GetUserWishList(user!.Id);
             var wishlistDto = _mapper.Map<IReadOnlyList<WishListProduct>, IReadOnlyList<WishListDto>>(wishlist);
             return wishlistDto;
         }
@@ -54,10 +54,11 @@ namespace DotNetWebAPI.Controllers
         {         
             try
             {
-               /* User? user = HttpContext.Items["User"] as User;
+                //User? user = HttpContext.Items["User"] as User;
+                //_repo.AddToWishList(prdId, user.Id);
+                User ? user = HttpContext.Items["User"] as User;
 
-                _repo.AddToWishList(prdId, user.Id);*/
-                await _repo.AddToWishList(prdId, "CurUser.Id");
+                await _repo.AddToWishList(prdId, user!.Id);
 
             }
             catch (DbUpdateException)
@@ -81,20 +82,20 @@ namespace DotNetWebAPI.Controllers
                 return NotFound();
             }
 
-            /*User? user = HttpContext.Items["User"] as User;
+            User? user = HttpContext.Items["User"] as User;
 
-            _repo.RemoveFromWishList(prdId, user.Id);*/
-            await _repo.RemoveFromWishList(prdId, "CurUser.Id");
+            //_repo.RemoveFromWishList(prdId, user.Id);
+            await _repo.RemoveFromWishList(prdId, user!.Id);
 
             return NoContent();
         }
 
         private bool WishListProductExists(int id)
         {
-            /*User? user = HttpContext.Items["User"] as User;
+            User? user = HttpContext.Items["User"] as User;           
 
-            return _repo.WishListProductExists(id, user.Id);*/
-            return _repo.WishListProductExists(id, "CurUser.Id");
+            //return _repo.WishListProductExists(id, user.Id);
+            return _repo.WishListProductExists(id, user!.Id);
         }
     }
 }
