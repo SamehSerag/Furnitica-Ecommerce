@@ -1,0 +1,5 @@
+.invalid-data {
+  color: #c80000;
+  display: flex;
+  justify-self: start;
+}

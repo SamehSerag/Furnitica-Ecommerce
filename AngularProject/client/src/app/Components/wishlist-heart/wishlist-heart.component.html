@@ -1,0 +1,10 @@
+<ng-container *ngIf="InWishlist();else notInWishlist">
+    <a class="addToWishlist" (click)="RemoveFromWishList()" data-rel="1">
+        <i class="fa fa-heart" aria-hidden="true"></i>
+    </a>
+</ng-container>
+<ng-template #notInWishlist>
+    <a class="addToWishlist" (click)="AddToWishList()" data-rel="1">
+        <i class="fa fa-heart-o" aria-hidden="true"></i>
+    </a>
+</ng-template>

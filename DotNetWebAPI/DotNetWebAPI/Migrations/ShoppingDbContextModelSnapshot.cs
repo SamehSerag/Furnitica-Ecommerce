@@ -305,7 +305,6 @@ namespace DotNetWebAPI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("starsCount")
@@ -318,6 +317,21 @@ namespace DotNetWebAPI.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Reviews");
+                });
+
+            modelBuilder.Entity("DotNetWebAPI.Models.WishListProduct", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "ProductId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("WishListProducts");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -528,6 +542,23 @@ namespace DotNetWebAPI.Migrations
             modelBuilder.Entity("DotNetWebAPI.Models.Review", b =>
                 {
                     b.HasOne("AngularProject.Models.Product", "Product")
+                        .WithMany("Reviews")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AngularProject.Models.User", "user")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Product");
+
+                    b.Navigation("user");
+                });
+
+            modelBuilder.Entity("DotNetWebAPI.Models.WishListProduct", b =>
+                {
+                    b.HasOne("AngularProject.Models.Product", "product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -539,7 +570,7 @@ namespace DotNetWebAPI.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Product");
+                    b.Navigation("product");
 
                     b.Navigation("user");
                 });
@@ -610,6 +641,8 @@ namespace DotNetWebAPI.Migrations
                     b.Navigation("Images");
 
                     b.Navigation("OrderProducts");
+
+                    b.Navigation("Reviews");
                 });
 
             modelBuilder.Entity("AngularProject.Models.User", b =>
