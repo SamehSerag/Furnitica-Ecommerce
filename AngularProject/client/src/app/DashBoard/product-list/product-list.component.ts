@@ -74,7 +74,7 @@ export class ProductListComponent implements OnInit, AfterViewChecked{
 
 
   getProductFilteration() {
-    this.prdService.getProductsFilteration(this.productsSearchModel.toString()).subscribe(
+    this.prdService.getProductsFilterationByAdmin(this.productsSearchModel.toString()).subscribe(
       response => {
         this.pagination = response;
         this.products = response.data;
