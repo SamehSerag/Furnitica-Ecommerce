@@ -69,7 +69,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     WishlistComponent,
     WishlistHeartComponent,
     AddtocartComponent,
-    ShoppingcartComponent,
+    ShoppingcartComponent
   ],
   imports: [
     BrowserModule,
