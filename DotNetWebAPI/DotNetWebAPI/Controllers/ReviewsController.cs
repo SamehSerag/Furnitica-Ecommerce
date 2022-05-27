@@ -14,20 +14,24 @@ using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using AngularProject.Models;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DotNetWebAPI.Controllers
 {
+
+    [Authorize(Roles = "Client")]
     [Route("api/[controller]")]
     [ApiController]
     public class ReviewsController : ControllerBase
     {
         private readonly IReviewRepository _repo;
         private readonly IMapper _mapper;
-
+        private readonly User? CurUser;
         public ReviewsController(IReviewRepository repo, IMapper mapper)
         {
             _repo = repo;
             _mapper = mapper;
+            CurUser = HttpContext.Items["User"] as User;
         }
 
         // GET: api/Reviews
@@ -78,8 +82,8 @@ namespace DotNetWebAPI.Controllers
              }
 
              var review = await _repo.GetReviewByUserIdAsync(user?.Id, prdid);*/
-
-            var review = await _repo.GetReviewByUserIdAsync("2dec20bc-7da6-411b-999c-2f45e40c9e16", prdid);
+            
+            var review = await _repo.GetReviewByUserIdAsync(CurUser!.Id, prdid);
 
             if (review == null)
             {
@@ -99,14 +103,15 @@ namespace DotNetWebAPI.Controllers
             {
                 return BadRequest();
             }
-          /*  User? user = HttpContext.Items["User"] as User;
+            /*  User? user = HttpContext.Items["User"] as User;
 
-            if (user == null)
-            {
-                return NotFound();
-            }
-*/
-            review.UserId = "2dec20bc-7da6-411b-999c-2f45e40c9e16";
+              if (user == null)
+              {
+                  return NotFound();
+              }
+  */
+
+            review.UserId = CurUser!.Id;
                 //user.Id;
 
             try
@@ -133,7 +138,7 @@ namespace DotNetWebAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Review>> PostReview(Review review)
         {
-            review.UserId = "2dec20bc-7da6-411b-999c-2f45e40c9e16";
+            review.UserId = CurUser!.Id;
             await _repo.AddReviewAsync(review);
 
             return CreatedAtAction("GetReview", new { id = review.Id }, review);
