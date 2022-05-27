@@ -33,7 +33,7 @@ export class SideBarComponent implements OnInit {
 
       },
       error: (e)=>{
-        this.isAdmin = false;
+        this.isAdmin = true;
         console.log("errorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr", e);
       },
     })
