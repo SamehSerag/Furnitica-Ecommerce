@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { IUser } from 'src/app/Models/IUser';
 import { AuthService } from 'src/app/Services/auth.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -9,12 +10,14 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent implements OnInit {
-  textEn: boolean = true;
+ textEn: boolean = true;
   textAr: boolean = false;
-  loggedIn: boolean = false;
-  loggedUser: string = "";
-  IsEnglish:boolean=true;
-  constructor(private auth: AuthService, public translate: TranslateService) {
+  loggedIn : boolean = false;
+  loggedUser : string = "";
+    IsEnglish:boolean=true;
+
+  @ViewChild('searchInput') searchInput!: ElementRef; 
+  constructor(private auth : AuthService, private router: Router) {
     translate.addLangs(['en', 'nl']);
     translate.setDefaultLang('en');
   }
@@ -23,16 +26,23 @@ export class SideBarComponent implements OnInit {
     this.addUserDataSetItemHandler();
     this.updateState();
   }
+  
+  searhcQuery(){
+    console.log(this.searchInput);
+    this.router.navigate(
+      ['/main-shop'],
+      { queryParams: { search: `${this.searchInput.nativeElement.value}` } }
+    );
+  }
 
   updateState() {
     console.log("updating state..........");
-    let userdata: string = localStorage.getItem("user-data") ?? "";
+    let userdata : string = localStorage.getItem("user-data") ?? "";
 
-    if (userdata != "") {
-      let user: IUser = JSON.parse(userdata);
+    if(userdata != "") {
+      let user : IUser = JSON.parse(userdata);
       this.loggedIn = true;
       this.loggedUser = user.userName;
-
     }
     else {
       this.loggedIn = false;
@@ -42,14 +52,14 @@ export class SideBarComponent implements OnInit {
   addUserDataSetItemHandler() {
     const originalSetItem = localStorage.setItem;
 
-    localStorage.setItem = function (key: string, value: string) {
+    localStorage.setItem = function(key : string, value : string) {
       originalSetItem.apply(this, [key, value]);
       const event = new Event('userDataChanged');
-      if (key == "user-data")
+      if(key == "user-data")
         document.dispatchEvent(event);
     };
 
-    const userDataSetHandler = (e: Event) => {
+    const userDataSetHandler = (e : Event) => {
       console.log("handling user-data set item event........");
       this.updateState();
     }
@@ -62,8 +72,7 @@ export class SideBarComponent implements OnInit {
     console.log("logging out........");
     this.auth.Logout();
   }
-
-  /**********************************************
+/**********************************************
    * 
    * Switching LAnguage
    * 
@@ -99,3 +108,4 @@ export class SideBarComponent implements OnInit {
 
 
 }
+
