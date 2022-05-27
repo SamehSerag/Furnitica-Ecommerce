@@ -179,35 +179,33 @@
                               <input type="checkbox">
                               <span class="checkmark"></span>
                             </label>
-                            <a href="#">
-                              <b>Lettuce</b>
-                              <span class="quantity">(30)</span>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="tiva-filter-price new-item-content sidebar-block">
-                        <h3 class="title-product">By Price</h3>
-                        <div id="block_price_filter" class="block">
-                          <div class="block-content">
-                            <div id="slider-range" class="tiva-filter">
-                              <div class="filter-itemprice-filter">
-                                <div class="layout-slider">
-                                  <!-- <input id="price-filter" name="price" value="0;1000" /> -->
-                                  <ngx-slider (userChangeEnd)="priceChange()" [(value)]="value" [(highValue)]="highValue" 
-                                  [options]="options"></ngx-slider>
-                                </div>
-                                <div class="layout-slider-settings"></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="sidebar-block by-color">
-                        <h3 class="title-product">By Color</h3>
-                        <div>
-                          <span *ngFor="let color of colorArray; let i=index;" class="left"
-                                    [ngClass]="(i % 2) != 0 ? 'left':'right'">
+                                                        <a href="#">
+                                                            <b>Lettuce</b>
+                                                            <span class="quantity">(30)</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="tiva-filter-price new-item-content sidebar-block">
+                                                <h3 class="title-product">By Price</h3>
+                                                <div id="block_price_filter" class="block">
+                                                    <div class="block-content">
+                                                        <div id="slider-range" class="tiva-filter">
+                                                            <div class="filter-itemprice-filter">
+                                                                <div class="layout-slider">
+                                                                    <!-- <input id="price-filter" name="price" value="0;1000" /> -->
+                                                                    <ngx-slider (userChangeEnd)="priceChange()" [(value)]="value" [(highValue)]="highValue" [options]="options"></ngx-slider>
+                                                                </div>
+                                                                <div class="layout-slider-settings"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sidebar-block by-color">
+                                                <h3 class="title-product">By Color</h3>
+                                                <div>
+                                                    <span *ngFor="let color of colorArray; let i=index;" class="left" [ngClass]="(i % 2) != 0 ? 'left':'right'">
 
                             <label [class]="'color-item'+ (i+1)"></label>
                             <a routerLink="/main-shop" (click)="colorChanged(i)">
