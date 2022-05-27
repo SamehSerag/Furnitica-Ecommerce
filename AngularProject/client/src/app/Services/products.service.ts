@@ -28,7 +28,7 @@ export class ProductsService {
     return this.httpClinet.get<IPagination>(`${environment.APIURL}/api/products`);
   }
   getProductsFilteration(filteration:string): Observable<IPagination> {
-    let headers : HttpHeaders = new HttpHeaders().set("Authorization", "Bearer " + localStorage["access-token"]);
+    // let headers : HttpHeaders = new HttpHeaders().set("Authorization", "Bearer " + localStorage["access-token"]);
 
     return this.httpClinet.get<IPagination>(`${environment.APIURL}/api/products${filteration}`);
   }
@@ -71,11 +71,15 @@ export class ProductsService {
   // }
 
   addProduct(newPrd: FormData): Observable<IOwnerProduct>{
-    return this.httpClinet.post<IOwnerProduct>(`${environment.APIURL}/api/products/owner`,newPrd)
+    let headers : HttpHeaders = new HttpHeaders().set("Authorization", "Bearer " + localStorage["access-token"]);
+
+    return this.httpClinet.post<IOwnerProduct>(`${environment.APIURL}/api/products/owner`,newPrd
+    , {headers})
     .pipe(
       retry(2),
       catchError(this.handleError)
     )
+    
   }
   updateProduct(prdId: number, updatedProduct: ProductToAdd): Observable<IProduct>{
     return this.httpClinet.put<IProduct>(`${environment.APIURL}/api/Products/Owner/${prdId}`

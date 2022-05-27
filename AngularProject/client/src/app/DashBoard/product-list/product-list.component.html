@@ -54,20 +54,20 @@
         </tbody>
     </table>
 
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-end">
-            <li [ngClass]="{'page-item':1, 'disabled' : !pagination.hasPreviousPage}">
-                <a rel="prev" routerLink="/Product/Owner" class="page-link" (click)="previousPage()">
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-end">
+      <li [ngClass]="{'page-item':1, 'disabled' : !(pagination?.hasPreviousPage)}">
+        <a rel="prev" routerLink="/Product/Owner" class="page-link" (click)="previousPage()">
           Previous
         </a>
-            </li>
-            <li *ngFor="let item of pagination.totalPages | asList; let i=index;" [ngClass]="{'page-item':1, 'active' : pagination.pageIndex == (i+1) }">
-                <a class="page-link" rel="nofollow" routerLink="/Product/Owner" (click)="paginate(i+1)">
+      </li>
+      <li *ngFor="let item of pagination?.totalPages ?? 0 | asList; let i=index;" [ngClass]="{'page-item':1, 'active' : pagination.pageIndex == (i+1) }">
+        <a class="page-link" rel="nofollow" routerLink="/Product/Owner" (click)="paginate(i+1)">
           {{i+1}}
         </a>
-            </li>
-            <li [ngClass]="{'page-item':1, 'disabled' : !pagination.hasNextPage}">
-                <a rel="next" routerLink="/Product/Owner" class="page-link" (click)="nextPage()">
+      </li>
+      <li [ngClass]="{'page-item':1, 'disabled' : !pagination?.hasNextPage}">
+        <a rel="next" routerLink="/Product/Owner" class="page-link" (click)="nextPage()">
           Next
         </a>
             </li>

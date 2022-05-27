@@ -22,10 +22,12 @@ using DotNetWebAPI.DTOs.Helpers;
 
 namespace AngularAPI.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase
     {
+        private User? CurUser;
         private readonly IMapper mapper;
         private readonly IHostingEnvironment environment;
 
@@ -37,6 +39,8 @@ namespace AngularAPI.Controllers
             _productRepository = productRepository;
             mapper = _mapper;
             environment = _environment;
+            //CurUser = HttpContext.Items["User"] as User ;
+
         }
 
         [HttpGet("test")]
@@ -76,6 +80,13 @@ namespace AngularAPI.Controllers
             if (!productSearchModel.IsValidRange)
                 return BadRequest("Max Price Less Than Min Price");
 
+            if(productSearchModel.OwnerId != null)
+            {
+                CurUser = HttpContext.Items["User"] as User;
+
+                productSearchModel.OwnerId = CurUser.Id;    
+            }
+
             var products = await GetProducts(productSearchModel);
 
             var productsDto = mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>
@@ -94,6 +105,13 @@ namespace AngularAPI.Controllers
         public async Task<ActionResult<AdminProductDto>> GetProductsByAdmin
             ([FromQuery] ProductSearchModel productSearchModel)
         {
+            if (productSearchModel.OwnerId != null)
+            {
+                CurUser = HttpContext.Items["User"] as User;
+
+                productSearchModel.OwnerId = CurUser.Id;
+            }
+
             if (!productSearchModel.IsValidRange)
                 return BadRequest("Max Price Less Than Min Price");
 
@@ -150,6 +168,14 @@ namespace AngularAPI.Controllers
         [HttpPut("owner/{id}")]
         public async Task<IActionResult> PutProduct(int id, ProductToAdd product)
         {
+            //product.OwnerId = CurUser.Id;
+            if (product.OwnerId != null)
+            {
+                CurUser = HttpContext.Items["User"] as User;
+
+                product.OwnerId = CurUser.Id;
+            }
+
             var productMapped = mapper.Map<ProductToAdd, Product>
                (product);
             if (id != productMapped.Id)
@@ -182,6 +208,12 @@ namespace AngularAPI.Controllers
         public async Task<ActionResult<AdminProductDto>> PostProduct([FromForm]ProductToAdd product)
         {
 
+            if (product.OwnerId != null)
+            {
+                CurUser = HttpContext.Items["User"] as User;
+
+                product.OwnerId = CurUser.Id;
+            }
             var productMapped = mapper.Map<ProductToAdd, Product>
                 (product);
 
