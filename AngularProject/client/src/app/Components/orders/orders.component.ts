@@ -12,8 +12,9 @@ export class OrdersComponent implements OnInit {
   allOrders: IOrder[] = [];
   FilterdData: any = [];
   orderProducts: any = {};
-  IsFilterd:boolean=false;
+  IsFilterd: boolean = false;
   isShown: boolean = false; // hidden by default
+  IsEnglish: boolean = true;
   FilterOn: any = ['Pending', 'Accepted', 'Rejected']
   form = new FormGroup({
     website: new FormControl('', Validators.required)
@@ -28,6 +29,13 @@ export class OrdersComponent implements OnInit {
     this._OrdersService.getAllOrders().subscribe((data: IOrder[]) => {
       this.allOrders = data;
       console.log(this.allOrders);
+      if (localStorage.getItem('Lang') == 'ar') {
+        this.IsEnglish = false;
+        console.log("ara",localStorage.getItem('Lang'));
+      }
+      else {
+        this.IsEnglish = true;
+      }
     }, err => {
       console.log(err);
     },
@@ -35,18 +43,12 @@ export class OrdersComponent implements OnInit {
         //final
       })
   }
- 
   FilterAllOrders(e: any) {
-    let dataFilter=e.target.value;
+    let dataFilter = e.target.value;
     this._OrdersService.getOrderssFilteration(dataFilter).subscribe(data => {
-      this.FilterdData=data;
-      this.IsFilterd=true;
-      console.log("TypeOf",typeof(data))
-      if(data==null){
-        console.log("No Data");
-      }
-      console.log("Nono",dataFilter);
-      console.log("Filter", data);
+      this.FilterdData = data;
+      this.IsFilterd = true;
+
     }, err => {
       console.log(err);
     },
@@ -55,17 +57,17 @@ export class OrdersComponent implements OnInit {
       })
     console.log(e.target.value);
   }
-  ShowAllOrders(){
-    this.IsFilterd=false;
+  ShowAllOrders() {
+    this.IsFilterd = false;
   }
 
-/***********************************
- * Delete Order
- * *********************************** */
+  /***********************************
+   * Delete Order
+   * *********************************** */
 
   DeleteOrder(OrderId: number) {
     this._OrdersService.deleteOrder(OrderId).subscribe(data => {
-      
+
       console.log(data);
 
     }, error => {

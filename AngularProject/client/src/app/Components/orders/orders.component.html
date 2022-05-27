@@ -35,14 +35,13 @@
 
                                     <div class="cart-container" *ngIf="!IsFilterd">
                                         <div class="cart-overview js-cart">
-                                            <accordion [isAnimated]="true">
-                                                <accordion-group [isOpen]="true" *ngFor="let order of allOrders"
-                                                    heading="Order number : &nbsp; ({{order.id}})  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date: &nbsp; ({{order.date | date:'dd/MM/yyyy'}})">
+                                            <div>
+                                                <div *ngFor="let order of allOrders">
 
-                                                    <div class="row">
+                                                    <div class="row orderContaine">
 
                                                         <div class="col-md-1 actions">
-                                                            <div *ngIf="order.state==0">
+                                                            <div *ngIf="order.state==0" class="px-2">
                                                                 <i class="fa fa-trash-o DeleteProduct"
                                                                     (click)='DeleteOrder(order.id)'></i>
                                                             </div>
@@ -51,7 +50,7 @@
                                                                     (click)='AcceptOrders(order.id)'></i>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-11">
+                                                        <div class="col-md-11 TabelHolder">
                                                             <div class=" main-title">
                                                                 <label>Order details ({{order.orderProducts.length}}
                                                                     items)</label>
@@ -64,47 +63,46 @@
 
                                                             </div>
 
-                                                            <table class="table table-bordered">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th style="text-align: center;" scope="col">
-                                                                            Product
-                                                                            Title</th>
-                                                                        <th style="text-align: center;" scope="col">
-                                                                            Quntity
-                                                                        </th>
-                                                                        <th style="text-align: center;" scope="col">
-                                                                            Details
-                                                                        </th>
-                                                                        <th style="text-align: center;" scope="col">
-                                                                            product
-                                                                            Price</th>
-                                                                    </tr>
-                                                                </thead>
+                                                            <table class="table">
+
                                                                 <tbody>
                                                                     <tr *ngFor="let orderD of order.orderProducts">
                                                                         <td style="text-align: center;">
-                                                                            {{orderD.product.title_EN}}</td>
+
+                                                                        </td>
                                                                         <td style="text-align: center;">
-                                                                            {{orderD.product.quantity}}</td>
+                                                                            <p>Product Name</p>
+                                                                            <div *ngIf="!IsEnglish">
+                                                                                {{orderD.product.title_AR}}</div>
+                                                                            <div *ngIf="IsEnglish">
+                                                                                {{orderD.product.title_EN}}</div>
+                                                                        </td>
+
                                                                         <td style="text-align: center;">
-                                                                            {{orderD.product.details_EN}}</td>
+                                                                            <p>Product Quantity</p>
+                                                                            <div>{{orderD.product.quantity}}</div>
+                                                                        </td>
+
                                                                         <td style="text-align: center;">
-                                                                            {{orderD.product.price}}</td>
+                                                                            <p> Product Price</p>
+                                                                            <div> {{orderD.product.price}}</div>
+                                                                        </td>
                                                                     </tr>
 
                                                                 </tbody>
-                                                            </table>
-                                                            <div class="main-title">
-                                                                <label>Total Price: {{order.totalPrice}}$</label>
+                                                                <div class="main-title">
+                                                                    <label class="totalPrice">Total Price:
+                                                                        {{order.totalPrice}}$</label>
 
-                                                            </div>
+                                                                </div>
+                                                            </table>
+
                                                         </div>
 
                                                     </div>
 
-                                                </accordion-group>
-                                            </accordion>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="text-center" *ngIf="allOrders.length === 0">
                                             <h4>There is no orders yet</h4>
@@ -116,14 +114,14 @@
                                     <!--------------------------- Show Filtered Orders------------------------------------>
                                     <div class="cart-container" *ngIf="IsFilterd">
                                         <div class="cart-overview js-cart">
-                                            <accordion [isAnimated]="true">
-                                                <accordion-group [isOpen]="true" *ngFor="let order of FilterdData"
-                                                    heading="Order number : &nbsp; ({{order.id}})  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date: &nbsp; ({{order.date | date:'dd/MM/yyyy'}})">
 
-                                                    <div class="row">
+                                            <div>
+                                                <div *ngFor="let order of FilterdData">
+
+                                                    <div class="row orderContaine">
 
                                                         <div class="col-md-1 actions">
-                                                            <div *ngIf="order.state==0">
+                                                            <div *ngIf="order.state==0" class="px-2">
                                                                 <i class="fa fa-trash-o DeleteProduct"
                                                                     (click)='DeleteOrder(order.id)'></i>
                                                             </div>
@@ -132,7 +130,7 @@
                                                                     (click)='AcceptOrders(order.id)'></i>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-11">
+                                                        <div class="col-md-11 TabelHolder">
                                                             <div class=" main-title">
                                                                 <label>Order details ({{order.orderProducts.length}}
                                                                     items)</label>
@@ -145,8 +143,8 @@
 
                                                             </div>
 
-                                                            <table class="table table-bordered">
-                                                                <thead>
+                                                            <table class="table">
+                                                                <!-- <thead>
                                                                     <tr>
                                                                         <th style="text-align: center;" scope="col">
                                                                             Product
@@ -154,38 +152,47 @@
                                                                         <th style="text-align: center;" scope="col">
                                                                             Quntity
                                                                         </th>
-                                                                        <th style="text-align: center;" scope="col">
-                                                                            Details
-                                                                        </th>
+
                                                                         <th style="text-align: center;" scope="col">
                                                                             product
                                                                             Price</th>
                                                                     </tr>
-                                                                </thead>
+                                                                </thead> -->
                                                                 <tbody>
                                                                     <tr *ngFor="let orderD of order.orderProducts">
                                                                         <td style="text-align: center;">
-                                                                            {{orderD.product.title_EN}}</td>
+
+                                                                        </td>
                                                                         <td style="text-align: center;">
-                                                                            {{orderD.product.quantity}}</td>
+                                                                            <p>Product Name</p>
+                                                                            <div>{{orderD.product.title_EN}}</div>
+                                                                        </td>
+
                                                                         <td style="text-align: center;">
-                                                                            {{orderD.product.details_EN}}</td>
+                                                                            <p>Product Quantity</p>
+                                                                            <div>{{orderD.product.quantity}}</div>
+                                                                        </td>
+
                                                                         <td style="text-align: center;">
-                                                                            {{orderD.product.price}}</td>
+                                                                            <p> Product Price</p>
+                                                                            <div> {{orderD.product.price}}</div>
+                                                                        </td>
                                                                     </tr>
 
                                                                 </tbody>
-                                                            </table>
-                                                            <div class="main-title">
-                                                                <label>Total Price: {{order.totalPrice}}$</label>
+                                                                <div class="main-title">
+                                                                    <label class="totalPrice">Total Price:
+                                                                        {{order.totalPrice}}$</label>
 
-                                                            </div>
+                                                                </div>
+                                                            </table>
+
                                                         </div>
 
                                                     </div>
-                                                </accordion-group>
 
-                                            </accordion>
+                                                </div>
+                                            </div>
                                             <div class="text-center" *ngIf="FilterdData.length === 0">
                                                 <h4>There is no orders yet</h4>
                                                 <img src="../../../assets/img/other/delver1.jpg" class="img-fluid">

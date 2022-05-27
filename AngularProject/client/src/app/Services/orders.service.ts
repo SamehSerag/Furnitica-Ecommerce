@@ -43,4 +43,11 @@ export class OrdersService {
   getAllPendingOrders() {
     return this.httpClient.get<IOrder[]>(`${environment.APIURL}/api/Orders/PendingOrders`)
   }
+  ///////////////////ADMIN API/////////////////////
+  getAllAdminOrders() {
+    let headers: HttpHeaders = new HttpHeaders();
+    headers = headers.append('Content-Type', 'application/json');
+    headers = headers.append('Authorization', 'Bearer ' + localStorage.getItem("access-token"));
+    return this.httpClient.get<IOrder[]>(`${environment.APIURL}/api/Orders/AdminOrders`,{headers: headers})
+  }
 }

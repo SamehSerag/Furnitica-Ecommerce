@@ -27,9 +27,9 @@ export class AllOrdersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._OrdersService.getAllOrders().subscribe((data: IOrder[]) => {
+    this._OrdersService.getAllAdminOrders().subscribe((data: IOrder[]) => {
       this.allOrders = data;
-      console.log(this.allOrders);
+      console.log("admin",this.allOrders);
     }, err => {
       console.log(err);
     },
@@ -38,6 +38,11 @@ export class AllOrdersComponent implements OnInit {
       })
   }
  
+  /*****************************
+   * 
+   * FILTER ORDERS
+   * 
+   ***************************** */
   FilterAllOrders(e: any) {
     let dataFilter=e.target.value;
     this._OrdersService.getOrderssFilteration(dataFilter).subscribe(data => {
@@ -90,14 +95,3 @@ export class AllOrdersComponent implements OnInit {
     console.log(OrderId);
   }
 }
-// debugger
-// this._OrdersService.getOrderssFilteration(this.dataFilter).subscribe(data => {
-//   console.log("Nono",this.dataFilter);
-//   debugger
-//   console.log("Filter",data);
-// }, err => {
-//   console.log(err);
-// },
-//   () => {
-//     //final
-//   })
