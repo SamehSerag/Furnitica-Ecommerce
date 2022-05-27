@@ -5,7 +5,7 @@ namespace AngularAPI.Data
 {
     public class PriceRange
     {
-        public  Test test { get; set; }
+        //public  Test test { get; set; }
         public PriceRange()
         {
 
@@ -22,8 +22,14 @@ namespace AngularAPI.Data
             MinPrice = list.MinBy(l => l.price)?.price ?? 0;
         }
 
-        public decimal MinPrice { get; set; }
-        public decimal MaxPrice { get; set; }
+        public PriceRange(IReadOnlyList<Product> list)
+        {
+            MaxPrice = list.MaxBy(l => l.price)?.price ?? 0;
+            MinPrice = list.MinBy(l => l.price)?.price ?? 0;
+        }
+
+        public decimal MinPrice { get; private set; }
+        public decimal MaxPrice { get;  private set; }
 
         public bool IsValidRange => MaxPrice > MinPrice ;
 
@@ -36,10 +42,10 @@ namespace AngularAPI.Data
         //}
     }
 
-    public class Test
-    {
-        public string testObj { get; set; }
-    }
+    //public class Test
+    //{
+    //    public string testObj { get; set; }
+    //}
 }
 
 

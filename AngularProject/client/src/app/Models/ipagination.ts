@@ -8,4 +8,9 @@ export interface IPagination {
     hasPreviousPage: boolean;
     hasNextPage: boolean;
     data: IProduct[];
+    priceRangeObj: PriceRange;
+}
+export interface PriceRange {
+    minPrice: number;
+    maxPrice: number;
 }

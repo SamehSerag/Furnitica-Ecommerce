@@ -7,6 +7,8 @@ namespace AngularAPI.Repository
     public interface IProductRepository
     {
         public static int TotalItems { get; protected set; } = 0;
+        public static int MinPrice { get; protected set; } = 0;
+        public static int MaxPrice { get; protected set; } = 0;
         Task<IReadOnlyList<Product>> GetAllProductsAsync
             (ProductSearchModel productSearchModel);
         Task<Product> GetProductByIdAsync(int id);

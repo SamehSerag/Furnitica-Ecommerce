@@ -16,8 +16,8 @@ import { Options } from "@angular-slider/ngx-slider";
   styleUrls: ['./main-shop.component.css']
 })
 export class MainShopComponent implements OnInit, OnChanges {
-  value: number = 100;
-  highValue: number = 1000;
+  value: number = 0;
+  highValue: number = 0;
   options: Options = {
     floor: 0,
     ceil: 1000
@@ -64,6 +64,7 @@ export class MainShopComponent implements OnInit, OnChanges {
         console.log(params['search']);
         this.productsSearchModel.search= params['search'] == undefined ? "" : params['search'];
         this.getProductFilteration();
+
       }
     );
 
@@ -91,11 +92,26 @@ export class MainShopComponent implements OnInit, OnChanges {
       response => {
         this.pagination = response;
         this.products = response.data;
-        console.log(this.products.length);
-      })
 
+
+        this.options.ceil = this.pagination.priceRangeObj.maxPrice; 
+        this.options.floor = this.pagination.priceRangeObj.minPrice; 
+
+        // console.log(this.pagination.priceRangeObj.minPrice);
+        // console.log(this.pagination.priceRangeObj.maxPrice);
+        console.log(this.productsSearchModel.maxPrice);
+        console.log(this.productsSearchModel.minPrice);
+
+        this.highValue = 
+                  this.productsSearchModel.maxPrice <= 0 ?  this.options.ceil: this.productsSearchModel.maxPrice
+        
+        this.value = 
+                  this.productsSearchModel.minPrice == 0 ?  this.options.floor: this.productsSearchModel.minPrice
+                  
+      })
       // this.router.navigate(["/main-shop"]);
-      this.prdService.getPriceRange();
+      // this.prdService.getPriceRange()    
+
       console.log(this.productsSearchModel.toString())
       
   }
@@ -150,8 +166,6 @@ export class MainShopComponent implements OnInit, OnChanges {
     this.getProductFilteration();
   }
   priceChange(){
-    console.log(this.value);
-    console.log(this.highValue);
 
     this.productsSearchModel.maxPrice = this.highValue;
     this.productsSearchModel.minPrice = this.value;

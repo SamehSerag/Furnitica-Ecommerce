@@ -13,4 +13,5 @@ export interface IProduct {
     category: Category;
     images?: any;
     orderProducts: any[];
+    
 }

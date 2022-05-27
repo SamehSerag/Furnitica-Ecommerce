@@ -86,6 +86,7 @@ namespace AngularAPI.Controllers
                 productSearchModel.PageSize,
                 productsDto);
 
+            paginationMetaData.PriceRangeObj = new PriceRange(IProductRepository.MinPrice,IProductRepository.MaxPrice);
             return Ok(paginationMetaData);
         }
         // GET: api/Products/admin
@@ -105,6 +106,8 @@ namespace AngularAPI.Controllers
                 (products.Count, productSearchModel.PageIndex,
                 productSearchModel.PageSize,
                 adminProductDto);
+
+            paginationMetaData.PriceRangeObj = new PriceRange(IProductRepository.MinPrice, IProductRepository.MaxPrice);
             return Ok(paginationMetaData);
         }
 

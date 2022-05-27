@@ -38,21 +38,21 @@ export class ProductsService {
     return this.httpClinet.get<IProduct>(`${environment.APIURL}/api/products/${prdId}`);
   }
 
-  getPriceRange(){
-    this.httpClinet.get<any>(`${environment.APIURL}/api/products`,{observe: 'response'})
-    .subscribe({
-      next: (res)=>{
-        console.log(res);
-      },
-      error: (err)=>{
-        console.log(err);
-      },
-      complete: ()=>{
-        console.log("Error");
+  // getPriceRange(){
+  //   this.httpClinet.get<any>(`${environment.APIURL}/api/products`,{observe: 'response'})
+  //   .subscribe({
+  //     next: (res)=>{
+  //       console.log(res);
+  //     },
+  //     error: (err)=>{
+  //       console.log(err);
+  //     },
+  //     complete: ()=>{
+  //       console.log("comp");
 
-      }
-    });
-  }
+  //     }
+  //   });
+  // }
   // addProduct(newPrd: IProductToAdd): Observable<IProductToAdd>{
   //   return this.httpClinet.post<IProductToAdd>(`${environment.APIURL}/api/products/owner`, 
   //   JSON.stringify(newPrd),this.httpOption)
