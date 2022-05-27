@@ -26,5 +26,33 @@ export class PendingOrdersComponent implements OnInit {
         //final
       })
   }
+  /***********************************
+ * Delete Order
+ * *********************************** */
+
+   DeleteOrder(OrderId: number) {
+    this._OrdersService.deleteOrder(OrderId).subscribe(data => {
+      
+      console.log(data);
+
+    }, error => {
+      console.log(error);
+    })
+    console.log(OrderId);
+  }
+  /***********************************
+ * Accept Order
+ * *********************************** */
+  AcceptOrders(OrderId: number) {
+    debugger
+    this._OrdersService.AcceptOrder(OrderId).subscribe(data => {
+      debugger
+      console.log(data);
+
+    }, error => {
+      console.log(error);
+    })
+    console.log(OrderId);
+  }
   
 }

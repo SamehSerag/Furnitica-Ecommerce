@@ -23,3 +23,7 @@
 #btnClose :hover{
   cursor: pointer;
 }
+.btn-outline-dark{
+  padding: 2px 20px;
+    font-size: 20px;
+}

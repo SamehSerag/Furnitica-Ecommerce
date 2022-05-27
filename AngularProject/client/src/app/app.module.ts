@@ -71,11 +71,12 @@ import { CheckOutComponent } from './Components/check-out/check-out.component';
     WishlistHeartComponent,
     AddtocartComponent,
     ShoppingcartComponent,
-    CheckOutComponent,
+    CheckOutComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
