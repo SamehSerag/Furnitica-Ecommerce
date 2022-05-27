@@ -275,7 +275,7 @@
                                     </a>
                                 </div>
                                 <div *ngIf="loggedIn">
-                                    <a href="user-wishlist.html" title="My Wishlists">
+                                    <a href="/wishlist" title="My Wishlists">
                                         <i class="fa fa-heart"></i>
                                         <span>My Wishlists</span>
                                     </a>
@@ -297,19 +297,16 @@
                                     </ul>
                                 </div>
 
-                                <div id="desktop_language_selector"
-                                    class="language-selector groups-selector hidden-sm-down">
+                                <div id="desktop_language_selector" class="language-selector groups-selector hidden-sm-down">
                                     <ul class="list-inline">
                                         <li class="list-inline-item current">
-                                            <a href="#" >
-                                                <img class="img-fluid" src="../../../assets/img/home/home1-flas.jpg"
-                                                    alt="English" width="16" height="11">
+                                            <a href="#">
+                                                <img class="img-fluid" src="../../../assets/img/home/home1-flas.jpg" alt="English" width="16" height="11">
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
                                             <a href="#">
-                                                <img class="img-fluid" src="../../../assets/img/home/eg-flag.jpg"
-                                                    alt="Arabic" width="16" height="11">
+                                                <img class="img-fluid" src="../../../assets/img/home/eg-flag.jpg" alt="Arabic" width="16" height="11">
                                             </a>
                                         </li>
                                     </ul>
@@ -357,7 +354,9 @@
                                                 <td colspan="3" class="d-flex justify-content-center">
                                                     <div class="cart-button">
                                                         <a [routerLinkActive]='["link-active"]' [routerLink]='"/shopping-cart"' title="View Cart">View Cart</a>
-                                                        <a href="product-checkout.html" title="Checkout">Checkout</a>
+                                                        <a [routerLink]='["/checkout"]' title="Checkout">Checkout</a>
+
+                                                        
                                                     </div>
                                                 </td>
                                             </tr>

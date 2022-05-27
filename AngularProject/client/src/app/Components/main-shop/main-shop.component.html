@@ -465,7 +465,7 @@
                                                 <div class="d-flex justify-content-around row">
                                                     <div class="showing col col-xs-12">
                                                         <span>SHOWING
-                                {{pagination?.pageIndex }} OF {{pagination?.totalPages}} Page(S)</span>
+                                {{pagination?.pageIndex }} OF {{pagination?.totalPages ?? 1}} Page(S)</span>
                                                     </div>
                                                     <div class="page-list col col-xs-12">
                                                         <ul>
@@ -475,7 +475,7 @@
                                 </a>
                                                             </li>
                                                             <!-- class="current active" -->
-                                                            <li *ngFor="let item of pagination.totalPages | asList; let i=index;">
+                                                            <li *ngFor="let item of pagination?.totalPages ?? 1 | asList; let i=index;">
                                                                 <a rel="nofollow" routerLink="/main-shop" class="disabled js-search-link" (click)="paginate(i+1)">
                                   {{i+1}}
                                 </a>
