@@ -1,43 +1,58 @@
 <div class="myContent">
   <h1 mat-dialog-title style="text-align: center; font-weight: bold;">Update Product</h1>
   <div mat-dialog-content>
+    <form [formGroup]="ownerForm" autocomplete="off" novalidate (ngSubmit)="onUpdate()" fxLayout="column wrap"
+      fxLayoutAlign="center center" fxLayoutGap="10px">
     <mat-form-field appearance="fill">
       <mat-label>Title In English</mat-label>
-      <textarea matInput [(ngModel)]="data.title_EN"></textarea>
+      <textarea formControlName="title_en" name="title_en" matInput [(ngModel)]="data.title_EN" ></textarea>
+      <mat-error *ngIf="hasError('title_en', 'required')">English Title is required</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Title In Arabic</mat-label>
-      <textarea matInput [(ngModel)]="data.title_AR"></textarea>
+      <textarea formControlName="title_ar" name="title_ar" matInput [(ngModel)]="data.title_AR"></textarea>
+      <mat-error *ngIf="hasError('title_ar', 'required')">Arabic Title is required</mat-error>
+
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Details In English</mat-label>
-      <textarea matInput [(ngModel)]="data.details_EN"></textarea>
+      <textarea formControlName="titleEn_details" name="titleEn_details" matInput [(ngModel)]="data.details_EN"></textarea>
+      <mat-error *ngIf="hasError('titleEn_details', 'required')"> English Details is required</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Details In Arabic</mat-label>
-      <textarea matInput [(ngModel)]="data.details_AR"></textarea>
+      <textarea formControlName="titleAr_details" name="titleAr_details" matInput [(ngModel)]="data.details_AR"></textarea>
+      <mat-error *ngIf="hasError('titleAr_details', 'required')">Arabic Details is required</mat-error>
+
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Price</mat-label>
-      <input min="0" type="number" matInput [(ngModel)]="data.price">
+      <input formControlName="price" name="price" min="0" type="number" matInput [(ngModel)]="data.price">
+      <mat-error *ngIf="hasError('price', 'required')">Price is required</mat-error>
+      
+      <span matPrefix>$&nbsp;</span>
+      <span matSuffix>.00</span>
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Quantity</mat-label>
-      <input min="0" type="number" matInput [(ngModel)]="data.quantity">
+      <input formControlName="quantity" name="quantity" min="0" type="number" matInput [(ngModel)]="data.quantity">
+      <mat-error *ngIf="hasError('quantity', 'required')">Quantity is required</mat-error>
+      
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Category</mat-label>
 
-      <mat-select placeholder="Category" [(ngModel)]="data.categoryID" (selectionChange)="changeCat($event)">
+      <mat-select formControlName="quantity" name="quantity" placeholder="Category" [(ngModel)]="data.categoryID" (selectionChange)="changeCat($event)">
         <mat-option *ngFor="let item of categories; let i=index" [value]="item.id">
           {{item.name}}
         </mat-option>
       </mat-select>
+      <mat-error *ngIf="hasError('quantity', 'required')">Category is required</mat-error>
     </mat-form-field>
 
     <mat-form-field>
@@ -46,13 +61,13 @@
         <mat-option *ngFor="let item of colorArray; let i=index" [value]="i">
           {{item}}
         </mat-option>
-
       </mat-select>
+      <!-- <mat-error *ngIf="hasError('color2', 'required')">Title is required</mat-error> -->
     </mat-form-field>
-
+    </form>
   </div>
   <div mat-dialog-actions [align]="'end'">
     <button mat-raised-button color="warn" mat-dialog-close (click)="onClose()"> Close </button>
-    <button mat-raised-button color="primary" mat-dialog-close (click)="onUpdate()"> Update </button>
+    <button mat-raised-button color="primary" mat-dialog-close (click)="onUpdate()" [disabled]="!ownerForm.valid"> Update </button>
   </div>
 </div>
