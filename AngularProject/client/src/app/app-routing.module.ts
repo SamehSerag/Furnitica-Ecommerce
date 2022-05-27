@@ -14,6 +14,7 @@ import { ProductListComponent } from './DashBoard/product-list/product-list.comp
 import { IndexComponent } from './index.component';
 import { WishlistComponent } from './Components/wishlist/wishlist.component';
 import { ShoppingcartComponent } from './Components/shoppingcart/shoppingcart.component';
+import { CheckOutComponent } from './Components/check-out/check-out.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'AddProduct/Owner', component: AddProductComponent},
   { path: 'wishlist', component: WishlistComponent},
   { path: 'shopping-cart', component: ShoppingcartComponent },
+  {path: 'checkout', component: CheckOutComponent }
 ];
 
 @NgModule({

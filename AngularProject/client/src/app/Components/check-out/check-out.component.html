@@ -1,0 +1,62 @@
+<div class="cart-container">
+    <div class="cart-overview js-cart">
+        <div>
+            <div>
+
+                <div class="row orderContainer">
+
+                    <div class="col-md-11 TabelHolder">
+                        <div class=" main-title">
+                            <label>Order details ({{order.orderProducts.length}}
+                                items)</label>
+                            <span *ngIf="order.state==0"
+                                class="pending">Pending</span>
+                            <span *ngIf="order.state==1"
+                                class="accepted">Accepted</span>
+                            <span *ngIf="order.state==2"
+                                class="rejected">Rejected</span>
+
+                        </div>
+
+                        <table class="table">
+
+                            <tbody>
+                                <tr *ngFor="let orderD of order.orderProducts">
+                                    <td style="text-align: center;">
+                                        <img class="img-fluid" src="assets/img/product/noImg.jpg"/>
+                                    </td>
+                                    <td style="text-align: center;">
+                                        <p>Product Name</p>
+                                        <div *ngIf="!IsEnglish">
+                                            {{orderD.product.title_AR}}</div>
+                                        <div *ngIf="IsEnglish">
+                                            {{orderD.product.title_EN}}</div>
+                                    </td>
+
+                                    <td style="text-align: center;">
+                                        <p>Product Quantity</p>
+                                        <div>{{orderD.quantity}}</div>
+                                    </td>
+
+                                    <td style="text-align: center;">
+                                        <p> Product Price</p>
+                                        <div> {{orderD.product.price}}</div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                            <div class="main-title" style="font-size: 3em; align-items: center;">
+                                <label class="totalPrice">Total Price:
+                                    {{order.totalPrice}}$</label>
+                            </div>
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+  
+</div>
