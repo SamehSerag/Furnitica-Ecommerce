@@ -22,6 +22,10 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { PendingOrdersComponent } from './DashBoard/pending-orders/pending-orders.component';
 import { AllOrdersComponent } from './DashBoard/all-orders/all-orders.component';
 import { ProductDetialsComponent } from './Components/product-detials/product-detials.component';
+
+import { AddtocartComponent } from './Components/addtocart/addtocart.component';
+import { ShoppingcartComponent } from './Components/shoppingcart/shoppingcart.component';
+
 import { ProductReviewsComponent } from './Components/product-reviews/product-reviews.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductListComponent } from './DashBoard/product-list/product-list.component';
@@ -48,9 +52,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductReviewsComponent,
     AllOrdersComponent,
     ProductDetialsComponent,
+
+    AddtocartComponent,
+    ShoppingcartComponent,
+
     ProductListComponent,
     PipeTransformPipe,
     AddProductComponent
+
   ],
   imports: [
     BrowserModule,
@@ -77,3 +86,4 @@ export class AppModule { }
 export function httpTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
+

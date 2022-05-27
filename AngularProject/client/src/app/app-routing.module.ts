@@ -12,6 +12,7 @@ import { PendingOrdersComponent } from './DashBoard/pending-orders/pending-order
 import { AddProductComponent } from './DashBoard/add-product/add-product.component';
 import { ProductListComponent } from './DashBoard/product-list/product-list.component';
 import { IndexComponent } from './index.component';
+import { ShoppingcartComponent } from './Components/shoppingcart/shoppingcart.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -24,8 +25,8 @@ const routes: Routes = [
   { path: 'edit-profile', component:EditProfileComponent},
   { path: 'Register', component:RegisterComponent},
   { path: 'Login', component:LoginComponent},
+  { path: 'shopping-cart', component: ShoppingcartComponent },
   { path: 'Product/Owner', component: ProductListComponent},
-  { path: 'AddProduct/Owner', component: AddProductComponent},
   { path: 'AddProduct/Owner', component: AddProductComponent},
 ];
 

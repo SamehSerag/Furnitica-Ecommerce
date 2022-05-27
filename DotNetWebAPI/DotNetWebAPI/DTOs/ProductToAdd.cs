@@ -12,5 +12,6 @@
         public int Quantity { get; set; }
         public int? CategoryID { get; set; }
         public string? OwnerId { get; set; }
+        public List<IFormFile>? files { get; set; }
     }
 }

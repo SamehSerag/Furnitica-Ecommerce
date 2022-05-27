@@ -90,34 +90,7 @@ export class ProductListComponent implements OnInit, AfterViewChecked{
     
   }
 
-  AddProduct() {
-    const observer = {
-      next: (prd: IOwnerProduct) => {
-        alert("Add Successfully");
-        this.productsSearchModel.pageIndex = this.pagination.totalPages;
-        this.ngOnInit();
-        this.scrollToBottom();
-      },
-      Error: (prd: IOwnerProduct) => {
-        alert("Error !!");
-      }
-
-    }
-
-    const product: IProductToAdd = {
-      title_EN: "test",
-      title_AR: "تست",
-      details_EN: "string",
-      details_AR: "string",
-      price: 10,
-      color: 1,
-      quantity: 1,
-      categoryID: 1,
-      ownerId: "1",
-    }
-    this.prdService.addProduct(product).subscribe(observer);
-  }
-
+ 
 
   /// Pagination
   paginate(pageIndex: number): void {
@@ -142,3 +115,32 @@ export class ProductListComponent implements OnInit, AfterViewChecked{
   }
  
 }
+
+
+ // AddProduct() {
+  //   const observer = {
+  //     next: (prd: IOwnerProduct) => {
+  //       alert("Add Successfully");
+  //       this.productsSearchModel.pageIndex = this.pagination.totalPages;
+  //       this.ngOnInit();
+  //       this.scrollToBottom();
+  //     },
+  //     Error: (prd: IOwnerProduct) => {
+  //       alert("Error !!");
+  //     }
+
+  //   }
+
+  //   const product: IProductToAdd = {
+  //     title_EN: "test",
+  //     title_AR: "تست",
+  //     details_EN: "string",
+  //     details_AR: "string",
+  //     price: 10,
+  //     color: 1,
+  //     quantity: 1,
+  //     categoryID: 1,
+  //     ownerId: "1",
+  //   }
+  //   this.prdService.addProduct(product).subscribe(observer);
+  // }

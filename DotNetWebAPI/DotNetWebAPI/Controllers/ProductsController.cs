@@ -18,6 +18,7 @@ using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IWebHostEnvironment;
 using AngularAPI.Data;
 using AngularAPI.Models;
 using DotNetWebAPI.DTOs;
+using DotNetWebAPI.DTOs.Helpers;
 
 namespace AngularAPI.Controllers
 {
@@ -173,10 +174,16 @@ namespace AngularAPI.Controllers
         // POST: api/Products/onwer
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost("owner")]
-        public async Task<ActionResult<AdminProductDto>> PostProduct(ProductToAdd product)
+        public async Task<ActionResult<AdminProductDto>> PostProduct([FromForm]ProductToAdd product)
         {
+
             var productMapped = mapper.Map<ProductToAdd, Product>
                 (product);
+
+            /// Save Image Locally and then add path to database
+            var Images = ImageSaver.SaveLocally(product.files, environment);
+            productMapped.Images.AddRange(Images);
+
             await _productRepository.AddProductAsync(productMapped);
 
             return CreatedAtAction("GetProductByAdmin", new { id = productMapped.Id }, productMapped);

@@ -131,6 +131,7 @@ namespace AngularAPI.Controllers
 
             if (userCreated.Succeeded && roleAssigned.Succeeded)
             {
+
                 if(userDto.Role == "Client")
                     cartRepository.GetCart(user.Id);               
                 return user;
