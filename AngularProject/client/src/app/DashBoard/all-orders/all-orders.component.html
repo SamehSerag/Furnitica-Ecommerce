@@ -17,8 +17,7 @@
                                             <form [formGroup]="form">
                                                 <div class="form-group">
                                                     <label for="website">Select Filter Option:</label>
-                                                    <select formControlName="website" class="form-control"
-                                                        (change)="FilterAllOrders($event)">
+                                                    <select formControlName="website" class="form-control" (change)="FilterAllOrders($event)">
                                                         <option selected>Filter Option:</option>
                                                         <option *ngFor="let op of FilterOn">{{op}}</option>
                                                     </select>
@@ -36,31 +35,25 @@
                                     <div class="cart-container" *ngIf="!IsFilterd">
                                         <div class="cart-overview js-cart">
                                             <accordion [isAnimated]="true">
-                                                <accordion-group [isOpen]="true" *ngFor="let order of allOrders"
-                                                    heading="Order number : &nbsp; ({{order.id}})  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date: &nbsp; ({{order.date | date:'dd/MM/yyyy'}})">
+                                                <accordion-group [isOpen]="true" *ngFor="let order of allOrders" heading="Order number : &nbsp; ({{order.id}})  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date: &nbsp; ({{order.date | date:'dd/MM/yyyy'}})">
 
                                                     <div class="row">
 
                                                         <div class="col-md-1 actions">
                                                             <div *ngIf="order.state==0">
-                                                                <i class="fa fa-trash-o DeleteProduct"
-                                                                    (click)='DeleteOrder(order.id)'></i>
+                                                                <i class="fa fa-trash-o DeleteProduct" (click)='DeleteOrder(order.id)'></i>
                                                             </div>
                                                             <div *ngIf="order.state==0">
-                                                                <i class="fa fa-check AcceptProduct"
-                                                                    (click)='AcceptOrders(order.id)'></i>
+                                                                <i class="fa fa-check AcceptProduct" (click)='AcceptOrders(order.id)'></i>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-11">
                                                             <div class=" main-title">
                                                                 <label>Order details ({{order.orderProducts.length}}
                                                                     items)</label>
-                                                                <span *ngIf="order.state==0"
-                                                                    class="pending">Pending</span>
-                                                                <span *ngIf="order.state==1"
-                                                                    class="accepted">Accepted</span>
-                                                                <span *ngIf="order.state==2"
-                                                                    class="rejected">Rejected</span>
+                                                                <span *ngIf="order.state==0" class="pending">Pending</span>
+                                                                <span *ngIf="order.state==1" class="accepted">Accepted</span>
+                                                                <span *ngIf="order.state==2" class="rejected">Rejected</span>
 
                                                             </div>
 
@@ -68,8 +61,8 @@
                                                                 <thead>
                                                                     <tr>
                                                                         <th style="text-align: center;" scope="col">
-                                                                            Product
-                                                                            Title</th>
+                                                                            Product Title
+                                                                        </th>
                                                                         <th style="text-align: center;" scope="col">
                                                                             Quntity
                                                                         </th>
@@ -77,8 +70,8 @@
                                                                             Details
                                                                         </th>
                                                                         <th style="text-align: center;" scope="col">
-                                                                            product
-                                                                            Price</th>
+                                                                            product Price
+                                                                        </th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
@@ -86,7 +79,7 @@
                                                                         <td style="text-align: center;">
                                                                             {{orderD.product.title_EN}}</td>
                                                                         <td style="text-align: center;">
-                                                                            {{orderD.product.quantity}}</td>
+                                                                            {{orderD.quantity}}</td>
                                                                         <td style="text-align: center;">
                                                                             {{orderD.product.details_EN}}</td>
                                                                         <td style="text-align: center;">
@@ -117,31 +110,25 @@
                                     <div class="cart-container" *ngIf="IsFilterd">
                                         <div class="cart-overview js-cart">
                                             <accordion [isAnimated]="true">
-                                                <accordion-group [isOpen]="true" *ngFor="let order of FilterdData"
-                                                    heading="Order number : &nbsp; ({{order.id}})  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date: &nbsp; ({{order.date | date:'dd/MM/yyyy'}})">
+                                                <accordion-group [isOpen]="true" *ngFor="let order of FilterdData" heading="Order number : &nbsp; ({{order.id}})  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date: &nbsp; ({{order.date | date:'dd/MM/yyyy'}})">
 
                                                     <div class="row">
 
                                                         <div class="col-md-1 actions">
                                                             <div *ngIf="order.state==0">
-                                                                <i class="fa fa-trash-o DeleteProduct"
-                                                                    (click)='DeleteOrder(order.id)'></i>
+                                                                <i class="fa fa-trash-o DeleteProduct" (click)='DeleteOrder(order.id)'></i>
                                                             </div>
                                                             <div *ngIf="order.state==0">
-                                                                <i class="fa fa-check AcceptProduct"
-                                                                    (click)='AcceptOrders(order.id)'></i>
+                                                                <i class="fa fa-check AcceptProduct" (click)='AcceptOrders(order.id)'></i>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-11">
                                                             <div class=" main-title">
                                                                 <label>Order details ({{order.orderProducts.length}}
                                                                     items)</label>
-                                                                <span *ngIf="order.state==0"
-                                                                    class="pending">Pending</span>
-                                                                <span *ngIf="order.state==1"
-                                                                    class="accepted">Accepted</span>
-                                                                <span *ngIf="order.state==2"
-                                                                    class="rejected">Rejected</span>
+                                                                <span *ngIf="order.state==0" class="pending">Pending</span>
+                                                                <span *ngIf="order.state==1" class="accepted">Accepted</span>
+                                                                <span *ngIf="order.state==2" class="rejected">Rejected</span>
 
                                                             </div>
 
@@ -149,8 +136,8 @@
                                                                 <thead>
                                                                     <tr>
                                                                         <th style="text-align: center;" scope="col">
-                                                                            Product
-                                                                            Title</th>
+                                                                            Product Title
+                                                                        </th>
                                                                         <th style="text-align: center;" scope="col">
                                                                             Quntity
                                                                         </th>
@@ -158,8 +145,8 @@
                                                                             Details
                                                                         </th>
                                                                         <th style="text-align: center;" scope="col">
-                                                                            product
-                                                                            Price</th>
+                                                                            product Price
+                                                                        </th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
@@ -167,7 +154,7 @@
                                                                         <td style="text-align: center;">
                                                                             {{orderD.product.title_EN}}</td>
                                                                         <td style="text-align: center;">
-                                                                            {{orderD.product.quantity}}</td>
+                                                                            {{orderD.quantity}}</td>
                                                                         <td style="text-align: center;">
                                                                             {{orderD.product.details_EN}}</td>
                                                                         <td style="text-align: center;">
@@ -197,7 +184,7 @@
                                     <!---------------------------End Show Filtered Orders------------------------------------>
                                 </div>
                                 <div class="cart-grid-right col-xs-12 col-lg-3">
-                                    <div class="cart-summary">
+                                    <!-- <div class="cart-summary">
                                         <div class="cart-detailed-totals">
                                             <div class="cart-summary-products">
                                                 <div class="summary-label">There are 3 item in your cart</div>
@@ -222,7 +209,7 @@
                                                 <span class="value">£200.00 (tax incl.)</span>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </section>

@@ -26,12 +26,11 @@ namespace DotNetWebAPI.Controllers
     {
         private readonly IReviewRepository _repo;
         private readonly IMapper _mapper;
-        private readonly User? CurUser;
         public ReviewsController(IReviewRepository repo, IMapper mapper)
         {
             _repo = repo;
             _mapper = mapper;
-            CurUser = HttpContext.Items["User"] as User;
+            
         }
 
         // GET: api/Reviews
@@ -82,8 +81,9 @@ namespace DotNetWebAPI.Controllers
              }
 
              var review = await _repo.GetReviewByUserIdAsync(user?.Id, prdid);*/
-            
-            var review = await _repo.GetReviewByUserIdAsync(CurUser!.Id, prdid);
+            User? user = HttpContext.Items["User"] as User;
+
+            var review = await _repo.GetReviewByUserIdAsync(user!.Id, prdid);
 
             if (review == null)
             {
@@ -110,8 +110,8 @@ namespace DotNetWebAPI.Controllers
                   return NotFound();
               }
   */
-
-            review.UserId = CurUser!.Id;
+            User? user = HttpContext.Items["User"] as User;
+            review.UserId = user!.Id;
                 //user.Id;
 
             try
@@ -138,7 +138,9 @@ namespace DotNetWebAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Review>> PostReview(Review review)
         {
-            review.UserId = CurUser!.Id;
+            User? user = HttpContext.Items["User"] as User;
+            review.UserId = user!.Id;
+
             await _repo.AddReviewAsync(review);
 
             return CreatedAtAction("GetReview", new { id = review.Id }, review);

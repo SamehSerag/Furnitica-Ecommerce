@@ -24,12 +24,14 @@ namespace DotNetWebAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Order>>> GetOrders([FromQuery] OrderSearchModel orderSearchModel)
         {
-            return await _orderRepo.ReturnAllOrders(orderSearchModel);
+            User? user = HttpContext.Items["User"] as User;
+            return await _orderRepo.ReturnAllOrders(user.Id,orderSearchModel);
         }    
         [HttpGet("AdminOrders")]
         public async Task<ActionResult<IEnumerable<Order>>> ReturnAdminOrders([FromQuery] OrderSearchModel orderSearchModel)
         {
-            return await _orderRepo.ReturnAllAdminOrders(orderSearchModel);
+            User? user = HttpContext.Items["User"] as User;
+            return await _orderRepo.ReturnAllAdminOrders(user.Id,orderSearchModel);
         }
         //Done
         // GET: api/Orders/5
@@ -78,8 +80,6 @@ namespace DotNetWebAPI.Controllers
         public async Task<ActionResult<Order>> PostOrder(Order order)
         {
 
-
-
             await _orderRepo.CreateOrderAsync(order);
 
             return CreatedAtAction("GetOrder", new { id = order.Id }, order);
@@ -92,7 +92,6 @@ namespace DotNetWebAPI.Controllers
 
             //// Find Order By ID
             await _orderRepo.DeleteOrderAsync(id);
-
 
             return NoContent();
         }

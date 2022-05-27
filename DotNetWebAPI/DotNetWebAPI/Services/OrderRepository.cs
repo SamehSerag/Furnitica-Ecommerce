@@ -18,9 +18,10 @@ namespace DotNetWebAPI.Services
             _context = context;
             
         }
-        public async Task<ActionResult<IEnumerable<Order>>> ReturnAllOrders(OrderSearchModel orderSearchModel)
+        public async Task<ActionResult<IEnumerable<Order>>> ReturnAllOrders(string userId,OrderSearchModel orderSearchModel)
         {
-            IQueryable<Order> query = _context.Orders.Where(w => w.UserID == "2dec20bc-7da6-411b-999c-2f45e40c9e16")
+
+            IQueryable<Order> query = _context.Orders.Where(w => w.UserID == userId)
                 .Include(o => o.OrderProducts).ThenInclude(P => P.Product);
             if (orderSearchModel != null)
             {
@@ -59,9 +60,9 @@ namespace DotNetWebAPI.Services
         /******************************************
          * GET ALL ADMIN ORDERS
          * ***************************************/
-        public async Task<ActionResult<IEnumerable<Order>>> ReturnAllAdminOrders(OrderSearchModel orderSearchModel)
+        public async Task<ActionResult<IEnumerable<Order>>> ReturnAllAdminOrders(string userId,OrderSearchModel orderSearchModel)
         {
-            IQueryable<Order> query = _context.Orders.Where(x => x.OrderProducts.Any(y => y.Product.OwnerId == "2dec20bc-7da6-411b-999c-2f45e40c9e16"))
+            IQueryable<Order> query = _context.Orders.Where(x => x.OrderProducts.Any(y => y.Product.OwnerId == userId))
                 .Include(o => o.OrderProducts).ThenInclude(P => P.Product);
 
             if (orderSearchModel != null)
@@ -155,13 +156,13 @@ namespace DotNetWebAPI.Services
         {
             var order = await _context.Orders.FirstOrDefaultAsync(o => o.Id == orderId);
             order.State = OrderState.Pending;
-            _context.SaveChangesAsync();
+           await _context.SaveChangesAsync();
         }
         public async Task RejectOrder(int orderId)
         {
             var order = await _context.Orders.FirstOrDefaultAsync(o => o.Id == orderId);
             order.State = OrderState.Rejected;
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
     }

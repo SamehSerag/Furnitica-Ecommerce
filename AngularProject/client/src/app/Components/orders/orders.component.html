@@ -17,8 +17,7 @@
                                             <form [formGroup]="form">
                                                 <div class="form-group">
                                                     <label for="website">Select Filter Option:</label>
-                                                    <select formControlName="website" class="form-control"
-                                                        (change)="FilterAllOrders($event)">
+                                                    <select formControlName="website" class="form-control" (change)="FilterAllOrders($event)">
                                                         <option selected>Filter Option:</option>
                                                         <option *ngFor="let Op of FilterOn">{{Op}}</option>
                                                     </select>
@@ -42,24 +41,17 @@
 
                                                         <div class="col-md-1 actions">
                                                             <div *ngIf="order.state==0" class="px-2">
-                                                                <i class="fa fa-trash-o DeleteProduct"
-                                                                    (click)='DeleteOrder(order.id)'></i>
+                                                                <i class="fa fa-trash-o DeleteProduct" (click)='DeleteOrder(order.id)'></i>
                                                             </div>
-                                                            <div *ngIf="order.state==0">
-                                                                <i class="fa fa-check AcceptProduct"
-                                                                    (click)='AcceptOrders(order.id)'></i>
-                                                            </div>
+
                                                         </div>
                                                         <div class="col-md-11 TabelHolder">
                                                             <div class=" main-title">
                                                                 <label>Order details ({{order.orderProducts.length}}
                                                                     items)</label>
-                                                                <span *ngIf="order.state==0"
-                                                                    class="pending">Pending</span>
-                                                                <span *ngIf="order.state==1"
-                                                                    class="accepted">Accepted</span>
-                                                                <span *ngIf="order.state==2"
-                                                                    class="rejected">Rejected</span>
+                                                                <span *ngIf="order.state==0" class="pending">Pending</span>
+                                                                <span *ngIf="order.state==1" class="accepted">Accepted</span>
+                                                                <span *ngIf="order.state==2" class="rejected">Rejected</span>
 
                                                             </div>
 
@@ -68,7 +60,7 @@
                                                                 <tbody>
                                                                     <tr *ngFor="let orderD of order.orderProducts">
                                                                         <td style="text-align: center;">
-
+                                                                            <img height="100" width="100" class="img-fluid" src="assets/img/product/noImg.jpg" />
                                                                         </td>
                                                                         <td style="text-align: center;">
                                                                             <p>Product Name</p>
@@ -122,24 +114,17 @@
 
                                                         <div class="col-md-1 actions">
                                                             <div *ngIf="order.state==0" class="px-2">
-                                                                <i class="fa fa-trash-o DeleteProduct"
-                                                                    (click)='DeleteOrder(order.id)'></i>
+                                                                <i class="fa fa-trash-o DeleteProduct" (click)='DeleteOrder(order.id)'></i>
                                                             </div>
-                                                            <div *ngIf="order.state==0">
-                                                                <i class="fa fa-check AcceptProduct"
-                                                                    (click)='AcceptOrders(order.id)'></i>
-                                                            </div>
+
                                                         </div>
                                                         <div class="col-md-11 TabelHolder">
                                                             <div class=" main-title">
                                                                 <label>Order details ({{order.orderProducts.length}}
                                                                     items)</label>
-                                                                <span *ngIf="order.state==0"
-                                                                    class="pending">Pending</span>
-                                                                <span *ngIf="order.state==1"
-                                                                    class="accepted">Accepted</span>
-                                                                <span *ngIf="order.state==2"
-                                                                    class="rejected">Rejected</span>
+                                                                <span *ngIf="order.state==0" class="pending">Pending</span>
+                                                                <span *ngIf="order.state==1" class="accepted">Accepted</span>
+                                                                <span *ngIf="order.state==2" class="rejected">Rejected</span>
 
                                                             </div>
 
@@ -161,7 +146,7 @@
                                                                 <tbody>
                                                                     <tr *ngFor="let orderD of order.orderProducts">
                                                                         <td style="text-align: center;">
-
+                                                                            <img height="100" width="100" class="img-fluid" src="assets/img/product/noImg.jpg" />
                                                                         </td>
                                                                         <td style="text-align: center;">
                                                                             <p>Product Name</p>
@@ -204,7 +189,7 @@
                                     <!---------------------------End Show Filtered Orders------------------------------------>
                                 </div>
                                 <div class="cart-grid-right col-xs-12 col-lg-3">
-                                    <div class="cart-summary">
+                                    <!-- <div class="cart-summary">
                                         <div class="cart-detailed-totals">
                                             <div class="cart-summary-products">
                                                 <div class="summary-label">There are 3 item in your cart</div>
@@ -229,7 +214,7 @@
                                                 <span class="value">£200.00 (tax incl.)</span>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </section>

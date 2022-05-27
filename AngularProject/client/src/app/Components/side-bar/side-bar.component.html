@@ -41,31 +41,7 @@
                         <div class="cart-content">
                             <table>
                                 <tbody>
-                                    <tr>
-                                        <td class="product-image">
-                                            <a href="product-detail.html">
-                                                <img src="../../../assets/img/product/5.jpg" alt="Product">
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <div class="product-name">
-                                                <a href="product-detail.html">Organic Strawberry Fruits</a>
-                                            </div>
-                                            <div>
-                                                2 x
-                                                <span class="product-price">£28.98</span>
-                                            </div>
-                                        </td>
-                                        <td class="action">
-                                            <a class="remove" href="#">
-                                                <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="total">
-                                        <td colspan="2">Total:</td>
-                                        <td>£92.96</td>
-                                    </tr>
+
 
                                     <tr>
                                         <td colspan="3" class="d-flex justify-content-center">
@@ -103,7 +79,7 @@
                         <ul class="menu-top navbar-nav">
                             <li routerLinkActive="nav-link">
                                 <a routerLink="" class="parent">Home</a>
-                                <div class="dropdown-menu">
+                                <!-- <div class="dropdown-menu">
                                     <ul>
                                         <li class="item">
                                             <a href="index-2.html" title="Home Page 1">Home Page 1</a>
@@ -121,9 +97,9 @@
                                             <a href="home5.html" title="Home Page 5">Home Page 5</a>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> -->
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="#" class="parent">Blog</a>
                                 <div class="dropdown-menu">
                                     <ul>
@@ -153,7 +129,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                            </li>
+                            </li> -->
                             <li routerLinkActive="nav-link">
                                 <a routerLink="/main-shop" class="parent">Shop</a>
                                 <!-- <a href="#" class="parent">Page</a>
@@ -217,9 +193,9 @@
                             <li routerLinkActive="nav-link" *ngIf="isAdmin">
                                 <a routerLink="/Product/Owner" class="parent"> Admin Shop</a>
                             </li>
-                            <li routerLinkActive="nav-link">
+                            <!-- <li routerLinkActive="nav-link">
                                 <a href="contact.html" class="parent">Contact US</a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -281,6 +257,12 @@
                                     </a>
                                 </div>
                                 <div *ngIf="loggedIn">
+                                    <a href="/Orders" title="My Orders">
+                                        <i class="fa fa-search"></i>
+                                        <span>My Orders</span>
+                                    </a>
+                                </div>
+                                <div *ngIf="loggedIn">
                                     <a (click)="Logout()" class="login" [routerLink]="['/Login']" routerLinkActive="router-link-active" title="Logout">
                                         <i class="fa fa-sign-out"></i>
                                         <span>Sign Out</span>
@@ -324,31 +306,6 @@
                                 <div class="cart-content">
                                     <table>
                                         <tbody>
-                                            <tr>
-                                                <td class="product-image">
-                                                    <a href="product-detail.html">
-                                                        <img src="../../../assets/img/product/5.jpg" alt="Product">
-                                                    </a>
-                                                </td>
-                                                <td>
-                                                    <div class="product-name">
-                                                        <a href="product-detail.html">Organic Strawberry Fruits</a>
-                                                    </div>
-                                                    <div>
-                                                        2 x
-                                                        <span class="product-price">£28.98</span>
-                                                    </div>
-                                                </td>
-                                                <td class="action">
-                                                    <a class="remove" href="#">
-                                                        <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr class="total">
-                                                <td colspan="2">Total:</td>
-                                                <td>£92.96</td>
-                                            </tr>
 
                                             <tr>
                                                 <td colspan="3" class="d-flex justify-content-center">
@@ -356,7 +313,7 @@
                                                         <a [routerLinkActive]='["link-active"]' [routerLink]='"/shopping-cart"' title="View Cart">View Cart</a>
                                                         <a [routerLink]='["/checkout"]' title="Checkout">Checkout</a>
 
-                                                        
+
                                                     </div>
                                                 </td>
                                             </tr>

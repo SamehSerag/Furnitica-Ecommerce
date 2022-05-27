@@ -28,8 +28,8 @@ export class OrdersService {
     let headers: HttpHeaders = new HttpHeaders();
     headers = headers.append('Content-Type', 'application/json');
     headers = headers.append('Authorization', 'Bearer ' + localStorage.getItem("token"));
-    
-    return this.httpClient.post<number>(`${environment.APIURL}/api/Orders/rejectOrder/` + orderID, { headers: headers })
+
+    return this.httpClient.put<number>(`${environment.APIURL}/api/Orders/rejectOrder/` + orderID, { headers: headers })
   }
   AcceptOrder(orderID: number) {
     let headers: HttpHeaders = new HttpHeaders();

@@ -50,7 +50,7 @@ namespace AngularAPI.Dtos.Helpers
            .ForMember(d => d.title_AR, o => o.MapFrom(s => s.product.Title_AR))
            .ForMember(d => d.price, o => o.MapFrom(s => s.product.price))
            .ForMember(d => d.availability, o => o.MapFrom(s => s.product.Quantity == 0 ? "Out Of Stock" : "In Stock"))
-           .ForMember(d => d.Image, o => o.MapFrom(s => (s.product.Images.Count != 0) ? s.product.Images[0].ToString() : ""));
+           .ForMember(d => d.Image, o => o.MapFrom(s => (s.product.Images.Count != 0) ? s.product.Images[0].Src : ""));
         }
     }
 }
