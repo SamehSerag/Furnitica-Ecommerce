@@ -15,20 +15,20 @@ export class ReviewsService {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
          , Authorization: 'my-auth-token'
-      })
+      }).set("Authorization", "Bearer " + localStorage["access-token"])
     };
   }
 
   getAllReviews(prdId: number): Observable<IReviewsPagination> {
-    return this.httpClient.get<IReviewsPagination>(`${environment.APIURL}/api/Reviews?PrdId=${prdId}`)
+    return this.httpClient.get<IReviewsPagination>(`${environment.APIURL}/api/Reviews?PrdId=${prdId}`,this.httpOption)
   }
 
   getUserReview(prdId: number): Observable<IReview> {
-    return this.httpClient.get<IReview>(`${environment.APIURL}/api/UserReview/${prdId}`)
+    return this.httpClient.get<IReview>(`${environment.APIURL}/api/UserReview/${prdId}`,this.httpOption)
   }
 
   getReviewById(id: number): Observable<IReview> {
-    return this.httpClient.get<IReview>(`${environment.APIURL}/api/Reviews/${id}`)
+    return this.httpClient.get<IReview>(`${environment.APIURL}/api/Reviews/${id}`,this.httpOption)
   }
 
   postReview(review: IReview): Observable<IReview> {
