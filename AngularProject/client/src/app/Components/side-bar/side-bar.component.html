@@ -281,6 +281,12 @@
                                     </a>
                                 </div>
                                 <div *ngIf="loggedIn">
+                                    <a href="/Orders" title="My Wishlists">
+                                        <i class="fa fa-heart"></i>
+                                        <span>My Orders</span>
+                                    </a>
+                                </div>
+                                <div *ngIf="loggedIn">
                                     <a (click)="Logout()" class="login" [routerLink]="['/Login']" routerLinkActive="router-link-active" title="Logout">
                                         <i class="fa fa-sign-out"></i>
                                         <span>Sign Out</span>

@@ -30,7 +30,7 @@ namespace DotNetWebAPI.Controllers
             _context = context;
             _repo = repo;
             _mapper = mapper;
-            CurUser = HttpContext.Items["User"] as User;
+           // CurUser = HttpContext.Items["User"] as User;//"2dec20bc-7da6-411b-999c-2f45e40c9e16"
         }
 
         // GET: api/WishListProducts
@@ -41,7 +41,7 @@ namespace DotNetWebAPI.Controllers
 
             return await _repo.GetUserWishList(user.Id);*/
 
-            var wishlist =  await _repo.GetUserWishList(CurUser.Id);
+            var wishlist =  await _repo.GetUserWishList("2dec20bc-7da6-411b-999c-2f45e40c9e16");
             var wishlistDto = _mapper.Map<IReadOnlyList<WishListProduct>, IReadOnlyList<WishListDto>>(wishlist);
             return wishlistDto;
         }
@@ -57,7 +57,7 @@ namespace DotNetWebAPI.Controllers
                /* User? user = HttpContext.Items["User"] as User;
 
                 _repo.AddToWishList(prdId, user.Id);*/
-                await _repo.AddToWishList(prdId, CurUser.Id);
+                await _repo.AddToWishList(prdId, "2dec20bc-7da6-411b-999c-2f45e40c9e16");
 
             }
             catch (DbUpdateException)
@@ -84,7 +84,7 @@ namespace DotNetWebAPI.Controllers
             /*User? user = HttpContext.Items["User"] as User;
 
             _repo.RemoveFromWishList(prdId, user.Id);*/
-            await _repo.RemoveFromWishList(prdId, CurUser.Id);
+            await _repo.RemoveFromWishList(prdId, "2dec20bc-7da6-411b-999c-2f45e40c9e16");
 
             return NoContent();
         }
@@ -94,7 +94,7 @@ namespace DotNetWebAPI.Controllers
             /*User? user = HttpContext.Items["User"] as User;
 
             return _repo.WishListProductExists(id, user.Id);*/
-            return _repo.WishListProductExists(id, CurUser.Id);
+            return _repo.WishListProductExists(id, "2dec20bc-7da6-411b-999c-2f45e40c9e16");
         }
     }
 }

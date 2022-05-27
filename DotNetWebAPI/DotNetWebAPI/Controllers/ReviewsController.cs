@@ -31,7 +31,7 @@ namespace DotNetWebAPI.Controllers
         {
             _repo = repo;
             _mapper = mapper;
-            CurUser = HttpContext.Items["User"] as User;
+          //  CurUser = HttpContext.Items["User"] as User;
         }
 
         // GET: api/Reviews
@@ -83,7 +83,7 @@ namespace DotNetWebAPI.Controllers
 
              var review = await _repo.GetReviewByUserIdAsync(user?.Id, prdid);*/
             
-            var review = await _repo.GetReviewByUserIdAsync(CurUser!.Id, prdid);
+            var review = await _repo.GetReviewByUserIdAsync("2dec20bc-7da6-411b-999c-2f45e40c9e16", prdid);
 
             if (review == null)
             {
@@ -138,7 +138,7 @@ namespace DotNetWebAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Review>> PostReview(Review review)
         {
-            review.UserId = CurUser!.Id;
+            review.UserId = "2dec20bc-7da6-411b-999c-2f45e40c9e16"; //CurUser!.Id;
             await _repo.AddReviewAsync(review);
 
             return CreatedAtAction("GetReview", new { id = review.Id }, review);
