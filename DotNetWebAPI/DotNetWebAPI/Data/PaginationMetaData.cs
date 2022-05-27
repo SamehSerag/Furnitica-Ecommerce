@@ -1,4 +1,6 @@
-﻿namespace AngularAPI.Dtos
+﻿using AngularAPI.Data;
+
+namespace AngularAPI.Dtos
 {
     public class PaginationMetaData<T>
     {
@@ -12,7 +14,7 @@
 
         public bool HasNextPage => PageIndex < TotalPages;
         public IReadOnlyList<T> Data { get; private set; }
-
+        public PriceRange PriceRangeObj { get;  set; }
         public PaginationMetaData(int itemsCount, int pageIndex, int pageSize, 
             IReadOnlyList<T> data)
         {
