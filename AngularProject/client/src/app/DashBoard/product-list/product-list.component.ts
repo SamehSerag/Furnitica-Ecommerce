@@ -1,12 +1,16 @@
 import { DOCUMENT } from '@angular/common';
 import { AfterViewChecked, Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { IPagination } from 'src/app/Models/ipagination';
 import { IProduct } from 'src/app/Models/iproduct';
-import { IOwnerProduct } from 'src/app/Models/Owner/IOwnerProduct';
+import { Category, IOwnerProduct } from 'src/app/Models/Owner/IOwnerProduct';
 import { IProductToAdd } from 'src/app/Models/Owner/IProductToAdd';
+import { ProductToAdd } from 'src/app/Models/Owner/ProductToAdd';
 import { ProductsSearchModel } from 'src/app/Models/ProductsSearchModel';
+import { CategoryService } from 'src/app/Services/category.service';
 import { ProductsService } from 'src/app/Services/products.service';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-product-list',
@@ -20,10 +24,14 @@ export class ProductListComponent implements OnInit, AfterViewChecked{
   productToDelete?: IProduct ;
   pagination!: IPagination;
   productsSearchModel: ProductsSearchModel;
+  colorArray: string[];
+
+  ownerId: string="1";
 
   constructor(@Inject(DOCUMENT) private dom: Document,
-    private prdService: ProductsService, private router: Router) {
-
+    private prdService: ProductsService, private router: Router, public dialog: MatDialog
+    , private catServ: CategoryService) {
+      this.colorArray = ["Blue", "Green", "Yellow", "Brown", "Pink", "Red"];
     this.products = [];
     this.productsSearchModel = new ProductsSearchModel();
     this.productToDelete = undefined;
@@ -35,8 +43,33 @@ export class ProductListComponent implements OnInit, AfterViewChecked{
   }
 
   ngOnInit(): void {
-    this.productsSearchModel.ownerId = "1";
+    this.productsSearchModel.ownerId = this.ownerId;
     this.getProductFilteration();
+  }
+  openDialog2() {
+    this.dialog.open(DialogComponent, {
+      width:'100px',
+      panelClass: 'my-class',
+      data: {
+        products: this.products[0],
+      },
+    });
+  }
+  openDialog(prId:number) {
+
+    this.dialog.open(DialogComponent, {
+      data: this.products.find(p => p.id == prId) ,
+    });
+    
+    // console.log("test");
+
+  }
+  func(catId:number){
+    var ss = "s" ;
+    this.catServ?.getAllCategories().subscribe((s)=>{
+      ss =  s.find(c=> c.id==catId)?.name ?? "s"
+    })
+    return ss;
   }
 
 
@@ -45,6 +78,7 @@ export class ProductListComponent implements OnInit, AfterViewChecked{
       response => {
         this.pagination = response;
         this.products = response.data;
+        console.log(this.products[0]);
       });
   }
   scrollToBottom(): void {

@@ -6,6 +6,7 @@ import { IPagination } from '../Models/ipagination';
 import { IProduct } from '../Models/iproduct';
 import { IOwnerProduct } from '../Models/Owner/IOwnerProduct';
 import { IProductToAdd } from '../Models/Owner/IProductToAdd';
+import { ProductToAdd } from '../Models/Owner/ProductToAdd';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,11 @@ export class ProductsService {
     return this.httpClinet.get<IProduct>(`${environment.APIURL}/api/products/${prdId}`);
   }
 
+  getPriceRange(){
+    // this.httpClinet.get<any>(`${environment.APIURL}/api/products`).subscribe((resp)=>{
+    //   console.log(resp.headers.get('X-PriceRange'));
+    // });
+  }
   // addProduct(newPrd: IProductToAdd): Observable<IProductToAdd>{
   //   return this.httpClinet.post<IProductToAdd>(`${environment.APIURL}/api/products/owner`, 
   //   JSON.stringify(newPrd),this.httpOption)
@@ -53,8 +59,13 @@ export class ProductsService {
       catchError(this.handleError)
     )
   }
-  updateProduct(prdId: number, updatedProduct: IProduct){
-
+  updateProduct(prdId: number, updatedProduct: ProductToAdd): Observable<IProduct>{
+    return this.httpClinet.put<IProduct>(`${environment.APIURL}/api/Products/Owner/${prdId}`
+    ,updatedProduct)
+    .pipe(
+      retry(2),
+      catchError(this.handleError)
+    )
   }
   deleteProduct(prdId: number){
     console.log(prdId)

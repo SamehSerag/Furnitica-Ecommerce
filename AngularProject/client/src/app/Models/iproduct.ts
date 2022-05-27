@@ -1,3 +1,5 @@
+import { Category } from "./Owner/IOwnerProduct";
+
 export interface IProduct {
     id: number;
     title_EN: string;
@@ -8,7 +10,7 @@ export interface IProduct {
     color: string;
     quantity: number;
     categoryID: number;
-    category?: any;
+    category: Category;
     images?: any;
     rating:number;
     orderProducts: any[];

@@ -8,6 +8,7 @@ import { Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductsSearchModel } from 'src/app/Models/ProductsSearchModel';
+import { Options } from "@angular-slider/ngx-slider";
 
 @Component({
   selector: 'app-main-shop',
@@ -15,6 +16,14 @@ import { ProductsSearchModel } from 'src/app/Models/ProductsSearchModel';
   styleUrls: ['./main-shop.component.css']
 })
 export class MainShopComponent implements OnInit, OnChanges {
+  value: number = 100;
+  highValue: number = 1000;
+  options: Options = {
+    floor: 0,
+    ceil: 1000
+  };
+
+
   sortArray: string[];
   colorArray: string[];
   // sortArrayValues: string[];
@@ -23,8 +32,10 @@ export class MainShopComponent implements OnInit, OnChanges {
   productsSearchModel: ProductsSearchModel;
 
   constructor(private prdService: ProductsService,
-    @Inject(DOCUMENT) private dom: Document, private router: Router, private activatedRoute: ActivatedRoute) {
-    this.products = [];
+    @Inject(DOCUMENT) private dom: Document, private router:Router, 
+    private activatedRoute: ActivatedRoute) {
+    this.products=[];
+
     this.sortArray = ["Sort by", "Name, A to Z", "Name, Z to A",
       "Price, low to high", "Price, high to low"];
     this.colorArray = ["Blue", "Green", "Yellow", "Brown", "Pink", "Red"];
@@ -61,6 +72,23 @@ export class MainShopComponent implements OnInit, OnChanges {
 
     this.getProductFilteration();
 
+    this.activatedRoute.queryParams
+      .subscribe(params => {
+        console.log(params['search']);
+        this.productsSearchModel.search= params['search'] == undefined ? "" : params['search'];
+        this.getProductFilteration();
+      }
+    );
+
+    // this.router.navigate(["/main-shop"],{queryParams:this.productsSearchModel} );
+
+    // this.prdService.getAllProducts().subscribe(
+    //   response => {
+    //     this.pagination = response;
+    //     this.products = response.data;
+    //   });
+      // console.log(this.productsSearchModel.toString());
+
   }
 
   filterByCat(catId: number): void {
@@ -82,11 +110,12 @@ export class MainShopComponent implements OnInit, OnChanges {
       response => {
         this.pagination = response;
         this.products = response.data;
+        console.log(this.products.length);
       })
 
-    // this.router.navigate(["/main-shop"]);
+      this.prdService.getPriceRange();
+      console.log(this.productsSearchModel.toString())
 
-    console.log(this.productsSearchModel.toString())
   }
 
 
@@ -138,6 +167,14 @@ export class MainShopComponent implements OnInit, OnChanges {
     this.productsSearchModel.color = colorId;
     this.getProductFilteration();
   }
+  priceChange(){
+    console.log(this.value);
+    console.log(this.highValue);
 
+    this.productsSearchModel.maxPrice = this.highValue;
+    this.productsSearchModel.minPrice = this.value;
+
+    this.getProductFilteration();
+  }
 
 }

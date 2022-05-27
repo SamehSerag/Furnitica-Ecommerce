@@ -1,0 +1,58 @@
+<div class="myContent">
+  <h1 mat-dialog-title style="text-align: center; font-weight: bold;">Update Product</h1>
+  <div mat-dialog-content>
+    <mat-form-field appearance="fill">
+      <mat-label>Title In English</mat-label>
+      <textarea matInput [(ngModel)]="data.title_EN"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Title In Arabic</mat-label>
+      <textarea matInput [(ngModel)]="data.title_AR"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Details In English</mat-label>
+      <textarea matInput [(ngModel)]="data.details_EN"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Details In Arabic</mat-label>
+      <textarea matInput [(ngModel)]="data.details_AR"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Price</mat-label>
+      <input min="0" type="number" matInput [(ngModel)]="data.price">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Quantity</mat-label>
+      <input min="0" type="number" matInput [(ngModel)]="data.quantity">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Category</mat-label>
+
+      <mat-select placeholder="Category" [(ngModel)]="data.categoryID" (selectionChange)="changeCat($event)">
+        <mat-option *ngFor="let item of categories; let i=index" [value]="item.id">
+          {{item.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Color</mat-label>
+      <mat-select placeholder="Color" [value]="colorIndex" (selectionChange)="changeColor($event)">
+        <mat-option *ngFor="let item of colorArray; let i=index" [value]="i">
+          {{item}}
+        </mat-option>
+
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+  <div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close (click)="onClose()"> Close </button>
+    <button mat-raised-button color="primary" mat-dialog-close (click)="onUpdate()"> Update </button>
+  </div>
+</div>

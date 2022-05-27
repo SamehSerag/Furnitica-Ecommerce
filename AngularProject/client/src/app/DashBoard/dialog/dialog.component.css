@@ -1,0 +1,19 @@
+mat-form-field, mat-select{
+    width: 100%;
+}
+textarea{
+    border-color: transparent;
+}
+.myContent {
+    width: 600px;
+}
+/* .md-dialog-container {
+    background-color: #000;
+    width: 250px !important;
+    height: 250px
+} */
+/* :host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+} */

@@ -58,6 +58,8 @@ builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
 builder.Services.AddScoped<IWishListRepository, WishListRepository>();
 
+
+
 // adding db context service
 builder.Services.AddDbContext<ShoppingDbContext>(
     options => options.UseSqlServer(
