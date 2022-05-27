@@ -48,6 +48,7 @@ export class ProductReviewsComponent implements OnInit {
   }
   PostReview() {
     console.log("Post");
+    console.log(this.userReview);
     this.userReview.productId=this.ProductId;
     this.reviewService.postReview(this.userReview).subscribe();
   }

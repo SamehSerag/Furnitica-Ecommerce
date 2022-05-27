@@ -14,26 +14,34 @@ export class ReviewsService {
     this.httpOption = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
-         , Authorization: 'my-auth-token'
-      }).set("Authorization", "Bearer " + localStorage["access-token"])
+      })
     };
   }
 
   getAllReviews(prdId: number): Observable<IReviewsPagination> {
-    return this.httpClient.get<IReviewsPagination>(`${environment.APIURL}/api/Reviews?PrdId=${prdId}`,this.httpOption)
+    let headers: HttpHeaders = new HttpHeaders().set("Authorization", "Bearer " + localStorage["access-token"]);
+    return this.httpClient.get<IReviewsPagination>(`${environment.APIURL}/api/Reviews?PrdId=${prdId}`, { headers })
   }
 
   getUserReview(prdId: number): Observable<IReview> {
-    return this.httpClient.get<IReview>(`${environment.APIURL}/api/UserReview/${prdId}`,this.httpOption)
+    let headers: HttpHeaders = new HttpHeaders().set("Authorization", "Bearer " + localStorage["access-token"]);
+    return this.httpClient.get<IReview>(`${environment.APIURL}/api/UserReview/${prdId}`, { headers })
   }
 
   getReviewById(id: number): Observable<IReview> {
-    return this.httpClient.get<IReview>(`${environment.APIURL}/api/Reviews/${id}`,this.httpOption)
+    let headers: HttpHeaders = new HttpHeaders().set("Authorization", "Bearer " + localStorage["access-token"]);
+
+
+    return this.httpClient.get<IReview>(`${environment.APIURL}/api/Reviews/${id}`, { headers })
   }
 
   postReview(review: IReview): Observable<IReview> {
+    let headers: HttpHeaders = new HttpHeaders().set("Authorization", "Bearer " + localStorage["access-token"]);
+    headers = headers.append('Content-Type', 'application/json');
+
+
     return this.httpClient.post<IReview>(`${environment.APIURL}/api/Reviews`,
-      JSON.stringify(review), this.httpOption)
+      JSON.stringify(review), { headers })
       .pipe(
         retry(2),
         catchError(this.handleError)
@@ -42,12 +50,16 @@ export class ReviewsService {
 
 
   putReview(review: IReview) {
+    let headers: HttpHeaders = new HttpHeaders().set("Authorization", "Bearer " + localStorage["access-token"]);
+    headers = headers.append('Content-Type', 'application/json');
+
+
     return this.httpClient.put<IReview>(`${environment.APIURL}/api/Reviews/${review.id}`,
-    JSON.stringify(review), this.httpOption)
-    .pipe(
-      retry(2),
-      catchError(this.handleError)
-    )
+      JSON.stringify(review),{headers})
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
   }
 
   private handleError(error: HttpErrorResponse) {

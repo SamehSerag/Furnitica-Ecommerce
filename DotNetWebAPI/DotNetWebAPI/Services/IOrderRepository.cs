@@ -6,8 +6,8 @@ namespace DotNetWebAPI.Services
 {
     public interface IOrderRepository
     {
-        Task<ActionResult<IEnumerable<Order>>> ReturnAllOrders(OrderSearchModel orderSearchModel);
-        Task<ActionResult<IEnumerable<Order>>> ReturnAllAdminOrders(OrderSearchModel orderSearchModel);
+        Task<ActionResult<IEnumerable<Order>>> ReturnAllOrders(string userId,OrderSearchModel orderSearchModel);
+        Task<ActionResult<IEnumerable<Order>>> ReturnAllAdminOrders(string userId, OrderSearchModel orderSearchModel);
         Task<ActionResult<Order>> ReturnOrderById(int orderId);
 
         Task<Order> CreateOrderAsync(Order order);

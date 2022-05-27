@@ -22,20 +22,21 @@ export class WishlistService {
 
   getWishList(): Observable<IWishlist[]> {
     let headers : HttpHeaders = new HttpHeaders().set("Authorization", "Bearer " + localStorage["access-token"]);
-    return this.httpClient.get<IWishlist[]>(`${environment.APIURL}/api/WishList`);
+    return this.httpClient.get<IWishlist[]>(`${environment.APIURL}/api/WishList`,{headers});
   }
 
   AddToWishlist(prdId: number):Observable<IWishlist[]> {
     let headers : HttpHeaders = new HttpHeaders().set("Authorization", "Bearer " + localStorage["access-token"]);
-    return this.httpClient.post<IWishlist[]>(`${environment.APIURL}/api/WishList/${prdId}`, this.httpOption)
+    return this.httpClient.post<IWishlist[]>(`${environment.APIURL}/api/WishList/${prdId}`, "",{headers})
     .pipe(
       retry(2),
       catchError(this.handleError)
-    )
-  }
+      )
+    }
 
-  RemoveFromWishlist(prdId: number){
-    return this.httpClient.delete(`${environment.APIURL}/api/WishList/${prdId}`)
+    RemoveFromWishlist(prdId: number){
+    let headers : HttpHeaders = new HttpHeaders().set("Authorization", "Bearer " + localStorage["access-token"]);
+    return this.httpClient.delete(`${environment.APIURL}/api/WishList/${prdId}`,{headers})
   }
 
   private handleError(error: HttpErrorResponse) {

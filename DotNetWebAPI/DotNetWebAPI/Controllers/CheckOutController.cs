@@ -41,6 +41,7 @@ namespace DotNetWebAPI.Controllers
 
             foreach (var item in myCartItems)
             {
+                item.Product.Quantity -= item.Quantity;
                 orderProducts.Add(new OrderProducts()
                 {
                     ProductId = item.Product.Id,

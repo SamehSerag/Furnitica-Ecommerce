@@ -16,21 +16,17 @@ using Microsoft.AspNetCore.Authorization;
 namespace DotNetWebAPI.Controllers
 {
 
-    //[Authorize(Roles = "Client")]
+    [Authorize(Roles = "Client")]
     [Route("api/[controller]")]
     [ApiController]
     public class WishListController : ControllerBase
     {
-        private readonly ShoppingDbContext _context;
         private readonly IWishListRepository _repo;
         private readonly IMapper _mapper;
-        private readonly User? CurUser;
-        public WishListController(ShoppingDbContext context, IWishListRepository repo, IMapper mapper)
+        public WishListController( IWishListRepository repo, IMapper mapper)
         {
-            _context = context;
             _repo = repo;
             _mapper = mapper;
-           // CurUser = HttpContext.Items["User"] as User;//"2dec20bc-7da6-411b-999c-2f45e40c9e16"
         }
 
         // GET: api/WishListProducts
@@ -40,8 +36,8 @@ namespace DotNetWebAPI.Controllers
             /*User? user = HttpContext.Items["User"] as User;
 
             return await _repo.GetUserWishList(user.Id);*/
-
-            var wishlist =  await _repo.GetUserWishList("2dec20bc-7da6-411b-999c-2f45e40c9e16");
+            User? user = HttpContext.Items["User"] as User;
+            var wishlist =  await _repo.GetUserWishList(user!.Id);
             var wishlistDto = _mapper.Map<IReadOnlyList<WishListProduct>, IReadOnlyList<WishListDto>>(wishlist);
             return wishlistDto;
         }
@@ -54,10 +50,11 @@ namespace DotNetWebAPI.Controllers
         {         
             try
             {
-               /* User? user = HttpContext.Items["User"] as User;
+                //User? user = HttpContext.Items["User"] as User;
+                //_repo.AddToWishList(prdId, user.Id);
+                User ? user = HttpContext.Items["User"] as User;
 
-                _repo.AddToWishList(prdId, user.Id);*/
-                await _repo.AddToWishList(prdId, "2dec20bc-7da6-411b-999c-2f45e40c9e16");
+                await _repo.AddToWishList(prdId, user!.Id);
 
             }
             catch (DbUpdateException)
@@ -81,20 +78,20 @@ namespace DotNetWebAPI.Controllers
                 return NotFound();
             }
 
-            /*User? user = HttpContext.Items["User"] as User;
+            User? user = HttpContext.Items["User"] as User;
 
-            _repo.RemoveFromWishList(prdId, user.Id);*/
-            await _repo.RemoveFromWishList(prdId, "2dec20bc-7da6-411b-999c-2f45e40c9e16");
+            //_repo.RemoveFromWishList(prdId, user.Id);
+            await _repo.RemoveFromWishList(prdId, user!.Id);
 
             return NoContent();
         }
 
         private bool WishListProductExists(int id)
         {
-            /*User? user = HttpContext.Items["User"] as User;
+            User? user = HttpContext.Items["User"] as User;           
 
-            return _repo.WishListProductExists(id, user.Id);*/
-            return _repo.WishListProductExists(id, "2dec20bc-7da6-411b-999c-2f45e40c9e16");
+            //return _repo.WishListProductExists(id, user.Id);
+            return _repo.WishListProductExists(id, user!.Id);
         }
     }
 }
