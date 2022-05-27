@@ -27,6 +27,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductListComponent } from './DashBoard/product-list/product-list.component';
 import { PipeTransformPipe } from './Pipes/pipe-transform.pipe';
 import { AddProductComponent } from './DashBoard/add-product/add-product.component';
+import { MatSliderModule } from '@angular/material/slider';
+import { DialogComponent } from './DashBoard/dialog/dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { SideCategoryCatalogComponent } from './Components/side-category-catalog/side-category-catalog.component';
+import { WishlistComponent } from './Components/wishlist/wishlist.component';
+import { WishlistHeartComponent } from './Components/wishlist-heart/wishlist-heart.component';
+import { AddtocartComponent } from './Components/addtocart/addtocart.component';
+import { ShoppingcartComponent } from './Components/shoppingcart/shoppingcart.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -50,7 +63,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductDetialsComponent,
     ProductListComponent,
     PipeTransformPipe,
-    AddProductComponent
+    AddProductComponent,
+    DialogComponent,
+    SideCategoryCatalogComponent,
+    WishlistComponent,
+    WishlistHeartComponent,
+    AddtocartComponent,
+    ShoppingcartComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,11 +81,18 @@ import { ReactiveFormsModule } from '@angular/forms';
         deps: [HttpClient]
       }
     }),
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    AccordionModule
+        AppRoutingModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        AccordionModule,
+        MatSliderModule,
+        MatDialogModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatButtonModule,
+        NgxSliderModule,
+        ReactiveFormsModule
   ],
 
   providers: [],

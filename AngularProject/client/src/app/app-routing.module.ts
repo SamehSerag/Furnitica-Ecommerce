@@ -12,20 +12,26 @@ import { PendingOrdersComponent } from './DashBoard/pending-orders/pending-order
 import { AddProductComponent } from './DashBoard/add-product/add-product.component';
 import { ProductListComponent } from './DashBoard/product-list/product-list.component';
 import { IndexComponent } from './index.component';
+import { WishlistComponent } from './Components/wishlist/wishlist.component';
+import { ShoppingcartComponent } from './Components/shoppingcart/shoppingcart.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'main-shop', component:MainShopComponent },
-  { path: 'profile', component:EditProfileComponent},//Done
-  { path: 'Orders', component:OrdersComponent},//Done
-  { path: 'Orders/pending', component:PendingOrdersComponent},//Done
-  { path: 'Orders/allOrders', component:AllOrdersComponent},//Done
-  { path: 'Products/:pid', component:ProductDetialsComponent },//Done
-  { path: 'edit-profile', component:EditProfileComponent},//Done
+  { path: 'main-shop/:catId', component:MainShopComponent },
+  { path: 'products/:pid', component:ProductDetialsComponent },
+  { path: 'profile', component:EditProfileComponent},
+  { path: 'Orders', component:OrdersComponent},
+  { path: 'Orders/pending', component:PendingOrdersComponent},
+  { path: 'Orders/allOrders', component:AllOrdersComponent},
+  { path: 'Products/:pid', component:ProductDetialsComponent },
+  { path: 'edit-profile', component:EditProfileComponent},
   { path: 'Register', component:RegisterComponent},
   { path: 'Login', component:LoginComponent},
-  { path: 'Product/Owner', component: ProductListComponent},//Done
+  { path: 'Product/Owner', component: ProductListComponent},
   { path: 'AddProduct/Owner', component: AddProductComponent},
+  { path: 'wishlist', component: WishlistComponent},
+  { path: 'shopping-cart', component: ShoppingcartComponent },
 ];
 
 @NgModule({
