@@ -79,6 +79,7 @@ export class ProductsService {
       retry(2),
       catchError(this.handleError)
     )
+    
   }
   updateProduct(prdId: number, updatedProduct: ProductToAdd): Observable<IProduct>{
     return this.httpClinet.put<IProduct>(`${environment.APIURL}/api/Products/Owner/${prdId}`
