@@ -47,11 +47,11 @@
                                         <tbody>
                                             <tr id="wishlist_1" *ngFor="let wishItem of wishlist">
                                                 <td>
-                                                    <ng-container *ngIf="wishItem.image == '' ;else NoImg">
-                                                        <img class="img-fluid image-cover" [src]="wishItem.image" alt="img">
+                                                    <ng-container *ngIf="!wishItem.image || wishItem.image.length===0 ;else NoImg">
+                                                        <img height="100" width="100" class="img-fluid" src="assets/img/product/noImg.jpg" />
                                                     </ng-container>
                                                     <ng-template #NoImg>
-                                                        <img height="100" width="100" class="img-fluid" src="assets/img/product/noImg.jpg" />
+                                                        <img class="img-fluid image-cover" src="assets/img/product/{{wishItem.image}}" alt="img">
                                                     </ng-template>
                                                 </td>
                                                 <td class="bold align_center">
