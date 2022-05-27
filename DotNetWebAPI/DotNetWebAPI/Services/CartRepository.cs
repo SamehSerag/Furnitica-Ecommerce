@@ -1,7 +1,6 @@
 ﻿using AngularProject.Data;
 using AngularProject.Models;
 using DotNetWebAPI.DTOs;
-using Microsoft.AspNetCore.Components;
 using Microsoft.EntityFrameworkCore;
 namespace AngularAPI.Services
 {
@@ -87,24 +86,24 @@ namespace AngularAPI.Services
         }
 
         // Count produts in the cart
-        public int GetCartItemCount(string userId)
+        public List<CartProductDto> GetCartItemCount(string userId)
         {
             string cartId = GetCart(userId);
 
-            if (!string.IsNullOrEmpty(cartId))
-            {
-                int cartItemCount = _dbContext.CartProducts.Where(x => x.CartId == cartId).Sum(x => x.Quantity);
+            //if (!string.IsNullOrEmpty(cartId))
+            //{
+            //    int cartItemCount = _dbContext.CartProducts.Where(x => x.CartId == cartId).Sum(x => x.Quantity);
 
-                return cartItemCount;
-            }
-            else
-            {
-                return 0;
-            }
+            //    return cartItemCount;
+            //}
+            //else
+            //{
+            //}
+                return GetProductsAvailableInCart(cartId);
         }
 
         // Clear all items from the cart
-        public int ClearCart(string userId)
+        public List<CartProductDto>  ClearCart(string userId)
         {
 
             string cartId = GetCart(userId);
@@ -118,7 +117,7 @@ namespace AngularAPI.Services
                     _dbContext.SaveChanges();
                 }
             }
-            return 0;
+            return GetProductsAvailableInCart(cartId);
         }
 
         // Delete the whole cart
@@ -135,6 +134,7 @@ namespace AngularAPI.Services
         public Product GetProductData(int productId)
         {
             Product product = _dbContext.Products.FirstOrDefault(x => x.Id == productId);
+
             if (product != null)
             {
                 _dbContext.Entry(product).State = EntityState.Detached;
@@ -147,7 +147,7 @@ namespace AngularAPI.Services
         // ######################## Available Products in Cart ########################
         public List<CartProductDto> GetProductsAvailableInCart(string cartID)
         {
-            List<CartProductDto> cartItemList = new List<CartProductDto>();
+            var cartItemList = new List<CartProductDto>();
             List<CartProduct> cartItems = _dbContext.CartProducts.Where(x => x.CartId == cartID).ToList();
 
             foreach (CartProduct item in cartItems)
