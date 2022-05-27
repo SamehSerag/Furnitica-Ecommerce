@@ -28,7 +28,15 @@ export class ProductsService {
     return this.httpClinet.get<IPagination>(`${environment.APIURL}/api/products`);
   }
   getProductsFilteration(filteration:string): Observable<IPagination> {
+    // let headers : HttpHeaders = new HttpHeaders().set("Authorization", "Bearer " + localStorage["access-token"]);
+
     return this.httpClinet.get<IPagination>(`${environment.APIURL}/api/products${filteration}`);
+  }
+  getProductsFilterationByAdmin(filteration:string): Observable<IPagination> {
+    let headers : HttpHeaders = new HttpHeaders().set("Authorization", "Bearer " + localStorage["access-token"]);
+
+    return this.httpClinet.get<IPagination>(`${environment.APIURL}/api/products${filteration}`,
+    {headers});
   }
 
   getProductsByCatId(catId: number): Observable<IPagination>{

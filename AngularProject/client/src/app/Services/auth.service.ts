@@ -44,6 +44,15 @@ export class AuthService {
     );
     return res;
   }
+  isAdmin() : Observable<any> {
+    console.log("55555555555555555555");
+    let res = this.http.get<any>(`${environment.AuthAPIURL}/testAdmin`, {observe: 'response'}).pipe(
+      tap(data => console.log("data = " + JSON.stringify(data))),
+      catchError(this.habdleError)
+      
+    );
+    return res;
+  }
 
   Logout(){
     localStorage.removeItem("access-token");
@@ -51,4 +60,7 @@ export class AuthService {
     localStorage.setItem("user-data", "");
     return  this.http.get<any>(`${environment.AuthAPIURL}/logout`);
   }
+
+  
+ 
 }

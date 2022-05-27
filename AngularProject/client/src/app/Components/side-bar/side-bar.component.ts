@@ -15,6 +15,7 @@ export class SideBarComponent implements OnInit {
   loggedIn : boolean = false;
   loggedUser : string = "";
     IsEnglish:boolean=true;
+    isAdmin: boolean = false;
 
   @ViewChild('searchInput') searchInput!: ElementRef;
   constructor(private auth : AuthService, private router: Router,public translate: TranslateService) {
@@ -25,6 +26,17 @@ export class SideBarComponent implements OnInit {
   ngOnInit(): void {
     this.addUserDataSetItemHandler();
     this.updateState();
+    this.auth.isAdmin().subscribe({
+      next: (res) =>{
+        this.isAdmin = true;
+        console.log("ressssssssssssssssssssssssssssssssssssssssssss", res);
+
+      },
+      error: (e)=>{
+        this.isAdmin = false;
+        console.log("errorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr", e);
+      },
+    })
   }
 
   searhcQuery(){
