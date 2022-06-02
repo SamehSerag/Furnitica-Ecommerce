@@ -19,17 +19,17 @@
 - [13] Vendors Can Manage Order
 
 ## 📱 Some Screenshots 
-<img width="400px" alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/images/0.jpeg"><img width="400" alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/images/00.jpeg">
+<img width="400" height="200" alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/images/0.jpeg"> <img width="400" height="200" alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/images/00.jpeg">
 <img width="400" alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/images/1.jpeg">
-<img width="400" alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/images/2.jpeg">
-<img width="400" alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/images/3.jpeg">
+<img width="400" height="243" alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/images/2.jpeg">
+<img width="400" height="230" alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/images/3.jpeg">
 <img width="400" alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/images/4.jpeg">
 <img width="400" alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/images/5.jpeg">
 <img width="400" alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/images/6.jpeg">
 <img width="400" alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/images/7.jpeg">
 <img width="400" alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/images/8.jpeg">
-<img width="400" alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/images/9.jpeg">
-<img width="400" alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/images/10.jpeg">
+<img width="400" height="243" alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/images/9.jpeg">
+<img width="400" height="243" alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/images/10.jpeg">
 <img width="400" alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/images/11.jpeg">
 
 ## 🛠 Requirements
