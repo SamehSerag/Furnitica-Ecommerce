@@ -19,7 +19,7 @@
 - [13] Vendors Can Manage Order
 
 ## 📱 Some Screenshots 
-<img width="400" height="200" alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/images/0.jpeg"> <img width="400" height="200" alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/images/00.jpeg">
+<img width="400" height="200" alt="Log In" src="/images/0.jpeg"> <img width="400" height="200" alt="Registration" src="/images/00.jpeg">
 <img width="400" alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/images/1.jpeg">
 <img width="400" height="243" alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/images/2.jpeg">
 <img width="400" height="230" alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/images/3.jpeg">
@@ -45,23 +45,19 @@
   > then Run The Application
 
 ## ⚡ Technologies and Libraries 
-* ASP.NET Core
+* Angular 13
+* Angular Material
+* .NET Core 6 Web API
 * Entity Framework Core
 * Sql Server
 * Html/Css
 * JQuery
 * BootStrap
-* Rezor pages and Tags
 * AutoMappers 
-* Paypal Services
-* Google Maps
-* External Logins (Google,FaceBook)
 * Dependancy injection 
-* Generic Repositories
-* Mvc Core identity
-* Remote Validations
-* LinqKit 
-* Partial views
+* Repository Design Pattern
+* .NET Core Identity
+
 
 ## 🏛 Architecture : 
 <!-- <img alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/Images/MVC.png"> -->
@@ -73,3 +69,5 @@
 # 👷🏽 Contributors
 * [Sameh Serag](https://github.com/SamehSerag)
 * [Mohamed Alaa](https://github.com/mohamedalaa1305)
+* [Omnia Fathy](https://github.com/omnia-fathy)
+* [Samaa Khaled](https://github.com/SamaaKH99)
