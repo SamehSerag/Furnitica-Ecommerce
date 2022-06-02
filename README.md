@@ -75,6 +75,7 @@ Or Log in wtih Customer
   username: omnia, password: @Asd1234
 ```
 
+You can also start your own journey by registering as a new customer or owner
 
 
 ## ⚡ Technologies and Libraries 
