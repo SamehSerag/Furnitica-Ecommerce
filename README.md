@@ -59,15 +59,9 @@
 * .NET Core Identity
 
 
-## 🏛 Architecture : 
-<!-- <img alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/Images/MVC.png"> -->
-
-<!-- ## 🏛 DataBase Diagram :
-<img alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/img/Db.PNG">
- -->
-
 # 👷🏽 Contributors
 * [Sameh Serag](https://github.com/SamehSerag)
 * [Mohamed Alaa](https://github.com/mohamedalaa1305)
 * [Omnia Fathy](https://github.com/omnia-fathy)
 * [Samaa Khaled](https://github.com/SamaaKH99)
+* [Noha Mostafa](https://github.com/NohaMostafa)
