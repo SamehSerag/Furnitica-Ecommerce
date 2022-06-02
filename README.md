@@ -6,18 +6,18 @@
 
 ## ⚙ Features
 
-- [1] You can login/Register as Customer or Owner
-- [2] Customer/Vendor Can Update His Profile 
+- [1] You can login/Register as Customer or Vendor
+- [2] Customer/Vendor Can Update His Profile Information
 - [3] Customers Can See All Products or Specific Product Without Login
-- [5] Customers Can Search For a Specific Product Without Login
-- [6] Customers Can fliter Products to certain criteria like (Color, Categoryies, Price Range)
-- [7] Customers Can Sort Products by (A-Z, Z-A, High to low price, Low to high price)
-- [8] Customers Can Add/Remove/Update Products in Cart
-- [9] Customers Can Add/Remove Their Favorite Products
-- [10] Customers Can see all his previous Orders and it's details 
-- [11] Customer Can Add Only One Review For a Product With Evaluation. 
-- [12] Vendors Can Add/Remove/Update/Delete Products.
-- [13] Vendors Can Manage Order
+- [4] Customers Can Search For a Specific Product Without Login
+- [5] Customers Can fliter Products to certain criteria like (Color, Categoryies, Price Range)
+- [6] Customers Can Sort Products by (A-Z, Z-A, High to low price, Low to high price)
+- [7] Customers Can Add/Remove/Update Products in Cart
+- [8] Customers Can Add/Remove Their Favorite Products
+- [9] Customers Can see all his previous Orders and it's details 
+- [10] Customer Can Add Only One Review For a Product With Evaluation. 
+- [11] Vendors Can Add/Remove/Update/Delete Products.
+- [12] Vendors Can Manage Order
 
 ## 📱 Some Screenshots 
 <img width="400" height="200" alt="Log In" src="/images/0.jpeg"> <img width="400" height="200" alt="Registration" src="/images/00.jpeg">
