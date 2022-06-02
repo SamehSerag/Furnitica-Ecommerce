@@ -40,9 +40,35 @@
  
 ## 🛠 How To Run 
 
- > open visual Studio and write in it's Terminal 
-  > update-database 
-  > then Run The Application
+Clone the project
+
+```bash
+  git clone https://github.com/SamehSerag/Examination-System.git
+```
+
+Restore database
+
+```bash
+  Examination_System_V7.bak
+```
+
+Go to the project directory
+
+```bash
+  cd WinFormsApp1 V2.03 Reports
+```
+
+Log in wtih student
+
+```bash
+  username: student, password: 1234
+```
+Or Log in wtih Instructor
+
+```bash
+  username: insturctor, password: insturctor
+```
+
 
 ## ⚡ Technologies and Libraries 
 * Angular 13
