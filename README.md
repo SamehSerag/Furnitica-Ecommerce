@@ -1,7 +1,8 @@
 # Furnitica Web Application
 
 ## 🧐 About
-* Furniture Online Store Built Using Angular and .NET Core Web API
+* Furniture Online Store Built Using Angular 13 and .NET Core 6 Web API
+
 
 ## ⚙ Features
 
