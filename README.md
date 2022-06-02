@@ -49,24 +49,29 @@ Clone the project
 Restore database
 
 ```bash
-  Examination_System_V7.bak
+  DbBackup/AngularDb.bak
 ```
 
-Go to the project directory
+Run API
 
 ```bash
-  cd WinFormsApp1 V2.03 Reports
+  cd DotNetWebAPI/DotNetWebAPI
+```
+Run Angular Project
+
+```bash
+  cd AngularProject/client
 ```
 
-Log in wtih student
+Log in wtih Vendor
 
 ```bash
-  username: student, password: 1234
+  username: alaa, password: @Asd1234
 ```
-Or Log in wtih Instructor
+Or Log in wtih Customer
 
 ```bash
-  username: insturctor, password: insturctor
+  username: omnia, password: @Asd1234
 ```
 
 
