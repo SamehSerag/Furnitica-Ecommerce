@@ -33,7 +33,7 @@
 <img width="400" height="243" alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/images/10.jpeg">
 <img width="400" alt="Screen Shot 2020-09-04 at 2 48 55 PM" src="/images/11.jpeg">
 
-## 🛠 Requirements
+## 🏛 Requirements
  * .Net Core 6 Runtime Env.
  * Sql server installed and Tsql.
  * Visual Studio To Run API.
